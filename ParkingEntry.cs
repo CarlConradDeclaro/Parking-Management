@@ -14,38 +14,25 @@ namespace Parking
 {
     public partial class ParkingEntry : Form
     {
-
-
         private FlowLayoutPanel flowLayoutPanel2;
         ParkingRecordsManager prm = new ParkingRecordsManager();
         public event EventHandler ParkingRecordAdded;
-
         public ParkingEntry(FlowLayoutPanel flowLayoutPanel2)
         {
             InitializeComponent();
-            this.flowLayoutPanel2 = flowLayoutPanel2;
-           
+            this.flowLayoutPanel2 = flowLayoutPanel2;          
         }
-
-
-
         public ParkingEntry()
         {
             InitializeComponent();
-
         }
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             //CALCULATE AMD VALIDATE HERE
-
             string platenum = plateNo.Text;
             string type = comboBoxType.SelectedItem?.ToString();
             string model = comboBoxModel.SelectedItem?.ToString();
@@ -54,9 +41,6 @@ namespace Parking
             DateTime currentDateTime = DateTime.Now;
             string ArrivalDate = currentDateTime.ToString("MM/dd/yyyy");
             string ArrivalTime = currentDateTime.ToString("hh:mm:ss tt");
-
-
-
 
             int proccedAddItem = 0;
 
@@ -87,11 +71,7 @@ namespace Parking
             else
             {
                 inValidM.Text = "please enter specified value";
-            }
-
-        
-
-
+            }       
             if (proccedAddItem == 3)
             {
                 ParkingRecord carDatails = new ParkingRecord(platenum, type, model, driverName, phoneNUm, ArrivalDate, ArrivalTime, "PARKED");
@@ -106,20 +86,12 @@ namespace Parking
                 invalid.Text = "Invalid Fields";
                 invalid.ForeColor = Color.Red;
             }
-        }
-
-        
-
-      
-
+        }     
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Clear existing items in comboBoxModel
             comboBoxModel.Items.Clear();
-
-
             string selectedItem = comboBoxType.SelectedItem?.ToString();
-
             var vehicleBrand = VehicleBrandMAnger.Instance;
             var VB = vehicleBrand.GetVB();
             foreach (var record in VB)
@@ -127,8 +99,6 @@ namespace Parking
                 if (record.vehicleType == selectedItem)
                     comboBoxModel.Items.Add(record.vBrand);
             }
-
-
         }
 
         private void comboBoxModel_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,7 +133,6 @@ namespace Parking
             driver.Text = "";
             phoneNo.Text = "";
         }
-
         private void dateDepart_ValueChanged(object sender, EventArgs e)
         {
 

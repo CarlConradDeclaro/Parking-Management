@@ -12,8 +12,8 @@
     {
     public partial class Parkin : UserControl
     {
-
-
+        ParkingEntry pe1;
+        Parkout pOut;
         private static Parkin instance;
         public static Parkin Instance
         {
@@ -23,11 +23,7 @@
                     instance = new Parkin();
                 return instance;
             }
-        }
-        
-
-        ParkingEntry pe1;
-        Parkout pOut;
+        }      
         public Parkin()
         {
             InitializeComponent();         
@@ -35,27 +31,17 @@
             numV.Text = countVehicle() + "";
             numPV.Text = countParkedVehicle() + "";
             numCV.Text = countClearedVehicle() + "";
-
             panel5.Show();
             history1.Hide();
             admin1.Hide();
         }
-
         private void ParkinList_EditHandler(object sender, EventArgs e)
         {
-            display();
-            
+            display();          
         }
-
-
-
         private void Parkin_Load(object sender, EventArgs e)
-        {
-
-          
+        {         
         }
-
-
 
         bool sidebarExpand = true;
         private void sidebarTransition_Tick(object sender, EventArgs e)
@@ -68,7 +54,6 @@
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();
-
                 }
             }
             else
@@ -79,8 +64,6 @@
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
-
-
                 }
             }
         }
@@ -94,7 +77,6 @@
                 {
                     menuTransition.Stop();
                     menuExpand = true;
-
                 }
             }
             else
@@ -104,7 +86,6 @@
                 {
                     menuTransition.Stop();
                     menuExpand = false;
-
                 }
             }
         }
@@ -120,19 +101,10 @@
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-        
-
-
+        {      
             pe1 = new ParkingEntry(flowLayoutPanel2);
-
             pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
-
-            pe1.ShowDialog();
-
-         
-
-
+            pe1.ShowDialog();        
         }
 
         private void ParkingRecordAddedHandler(object sender, EventArgs e)
@@ -154,7 +126,6 @@
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void flowLayoutPanel2_Click(object sender, EventArgs e)
@@ -166,13 +137,11 @@
             flowLayoutPanel2.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords(); // Add a semicolon here
-
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
                  if (record.Status == "PARKED")
                 {
-
                     parkinList pL = new parkinList(numV, numCV, numPV); 
                     pL.UpdateLabels(record);
                     pL.EditParking += ParkingRecordAddedHandler;
@@ -210,7 +179,6 @@
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var records = parkingRecordsManager.GetAllParkingRecords();
             DialogResult result;
-
             if (records.Count == 0)
             {
                 result = MessageBox.Show("There are no records to clear.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -221,8 +189,7 @@
             }
 
             if (result == DialogResult.Yes)
-            {
-                // Clear all records
+            {          
                 records.Clear();
                 display();
             }
@@ -293,7 +260,6 @@
             {
                 if (record.Status == "PARKED")
                     countParkedVehicle++;
-
             }
             return countParkedVehicle;
         }
@@ -318,15 +284,13 @@
         private void button6_Click(object sender, EventArgs e)
         {
 
-           admin1.Hide();
-            history1.Hide();
-           
+            admin1.Hide();
+            history1.Hide();       
             panel5.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             history1.Show();
              admin1.Hide();
        
@@ -334,68 +298,38 @@
 
         private void button7_Click(object sender, EventArgs e)
         {
-
-           admin1.Show();
+            admin1.Show();
             history1.Hide();
-
-
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-
-
             int width = panel9.Width;
             int height = panel9.Height;
-
-
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-
-
             path.AddArc(0, 0, 20, 20, 180, 90); // Top-left corner
             path.AddArc(width - 20, 0, 20, 20, 270, 90); // Top-right corner
             path.AddArc(width - 20, height - 20, 20, 20, 0, 90); // Bottom-right corner
             path.AddArc(0, height - 20, 20, 20, 90, 90); // Bottom-left corner
             path.CloseFigure();
-
-
             using (Pen pen = new Pen(Color.Black, 1)) // You can adjust color and thickness as needed
             {
                 g.DrawPath(pen, path);
             }
         }
-
-
-
-
-
-    
-
-
-
-
-
         private void panel10_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-
-
             int width = panel10.Width;
             int height = panel10.Height;
-
-
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-
-
             path.AddArc(0, 0, 20, 20, 180, 90);
             path.AddArc(0, 0, 20, 20, 180, 90);
             path.AddArc(width - 20, 0, 20, 20, 270, 90); 
             path.AddArc(width - 20, height - 20, 20, 20, 0, 90); 
             path.AddArc(0, height - 20, 20, 20, 90, 90); 
             path.CloseFigure();
-
-
             using (Pen pen = new Pen(Color.Black, 1)) 
             {
                 g.DrawPath(pen, path);
@@ -405,22 +339,14 @@
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-
-
             int width = panel11.Width;
             int height = panel11.Height;
-
-
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-
-
             path.AddArc(0, 0, 20, 20, 180, 90); 
             path.AddArc(width - 20, 0, 20, 20, 270, 90);
             path.AddArc(width - 20, height - 20, 20, 20, 0, 90);
             path.AddArc(0, height - 20, 20, 20, 90, 90); 
             path.CloseFigure();
-
-
             using (Pen pen = new Pen(Color.Black, 1)) 
             {
                 g.DrawPath(pen, path);

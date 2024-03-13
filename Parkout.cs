@@ -44,12 +44,8 @@ namespace Parking
                 }
             }
         }
-
-
-
         private void ParkOutList_ParkingRecordAdded(object sender, EventArgs e)
         {
-
             Parking?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
@@ -110,8 +106,6 @@ namespace Parking
                     record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"), parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS);
                     var parkingHistoryRecords = ParkingRecordsManager.Instance;
                 
-
-
                     if (enterAmt.Text != "")
                     {
                         if (!double.TryParse(enterAmt.Text, out double amt))
@@ -149,21 +143,11 @@ namespace Parking
                         MessageBox.Show("Please enter amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
-
-
-
                     Parking?.Invoke(this, EventArgs.Empty);
-
                 }
             }
 
         }
-
-
-
-
-
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             Parking?.Invoke(this, EventArgs.Empty);
@@ -255,20 +239,14 @@ namespace Parking
                 }
             }
         }
-
         private void change_Click(object sender, EventArgs e)
         {
 
         }
-
-
-        double setHOURS,setTIME;
-        
+        double setHOURS,setTIME;   
         private void button5_Click(object sender, EventArgs e)
         {
             //here to compute time/amt
-
-
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
 
@@ -297,22 +275,15 @@ namespace Parking
                         string arrivalDate = record.ArrivalDate;
                         string arrvalTime = record.ArrivalTime;
                         string arrivalDateTime = arrivalDate + " " + arrvalTime;
-                        DateTime parkin = DateTime.Parse(arrivalDateTime);
-
-
-                  
+                        DateTime parkin = DateTime.Parse(arrivalDateTime);                 
                         // Park out time
                         DateTime selectedDate = parkOutDate.Value;
                         DateTime selectedTime = parkOutTime.Value;
-
                         string formattedDateTime = selectedDate.ToString("MM/dd/yyyy");
                         string time = selectedTime.ToString("hh:mm:ss tt");
                         string parkout = formattedDateTime + " " + time;
                         DateTime toPARKOUT = DateTime.Parse(parkout);
-
-
                         TimeSpan duration = toPARKOUT -  parkin;
-
                         double HOURS = 0;
                         int day = 0;
                         int year = toPARKOUT.Year - parkin.Year;
@@ -346,14 +317,8 @@ namespace Parking
                         {
                             totalAmount = amount;
                         }
-
-
-
-
-
                         double hours = Math.Round(HOURS, 0);
                         double amt = Math.Round(totalAmount, 0);
-
                         if (toPARKOUT >= parkin)
                         {
                             setHOURS = amt;
@@ -379,27 +344,11 @@ namespace Parking
                             else if (parkOutTime.Value < p2)
                             {
                                 invalidT.Text = "Invalid Time!";
-                            }
-                           
-                             
+                            }                                                    
                         }
-
-
-
-
-
-
                     }            
                 }
-            }
-            
-
-
-
-
-
+            }           
         }
     }
 }
-
-

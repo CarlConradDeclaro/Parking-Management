@@ -14,47 +14,29 @@ namespace Parking
     {
 
         private string plateNum;
-
-
         public event EventHandler editHandler;
-
-
 
         public edit(ParkingRecord record)
         {
-            InitializeComponent();
-           
+            InitializeComponent();       
             plateValue.Text = record.PlateNumber;
             typeValue.Text = record.Type;
             brandValue.Text = record.Model;
             driverValue.Text = record.Driver;
             phoneValue.Text = record.Phone;
-            plateNum = record.PlateNumber;
-           
+            plateNum = record.PlateNumber;         
         }
         public edit() { }
 
         private void edit_Load(object sender, EventArgs e)
         {
 
-        }
-  
-
-
-        
-
+        }      
         private void button2_Click(object sender, EventArgs e)
-        {
-            // how can i use the display() from parkin it should refresh the flowpane freom parkin
-            
-            EditVehicle(plateNum);
-        
+        {            
+            EditVehicle(plateNum);      
             this.Close();
-
         }
-
-    
-
         private void EditVehicle(String plateNumber) {
             // edit vehicle details
             var parkingRecordsManager = ParkingRecordsManager.Instance;
@@ -69,20 +51,12 @@ namespace Parking
                     record.Model = brandValue.Text;
                     record.Driver = driverValue.Text;
                     record.Phone = phoneValue.Text;
-
-
-
-
                      editHandler?.Invoke(this, EventArgs.Empty);
-
-
                     return;
-
                 }
                
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

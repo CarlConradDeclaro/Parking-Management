@@ -17,24 +17,18 @@ namespace Parking
         {
             InitializeComponent();
         }
-
-
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         public void UpdateLabels(string data1, string data2)
         {    
             vLabel1.Text = data1;
-            vLabel1Data.Text = data2; 
-          
-         
+            vLabel1Data.Text = data2;                  
         }
 
         private void vehicleDetails_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

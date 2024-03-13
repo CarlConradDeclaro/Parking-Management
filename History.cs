@@ -23,10 +23,6 @@ namespace Parking
                 return instance;
             }
         }
-
-
-
-
         public History()
         {
             InitializeComponent();
@@ -45,7 +41,6 @@ namespace Parking
                 flowPanelHistory.Controls.Add(pL);
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             flowPanelHistory.Controls.Clear();
@@ -59,8 +54,6 @@ namespace Parking
                 flowPanelHistory.Controls.Add(pL);
             }
         }
-
-
         public void display() {
 
             flowPanelHistory.Controls.Clear();
@@ -73,8 +66,6 @@ namespace Parking
                 pL.UpdateLabels(record);
                 flowPanelHistory.Controls.Add(pL);
             }
-
-
         }
     }
 }
