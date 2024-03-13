@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             panel1 = new Panel();
             button8 = new Button();
             panel3 = new Panel();
@@ -47,7 +48,6 @@
             label4 = new Label();
             label1 = new Label();
             panel5 = new Panel();
-            label5 = new Label();
             panel6 = new Panel();
             button7 = new Button();
             label13 = new Label();
@@ -73,7 +73,6 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)setAAPH).BeginInit();
             ((System.ComponentModel.ISupportInitialize)setFlagDown).BeginInit();
-            panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)flagDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AAPH).BeginInit();
@@ -84,6 +83,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button8);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label6);
@@ -96,11 +96,13 @@
             // 
             // button8
             // 
-            button8.Location = new Point(1203, 19);
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Image = (Image)resources.GetObject("button8.Image");
+            button8.Location = new Point(1204, 20);
             button8.Name = "button8";
-            button8.Size = new Size(71, 29);
+            button8.Size = new Size(43, 29);
             button8.TabIndex = 18;
-            button8.Text = "refresh";
             button8.UseVisualStyleBackColor = true;
             button8.Click += button8_Click;
             // 
@@ -138,11 +140,13 @@
             // 
             // button2
             // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
             button2.Location = new Point(1177, 22);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 3;
-            button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -219,11 +223,13 @@
             // 
             // button1
             // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.Location = new Point(1180, 21);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 3;
-            button1.Text = "Save";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -270,23 +276,11 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(22, 19, 75);
-            panel5.Controls.Add(label5);
             panel5.Location = new Point(3, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(1342, 52);
             panel5.TabIndex = 11;
             panel5.Paint += panel5_Paint;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(11, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(60, 31);
-            label5.TabIndex = 11;
-            label5.Text = "Edit:";
             // 
             // panel6
             // 
@@ -298,16 +292,18 @@
             panel6.Controls.Add(button3);
             panel6.Location = new Point(151, 81);
             panel6.Name = "panel6";
-            panel6.Size = new Size(993, 52);
+            panel6.Size = new Size(891, 52);
             panel6.TabIndex = 15;
             // 
             // button7
             // 
-            button7.Location = new Point(375, 16);
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Image = (Image)resources.GetObject("button7.Image");
+            button7.Location = new Point(325, 9);
             button7.Name = "button7";
-            button7.Size = new Size(69, 29);
+            button7.Size = new Size(41, 37);
             button7.TabIndex = 17;
-            button7.Text = "refresh";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
@@ -329,9 +325,9 @@
             label9.ForeColor = Color.White;
             label9.Location = new Point(14, 14);
             label9.Name = "label9";
-            label9.Size = new Size(70, 31);
+            label9.Size = new Size(60, 31);
             label9.TabIndex = 11;
-            label9.Text = "Type:";
+            label9.Text = "Edit:";
             // 
             // selectedItemType
             // 
@@ -346,9 +342,9 @@
             // 
             button3.Location = new Point(272, 13);
             button3.Name = "button3";
-            button3.Size = new Size(94, 29);
+            button3.Size = new Size(47, 29);
             button3.TabIndex = 11;
-            button3.Text = "Filter";
+            button3.Text = "set";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -375,9 +371,9 @@
             label10.ForeColor = Color.White;
             label10.Location = new Point(160, 213);
             label10.Name = "label10";
-            label10.Size = new Size(70, 31);
+            label10.Size = new Size(54, 31);
             label10.TabIndex = 16;
-            label10.Text = "Type:";
+            label10.Text = "Edit";
             // 
             // label12
             // 
@@ -419,6 +415,8 @@
             // 
             // panel4
             // 
+            panel4.Anchor = AnchorStyles.Top;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(panel7);
             panel4.Controls.Add(button6);
             panel4.Controls.Add(button5);
@@ -432,9 +430,9 @@
             panel4.Controls.Add(flowLayoutBrands);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-            panel4.Location = new Point(107, 373);
+            panel4.Location = new Point(131, 369);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1348, 587);
+            panel4.Size = new Size(1289, 587);
             panel4.TabIndex = 1;
             // 
             // panel7
@@ -448,48 +446,56 @@
             // 
             // button9
             // 
-            button9.Location = new Point(357, 22);
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Image = (Image)resources.GetObject("button9.Image");
+            button9.Location = new Point(357, 3);
             button9.Name = "button9";
-            button9.Size = new Size(58, 29);
+            button9.Size = new Size(58, 48);
             button9.TabIndex = 1;
-            button9.Text = "Add";
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
             // 
             // newBrand
             // 
-            newBrand.Location = new Point(149, 23);
+            newBrand.Location = new Point(148, 14);
             newBrand.Name = "newBrand";
             newBrand.Size = new Size(202, 27);
             newBrand.TabIndex = 0;
             // 
             // button6
             // 
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Image = (Image)resources.GetObject("button6.Image");
             button6.Location = new Point(449, 325);
             button6.Name = "button6";
-            button6.Size = new Size(100, 29);
+            button6.Size = new Size(68, 41);
             button6.TabIndex = 23;
-            button6.Text = "Save";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
             // button5
             // 
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Image = (Image)resources.GetObject("button5.Image");
             button5.Location = new Point(449, 269);
             button5.Name = "button5";
-            button5.Size = new Size(100, 29);
+            button5.Size = new Size(68, 41);
             button5.TabIndex = 22;
-            button5.Text = "Save";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(449, 213);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(449, 200);
             button4.Name = "button4";
-            button4.Size = new Size(100, 29);
+            button4.Size = new Size(68, 54);
             button4.TabIndex = 17;
-            button4.Text = "Save";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -511,8 +517,6 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)setAAPH).EndInit();
             ((System.ComponentModel.ISupportInitialize)setFlagDown).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)flagDown).EndInit();
@@ -544,7 +548,6 @@
         private NumericUpDown setAAPH;
         private NumericUpDown setFlagDown;
         private Panel panel5;
-        private Label label5;
         private Panel panel6;
         private Label label13;
         private Label label9;

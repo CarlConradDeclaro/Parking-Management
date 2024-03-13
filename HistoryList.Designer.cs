@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryList));
             Label3 = new Label();
             Label5 = new Label();
             Label4 = new Label();
@@ -59,7 +60,7 @@
             Label5.AutoSize = true;
             Label5.Font = new Font("Ebrima", 9F, FontStyle.Bold);
             Label5.ForeColor = Color.Gainsboro;
-            Label5.Location = new Point(640, 14);
+            Label5.Location = new Point(621, 14);
             Label5.Name = "Label5";
             Label5.Size = new Size(67, 20);
             Label5.TabIndex = 17;
@@ -71,7 +72,7 @@
             Label4.AutoSize = true;
             Label4.Font = new Font("Ebrima", 9F, FontStyle.Bold);
             Label4.ForeColor = Color.Gainsboro;
-            Label4.Location = new Point(539, 14);
+            Label4.Location = new Point(520, 14);
             Label4.Name = "Label4";
             Label4.Size = new Size(77, 20);
             Label4.TabIndex = 16;
@@ -151,21 +152,27 @@
             // 
             // button1
             // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.Location = new Point(1172, 10);
             button1.Name = "button1";
             button1.Size = new Size(51, 29);
             button1.TabIndex = 23;
-            button1.Text = "View";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
             button2.Location = new Point(1229, 10);
             button2.Name = "button2";
             button2.Size = new Size(63, 29);
             button2.TabIndex = 24;
-            button2.Text = "Delete";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // HistoryList
             // 

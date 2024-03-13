@@ -116,3 +116,5 @@ C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\re
 C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\Parking.pdb
 C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\Parking.genruntimeconfig.cache
 C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\ref\Parking.dll
+C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\Parking.view.resources
+C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\Parking.viewParkinVH.resources

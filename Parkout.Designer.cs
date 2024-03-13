@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parkout));
             panel2 = new Panel();
             button1 = new Button();
             button4 = new Button();
             button2 = new Button();
             listOfVehicle = new FlowLayoutPanel();
             panel1 = new Panel();
+            invalidT = new Label();
+            invalidD = new Label();
             setHours = new Label();
             label11 = new Label();
             button5 = new Button();
@@ -56,8 +59,6 @@
             flowPanelVH = new FlowLayoutPanel();
             flowPanel = new Panel();
             label3 = new Label();
-            invalidD = new Label();
-            invalidT = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -79,24 +80,29 @@
             button1.BackColor = SystemColors.ButtonFace;
             button1.Font = new Font("Segoe UI", 13.8F);
             button1.ForeColor = Color.Black;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(127, 3);
             button1.Name = "button1";
             button1.Size = new Size(103, 43);
             button1.TabIndex = 0;
-            button1.Text = "Clear";
+            button1.Text = "    Clear";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button4
             // 
             button4.BackColor = SystemColors.ButtonFace;
+            button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 13.8F);
             button4.ForeColor = Color.Black;
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.Location = new Point(236, 3);
             button4.Name = "button4";
             button4.Size = new Size(102, 43);
             button4.TabIndex = 11;
-            button4.Text = "Pay";
+            button4.Text = "    Pay";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
@@ -105,11 +111,13 @@
             button2.BackColor = SystemColors.ButtonFace;
             button2.Font = new Font("Segoe UI", 13.8F);
             button2.ForeColor = Color.Black;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.Location = new Point(18, 4);
             button2.Name = "button2";
             button2.Size = new Size(103, 40);
             button2.TabIndex = 6;
-            button2.Text = "Close";
+            button2.Text = "    Close";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click_1;
             // 
@@ -150,11 +158,29 @@
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint_1;
             // 
+            // invalidT
+            // 
+            invalidT.AutoSize = true;
+            invalidT.ForeColor = Color.Red;
+            invalidT.Location = new Point(207, 284);
+            invalidT.Name = "invalidT";
+            invalidT.Size = new Size(0, 20);
+            invalidT.TabIndex = 17;
+            // 
+            // invalidD
+            // 
+            invalidD.AutoSize = true;
+            invalidD.ForeColor = Color.Red;
+            invalidD.Location = new Point(207, 225);
+            invalidD.Name = "invalidD";
+            invalidD.Size = new Size(0, 20);
+            invalidD.TabIndex = 16;
+            // 
             // setHours
             // 
             setHours.AutoSize = true;
             setHours.Font = new Font("Cambria", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            setHours.ForeColor = Color.FromArgb(192, 0, 0);
+            setHours.ForeColor = Color.White;
             setHours.Location = new Point(244, 196);
             setHours.Name = "setHours";
             setHours.Size = new Size(0, 23);
@@ -315,8 +341,9 @@
             // seeAll
             // 
             seeAll.BackColor = SystemColors.ButtonFace;
+            seeAll.FlatStyle = FlatStyle.Flat;
             seeAll.ForeColor = Color.Black;
-            seeAll.Location = new Point(465, 42);
+            seeAll.Location = new Point(411, 45);
             seeAll.Name = "seeAll";
             seeAll.Size = new Size(74, 37);
             seeAll.TabIndex = 2;
@@ -327,13 +354,14 @@
             // button3
             // 
             button3.BackColor = SystemColors.ButtonFace;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
-            button3.Location = new Point(363, 45);
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(357, 45);
             button3.Name = "button3";
-            button3.Size = new Size(96, 34);
+            button3.Size = new Size(48, 39);
             button3.TabIndex = 1;
-            button3.Text = "SEARCH";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -372,24 +400,6 @@
             label3.Size = new Size(165, 31);
             label3.TabIndex = 10;
             label3.Text = "Vehicle Details";
-            // 
-            // invalidD
-            // 
-            invalidD.AutoSize = true;
-            invalidD.ForeColor = Color.Red;
-            invalidD.Location = new Point(207, 225);
-            invalidD.Name = "invalidD";
-            invalidD.Size = new Size(0, 20);
-            invalidD.TabIndex = 16;
-            // 
-            // invalidT
-            // 
-            invalidT.AutoSize = true;
-            invalidT.ForeColor = Color.Red;
-            invalidT.Location = new Point(207, 284);
-            invalidT.Name = "invalidT";
-            invalidT.Size = new Size(0, 20);
-            invalidT.TabIndex = 17;
             // 
             // Parkout
             // 

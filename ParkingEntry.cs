@@ -84,25 +84,50 @@ namespace Parking
 
             if (phoneNUm != "")
                 if (!double.TryParse(phoneNo.Text, out _))
-                {              
+                {
                     invalidPhone.Text = "Please enter a valid numeric number";
                 }
                 else
                 {
-                   
+                    proccedAddItem++;
                     invalidPhone.Text = "";
                 }
-            
+            else {
+                proccedAddItem++;
+                invalidPhone.Text = "";
+            }
              
 
-            if (proccedAddItem == 3)
+            if (proccedAddItem == 4)
             {
-                ParkingRecord carDatails = new ParkingRecord(platenum, type, model, driverName, phoneNUm, ArrivalDate, ArrivalTime, "PARKED");
+                ParkingRecord carDetails = new ParkingRecord(platenum.ToUpper(), type, model, driverName, phoneNUm, ArrivalDate, ArrivalTime, "PARKED");
                 var parkingRecordsManager = ParkingRecordsManager.Instance;
-                parkingRecordsManager.AddParkingRecord(carDatails);
-                ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
-                invalid.Text = "Succesfully added new Vehicle!";
-                invalid.ForeColor = Color.Chartreuse;              
+                var records = parkingRecordsManager.GetAllParkingRecords();
+
+                bool isAlreadyInList = false;
+
+                foreach (var record in records)
+                {
+                    // Assuming Platenum uniquely identifies a parking record
+                    if (record.PlateNumber.ToUpper() == platenum.ToUpper())
+                    {
+                        isAlreadyInList = true;
+                        break;
+                    }
+                }
+
+                if (!isAlreadyInList)
+                {
+                    parkingRecordsManager.AddParkingRecord(carDetails);
+                    ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
+                    invalid.Text = "Successfully added new Vehicle!";
+                    invalid.ForeColor = Color.Chartreuse;
+                }
+                else
+                {
+                    MessageBox.Show("OPPS!, Vehicle is already in the list", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
             else
             {
@@ -123,6 +148,8 @@ namespace Parking
                     comboBoxModel.Items.Add(record.vBrand);
             }
         }
+
+      
 
         private void comboBoxModel_SelectedIndexChanged(object sender, EventArgs e)
         {

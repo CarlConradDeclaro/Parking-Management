@@ -216,10 +216,13 @@
                 var record = allParkingRecords[i];
                 if (record.PlateNumber.Contains(searchVH.Text))
                 {
-                    parkinList pL = new parkinList(numV, numCV, numPV);
-                    pL.UpdateLabels(record);
-                    flowLayoutPanel2.Controls.Add(pL);
-                    foundRecord = true;
+                    if (record.Status != "Cleared") {
+                        parkinList pL = new parkinList(numV, numCV, numPV);
+                        pL.UpdateLabels(record);
+                        flowLayoutPanel2.Controls.Add(pL);
+                        foundRecord = true;
+                    }
+                   
                 }
             }
             if (!foundRecord)
@@ -285,12 +288,14 @@
         {
 
             admin1.Hide();
+           // history1.deleteHistoryV += ParkingRecordAddedHandler;
             history1.Hide();       
             panel5.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
+        {  
+            history1.deleteHistoryV += ParkingRecordAddedHandler;
             history1.Show();
              admin1.Hide();
        
@@ -298,6 +303,7 @@
 
         private void button7_Click(object sender, EventArgs e)
         {
+          //  history1.deleteHistoryV += ParkingRecordAddedHandler;
             admin1.Show();
             history1.Hide();
         }

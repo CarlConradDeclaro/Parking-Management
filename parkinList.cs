@@ -57,7 +57,9 @@ namespace Parking
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(label1.Text);
+            viewParkinVH vph = new viewParkinVH();
+            vph.UpdateLabels(vehicleRecord);
+            vph.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

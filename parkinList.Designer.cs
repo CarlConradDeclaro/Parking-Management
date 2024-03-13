@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(parkinList));
             label1 = new Label();
             label2 = new Label();
             label7 = new Label();
@@ -91,22 +92,28 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.Location = new Point(1182, 9);
             button1.Name = "button1";
             button1.Size = new Size(32, 29);
             button1.TabIndex = 10;
-            button1.Text = "V";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
             button2.Location = new Point(1258, 9);
             button2.Name = "button2";
             button2.Size = new Size(33, 29);
             button2.TabIndex = 11;
-            button2.Text = "D";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -137,11 +144,14 @@
             // button3
             // 
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button3.Cursor = Cursors.Hand;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Image = (Image)resources.GetObject("button3.Image");
             button3.Location = new Point(1220, 9);
             button3.Name = "button3";
             button3.Size = new Size(32, 29);
             button3.TabIndex = 13;
-            button3.Text = "E";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 

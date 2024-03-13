@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrandType));
             brandName = new TextBox();
             button2 = new Button();
             SuspendLayout();
@@ -44,11 +45,13 @@
             // 
             // button2
             // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
             button2.Location = new Point(306, 1);
             button2.Name = "button2";
-            button2.Size = new Size(60, 29);
+            button2.Size = new Size(60, 34);
             button2.TabIndex = 8;
-            button2.Text = "delete";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

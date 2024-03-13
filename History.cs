@@ -13,7 +13,8 @@ namespace Parking
     public partial class History : UserControl
     {
 
-        private static History instance;
+        private static History instance;//
+        public event EventHandler deleteHistoryV;
         public static History Instance
         {
             get
@@ -54,7 +55,8 @@ namespace Parking
                 flowPanelHistory.Controls.Add(pL);
             }
         }
-        public void display() {
+        public void display()
+        {
 
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
@@ -66,6 +68,52 @@ namespace Parking
                 pL.UpdateLabels(record);
                 flowPanelHistory.Controls.Add(pL);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            flowPanelHistory.Controls.Clear();
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); // Add a semicolon here
+
+            foreach (var record in allParkingHistoryRecords)
+            {
+                HistoryList pL = new HistoryList();
+                pL.UpdateLabels(record);
+                flowPanelHistory.Controls.Add(pL);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            flowPanelHistory.Controls.Clear();
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); // Add a semicolon here
+            bool foundRecord = false;
+            foreach (var record in allParkingHistoryRecords)
+            {
+                if (searchVH.Text == record.PlateNumber) {
+                    HistoryList pL = new HistoryList();
+                    pL.deleteHistoryHandler += DeLeteHandler;
+                    pL.UpdateLabels(record);
+                    flowPanelHistory.Controls.Add(pL);
+                    foundRecord = true;
+                }            
+            }
+            if (!foundRecord)
+            {
+                Label noResultsLabel = new Label();
+                noResultsLabel.Text = "No results found.";
+                noResultsLabel.ForeColor = Color.White;
+                flowPanelHistory.Controls.Add(noResultsLabel);
+            }
+        }
+
+
+        private void DeLeteHandler(object sender, EventArgs e)
+        {
+            deleteHistoryV?.Invoke(this, EventArgs.Empty);
+           
         }
     }
 }

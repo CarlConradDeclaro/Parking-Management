@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParkingEntry));
             palteNo = new Label();
             plateNo = new TextBox();
             type = new Label();
@@ -161,11 +162,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button1.ForeColor = Color.Brown;
-            button1.Location = new Point(371, 673);
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(371, 667);
             button1.Name = "button1";
-            button1.Size = new Size(95, 34);
+            button1.Size = new Size(108, 40);
             button1.TabIndex = 16;
-            button1.Text = "Close";
+            button1.Text = "      Close";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -175,11 +178,13 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(64, 64, 64);
-            button2.Location = new Point(625, 673);
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(625, 667);
             button2.Name = "button2";
-            button2.Size = new Size(96, 34);
+            button2.Size = new Size(96, 40);
             button2.TabIndex = 17;
-            button2.Text = "Add vehicle";
+            button2.Text = "     Add vehicle";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -244,11 +249,13 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button3.ForeColor = Color.Green;
-            button3.Location = new Point(499, 673);
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(499, 667);
             button3.Name = "button3";
-            button3.Size = new Size(96, 34);
+            button3.Size = new Size(105, 40);
             button3.TabIndex = 24;
-            button3.Text = "Clear";
+            button3.Text = "    Clear";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 

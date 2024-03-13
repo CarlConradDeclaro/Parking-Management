@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
             label1 = new Label();
             flowPanelHistory = new FlowLayoutPanel();
             panel1 = new Panel();
@@ -35,7 +36,7 @@
             button2 = new Button();
             button3 = new Button();
             button1 = new Button();
-            textBox1 = new TextBox();
+            searchVH = new TextBox();
             panel3 = new Panel();
             label8 = new Label();
             label7 = new Label();
@@ -85,7 +86,7 @@
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button1);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(searchVH);
             panel2.Location = new Point(872, 71);
             panel2.Name = "panel2";
             panel2.Size = new Size(517, 60);
@@ -93,39 +94,49 @@
             // 
             // button2
             // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
             button2.Location = new Point(441, 18);
             button2.Name = "button2";
             button2.Size = new Size(64, 29);
             button2.TabIndex = 4;
-            button2.Text = "refresh";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button3
             // 
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
             button3.Location = new Point(371, 18);
             button3.Name = "button3";
             button3.Size = new Size(64, 29);
             button3.TabIndex = 5;
             button3.Text = "All";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(271, 18);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(271, 10);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(48, 44);
             button1.TabIndex = 1;
-            button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // textBox1
+            // searchVH
             // 
-            textBox1.Location = new Point(16, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(249, 27);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Enter Plate No.";
+            searchVH.Location = new Point(16, 18);
+            searchVH.Name = "searchVH";
+            searchVH.PlaceholderText = "Enter Plate No.";
+            searchVH.Size = new Size(249, 27);
+            searchVH.TabIndex = 0;
             // 
             // panel3
             // 
@@ -229,6 +240,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);
+            Cursor = Cursors.Hand;
             Name = "History";
             Size = new Size(1416, 982);
             Load += History_Load;
@@ -247,10 +259,9 @@
         private FlowLayoutPanel flowPanelHistory;
         private Panel panel1;
         private Panel panel2;
-        private Button button2;
         private Button button3;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox searchVH;
         private Panel panel3;
         private Label label8;
         private Label label7;
@@ -260,5 +271,6 @@
         private Label label3;
         private Label label2;
         private ColorDialog colorDialog1;
+        private Button button2;
     }
 }

@@ -102,9 +102,7 @@ namespace Parking
                 var record = allParkingRecords[i];
                 if (record.Status != "Cleared" && record.PlateNumber == palteNum)
                 {
-                    ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.PlateNumber, record.Type, record.Model, record.Driver, record.Phone,
-                    record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"), parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS);
-                    var parkingHistoryRecords = ParkingRecordsManager.Instance;
+                  var parkingHistoryRecords = ParkingRecordsManager.Instance;
                 
                     if (enterAmt.Text != "")
                     {
@@ -122,6 +120,9 @@ namespace Parking
                                 setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
                                 setStatus.Text = "Successfully paid the amount";
                                 setStatus.ForeColor = Color.GreenYellow;
+                                ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.PlateNumber, record.Type, record.Model, record.Driver, record.Phone,
+                                 record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"), parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text), Double.Parse(enterAmt.Text));
+
                                 parkingRecordsManager.AddParkingHistoryRecord(carDetails);
                                 return;
                             }                           
@@ -198,6 +199,7 @@ namespace Parking
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
             bool foundRecord = false;
+            if(searchVHTxt.Text != "")
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
@@ -227,6 +229,7 @@ namespace Parking
             listOfVehicle.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
+            bool foundRecord = false;
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
@@ -236,8 +239,19 @@ namespace Parking
                     POL.UpdateLabels(record);
                     POL.ParkingRecordAdded += ParkOutList_ParkingRecordAdded;
                     listOfVehicle.Controls.Add(POL);
+                    foundRecord = true;
                 }
             }
+
+            if (!foundRecord)
+            {
+                Label noResultsLabel = new Label();
+                noResultsLabel.Text = "No results found.";
+                noResultsLabel.ForeColor = Color.White;
+                listOfVehicle.Controls.Add(noResultsLabel);
+            }
+
+
         }
         private void change_Click(object sender, EventArgs e)
         {
@@ -249,7 +263,7 @@ namespace Parking
             //here to compute time/amt
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
-
+            if(flowPanelVH.Controls.Count != 0)
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];

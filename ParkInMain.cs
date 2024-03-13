@@ -62,13 +62,15 @@ namespace Parking
          public String DepartureDate { get; set; }
          public String DepartureTime { get; set; }
          public double Hours { get; set; }
-         public double Amount { get; set; }            
+         public double Amount { get; set; }
+        public double Cash { get; set; }
+        public double Changed { get; set; }
         public ParkingHistoyRecord()
         {
              
         }        
         public ParkingHistoyRecord(string plateNumber, string type, string model,
-                             string driver, string phone, string arrivalDate, string arrivalTime, string departureDate, string departureTime, double hours, double amount)
+                             string driver, string phone, string arrivalDate, string arrivalTime, string departureDate, string departureTime, double hours, double amount,double change,double cash)
         {
             PlateNumber = plateNumber;
             Type = type;
@@ -86,6 +88,8 @@ namespace Parking
             DepartureTime = departureTime;
             Hours = hours;
             Amount = amount;
+            Cash = cash;
+            Changed = change;
         }     
     }
     public class ParkingRecordsManager

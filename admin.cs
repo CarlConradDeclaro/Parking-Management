@@ -140,6 +140,7 @@ namespace Parking
         public void display()
         {
             selectedItemType.Items.Clear();
+            flowLayoutBrands.Controls.Clear();
             var vehiclemanger = VehicleManger.Instance;
             var VPM = vehiclemanger.GetVPM();
             foreach (var record in VPM)
@@ -191,10 +192,18 @@ namespace Parking
         {
 
             var vehiclemanager = VehicleManger.Instance;
-            vehiclemanager.addVPM(new Vehicle(setTypeName.Text, (double)setFlagDown.Value, (double)setAAPH.Value));
-            selectTypeCB();
-            display();
-            MessageBox.Show("Successfuly Added Type", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (setTypeName.Text != "")
+            {
+                vehiclemanager.addVPM(new Vehicle(setTypeName.Text, (double)setFlagDown.Value, (double)setAAPH.Value));
+                selectTypeCB();
+                display();
+                MessageBox.Show("Successfuly Added Type", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else {
+                MessageBox.Show("Please input value", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
+           
 
         }
 
@@ -215,9 +224,14 @@ namespace Parking
         {
             string selecttype = selectType.SelectedItem?.ToString();
             var vehicleBrand = VehicleBrandMAnger.Instance;
-            vehicleBrand.addVB(new VehicleBrand(selecttype, setBrandName.Text));
-            MessageBox.Show("Successfuly Added brand", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            if (setBrandName.Text != "")
+            {
+                vehicleBrand.addVB(new VehicleBrand(selecttype, setBrandName.Text));
+                MessageBox.Show("Successfuly Added brand", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else {
+                MessageBox.Show("Please input value", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
