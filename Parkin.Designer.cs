@@ -123,7 +123,7 @@
             // 
             flowLayoutPanel2.Anchor = AnchorStyles.Top;
             flowLayoutPanel2.AutoScroll = true;
-            flowLayoutPanel2.Location = new Point(92, 3);
+            flowLayoutPanel2.Location = new Point(79, 3);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(1330, 809);
             flowLayoutPanel2.TabIndex = 1;
@@ -135,7 +135,7 @@
             panel2.Controls.Add(flowLayoutPanel2);
             panel2.Location = new Point(50, 367);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1546, 843);
+            panel2.Size = new Size(1520, 843);
             panel2.TabIndex = 2;
             // 
             // panel3
@@ -148,7 +148,7 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(142, 300);
+            panel3.Location = new Point(129, 300);
             panel3.Name = "panel3";
             panel3.Size = new Size(1330, 61);
             panel3.TabIndex = 3;
@@ -227,7 +227,7 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 57);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(235, 1252);
+            sidebar.Size = new Size(261, 1252);
             sidebar.TabIndex = 6;
             // 
             // menuContainer
@@ -238,7 +238,7 @@
             menuContainer.Controls.Add(button7);
             menuContainer.Location = new Point(6, 3);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(241, 395);
+            menuContainer.Size = new Size(255, 395);
             menuContainer.TabIndex = 7;
             // 
             // panel6
@@ -247,7 +247,7 @@
             panel6.Controls.Add(menu);
             panel6.Location = new Point(3, 3);
             panel6.Name = "panel6";
-            panel6.Size = new Size(233, 66);
+            panel6.Size = new Size(249, 66);
             panel6.TabIndex = 4;
             // 
             // menu
@@ -263,7 +263,7 @@
             menu.ImageAlign = ContentAlignment.MiddleLeft;
             menu.Location = new Point(-3, -9);
             menu.Name = "menu";
-            menu.Size = new Size(236, 75);
+            menu.Size = new Size(252, 75);
             menu.TabIndex = 3;
             menu.Text = "Menu";
             menu.UseVisualStyleBackColor = false;
@@ -282,7 +282,7 @@
             button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.Location = new Point(3, 75);
             button6.Name = "button6";
-            button6.Size = new Size(233, 68);
+            button6.Size = new Size(249, 68);
             button6.TabIndex = 13;
             button6.Text = "Home";
             button6.UseVisualStyleBackColor = false;
@@ -301,7 +301,7 @@
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.Location = new Point(3, 149);
             button5.Name = "button5";
-            button5.Size = new Size(233, 68);
+            button5.Size = new Size(249, 68);
             button5.TabIndex = 3;
             button5.Text = "History";
             button5.UseVisualStyleBackColor = false;
@@ -320,9 +320,9 @@
             button7.ImageAlign = ContentAlignment.MiddleLeft;
             button7.Location = new Point(3, 223);
             button7.Name = "button7";
-            button7.Size = new Size(233, 68);
+            button7.Size = new Size(249, 68);
             button7.TabIndex = 14;
-            button7.Text = "Vehicle Setting";
+            button7.Text = "     Vehicle Setting";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
@@ -331,7 +331,7 @@
             panel7.Anchor = AnchorStyles.Top;
             panel7.BackgroundImageLayout = ImageLayout.None;
             panel7.Controls.Add(button2);
-            panel7.Location = new Point(1214, 241);
+            panel7.Location = new Point(1201, 241);
             panel7.Name = "panel7";
             panel7.Size = new Size(122, 53);
             panel7.TabIndex = 2;
@@ -360,7 +360,7 @@
             panel8.Anchor = AnchorStyles.Top;
             panel8.BackgroundImageLayout = ImageLayout.None;
             panel8.Controls.Add(parkout);
-            panel8.Location = new Point(1342, 241);
+            panel8.Location = new Point(1329, 241);
             panel8.Name = "panel8";
             panel8.Size = new Size(127, 53);
             panel8.TabIndex = 5;
@@ -408,9 +408,9 @@
             panel5.Controls.Add(panel3);
             panel5.Controls.Add(panel2);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(235, 57);
+            panel5.Location = new Point(261, 57);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1616, 1252);
+            panel5.Size = new Size(1590, 1252);
             panel5.TabIndex = 9;
             // 
             // admin1
@@ -419,7 +419,7 @@
             admin1.Dock = DockStyle.Fill;
             admin1.Location = new Point(0, 0);
             admin1.Name = "admin1";
-            admin1.Size = new Size(1616, 1252);
+            admin1.Size = new Size(1590, 1252);
             admin1.TabIndex = 16;
             // 
             // history1
@@ -428,14 +428,14 @@
             history1.Dock = DockStyle.Fill;
             history1.Location = new Point(0, 0);
             history1.Name = "history1";
-            history1.Size = new Size(1616, 1252);
+            history1.Size = new Size(1590, 1252);
             history1.TabIndex = 15;
             // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.Controls.Add(btnCleared);
-            panel4.Location = new Point(1111, 254);
+            panel4.Location = new Point(1098, 254);
             panel4.Name = "panel4";
             panel4.Size = new Size(97, 39);
             panel4.TabIndex = 14;
@@ -458,7 +458,7 @@
             panel10.Controls.Add(label9);
             panel10.Controls.Add(button8);
             panel10.Controls.Add(panel14);
-            panel10.Location = new Point(613, 21);
+            panel10.Location = new Point(600, 21);
             panel10.Name = "panel10";
             panel10.Size = new Size(261, 125);
             panel10.TabIndex = 13;
@@ -514,7 +514,7 @@
             panel9.Controls.Add(logo);
             panel9.Controls.Add(panel13);
             panel9.Controls.Add(label5);
-            panel9.Location = new Point(311, 21);
+            panel9.Location = new Point(298, 21);
             panel9.Name = "panel9";
             panel9.Size = new Size(261, 125);
             panel9.TabIndex = 9;
@@ -569,7 +569,7 @@
             panel12.Anchor = AnchorStyles.Top;
             panel12.Controls.Add(button1);
             panel12.Controls.Add(searchVH);
-            panel12.Location = new Point(142, 258);
+            panel12.Location = new Point(129, 258);
             panel12.Name = "panel12";
             panel12.Size = new Size(387, 36);
             panel12.TabIndex = 11;
@@ -600,7 +600,7 @@
             panel11.Controls.Add(button3);
             panel11.Controls.Add(panel15);
             panel11.Controls.Add(label14);
-            panel11.Location = new Point(916, 24);
+            panel11.Location = new Point(903, 24);
             panel11.Name = "panel11";
             panel11.Size = new Size(260, 125);
             panel11.TabIndex = 10;

@@ -71,7 +71,30 @@ namespace Parking
             else
             {
                 inValidM.Text = "please enter specified value";
-            }       
+            }        
+             if (double.TryParse(driver.Text, out _))
+                {
+                    invalidDriver.Text = "Invalid name";
+                }
+                else
+                {
+                   
+                    invalidDriver.Text = "";
+                }
+
+            if (phoneNUm != "")
+                if (!double.TryParse(phoneNo.Text, out _))
+                {              
+                    invalidPhone.Text = "Please enter a valid numeric number";
+                }
+                else
+                {
+                   
+                    invalidPhone.Text = "";
+                }
+            
+             
+
             if (proccedAddItem == 3)
             {
                 ParkingRecord carDatails = new ParkingRecord(platenum, type, model, driverName, phoneNUm, ArrivalDate, ArrivalTime, "PARKED");

@@ -13,6 +13,7 @@ namespace Parking
     public partial class BrandType : UserControl
     {
         FlowLayoutPanel flowPanelbrands;
+        public event EventHandler brandDeleteHandler;
         string getvType;
         public BrandType()
         {
@@ -27,14 +28,14 @@ namespace Parking
         public void UpdateLabels(VehicleBrand vbrand)
         {
             brandName.Text = vbrand.vBrand;
-        }   
+        }
 
         public void getVType(string getvtype, FlowLayoutPanel flowLayoutPanel)
         {
             getvType = getvtype;
             flowPanelbrands = flowLayoutPanel;
-        }     
-
+        }
+      
         private void button2_Click(object sender, EventArgs e)
         {
             var vehicleBrand = VehicleBrandMAnger.Instance;
@@ -45,20 +46,11 @@ namespace Parking
                 {
                     vehicleBrand.RemoveParkingHistoryRecord(record);
                     MessageBox.Show("Deleted Succesfully", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   break;
-               }
-            }
-         
-            foreach (var record in VB)
-            {
-                if (getvType == record.vehicleType)
-                {
-                    BrandType bt = new BrandType();
-                    bt.UpdateLabels(record);
-                    flowPanelbrands.Controls.Add(bt);
+                    brandDeleteHandler?.Invoke(this, EventArgs.Empty);
+                    break;
                 }
-
             }
         }
+       
     }
 }

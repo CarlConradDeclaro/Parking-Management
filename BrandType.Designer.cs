@@ -44,7 +44,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(430, 3);
+            button2.Location = new Point(306, 1);
             button2.Name = "button2";
             button2.Size = new Size(60, 29);
             button2.TabIndex = 8;
@@ -60,7 +60,7 @@
             Controls.Add(button2);
             Controls.Add(brandName);
             Name = "BrandType";
-            Size = new Size(506, 35);
+            Size = new Size(374, 35);
             Load += BrandType_Load;
             ResumeLayout(false);
             PerformLayout();

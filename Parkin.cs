@@ -60,7 +60,7 @@
             {
                 sidebar.Width += 10;
 
-                if (sidebar.Width >= 200)
+                if (sidebar.Width >= 230)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();

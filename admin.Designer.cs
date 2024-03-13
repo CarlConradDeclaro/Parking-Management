@@ -62,6 +62,9 @@
             flagDown = new NumericUpDown();
             AAPH = new NumericUpDown();
             panel4 = new Panel();
+            panel7 = new Panel();
+            button9 = new Button();
+            newBrand = new TextBox();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -75,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)flagDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AAPH).BeginInit();
             panel4.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -351,9 +355,10 @@
             // flowLayoutBrands
             // 
             flowLayoutBrands.AutoScroll = true;
-            flowLayoutBrands.Location = new Point(578, 139);
+            flowLayoutBrands.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutBrands.Location = new Point(624, 213);
             flowLayoutBrands.Name = "flowLayoutBrands";
-            flowLayoutBrands.Size = new Size(601, 433);
+            flowLayoutBrands.Size = new Size(418, 251);
             flowLayoutBrands.TabIndex = 3;
             // 
             // typeName
@@ -414,6 +419,7 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(panel7);
             panel4.Controls.Add(button6);
             panel4.Controls.Add(button5);
             panel4.Controls.Add(button4);
@@ -430,6 +436,32 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1348, 587);
             panel4.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(button9);
+            panel7.Controls.Add(newBrand);
+            panel7.Location = new Point(624, 159);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(418, 51);
+            panel7.TabIndex = 24;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(357, 22);
+            button9.Name = "button9";
+            button9.Size = new Size(58, 29);
+            button9.TabIndex = 1;
+            button9.Text = "Add";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // newBrand
+            // 
+            newBrand.Location = new Point(149, 23);
+            newBrand.Name = "newBrand";
+            newBrand.Size = new Size(202, 27);
+            newBrand.TabIndex = 0;
             // 
             // button6
             // 
@@ -487,6 +519,8 @@
             ((System.ComponentModel.ISupportInitialize)AAPH).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -529,5 +563,8 @@
         private Button button4;
         private Button button7;
         private Button button8;
+        private Panel panel7;
+        private Button button9;
+        private TextBox newBrand;
     }
 }

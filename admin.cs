@@ -30,7 +30,7 @@ namespace Parking
 
         private void button3_Click(object sender, EventArgs e)
         {
-         
+
 
             flowLayoutBrands.Controls.Clear();
             string selecteditemType = this.selectedItemType.SelectedItem?.ToString();
@@ -43,6 +43,7 @@ namespace Parking
                 if (selecteditemType == record.vehicleType)
                 {
                     BrandType bt = new BrandType();
+                    bt.brandDeleteHandler += displayBrands;
                     bt.UpdateLabels(record);
                     flowLayoutBrands.Controls.Add(bt);
 
@@ -153,6 +154,26 @@ namespace Parking
             AAPH.Value = 0;
 
         }
+     
+        private void displayBrands(object sender, EventArgs e)
+        {
+            flowLayoutBrands.Controls.Clear();
+            var vehicleBrand = VehicleBrandMAnger.Instance;
+ 
+            var VB = vehicleBrand.GetVB();
+           
+            string selecteditemType = this.selectedItemType.SelectedItem?.ToString();
+
+            foreach (var record in VB)
+            {
+                if (record.vehicleType == selecteditemType) {
+                    BrandType bt = new BrandType();
+                    bt.UpdateLabels(record);
+                    flowLayoutBrands.Controls.Add(bt);
+                }
+                           
+            }
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -191,24 +212,53 @@ namespace Parking
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {         
+        {
             string selecttype = selectType.SelectedItem?.ToString();
             var vehicleBrand = VehicleBrandMAnger.Instance;
             vehicleBrand.addVB(new VehicleBrand(selecttype, setBrandName.Text));
             MessageBox.Show("Successfuly Added brand", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-         
+
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            selectTypeCB();   
-      
+            selectTypeCB();
+
             setTypeName.Text = "";
             setBrandName.Text = "";
             setFlagDown.Value = 0;
             setAAPH.Value = 0;
             setBrandName.Text = "";
             selectType.Text = "";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //flowLayoutBrands
+
+
+            flowLayoutBrands.Controls.Clear();
+            string selecteditemType = this.selectedItemType.SelectedItem?.ToString();
+            var vehicleBrand = VehicleBrandMAnger.Instance;
+            if(newBrand.Text != "")
+            vehicleBrand.addVB(new VehicleBrand(selecteditemType, newBrand.Text));
+            else
+            MessageBox.Show("Please enter value", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var VB = vehicleBrand.GetVB();
+            flowLayoutBrands.Controls.Clear();
+            foreach (var record in VB)
+            {
+                if (selecteditemType == record.vehicleType)
+                {
+                    BrandType bt = new BrandType();
+                    bt.UpdateLabels(record);
+                    flowLayoutBrands.Controls.Add(bt);
+
+                    BrandType pT = new BrandType();
+                    pT.getVType(selecteditemType, flowLayoutBrands);
+                }
+
+            }
         }
     }
 }
