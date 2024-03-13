@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BrandType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="History.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="HistoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ParkingEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Parkin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="parkinList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Parkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ParkOutList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="vehicleDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
