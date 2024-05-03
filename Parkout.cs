@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Parking
 {
@@ -17,6 +19,8 @@ namespace Parking
        public event EventHandler ParkingRecordAdded;
         public event EventHandler Parking;
         private string palteNum, Type;
+        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+
         public Parkout()
         {
             InitializeComponent();
@@ -89,8 +93,37 @@ namespace Parking
             palteNum = paltenum;
             Type = type;
         }
-       
 
+        private void deleteVehicleFromList(String PlateNumber) {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Vehicle WHERE v_plate = @v_plate";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@v_plate", PlateNumber); 
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            Console.WriteLine("Record successfully deleted.");  
+                        }
+                        else
+                        {
+                            Console.WriteLine("No record found with the specified id.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -122,8 +155,8 @@ namespace Parking
                                 setStatus.ForeColor = Color.GreenYellow;
                                 ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.PlateNumber, record.Type, record.Model, record.Driver, record.Phone,
                                  record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"), parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text), Double.Parse(enterAmt.Text));
-
                                 parkingRecordsManager.AddParkingHistoryRecord(carDetails);
+                                deleteVehicleFromList(record.PlateNumber);
                                 return;
                             }                           
                             else 
@@ -298,20 +331,20 @@ namespace Parking
                         string parkout = formattedDateTime + " " + time;
                         DateTime toPARKOUT = DateTime.Parse(parkout);
                         TimeSpan duration = toPARKOUT -  parkin;
-                        double HOURS = 0;
+                        int HOURS = 0;
                         int day = 0;
                         int year = toPARKOUT.Year - parkin.Year;
 
                         if (year >= 1)
                         {
                             day = (int)duration.TotalDays % 365;
-                            HOURS = (duration.TotalHours - year * 24 * 365) % 24;
+                            HOURS = ((int)duration.TotalHours - year * 24 * 365) % 24;
                             Console.WriteLine("Parking Time: " + year + " Year/s " + day + " Day/s " + " and " + HOURS.ToString("0.00") + " Hour/s");
                         }
                         else if (duration.TotalHours > 23)
                         {
                             day = (int)duration.TotalDays;
-                            HOURS = duration.TotalHours % 24;
+                            HOURS = (int)duration.TotalHours % 24;
                             Console.WriteLine("Parking Time: " + day + " Day/s " + " and " + HOURS.ToString("0.00") + " Hour/s");
                         }
                         else
@@ -319,7 +352,7 @@ namespace Parking
                             Console.WriteLine("Parking Time: " + duration.Hours.ToString("0.00") + " Hour/s");
                         }
 
-                        HOURS = duration.TotalHours;
+                        HOURS =(int) duration.TotalHours;
                         double amount = flagDown;
                         double totalAmount = 0;
 
@@ -329,10 +362,15 @@ namespace Parking
                         }
                         else
                         {
-                            totalAmount = amount;
+                            totalAmount =amount;
                         }
-                        double hours = Math.Round(HOURS, 0);
-                        double amt = Math.Round(totalAmount, 0);
+
+
+                        int hours = HOURS;
+                        int amt =(int) totalAmount;
+
+
+
                         if (toPARKOUT >= parkin)
                         {
                             setHOURS = amt;

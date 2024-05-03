@@ -282,9 +282,9 @@
             label5.Font = new Font("Cambria", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(96, 77);
             label5.Name = "label5";
-            label5.Size = new Size(103, 27);
+            label5.Size = new Size(90, 27);
             label5.TabIndex = 4;
-            label5.Text = "Changed:";
+            label5.Text = "Change:";
             // 
             // setAmt
             // 
@@ -314,9 +314,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(21, 392);
             label1.Name = "label1";
-            label1.Size = new Size(168, 31);
+            label1.Size = new Size(160, 31);
             label1.TabIndex = 1;
-            label1.Text = "Entert Amount:";
+            label1.Text = "Enter Amount:";
             // 
             // enterAmt
             // 

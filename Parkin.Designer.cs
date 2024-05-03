@@ -76,8 +76,8 @@
             panel4 = new Panel();
             btnCleared = new Button();
             panel5 = new Panel();
-            admin1 = new admin();
             history1 = new History();
+            admin1 = new admin();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)humBtn).BeginInit();
             sidebar.SuspendLayout();
@@ -620,8 +620,8 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(admin1);
             panel5.Controls.Add(history1);
+            panel5.Controls.Add(admin1);
             panel5.Controls.Add(panel4);
             panel5.Controls.Add(panel10);
             panel5.Controls.Add(panel9);
@@ -637,15 +637,6 @@
             panel5.Size = new Size(1590, 1252);
             panel5.TabIndex = 9;
             // 
-            // admin1
-            // 
-            admin1.BackColor = Color.FromArgb(22, 19, 64);
-            admin1.Dock = DockStyle.Fill;
-            admin1.Location = new Point(0, 0);
-            admin1.Name = "admin1";
-            admin1.Size = new Size(1590, 1252);
-            admin1.TabIndex = 16;
-            // 
             // history1
             // 
             history1.BackColor = Color.FromArgb(22, 19, 64);
@@ -653,7 +644,16 @@
             history1.Location = new Point(0, 0);
             history1.Name = "history1";
             history1.Size = new Size(1590, 1252);
-            history1.TabIndex = 15;
+            history1.TabIndex = 16;
+            // 
+            // admin1
+            // 
+            admin1.BackColor = Color.FromArgb(22, 19, 64);
+            admin1.Dock = DockStyle.Fill;
+            admin1.Location = new Point(0, 0);
+            admin1.Name = "admin1";
+            admin1.Size = new Size(1590, 1252);
+            admin1.TabIndex = 15;
             // 
             // Parkin
             // 
@@ -744,7 +744,7 @@
         private Panel panel4;
         private Button btnCleared;
         private Panel panel5;
-        private History history1;
         private admin admin1;
+        private History history1;
     }
 }

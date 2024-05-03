@@ -23,24 +23,30 @@
                     instance = new Parkin();
                 return instance;
             }
-        }      
+        }
         public Parkin()
         {
-            InitializeComponent();         
+            InitializeComponent();
             filterDisplay("PARKED");
             numV.Text = countVehicle() + "";
             numPV.Text = countParkedVehicle() + "";
             numCV.Text = countClearedVehicle() + "";
             panel5.Show();
-            history1.Hide();
-            admin1.Hide();
+              history1.Hide();
+             admin1.Hide();
+
+           
+     
+
+            
+           
         }
         private void ParkinList_EditHandler(object sender, EventArgs e)
         {
-            display();          
+            display();
         }
         private void Parkin_Load(object sender, EventArgs e)
-        {         
+        {
         }
 
         bool sidebarExpand = true;
@@ -101,10 +107,10 @@
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {      
+        {
             pe1 = new ParkingEntry(flowLayoutPanel2);
             pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
-            pe1.ShowDialog();        
+            pe1.ShowDialog();
         }
 
         private void ParkingRecordAddedHandler(object sender, EventArgs e)
@@ -119,9 +125,14 @@
 
         private void parkout_Click(object sender, EventArgs e)
         {
-            pOut = new Parkout();
-            pOut.Parking += ParkingRecordAddedHandler;
-            pOut.ShowDialog();
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
+ 
+                pOut = new Parkout();
+                pOut.Parking += ParkingRecordAddedHandler;
+                pOut.ShowDialog();
+
+                  
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -140,9 +151,9 @@
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
-                 if (record.Status == "PARKED")
+                if (record.Status == "PARKED")
                 {
-                    parkinList pL = new parkinList(numV, numCV, numPV); 
+                    parkinList pL = new parkinList(numV, numCV, numPV);
                     pL.UpdateLabels(record);
                     pL.EditParking += ParkingRecordAddedHandler;
                     flowLayoutPanel2.Controls.Add(pL);
@@ -189,7 +200,7 @@
             }
 
             if (result == DialogResult.Yes)
-            {          
+            {
                 records.Clear();
                 display();
             }
@@ -216,13 +227,14 @@
                 var record = allParkingRecords[i];
                 if (record.PlateNumber.Contains(searchVH.Text))
                 {
-                    if (record.Status != "Cleared") {
+                    if (record.Status != "Cleared")
+                    {
                         parkinList pL = new parkinList(numV, numCV, numPV);
                         pL.UpdateLabels(record);
                         flowLayoutPanel2.Controls.Add(pL);
                         foundRecord = true;
                     }
-                   
+
                 }
             }
             if (!foundRecord)
@@ -287,23 +299,23 @@
         private void button6_Click(object sender, EventArgs e)
         {
 
-            admin1.Hide();
-           // history1.deleteHistoryV += ParkingRecordAddedHandler;
-            history1.Hide();       
+           admin1.Hide();
+            history1.deleteHistoryV += ParkingRecordAddedHandler;
+            history1.Hide();
             panel5.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {  
-            history1.deleteHistoryV += ParkingRecordAddedHandler;
-            history1.Show();
-             admin1.Hide();
-       
+        {
+           history1.deleteHistoryV += ParkingRecordAddedHandler;
+           history1.Show();
+           admin1.Hide();
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-          //  history1.deleteHistoryV += ParkingRecordAddedHandler;
+            history1.deleteHistoryV += ParkingRecordAddedHandler;
             admin1.Show();
             history1.Hide();
         }
@@ -332,11 +344,11 @@
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddArc(0, 0, 20, 20, 180, 90);
             path.AddArc(0, 0, 20, 20, 180, 90);
-            path.AddArc(width - 20, 0, 20, 20, 270, 90); 
-            path.AddArc(width - 20, height - 20, 20, 20, 0, 90); 
-            path.AddArc(0, height - 20, 20, 20, 90, 90); 
+            path.AddArc(width - 20, 0, 20, 20, 270, 90);
+            path.AddArc(width - 20, height - 20, 20, 20, 0, 90);
+            path.AddArc(0, height - 20, 20, 20, 90, 90);
             path.CloseFigure();
-            using (Pen pen = new Pen(Color.Black, 1)) 
+            using (Pen pen = new Pen(Color.Black, 1))
             {
                 g.DrawPath(pen, path);
             }
@@ -348,12 +360,12 @@
             int width = panel11.Width;
             int height = panel11.Height;
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddArc(0, 0, 20, 20, 180, 90); 
+            path.AddArc(0, 0, 20, 20, 180, 90);
             path.AddArc(width - 20, 0, 20, 20, 270, 90);
             path.AddArc(width - 20, height - 20, 20, 20, 0, 90);
-            path.AddArc(0, height - 20, 20, 20, 90, 90); 
+            path.AddArc(0, height - 20, 20, 20, 90, 90);
             path.CloseFigure();
-            using (Pen pen = new Pen(Color.Black, 1)) 
+            using (Pen pen = new Pen(Color.Black, 1))
             {
                 g.DrawPath(pen, path);
             }
@@ -370,6 +382,11 @@
         }
 
         private void history1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void admin1_Load(object sender, EventArgs e)
         {
 
         }

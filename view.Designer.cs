@@ -272,9 +272,9 @@
             label13.ForeColor = Color.White;
             label13.Location = new Point(24, 501);
             label13.Name = "label13";
-            label13.Size = new Size(89, 23);
+            label13.Size = new Size(78, 23);
             label13.TabIndex = 18;
-            label13.Text = "Changed:";
+            label13.Text = "Change:";
             // 
             // setHours
             // 
