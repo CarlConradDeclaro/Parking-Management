@@ -62,35 +62,7 @@ namespace Parking
                 }
 
             }
-
-
-            /*
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                var parkingRecordsManager = ParkingRecordsManager.Instance;
-                var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
-
-                for (int i = allParkingRecords.Count - 1; i >= 0; i--)
-                {
-                    var record = allParkingRecords[i];
-                    if (string.Equals(record.PlateNumber, label1.Text))
-                    {
-                        parkingRecordsManager.RemoveParkingRecord(record);
-                        MessageBox.Show("The vehicle with plate number " + label1.Text + " has been successfully removed.", "Vehicle Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Parent.Controls.Remove(this);                   
-                        numV.Text = parkingRecordsManager.GetAllParkingRecords().Count.ToString();
-                        numCV.Text = parkingRecordsManager.GetAllParkingRecords().Count(r => r.Status == "Cleared").ToString();
-                        numPV.Text = parkingRecordsManager.GetAllParkingRecords().Count(r => r.Status == "PARKED").ToString();
-                        break;
-                    }
-                }
-            }
-             
-             
-             
-             
-             */
+ 
         }
 
         private void button1_Click(object sender, EventArgs e)

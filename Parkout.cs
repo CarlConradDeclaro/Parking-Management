@@ -94,40 +94,11 @@ namespace Parking
             Type = type;
         }
 
-        private void deleteVehicleFromList(String PlateNumber) {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "DELETE FROM Vehicle WHERE v_plate = @v_plate";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@v_plate", PlateNumber); 
-
-                    try
-                    {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            Console.WriteLine("Record successfully deleted.");  
-                        }
-                        else
-                        {
-                            Console.WriteLine("No record found with the specified id.");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error: " + ex.Message);
-                    }
-                }
-            }
-        }
+       
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            //parkout
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
@@ -148,15 +119,19 @@ namespace Parking
                         {
                             if (setAmt.Text != "" && double.Parse(enterAmt.Text) >= double.Parse(setAmt.Text))
                             {
-                                //  double.Parse(enterAmt.Text) >= double.Parse(setAmt.Text)
+                             
                                 record.Status = "Cleared";
                                 setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
                                 setStatus.Text = "Successfully paid the amount";
-                                setStatus.ForeColor = Color.GreenYellow;
-                                ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.PlateNumber, record.Type, record.Model, record.Driver, record.Phone,
-                                 record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"), parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text), Double.Parse(enterAmt.Text));
+                                setStatus.ForeColor = Color.GreenYellow;              
+                                ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id,convertSlocToSId(record.S_location), record.PlateNumber,
+                                                                                        record.Type, record.Model, record.Driver, record.Phone,
+                                                                                        record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"),
+                                                                                        parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text),
+                                                                                        Double.Parse(enterAmt.Text));
                                 parkingRecordsManager.AddParkingHistoryRecord(carDetails);
-                                deleteVehicleFromList(record.PlateNumber);
+                                UpdateVehicleFromList(record.PlateNumber);
+                                updateAvailability_query(record.S_location);
                                 return;
                             }                           
                             else 
@@ -180,8 +155,148 @@ namespace Parking
                     Parking?.Invoke(this, EventArgs.Empty);
                 }
             }
-
         }
+
+
+        private void updateAvailability_query(string selectedSlot)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                string updateQuery = "UPDATE V_Slots SET availability = 1 WHERE s_loc = @s_loc";
+
+
+                SqlCommand command = new SqlCommand(updateQuery, connection);
+
+                try
+                {
+
+                    connection.Open();
+
+
+                    command.Parameters.AddWithValue("@s_loc", selectedSlot);
+
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+
+
+        private int convertSlocToSId(string s_loc) {
+            int s_id = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string getSlotIDQuery = "SELECT s_id FROM V_Slots WHERE s_loc = @s_loc";
+
+                SqlCommand command = new SqlCommand(getSlotIDQuery, connection);
+                command.Parameters.AddWithValue("@s_loc", s_loc);
+
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        s_id = (int)result; 
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                     
+                }
+            }
+
+            return s_id;
+        }
+
+        private void setTransaction(int vehicleId, int slotId, int admin_id)
+        {
+
+            string insertQuery = "INSERT INTO Transactions (v_id, s_id, transaction_date, admin_id) VALUES (@v_id, @s_id, @transaction_date, @admin_id)";
+
+            DateTime transactionDate = DateTime.Now;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                
+                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                {
+                  
+                    command.Parameters.AddWithValue("@v_id", vehicleId);
+                    command.Parameters.AddWithValue("@s_id", slotId);
+                    command.Parameters.AddWithValue("@transaction_date", transactionDate);
+                    command.Parameters.AddWithValue("@admin_id", admin_id);
+
+
+                    try
+                    {
+                         
+                        connection.Open();
+
+                     
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        
+                        if (rowsAffected > 0)
+                        {
+                            Console.WriteLine("Data inserted successfully.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No rows were affected.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+
+        private void UpdateVehicleFromList(String PlateNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE  Vehicle  SET status = 'cleared' WHERE v_plate = @v_plate";
+
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@v_plate", PlateNumber);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            Console.WriteLine("Record successfully deleted.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No record found with the specified id.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             Parking?.Invoke(this, EventArgs.Empty);
@@ -382,8 +497,7 @@ namespace Parking
                         }
                         else
                         {
-                            //  MessageBox.Show("Invalid date/time", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            DateTime p1 = DateTime.Parse(arrivalDate);
+                             DateTime p1 = DateTime.Parse(arrivalDate);
                             DateTime p2 = DateTime.Parse(arrvalTime);
 
                             if (parkOutDate.Value < p1 && parkOutTime.Value < p2)

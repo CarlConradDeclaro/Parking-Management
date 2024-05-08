@@ -14,7 +14,7 @@ namespace Parking
     public partial class History : UserControl
     {
 
-        private static History instance;//
+        private static History instance; 
         public event EventHandler deleteHistoryV;
         public static History Instance
         {
@@ -34,7 +34,7 @@ namespace Parking
         {
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); // Add a semicolon here
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
 
             foreach (var record in allParkingHistoryRecords)
             {
@@ -47,7 +47,7 @@ namespace Parking
         {
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); // Add a semicolon here
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
 
             foreach (var record in allParkingHistoryRecords)
             {
@@ -61,7 +61,7 @@ namespace Parking
 
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); // Add a semicolon here
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
 
             foreach (var record in allParkingHistoryRecords)
             {
@@ -75,7 +75,7 @@ namespace Parking
         {
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); // Add a semicolon here
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
 
             foreach (var record in allParkingHistoryRecords)
             {
@@ -89,7 +89,7 @@ namespace Parking
         {
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); // Add a semicolon here
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); 
             bool foundRecord = false;
             foreach (var record in allParkingHistoryRecords)
             {

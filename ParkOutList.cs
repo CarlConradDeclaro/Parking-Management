@@ -35,17 +35,16 @@ namespace Parking
 
         public void UpdateLabels(ParkingRecord parkRecord)
         {
-            parkingRecord = parkRecord; // Store the ParkingRecord associated with this control
+            parkingRecord = parkRecord; 
             plateNo.Text = parkRecord.PlateNumber;
             type.Text = parkRecord.Type;
             brand.Text = parkRecord.Model;
         }     
         private void parkout_Click(object sender, EventArgs e)
         {
-            //parkingRecord.Status = "Cleared";
-            //  ParkingRecordAdded?.Invoke(this, EventArgs.Empty);         
+          
             titleLabel.getVHparkOutnType(parkingRecord.PlateNumber,parkingRecord.Type);
-           // amtTxt.Text = parkingRecord.Amount+"";
+          
             statusTxt.Text = "Not Paid";
             flowPanelVH.Controls.Clear();         
             string selectedPlateNo = plateNo.Text;
@@ -82,17 +81,7 @@ namespace Parking
                     ArrivalTime.UpdateLabels("Arrival Time", record.ArrivalTime);
                     flowPanelVH.Controls.Add(ArrivalTime);
 
-                   // vehicleDetails DepartureDate = new vehicleDetails();
-                   // DepartureDate.UpdateLabels("Departure Date", record.DepartureDate);
-                   // flowPanelVH.Controls.Add(DepartureDate);
-
-                 //   vehicleDetails DepartureTime = new vehicleDetails();
-                 //   DepartureTime.UpdateLabels("Departure Time", record.DepartureTime);
-                 //   flowPanelVH.Controls.Add(DepartureTime);
-
-                  //  vehicleDetails Hours = new vehicleDetails();
-                //    Hours.UpdateLabels("Hours", record.Hours+"");
-                  //  flowPanelVH.Controls.Add(Hours);                   
+                            
                     return;
                 }               
               }

@@ -33,13 +33,7 @@
             numCV.Text = countClearedVehicle() + "";
             panel5.Show();
               history1.Hide();
-             admin1.Hide();
-
-           
-     
-
-            
-           
+             admin1.Hide();     
         }
         private void ParkinList_EditHandler(object sender, EventArgs e)
         {

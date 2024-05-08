@@ -19,6 +19,7 @@ namespace Parking
     public class ParkingRecord
     {
         // Attributes
+        public int id { get; set; }
         public string PlateNumber { get; set; }
         public string Type { get; set; }
         public string Model { get; set; }
@@ -26,21 +27,21 @@ namespace Parking
         public string Phone { get; set; }
         public string ArrivalDate { get; set; }
         public string ArrivalTime { get; set; }
-        //public String DepartureDate { get; set; }
-        //public String DepartureTime { get; set; }
-       // public double Hours { get; set; }
-       // public double Amount { get; set; }
+        
         public string Status { get; set; }
+        public string S_location { get; set; }
 
-        // Constructor
+       
         public ParkingRecord()
         {
-            // Default constructor
+          
         }
-        // Additional constructor with parameters
-        public ParkingRecord(string plateNumber, string type, string model,
-                             string driver, string phone, string arrivalDate, string arrivalTime, string status)
+      
+        public ParkingRecord(int Id,string plateNumber, string type, string model,
+                             string driver, string phone, string arrivalDate,
+                             string arrivalTime, string status,string s_location)
         {
+            id = Id;
             PlateNumber = plateNumber;
             Type = type;
             Model = model;
@@ -48,18 +49,19 @@ namespace Parking
             Phone = phone;
             ArrivalDate = arrivalDate;
             ArrivalTime = arrivalTime;
-           // Hours = hours;
-          //  Amount = amount;
+         
             Status = status;
-          //  DepartureDate = departureDate;
-          //  DepartureTime = departureTime;
+            S_location = s_location;
+         
         }
 
       
     }
     public class ParkingHistoyRecord
     {
-        // Attributes
+      
+          public int v_id { get; set; }
+          public int s_id { get; set; }
          public string PlateNumber { get; set; }
          public string Type { get; set; }
          public string Model { get; set; }
@@ -77,27 +79,29 @@ namespace Parking
         {
              
         }        
-        public ParkingHistoyRecord(string plateNumber, string type, string model,
+        public ParkingHistoyRecord(int v_ID,int s_ID, string plateNumber, string type, string model,
                              string driver, string phone, string arrivalDate, string arrivalTime, string departureDate, string departureTime, double hours, double amount,double change,double cash)
         {
-            PlateNumber = plateNumber;
-            Type = type;
-            Model = model;
-            Driver = driver;
-            Phone = phone;
-            ArrivalDate = arrivalDate;
-            ArrivalTime = arrivalTime;
-            Hours = hours;
-            Amount = amount;
+                v_id = v_ID;
+                s_id = s_ID;
+                PlateNumber = plateNumber;
+                Type = type;
+                Model = model;
+                Driver = driver;
+                Phone = phone;
+                ArrivalDate = arrivalDate;
+                ArrivalTime = arrivalTime;
+                Hours = hours;
+                Amount = amount;
             
-            DepartureDate = departureDate;
-            DepartureTime = departureTime;
-            DepartureDate = departureDate;
-            DepartureTime = departureTime;
-            Hours = hours;
-            Amount = amount;
-            Cash = cash;
-            Changed = change;
+                DepartureDate = departureDate;
+                DepartureTime = departureTime;
+                DepartureDate = departureDate;
+                DepartureTime = departureTime;
+                Hours = hours;
+                Amount = amount;
+                Cash = cash;
+                Changed = change;
         }     
     }
     public class ParkingRecordsManager
@@ -118,7 +122,7 @@ namespace Parking
                 return instance;
             }
         }
-        // Constructor
+      
         public ParkingRecordsManager()
         {
             parkingRecords = new List<ParkingRecord>();
@@ -129,82 +133,23 @@ namespace Parking
         private void AddDefaultValues()
         {
 
-         /*      parkingRecords.Add(new ParkingRecord("423432", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("2124332", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("435345", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("354f45", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("534234dfg", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("34534df", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("354g456", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("234756gh", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("5642fgd", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("867ghj45", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("345fg56", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("456fg34", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("34gh67", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("3456f", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("456t56", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-               parkingRecords.Add(new ParkingRecord("564hg56", "SUV", "ford", "John Doe", "123456789", "03/12/2024", "06:00:00 AM", "PARKED"));
-           */
-         /*     parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-             parkingHistoryRecords.Add(new ParkingHistoyRecord("9807", "SUV", "ford", "carl conrad", "123456789", "3/9/2024", "8:54:12 PM", "3/9/2024", "10:54:12 PM", 0, 0));
-        */
-           
-            
-            // Connect to the database and retrieve parking records
- 
-           /* using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT v_plate, v_type FROM Vehicle"; 
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    
-             
-                    parkingRecords.Add(
-                       new ParkingRecord(
-                        reader["v_plate"].ToString(),
-                        reader["v_type"].ToString(),
-                        "ford", // Empty string for model
-                        "John Doe", // Empty string for driver
-                        "123456789", // Empty string for phone
-                        "03/12/2024", // Empty string for arrivalDate
-                        "06:00:00 AM", // Empty string for arrivalTime
-                        "PARKED"  // Empty string for status
-                    )
-                        );
- 
-                }
-
-                reader.Close();
-            } */
-
+        
 
 
         }
         public void AddParkingRecord(ParkingRecord parkingRecord)
         {
-            // SQL query to insert a new record into the ParkingRecords table
+         
             string query = @"INSERT INTO 
-                     Vehicle (v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status) 
-                     VALUES (@v_plate, @v_type, @model, @driver, @phone, @arrivalDate, @arrivalTime, @status)";
+                     Vehicle (v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status,s_sloc) 
+                     VALUES (@v_plate, @v_type, @model, @driver, @phone, @arrivalDate, @arrivalTime, @status,@s_sloc)";
 
-            // Create a new SQL connection
+
+
+           
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                // Create a new SQL command with the query and connection
+               
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     // Add parameters to the command
@@ -216,14 +161,15 @@ namespace Parking
                     command.Parameters.AddWithValue("@arrivalDate", parkingRecord.ArrivalDate);
                     command.Parameters.AddWithValue("@arrivalTime", parkingRecord.ArrivalTime);
                     command.Parameters.AddWithValue("@status", parkingRecord.Status);
+                    command.Parameters.AddWithValue("@s_sloc", parkingRecord.S_location);
 
-                    // Open the connection
+                  
                     connection.Open();
 
-                    // Execute the command
+                 
                     int rowsAffected = command.ExecuteNonQuery();
 
-                    // Check if the insertion was successful
+                
                     if (rowsAffected > 0)
                     {
                         Console.WriteLine("Parking record inserted successfully.");
@@ -234,17 +180,17 @@ namespace Parking
                     }
                 }
             }
-            //parkingRecords.Add(parkingRecord);
+            
         }       
         public void RemoveParkingRecord(ParkingRecord parkingRecord)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM Vehicle WHERE v_plate = @v_plate";
+                string query = "DELETE FROM Vehicle WHERE id = @id";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@v_plate", parkingRecord.PlateNumber); // Assuming Id is the property of ParkingRecord that corresponds to the id in the database
+                    command.Parameters.AddWithValue("@id", parkingRecord.id);  
 
                     try
                     {
@@ -267,25 +213,27 @@ namespace Parking
                     }
                 }
             }
-            //parkingRecords.Remove(parkingRecord);
+            
         }
         public List<ParkingRecord> GetAllParkingRecords()
         {
             parkingRecords.Clear();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status FROM Vehicle";
+                string query = "SELECT id, v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status,s_sloc FROM Vehicle";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
+                   
                     DateTime arrivalDate = (DateTime)reader["arrivalDate"];
                     TimeSpan arrivalTime = (TimeSpan)reader["arrivalTime"];
                     DateTime time = DateTime.Today.Add(arrivalTime);
                     parkingRecords.Add(
                        new ParkingRecord(
+                        (int)reader["id"],
                         reader["v_plate"].ToString(),
                         reader["v_type"].ToString(),
                         reader["model"].ToString(),
@@ -293,7 +241,8 @@ namespace Parking
                         reader["phone"].ToString(),
                         arrivalDate.ToString("MM/dd/yyyy"),
                         time.ToString("hh:mm:ss tt"),
-                        reader["status"].ToString()
+                        reader["status"].ToString(),
+                        reader["s_sloc"].ToString()
                     )
                         );
 
@@ -305,7 +254,44 @@ namespace Parking
         }
         public void AddParkingHistoryRecord(ParkingHistoyRecord parkinghistoryRecords)
         {
-            parkingHistoryRecords.Add(parkinghistoryRecords);
+            string query = "insert into Transactions" +
+                "(v_id, s_id,admin_id,departureDate,departureTime,hours,amount ,change,cash )" +
+                " values (@v_id, @s_id,@admin_id,@departureDate,@departureTime,@hours,@amount ,@change,@cash ) ";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+              
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                 
+                    command.Parameters.AddWithValue("@v_id", parkinghistoryRecords.v_id);
+                    command.Parameters.AddWithValue("@s_id", parkinghistoryRecords.s_id);       
+                    command.Parameters.AddWithValue("@admin_id", 1010);
+                    command.Parameters.AddWithValue("@departureDate", parkinghistoryRecords.DepartureDate);
+                    command.Parameters.AddWithValue("@departureTime", parkinghistoryRecords.DepartureTime);
+                    command.Parameters.AddWithValue("@hours", parkinghistoryRecords.Hours);
+                    command.Parameters.AddWithValue("@amount", parkinghistoryRecords.Amount);
+                    command.Parameters.AddWithValue("@change", parkinghistoryRecords.Changed);
+                    command.Parameters.AddWithValue("@cash", parkinghistoryRecords.Cash);
+
+        
+                    connection.Open();
+
+               
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                   
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Parking record inserted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to insert parking record.");
+                    }
+                }
+            }
+ 
+         
         }
         public void RemoveParkingHistoryRecord(ParkingHistoyRecord parkinghistoryRecords)
         {
@@ -313,10 +299,59 @@ namespace Parking
         }
         public List<ParkingHistoyRecord> GetAllParkingHistoryRecords() 
         {
+            parkingHistoryRecords.Clear();
+ 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {         
+                string query = @"SELECT t.v_id, t.s_id, t.departureDate, t.departureTime, t.hours, t.amount, t.change, t.cash,
+                         v.v_plate, v.v_type, v.model, v.driver, v.phone,
+                         v.arrivalDate, v.arrivalTime
+                         FROM Transactions t
+                         JOIN Vehicle v ON t.v_id = v.id
+                         JOIN V_Slots s ON t.s_id = s.s_id";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        
+                        parkingHistoryRecords.Add(
+                            new ParkingHistoyRecord(
+                                (int)reader["v_id"],
+                                (int)reader["s_id"],
+                                reader["v_plate"].ToString(), 
+                                reader["v_type"].ToString(),
+                                reader["model"].ToString(),
+                                reader["driver"].ToString(),
+                                reader["phone"].ToString(),
+                                reader["arrivalDate"].ToString(), 
+                                reader["arrivalTime"].ToString(), 
+                                reader["departureDate"].ToString(),
+                                reader["departureTime"].ToString(),
+                                (double)reader["hours"],
+                                (double)reader["amount"], 
+                                (double)reader["cash"],
+                                (double)reader["change"]));
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    
+                }
+            }
+
             return parkingHistoryRecords;
+
         }
 
-
+        
     }
 
 
