@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Parking
@@ -22,7 +23,7 @@ namespace Parking
 
         string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
         string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
-
+        string Sloc;
         public ParkingEntry(FlowLayoutPanel flowLayoutPanel2)
         {
             InitializeComponent();
@@ -30,7 +31,12 @@ namespace Parking
 
 
             OccupiedArea();
+
+            firstFloorPanel.Hide();
+            secondFloorPanel.Hide();
         }
+
+
         public ParkingEntry()
         {
             InitializeComponent();
@@ -45,7 +51,7 @@ namespace Parking
             string platenum = plateNo.Text;
             string type = comboBoxType.SelectedItem?.ToString();
             string model = comboBoxModel.SelectedItem?.ToString();
-            string s_loc = comboBoxS_slots.SelectedItem?.ToString();
+            string s_loc = getSloc();
             string driverName = driver.Text;
             string phoneNUm = phoneNo.Text;
             DateTime currentDateTime = DateTime.Now;
@@ -130,12 +136,17 @@ namespace Parking
 
                 if (!isAlreadyInList)
                 {
-                    parkingRecordsManager.AddParkingRecord(carDetails);
-                    ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
-                    invalid.Text = "Successfully added new Vehicle!";
-                    invalid.ForeColor = Color.Chartreuse;
-                    updateAvailability_query();
-                    fetchSlots_query();//  refresh the comboBoxS_slots
+                    if (getSloc() != null)
+                    {
+                        parkingRecordsManager.AddParkingRecord(carDetails);
+                        ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
+                        invalid.Text = "Successfully added new Vehicle!";
+                        invalid.ForeColor = Color.Chartreuse;
+                        updateAvailability_query();
+
+                    }
+                    else
+                        MessageBox.Show("Please select a slot area for this vehicle!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -178,7 +189,7 @@ namespace Parking
             {
                 comboBoxType.Items.Add(record.vehicleType);
             }
-            fetchSlots_query();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -203,45 +214,6 @@ namespace Parking
 
         }
 
-        private void comboBoxS_slots_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fetchSlots_query()
-        {
-            comboBoxS_slots.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-
-                string query = "SELECT s_loc FROM V_Slots where availability  != 0";
-
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                try
-                {
-
-                    connection.Open();
-
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-
-                        while (reader.Read())
-                        {
-
-                            comboBoxS_slots.Items.Add(reader["s_loc"].ToString());
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
 
 
         private void updateAvailability_query()
@@ -260,7 +232,7 @@ namespace Parking
                     connection.Open();
 
 
-                    command.Parameters.AddWithValue("@s_loc", comboBoxS_slots.SelectedItem?.ToString());
+                    command.Parameters.AddWithValue("@s_loc", getSloc());
 
 
                     command.ExecuteNonQuery();
@@ -276,53 +248,54 @@ namespace Parking
         bool select = false;
 
 
-        
+
 
         private void OccupiedArea()
         {
-           
+
             Image image = Image.FromFile(imagePath1);
             Image image2 = Image.FromFile(imagePath2);
 
 
-            if (isOccupied("B-01"))
+            if (isOccupied("BM-01"))
             {
                 b01.Image = image2;
                 labelB1.Text = "";
             }
 
-            if (isOccupied("B-02"))
+            if (isOccupied("BM-02"))
             {
                 b02.Image = image2;
                 labelB2.Text = "";
             }
-            if (isOccupied("B-03"))
+            if (isOccupied("BM-03"))
             {
                 b03.Image = image2;
                 labelB3.Text = "";
             }
-            if (isOccupied("B-04")) { 
+            if (isOccupied("BM-04"))
+            {
                 b04.Image = image2;
                 labelB4.Text = "";
             }
 
-            if (isOccupied("B-05"))
+            if (isOccupied("BM-05"))
             {
                 b05.Image = image2;
                 labelB5.Text = "";
             }
 
-            if (isOccupied("B-06"))
+            if (isOccupied("BM-06"))
             {
                 b06.Image = image;
                 labelB6.Text = "";
             }
-            if (isOccupied("B-07"))
+            if (isOccupied("BM-07"))
             {
                 b07.Image = image;
                 labelB7.Text = "";
             }
-            if (isOccupied("B-08"))
+            if (isOccupied("BM-08"))
             {
                 b08.Image = image;
                 labelB8.Text = "";
@@ -331,7 +304,8 @@ namespace Parking
 
         }
 
-        private bool isOccupied(string slotName) {
+        private bool isOccupied(string slotName)
+        {
             List<string> occupiedSlots = new List<string>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -356,7 +330,7 @@ namespace Parking
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-            }    
+            }
             return occupiedSlots.Contains(slotName);
         }
 
@@ -369,23 +343,31 @@ namespace Parking
         bool b7 = true;
         bool b8 = true;
 
- 
+        private void setSloc(string sloc)
+        {
+            Sloc = sloc;
+        }
+        private string getSloc()
+        {
+            return Sloc;
+        }
 
         private void b01_Click(object sender, EventArgs e)
         {
-           Image image = Image.FromFile(imagePath2);
+            Image image = Image.FromFile(imagePath2);
 
             if (b1)
-            { 
+            {
                 b01.Image = image;
                 labelB1.Text = "";
             }
             else
             {
                 b01.Image = null;
-                labelB1.Text = "B-01";
+                setSloc(null);
+                labelB1.Text = "BM-01";
             }
-                
+
             b1 = !b1;
 
 
@@ -406,14 +388,23 @@ namespace Parking
             b08.Image = null;
 
 
-            labelB2.Text = "B-02";
-            labelB3.Text = "B-03";
-            labelB4.Text = "B-04";
-            labelB5.Text = "B-05";
-            labelB6.Text = "B-06";
-            labelB7.Text = "B-07";
-            labelB8.Text = "B-08";
+            labelB2.Text = "BM-02";
+            labelB3.Text = "BM-03";
+            labelB4.Text = "BM-04";
+            labelB5.Text = "BM-05";
+            labelB6.Text = "BM-06";
+            labelB7.Text = "BM-07";
+            labelB8.Text = "BM-08";
+
             OccupiedArea();
+
+            if (!isOccupied("BM-01"))
+                setSloc("BM-01");
+            else
+                setSloc(null);
+
+
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -428,7 +419,8 @@ namespace Parking
             else
             {
                 b02.Image = null;
-                labelB2.Text = "B-02";
+                setSloc(null);
+                labelB2.Text = "BM-02";
             }
 
             b2 = !b2;
@@ -451,17 +443,19 @@ namespace Parking
             b08.Image = null;
 
 
-            labelB1.Text = "B-01";
-            labelB3.Text = "B-03";
-            labelB4.Text = "B-04";
-            labelB5.Text = "B-05";
-            labelB6.Text = "B-06";
-            labelB7.Text = "B-07";
-            labelB8.Text = "B-08";
+            labelB1.Text = "BM-01";
+            labelB3.Text = "BM-03";
+            labelB4.Text = "BM-04";
+            labelB5.Text = "BM-05";
+            labelB6.Text = "BM-06";
+            labelB7.Text = "BM-07";
+            labelB8.Text = "BM-08";
             OccupiedArea();
+            if (!isOccupied("BM-02"))
+                setSloc("BM-02");
         }
 
-       
+
 
 
         private void b03_Click(object sender, EventArgs e)
@@ -476,7 +470,7 @@ namespace Parking
             else
             {
                 b03.Image = null;
-                labelB3.Text = "B-03";
+                labelB3.Text = "BM-03";
             }
 
             b3 = !b3;
@@ -499,14 +493,16 @@ namespace Parking
             b08.Image = null;
 
 
-            labelB1.Text = "B-01";
-            labelB2.Text = "B-02";
-            labelB4.Text = "B-04";
-            labelB5.Text = "B-05";
-            labelB6.Text = "B-06";
-            labelB7.Text = "B-07";
-            labelB8.Text = "B-08";
+            labelB1.Text = "BM-01";
+            labelB2.Text = "BM-02";
+            labelB4.Text = "BM-04";
+            labelB5.Text = "BM-05";
+            labelB6.Text = "BM-06";
+            labelB7.Text = "BM-07";
+            labelB8.Text = "BM-08";
             OccupiedArea();
+            if (!isOccupied("BM-03"))
+                setSloc("BM-03");
         }
 
         private void b04_Click(object sender, EventArgs e)
@@ -521,7 +517,7 @@ namespace Parking
             else
             {
                 b04.Image = null;
-                labelB4.Text = "B-04";
+                labelB4.Text = "BM-04";
             }
 
             b4 = !b4;
@@ -544,14 +540,16 @@ namespace Parking
             b08.Image = null;
 
 
-            labelB1.Text = "B-01";
-            labelB2.Text = "B-02";
-            labelB3.Text = "B-03";
-            labelB5.Text = "B-05";
-            labelB6.Text = "B-06";
-            labelB7.Text = "B-07";
-            labelB8.Text = "B-08";
+            labelB1.Text = "BM-01";
+            labelB2.Text = "BM-02";
+            labelB3.Text = "BM-03";
+            labelB5.Text = "BM-05";
+            labelB6.Text = "BM-06";
+            labelB7.Text = "BM-07";
+            labelB8.Text = "BM-08";
             OccupiedArea();
+            if (!isOccupied("BM-04"))
+                setSloc("BM-04");
 
         }
 
@@ -567,7 +565,7 @@ namespace Parking
             else
             {
                 b05.Image = null;
-                labelB5.Text = "B-05";
+                labelB5.Text = "BM-05";
             }
 
             b5 = !b5;
@@ -590,14 +588,16 @@ namespace Parking
             b08.Image = null;
 
 
-            labelB1.Text = "B-01";
-            labelB2.Text = "B-02";
-            labelB4.Text = "B-04";
-            labelB3.Text = "B-03";
-            labelB6.Text = "B-06";
-            labelB7.Text = "B-07";
-            labelB8.Text = "B-08";
+            labelB1.Text = "BM-01";
+            labelB2.Text = "BM-02";
+            labelB4.Text = "BM-04";
+            labelB3.Text = "BM-03";
+            labelB6.Text = "BM-06";
+            labelB7.Text = "BM-07";
+            labelB8.Text = "BM-08";
             OccupiedArea();
+            if (!isOccupied("BM-05"))
+                setSloc("BM-05");
         }
 
         private void b06_Click(object sender, EventArgs e)
@@ -612,7 +612,7 @@ namespace Parking
             else
             {
                 b06.Image = null;
-                labelB6.Text = "B-06";
+                labelB6.Text = "BM-06";
             }
 
             b6 = !b6;
@@ -635,14 +635,16 @@ namespace Parking
             b08.Image = null;
 
 
-            labelB1.Text = "B-01";
-            labelB2.Text = "B-02";
-            labelB4.Text = "B-04";
-            labelB5.Text = "B-05";
-            labelB3.Text = "B-03";
-            labelB7.Text = "B-07";
-            labelB8.Text = "B-08";
+            labelB1.Text = "BM-01";
+            labelB2.Text = "BM-02";
+            labelB4.Text = "BM-04";
+            labelB5.Text = "BM-05";
+            labelB3.Text = "BM-03";
+            labelB7.Text = "BM-07";
+            labelB8.Text = "BM-08";
             OccupiedArea();
+            if (!isOccupied("BM-06"))
+                setSloc("BM-06");
         }
 
         private void b07_Click_1(object sender, EventArgs e)
@@ -653,11 +655,16 @@ namespace Parking
             {
                 b07.Image = image;
                 labelB7.Text = "";
+                if (!isOccupied("BM-07"))
+                    setSloc("BM-07");
+                else
+                    setSloc(null);
             }
             else
             {
                 b07.Image = null;
-                labelB7.Text = "B-07";
+                setSloc(null);
+                labelB7.Text = "BM-07";
             }
 
             b7 = !b7;
@@ -680,30 +687,36 @@ namespace Parking
             b08.Image = null;
 
 
-            labelB1.Text = "B-01";
-            labelB2.Text = "B-02";
-            labelB4.Text = "B-04";
-            labelB5.Text = "B-05";
-            labelB6.Text = "B-06";
-            labelB3.Text = "B-03";
-            labelB8.Text = "B-08";
+            labelB1.Text = "BM-01";
+            labelB2.Text = "BM-02";
+            labelB4.Text = "BM-04";
+            labelB5.Text = "BM-05";
+            labelB6.Text = "BM-06";
+            labelB3.Text = "BM-03";
+            labelB8.Text = "BM-08";
             OccupiedArea();
+
         }
-      
+
 
         private void b08_Click_1(object sender, EventArgs e)
         {
             Image image = Image.FromFile(imagePath1);
-       
+
             if (b8)
             {
                 b08.Image = image;
                 labelB8.Text = "";
+                if (!isOccupied("BM-08"))
+                    setSloc("BM-08");
+                else
+                    setSloc(null);
             }
             else
             {
                 b08.Image = null;
-                labelB8.Text = "B-08";
+                setSloc(null);
+                labelB8.Text = "BM-08";
             }
 
             b8 = !b8;
@@ -726,14 +739,633 @@ namespace Parking
             b03.Image = null;
 
 
-            labelB1.Text = "B-01";
-            labelB2.Text = "B-02";
-            labelB4.Text = "B-04";
-            labelB5.Text = "B-05";
-            labelB6.Text = "B-06";
-            labelB7.Text = "B-07";
-            labelB3.Text = "B-03";
+            labelB1.Text = "BM-01";
+            labelB2.Text = "BM-02";
+            labelB4.Text = "BM-04";
+            labelB5.Text = "BM-05";
+            labelB6.Text = "BM-06";
+            labelB7.Text = "BM-07";
+            labelB3.Text = "BM-03";
             OccupiedArea();
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            //basement
+            basementPanel.Dock = DockStyle.Fill;
+            panel5.Controls.Add(basementPanel);
+            basementPanel.Show();
+
+            firstFloorPanel.Dock = DockStyle.None;
+            panel5.Controls.Remove(firstFloorPanel);
+            firstFloorPanel.Hide();
+
+            panel5.Controls.Remove(secondFloorPanel);
+            secondFloorPanel.Dock = DockStyle.None;
+            secondFloorPanel.Hide();
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            //firstfloor
+
+            firstFloorPanel.Dock = DockStyle.Fill;
+            panel5.Controls.Add(firstFloorPanel);
+            firstFloorPanel.Show();
+
+
+            panel5.Controls.Remove(basementPanel);
+            basementPanel.Dock = DockStyle.None;
+            basementPanel.Hide();
+
+            panel5.Controls.Remove(secondFloorPanel);
+            secondFloorPanel.Dock = DockStyle.None;
+            secondFloorPanel.Hide();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            panel5.Controls.Add(secondFloorPanel);
+            secondFloorPanel.Dock = DockStyle.Fill;
+            secondFloorPanel.Show();
+
+            firstFloorPanel.Dock = DockStyle.None;
+            panel5.Controls.Remove(firstFloorPanel);
+            firstFloorPanel.Hide();
+
+            panel5.Controls.Remove(basementPanel);
+            basementPanel.Dock = DockStyle.None;
+            basementPanel.Hide();
+
+
+        }
+
+
+        bool a1 = true;
+        bool a2 = true;
+        bool a3 = true;
+        bool a4 = true;
+        bool a5 = true;
+        bool a6 = true;
+        bool a7 = true;
+        bool a8 = true;
+        bool a9 = true;
+        bool a_10 = true;
+
+
+        //firstfloor btns
+        private void a01_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath1);
+
+            if (a1)
+            {
+                a01.Image = image;
+                labela1.Text = "";
+                if (!isOccupied("A-01"))
+                    setSloc("A-01");
+                else
+                    setSloc(null);
+            }
+            else
+            {
+                a01.Image = null;
+                setSloc(null);
+                labela1.Text = "A-01";
+            }
+
+            a1 = !a1;
+
+
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a9 = true;
+            a_10 = true;
+            a09.Image = null;
+            a10.Image = null;
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+
+            OccupiedArea();
+
+            if (!isOccupied("A-01"))
+                setSloc("A-01");
+            else
+                setSloc(null);
+        }
+
+        private void a02_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a2)
+            {
+                a02.Image = image;
+                labela2.Text = "";
+            }
+            else
+            {
+                a02.Image = null;
+                setSloc(null);
+                labela2.Text = "A-02";
+            }
+
+            a2 = !a2;
+
+
+            a1 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+
+            a01.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a9 = true;
+            a_10 = true;
+            a09.Image = null;
+            a10.Image = null;
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+
+            labela1.Text = "A-01";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            OccupiedArea();
+            if (!isOccupied("A-02"))
+                setSloc("A-02");
+        }
+
+        private void a03_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a3)
+            {
+                a03.Image = image;
+                labela3.Text = "";
+            }
+            else
+            {
+                a03.Image = null;
+                setSloc(null);
+                labela3.Text = "A-03";
+            }
+
+            a3 = !a3;
+
+
+            a1 = true;
+            a2 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a9 = true;
+            a_10 = true;
+            a09.Image = null;
+            a10.Image = null;
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            OccupiedArea();
+            if (!isOccupied("A-03"))
+                setSloc("A-03");
+        }
+
+        private void a04_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a4)
+            {
+                a04.Image = image;
+                labela4.Text = "";
+            }
+            else
+            {
+                a04.Image = null;
+                setSloc(null);
+                labela4.Text = "A-04";
+            }
+
+            a4 = !a4;
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a9 = true;
+            a_10 = true;
+            a09.Image = null;
+            a10.Image = null;
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            OccupiedArea();
+            if (!isOccupied("A-04"))
+                setSloc("A-04");
+        }
+
+        private void a05_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a5)
+            {
+                a05.Image = image;
+                labela5.Text = "";
+            }
+            else
+            {
+                a05.Image = null;
+                setSloc(null);
+                labela5.Text = "A-05";
+            }
+
+            a5 = !a5;
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+            a9 = true;
+            a_10 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a09.Image = null;
+            a10.Image = null;
+
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+            OccupiedArea();
+            if (!isOccupied("A-05"))
+                setSloc("A-05");
+        }
+
+        private void a06_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a6)
+            {
+                a06.Image = image;
+                labela6.Text = "";
+            }
+            else
+            {
+                a06.Image = null;
+                setSloc(null);
+                labela6.Text = "A-6";
+            }
+
+            a6 = !a6;
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a7 = true;
+            a8 = true;
+            a9 = true;
+            a_10 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a09.Image = null;
+            a10.Image = null;
+
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+            OccupiedArea();
+            if (!isOccupied("A-06"))
+                setSloc("A-06");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a7)
+            {
+                a07.Image = image;
+                labela7.Text = "";
+            }
+            else
+            {
+                a07.Image = null;
+                setSloc(null);
+                labela7.Text = "A-7";
+            }
+
+            a7 = !a7;
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a8 = true;
+            a9 = true;
+            a_10 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a08.Image = null;
+            a09.Image = null;
+            a10.Image = null;
+
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela8.Text = "A-08";
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+
+            OccupiedArea();
+            if (!isOccupied("A-07"))
+                setSloc("A-07");
+        }
+
+        private void a08_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a8)
+            {
+                a08.Image = image;
+                labela8.Text = "";
+            }
+            else
+            {
+                a08.Image = null;
+                setSloc(null);
+                labela8.Text = "A-8";
+            }
+
+            a8 = !a8;
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a9 = true;
+            a_10 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a09.Image  = null;
+            a10.Image = null;
+
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+            OccupiedArea();
+            if (!isOccupied("A-08"))
+                setSloc("A-08");
+        }
+
+        private void a09_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a9)
+            {
+                a09.Image = image;
+                labela9.Text = "";
+            }
+            else
+            {
+                a09.Image = null;
+                setSloc(null);
+                labela9.Text = "A-9";
+            }
+
+            a9 = !a9;
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+            a_10 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a10.Image = null;
+
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            labela10.Text = "A-010";
+            OccupiedArea();
+            if (!isOccupied("A-09"))
+                setSloc("A-09");
+        }
+
+        private void a10_Click(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile(imagePath2);
+
+            if (a_10)
+            {
+                a10.Image = image;
+                labela10.Text = "";
+            }
+            else
+            {
+                a10.Image = null;
+                setSloc(null);
+                labela10.Text = "A-10";
+            }
+
+            a_10 = !a_10;
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+            a9 = true;
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a09.Image = null;
+
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            labela9.Text = "A-09";
+            OccupiedArea();
+            if (!isOccupied("A-10"))
+                setSloc("A-10");
         }
     }
 }//

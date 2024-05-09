@@ -14,6 +14,9 @@ ADD departureDate VARCHAR(50),
     change FLOAT,
     cash FLOAT;
 
+ALTER TABLE Transactions
+ADD id int primary key identity(1,1)
+
 
 
  
