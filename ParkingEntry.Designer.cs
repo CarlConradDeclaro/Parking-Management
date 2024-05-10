@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParkingEntry));
+            comboBoxType = new ComboBox();
             palteNo = new Label();
             plateNo = new TextBox();
             type = new Label();
@@ -37,7 +38,6 @@
             comboBoxModel = new ComboBox();
             driver = new TextBox();
             label5 = new Label();
-            comboBoxType = new ComboBox();
             phoneNo = new TextBox();
             label1 = new Label();
             button1 = new Button();
@@ -80,7 +80,9 @@
             labelB1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
+            label2 = new Label();
             panel4 = new Panel();
+            label3 = new Label();
             secondFloorPanel = new Panel();
             label6 = new Label();
             label13 = new Label();
@@ -134,15 +136,29 @@
             panel5.SuspendLayout();
             SuspendLayout();
             // 
+            // comboBoxType
+            // 
+            comboBoxType.BackColor = Color.White;
+            comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxType.DropDownWidth = 350;
+            comboBoxType.Font = new Font("Segoe UI", 13.8F);
+            comboBoxType.ForeColor = Color.Black;
+            comboBoxType.FormattingEnabled = true;
+            comboBoxType.Location = new Point(17, 253);
+            comboBoxType.Name = "comboBoxType";
+            comboBoxType.Size = new Size(350, 39);
+            comboBoxType.TabIndex = 10;
+            comboBoxType.SelectedIndexChanged += comboBoxType_SelectedIndexChanged;
+            // 
             // palteNo
             // 
             palteNo.AutoSize = true;
             palteNo.BackColor = Color.Transparent;
-            palteNo.Font = new Font("Sans Serif Collection", 7.8F, FontStyle.Bold);
-            palteNo.ForeColor = Color.Red;
-            palteNo.Location = new Point(29, 98);
+            palteNo.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            palteNo.ForeColor = Color.WhiteSmoke;
+            palteNo.Location = new Point(19, 110);
             palteNo.Name = "palteNo";
-            palteNo.Size = new Size(109, 32);
+            palteNo.Size = new Size(127, 23);
             palteNo.TabIndex = 0;
             palteNo.Text = "Plate No*";
             // 
@@ -150,21 +166,22 @@
             // 
             plateNo.BackColor = Color.White;
             plateNo.BorderStyle = BorderStyle.None;
-            plateNo.Font = new Font("Segoe UI", 13.8F);
-            plateNo.Location = new Point(31, 129);
+            plateNo.Font = new Font("NSimSun", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            plateNo.ForeColor = Color.Black;
+            plateNo.Location = new Point(19, 145);
             plateNo.Name = "plateNo";
-            plateNo.Size = new Size(352, 31);
+            plateNo.Size = new Size(352, 35);
             plateNo.TabIndex = 1;
             // 
             // type
             // 
             type.AutoSize = true;
             type.BackColor = Color.Transparent;
-            type.Font = new Font("Sans Serif Collection", 7.8F, FontStyle.Bold);
-            type.ForeColor = Color.Red;
-            type.Location = new Point(29, 316);
+            type.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            type.ForeColor = Color.WhiteSmoke;
+            type.Location = new Point(17, 222);
             type.Name = "type";
-            type.Size = new Size(74, 32);
+            type.Size = new Size(75, 23);
             type.TabIndex = 2;
             type.Text = "Type*";
             // 
@@ -172,20 +189,22 @@
             // 
             model.AutoSize = true;
             model.BackColor = Color.Transparent;
-            model.Font = new Font("Sans Serif Collection", 7.8F, FontStyle.Bold);
-            model.ForeColor = Color.Red;
-            model.Location = new Point(29, 208);
+            model.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            model.ForeColor = Color.WhiteSmoke;
+            model.Location = new Point(17, 325);
             model.Name = "model";
-            model.Size = new Size(86, 32);
+            model.Size = new Size(88, 23);
             model.TabIndex = 4;
             model.Text = "Model*";
             // 
             // comboBoxModel
             // 
+            comboBoxModel.BackColor = Color.White;
             comboBoxModel.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxModel.Font = new Font("Segoe UI", 13.8F);
+            comboBoxModel.ForeColor = Color.Black;
             comboBoxModel.FormattingEnabled = true;
-            comboBoxModel.Location = new Point(29, 239);
+            comboBoxModel.Location = new Point(17, 356);
             comboBoxModel.Name = "comboBoxModel";
             comboBoxModel.Size = new Size(350, 39);
             comboBoxModel.TabIndex = 5;
@@ -193,8 +212,10 @@
             // 
             // driver
             // 
-            driver.Font = new Font("Segoe UI", 13.8F);
-            driver.Location = new Point(493, 240);
+            driver.BackColor = Color.White;
+            driver.Font = new Font("NSimSun", 16.2F);
+            driver.ForeColor = Color.Black;
+            driver.Location = new Point(14, 574);
             driver.Name = "driver";
             driver.Size = new Size(350, 38);
             driver.TabIndex = 9;
@@ -203,29 +224,20 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Sans Serif Collection", 7.8F, FontStyle.Bold);
-            label5.ForeColor = Color.Red;
-            label5.Location = new Point(493, 209);
+            label5.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label5.ForeColor = Color.WhiteSmoke;
+            label5.Location = new Point(14, 543);
             label5.Name = "label5";
-            label5.Size = new Size(77, 32);
+            label5.Size = new Size(88, 23);
             label5.TabIndex = 8;
             label5.Text = "Driver";
             // 
-            // comboBoxType
-            // 
-            comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxType.Font = new Font("Segoe UI", 13.8F);
-            comboBoxType.FormattingEnabled = true;
-            comboBoxType.Location = new Point(29, 347);
-            comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(350, 39);
-            comboBoxType.TabIndex = 10;
-            comboBoxType.SelectedIndexChanged += comboBoxType_SelectedIndexChanged;
-            // 
             // phoneNo
             // 
-            phoneNo.Font = new Font("Segoe UI", 13.8F);
-            phoneNo.Location = new Point(493, 129);
+            phoneNo.BackColor = Color.White;
+            phoneNo.Font = new Font("NSimSun", 16.2F);
+            phoneNo.ForeColor = Color.Black;
+            phoneNo.Location = new Point(14, 463);
             phoneNo.Name = "phoneNo";
             phoneNo.Size = new Size(350, 38);
             phoneNo.TabIndex = 12;
@@ -234,25 +246,26 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Sans Serif Collection", 7.8F, FontStyle.Bold);
-            label1.ForeColor = Color.Red;
-            label1.Location = new Point(493, 98);
+            label1.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label1.ForeColor = Color.WhiteSmoke;
+            label1.Location = new Point(14, 432);
             label1.Name = "label1";
-            label1.Size = new Size(114, 32);
+            label1.Size = new Size(114, 23);
             label1.TabIndex = 11;
             label1.Text = "Phone No";
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.GradientInactiveCaption;
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button1.ForeColor = Color.Brown;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(493, 347);
+            button1.Location = new Point(518, 630);
             button1.Name = "button1";
-            button1.Size = new Size(108, 40);
+            button1.Size = new Size(106, 40);
             button1.TabIndex = 16;
             button1.Text = "      Close";
             button1.UseVisualStyleBackColor = false;
@@ -260,17 +273,18 @@
             // 
             // button2
             // 
-            button2.BackColor = SystemColors.GradientInactiveCaption;
+            button2.BackColor = Color.Transparent;
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button2.ForeColor = Color.FromArgb(64, 64, 64);
+            button2.ForeColor = Color.Lime;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(747, 347);
+            button2.Location = new Point(733, 630);
             button2.Name = "button2";
-            button2.Size = new Size(96, 40);
+            button2.Size = new Size(91, 40);
             button2.TabIndex = 17;
-            button2.Text = "     Add vehicle";
+            button2.Text = "     Add ";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -295,7 +309,7 @@
             inValidPN.AutoSize = true;
             inValidPN.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             inValidPN.ForeColor = Color.Red;
-            inValidPN.Location = new Point(31, 170);
+            inValidPN.Location = new Point(19, 186);
             inValidPN.Name = "inValidPN";
             inValidPN.Size = new Size(0, 20);
             inValidPN.TabIndex = 19;
@@ -305,7 +319,7 @@
             invalidT.AutoSize = true;
             invalidT.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             invalidT.ForeColor = Color.Red;
-            invalidT.Location = new Point(29, 389);
+            invalidT.Location = new Point(17, 295);
             invalidT.Name = "invalidT";
             invalidT.Size = new Size(0, 20);
             invalidT.TabIndex = 20;
@@ -315,7 +329,7 @@
             inValidM.AutoSize = true;
             inValidM.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             inValidM.ForeColor = Color.Red;
-            inValidM.Location = new Point(29, 281);
+            inValidM.Location = new Point(17, 398);
             inValidM.Name = "inValidM";
             inValidM.Size = new Size(0, 20);
             inValidM.TabIndex = 21;
@@ -325,22 +339,23 @@
             invalid.AutoSize = true;
             invalid.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             invalid.ForeColor = Color.Lime;
-            invalid.Location = new Point(31, 49);
+            invalid.Location = new Point(19, 75);
             invalid.Name = "invalid";
             invalid.Size = new Size(0, 28);
             invalid.TabIndex = 23;
             // 
             // button3
             // 
-            button3.BackColor = SystemColors.GradientInactiveCaption;
+            button3.BackColor = Color.Transparent;
+            button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button3.ForeColor = Color.Green;
+            button3.ForeColor = Color.Yellow;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(621, 347);
+            button3.Location = new Point(630, 630);
             button3.Name = "button3";
-            button3.Size = new Size(105, 40);
+            button3.Size = new Size(107, 40);
             button3.TabIndex = 24;
             button3.Text = "    Clear";
             button3.UseVisualStyleBackColor = false;
@@ -349,12 +364,13 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 10, 60);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button4);
             panel1.Controls.Add(title);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1378, 46);
+            panel1.Size = new Size(850, 43);
             panel1.TabIndex = 25;
             // 
             // button4
@@ -366,7 +382,7 @@
             button4.ForeColor = Color.Brown;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(1332, 2);
+            button4.Location = new Point(805, 1);
             button4.Name = "button4";
             button4.Size = new Size(40, 40);
             button4.TabIndex = 59;
@@ -379,7 +395,7 @@
             invalidDriver.AutoSize = true;
             invalidDriver.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             invalidDriver.ForeColor = Color.Red;
-            invalidDriver.Location = new Point(493, 281);
+            invalidDriver.Location = new Point(14, 630);
             invalidDriver.Name = "invalidDriver";
             invalidDriver.Size = new Size(0, 20);
             invalidDriver.TabIndex = 26;
@@ -389,7 +405,7 @@
             invalidPhone.AutoSize = true;
             invalidPhone.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             invalidPhone.ForeColor = Color.Red;
-            invalidPhone.Location = new Point(493, 170);
+            invalidPhone.Location = new Point(14, 504);
             invalidPhone.Name = "invalidPhone";
             invalidPhone.Size = new Size(0, 20);
             invalidPhone.TabIndex = 27;
@@ -706,18 +722,24 @@
             panel2.Controls.Add(button14);
             panel2.Controls.Add(button12);
             panel2.Controls.Add(button13);
-            panel2.Location = new Point(19, 16);
+            panel2.Location = new Point(10, 66);
             panel2.Name = "panel2";
             panel2.Size = new Size(398, 52);
             panel2.TabIndex = 58;
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(0, 0, 64);
             panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(panel4);
             panel3.Controls.Add(invalid);
             panel3.Controls.Add(type);
             panel3.Controls.Add(model);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button3);
             panel3.Controls.Add(comboBoxModel);
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(driver);
             panel3.Controls.Add(plateNo);
@@ -726,29 +748,51 @@
             panel3.Controls.Add(invalidDriver);
             panel3.Controls.Add(comboBoxType);
             panel3.Controls.Add(label1);
-            panel3.Controls.Add(button3);
             panel3.Controls.Add(phoneNo);
-            panel3.Controls.Add(button1);
             panel3.Controls.Add(inValidM);
-            panel3.Controls.Add(button2);
             panel3.Controls.Add(invalidT);
             panel3.Controls.Add(inValidPN);
-            panel3.Location = new Point(12, 61);
+            panel3.Location = new Point(3, 49);
             panel3.Name = "panel3";
-            panel3.Size = new Size(117, 564);
+            panel3.Size = new Size(844, 683);
             panel3.TabIndex = 59;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label2.ForeColor = Color.WhiteSmoke;
+            label2.Location = new Point(91, 21);
+            label2.Name = "label2";
+            label2.Size = new Size(218, 23);
+            label2.TabIndex = 61;
+            label2.Text = "Vehicle Details:";
             // 
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(label3);
             panel4.Controls.Add(secondFloorPanel);
             panel4.Controls.Add(firstFloorPanel);
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(panel2);
-            panel4.Location = new Point(174, 61);
+            panel4.Location = new Point(400, 12);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1134, 564);
+            panel4.Size = new Size(424, 605);
             panel4.TabIndex = 60;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label3.ForeColor = Color.WhiteSmoke;
+            label3.Location = new Point(139, 7);
+            label3.Name = "label3";
+            label3.Size = new Size(179, 23);
+            label3.TabIndex = 63;
+            label3.Text = "Parking Area:";
             // 
             // secondFloorPanel
             // 
@@ -1339,7 +1383,7 @@
             // panel5
             // 
             panel5.Controls.Add(basementPanel);
-            panel5.Location = new Point(19, 77);
+            panel5.Location = new Point(10, 131);
             panel5.Name = "panel5";
             panel5.Size = new Size(398, 463);
             panel5.TabIndex = 59;
@@ -1348,10 +1392,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(28, 33, 64);
+            BackColor = Color.FromArgb(0, 0, 64);
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1378, 641);
-            Controls.Add(panel4);
+            ClientSize = new Size(850, 735);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Cursor = Cursors.Hand;
@@ -1370,6 +1413,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             secondFloorPanel.ResumeLayout(false);
             secondFloorPanel.PerformLayout();
             firstFloorPanel.ResumeLayout(false);
@@ -1474,5 +1518,7 @@
         private Button button16;
         private Button c05;
         private Button c06;
+        private Label label2;
+        private Label label3;
     }
 }

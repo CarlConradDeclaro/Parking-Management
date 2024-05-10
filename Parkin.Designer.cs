@@ -42,7 +42,6 @@
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            panel2 = new Panel();
             flowLayoutPanel2 = new FlowLayoutPanel();
             panel3 = new Panel();
             label1 = new Label();
@@ -76,14 +75,97 @@
             panel4 = new Panel();
             btnCleared = new Button();
             panel5 = new Panel();
-            history1 = new History();
-            admin1 = new admin();
+            parkingView = new Panel();
+            label10 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            panel18 = new Panel();
+            label37 = new Label();
+            label36 = new Label();
+            label35 = new Label();
+            label34 = new Label();
+            label33 = new Label();
+            label32 = new Label();
+            label31 = new Label();
+            label30 = new Label();
+            label22 = new Label();
+            c01 = new Label();
+            button48 = new Button();
+            button29 = new Button();
+            button47 = new Button();
+            button30 = new Button();
+            button46 = new Button();
+            button31 = new Button();
+            button45 = new Button();
+            button32 = new Button();
+            button44 = new Button();
+            button33 = new Button();
+            button43 = new Button();
+            button34 = new Button();
+            button42 = new Button();
+            button35 = new Button();
+            button41 = new Button();
+            button36 = new Button();
+            button40 = new Button();
+            button37 = new Button();
+            button39 = new Button();
+            button38 = new Button();
+            panel17 = new Panel();
+            label29 = new Label();
+            label28 = new Label();
+            label27 = new Label();
+            label26 = new Label();
+            label25 = new Label();
+            label24 = new Label();
+            label23 = new Label();
+            labela6 = new Label();
+            label21 = new Label();
+            labela1 = new Label();
+            button19 = new Button();
+            button20 = new Button();
+            button21 = new Button();
+            button22 = new Button();
+            button23 = new Button();
+            button24 = new Button();
+            button25 = new Button();
+            button26 = new Button();
+            button27 = new Button();
+            button28 = new Button();
+            panel19 = new Panel();
+            button4 = new Button();
+            textBox1 = new TextBox();
+            panel16 = new Panel();
+            labelB10 = new Label();
+            labelB9 = new Label();
+            labelB8 = new Label();
+            labelB7 = new Label();
+            labelB6 = new Label();
+            labelB5 = new Label();
+            labelB4 = new Label();
+            labelB3 = new Label();
+            labelB2 = new Label();
+            labelB1 = new Label();
+            b10 = new Button();
+            b09 = new Button();
+            b08 = new Button();
+            b07 = new Button();
+            b06 = new Button();
+            b05 = new Button();
+            b04 = new Button();
+            b03 = new Button();
+            b02 = new Button();
+            b01 = new Button();
+            Content = new Panel();
+            vehicleListPanel = new Panel();
+            panel2 = new Panel();
+            btnViewParkLot = new Button();
+            btnViewParkList = new Button();
+            panelContent = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)humBtn).BeginInit();
             sidebar.SuspendLayout();
             menuContainer.SuspendLayout();
             panel6.SuspendLayout();
-            panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel11.SuspendLayout();
             panel15.SuspendLayout();
@@ -96,6 +178,15 @@
             panel14.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
+            parkingView.SuspendLayout();
+            panel18.SuspendLayout();
+            panel17.SuspendLayout();
+            panel19.SuspendLayout();
+            panel16.SuspendLayout();
+            Content.SuspendLayout();
+            vehicleListPanel.SuspendLayout();
+            panel2.SuspendLayout();
+            panelContent.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -235,22 +326,13 @@
             sidebarTransition.Interval = 10;
             sidebarTransition.Tick += sidebarTransition_Tick;
             // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Controls.Add(flowLayoutPanel2);
-            panel2.Location = new Point(50, 367);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1520, 843);
-            panel2.TabIndex = 2;
-            // 
             // flowLayoutPanel2
             // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Top;
             flowLayoutPanel2.AutoScroll = true;
-            flowLayoutPanel2.Location = new Point(79, 3);
+            flowLayoutPanel2.Dock = DockStyle.Fill;
+            flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(1330, 809);
+            flowLayoutPanel2.Size = new Size(1341, 523);
             flowLayoutPanel2.TabIndex = 1;
             flowLayoutPanel2.Click += flowLayoutPanel2_Click;
             // 
@@ -264,9 +346,9 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(129, 300);
+            panel3.Location = new Point(2, 66);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1330, 61);
+            panel3.Size = new Size(1305, 40);
             panel3.TabIndex = 3;
             // 
             // label1
@@ -274,7 +356,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(884, 19);
+            label1.Location = new Point(884, 5);
             label1.Name = "label1";
             label1.Size = new Size(57, 28);
             label1.TabIndex = 11;
@@ -285,7 +367,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(1043, 19);
+            label12.Location = new Point(1043, 5);
             label12.Name = "label12";
             label12.Size = new Size(67, 28);
             label12.TabIndex = 10;
@@ -296,7 +378,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(652, 19);
+            label8.Location = new Point(652, 5);
             label8.Name = "label8";
             label8.Size = new Size(54, 28);
             label8.TabIndex = 6;
@@ -307,7 +389,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(405, 19);
+            label4.Location = new Point(405, 5);
             label4.Name = "label4";
             label4.Size = new Size(70, 28);
             label4.TabIndex = 2;
@@ -318,7 +400,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(222, 19);
+            label3.Location = new Point(222, 5);
             label3.Name = "label3";
             label3.Size = new Size(55, 28);
             label3.TabIndex = 1;
@@ -329,7 +411,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(12, 19);
+            label2.Location = new Point(12, 5);
             label2.Name = "label2";
             label2.Size = new Size(95, 28);
             label2.TabIndex = 0;
@@ -397,7 +479,7 @@
             panel12.Anchor = AnchorStyles.Top;
             panel12.Controls.Add(button1);
             panel12.Controls.Add(searchVH);
-            panel12.Location = new Point(129, 258);
+            panel12.Location = new Point(2, 3);
             panel12.Name = "panel12";
             panel12.Size = new Size(387, 36);
             panel12.TabIndex = 11;
@@ -415,7 +497,7 @@
             // searchVH
             // 
             searchVH.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            searchVH.Location = new Point(0, 3);
+            searchVH.Location = new Point(0, 4);
             searchVH.Name = "searchVH";
             searchVH.PlaceholderText = "Search Plate No.";
             searchVH.Size = new Size(296, 32);
@@ -426,7 +508,7 @@
             panel7.Anchor = AnchorStyles.Top;
             panel7.BackgroundImageLayout = ImageLayout.None;
             panel7.Controls.Add(button2);
-            panel7.Location = new Point(1201, 241);
+            panel7.Location = new Point(1052, 6);
             panel7.Name = "panel7";
             panel7.Size = new Size(122, 53);
             panel7.TabIndex = 2;
@@ -442,9 +524,9 @@
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(0, -12);
+            button2.Location = new Point(0, -3);
             button2.Name = "button2";
-            button2.Size = new Size(179, 65);
+            button2.Size = new Size(179, 61);
             button2.TabIndex = 3;
             button2.Text = "Parkin";
             button2.UseVisualStyleBackColor = false;
@@ -455,7 +537,7 @@
             panel8.Anchor = AnchorStyles.Top;
             panel8.BackgroundImageLayout = ImageLayout.None;
             panel8.Controls.Add(parkout);
-            panel8.Location = new Point(1329, 241);
+            panel8.Location = new Point(1180, 6);
             panel8.Name = "panel8";
             panel8.Size = new Size(127, 53);
             panel8.TabIndex = 5;
@@ -471,9 +553,9 @@
             parkout.ForeColor = Color.White;
             parkout.Image = (Image)resources.GetObject("parkout.Image");
             parkout.ImageAlign = ContentAlignment.MiddleLeft;
-            parkout.Location = new Point(0, -17);
+            parkout.Location = new Point(0, -11);
             parkout.Name = "parkout";
-            parkout.Size = new Size(173, 71);
+            parkout.Size = new Size(173, 66);
             parkout.TabIndex = 3;
             parkout.Text = "Parkout";
             parkout.UseVisualStyleBackColor = false;
@@ -596,7 +678,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.Controls.Add(btnCleared);
-            panel4.Location = new Point(1058, 241);
+            panel4.Location = new Point(909, 6);
             panel4.Name = "panel4";
             panel4.Size = new Size(137, 52);
             panel4.TabIndex = 14;
@@ -620,40 +702,1108 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(history1);
-            panel5.Controls.Add(admin1);
-            panel5.Controls.Add(panel4);
+            panel5.Controls.Add(parkingView);
+            panel5.Controls.Add(Content);
+            panel5.Controls.Add(btnViewParkLot);
+            panel5.Controls.Add(btnViewParkList);
             panel5.Controls.Add(panel10);
             panel5.Controls.Add(panel9);
-            panel5.Controls.Add(panel8);
-            panel5.Controls.Add(panel7);
-            panel5.Controls.Add(panel12);
             panel5.Controls.Add(panel11);
-            panel5.Controls.Add(panel3);
-            panel5.Controls.Add(panel2);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(261, 57);
+            panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
             panel5.Size = new Size(1590, 1252);
             panel5.TabIndex = 9;
             // 
-            // history1
+            // parkingView
             // 
-            history1.BackColor = Color.FromArgb(22, 19, 64);
-            history1.Dock = DockStyle.Fill;
-            history1.Location = new Point(0, 0);
-            history1.Name = "history1";
-            history1.Size = new Size(1590, 1252);
-            history1.TabIndex = 16;
+            parkingView.BackColor = Color.FromArgb(22, 19, 64);
+            parkingView.Controls.Add(label10);
+            parkingView.Controls.Add(label7);
+            parkingView.Controls.Add(label6);
+            parkingView.Controls.Add(panel18);
+            parkingView.Controls.Add(panel17);
+            parkingView.Controls.Add(panel19);
+            parkingView.Controls.Add(panel16);
+            parkingView.Location = new Point(73, 345);
+            parkingView.Name = "parkingView";
+            parkingView.Size = new Size(1308, 757);
+            parkingView.TabIndex = 19;
             // 
-            // admin1
+            // label10
             // 
-            admin1.BackColor = Color.FromArgb(22, 19, 64);
-            admin1.Dock = DockStyle.Fill;
-            admin1.Location = new Point(0, 0);
-            admin1.Name = "admin1";
-            admin1.Size = new Size(1590, 1252);
-            admin1.TabIndex = 15;
+            label10.AutoSize = true;
+            label10.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(1186, 88);
+            label10.Name = "label10";
+            label10.Size = new Size(114, 23);
+            label10.TabIndex = 13;
+            label10.Text = "2nd Flor";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(584, 88);
+            label7.Name = "label7";
+            label7.Size = new Size(127, 23);
+            label7.TabIndex = 12;
+            label7.Text = "1st Floor";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(6, 88);
+            label6.Name = "label6";
+            label6.Size = new Size(114, 23);
+            label6.TabIndex = 11;
+            label6.Text = "Basement";
+            // 
+            // panel18
+            // 
+            panel18.BackgroundImage = Properties.Resources.parkingLot;
+            panel18.BackgroundImageLayout = ImageLayout.Stretch;
+            panel18.Controls.Add(label37);
+            panel18.Controls.Add(label36);
+            panel18.Controls.Add(label35);
+            panel18.Controls.Add(label34);
+            panel18.Controls.Add(label33);
+            panel18.Controls.Add(label32);
+            panel18.Controls.Add(label31);
+            panel18.Controls.Add(label30);
+            panel18.Controls.Add(label22);
+            panel18.Controls.Add(c01);
+            panel18.Controls.Add(button48);
+            panel18.Controls.Add(button29);
+            panel18.Controls.Add(button47);
+            panel18.Controls.Add(button30);
+            panel18.Controls.Add(button46);
+            panel18.Controls.Add(button31);
+            panel18.Controls.Add(button45);
+            panel18.Controls.Add(button32);
+            panel18.Controls.Add(button44);
+            panel18.Controls.Add(button33);
+            panel18.Controls.Add(button43);
+            panel18.Controls.Add(button34);
+            panel18.Controls.Add(button42);
+            panel18.Controls.Add(button35);
+            panel18.Controls.Add(button41);
+            panel18.Controls.Add(button36);
+            panel18.Controls.Add(button40);
+            panel18.Controls.Add(button37);
+            panel18.Controls.Add(button39);
+            panel18.Controls.Add(button38);
+            panel18.Location = new Point(874, 114);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(426, 559);
+            panel18.TabIndex = 10;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.BackColor = Color.Transparent;
+            label37.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label37.ForeColor = SystemColors.InactiveCaption;
+            label37.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label37.Location = new Point(355, 475);
+            label37.Name = "label37";
+            label37.Size = new Size(48, 23);
+            label37.TabIndex = 82;
+            label37.Text = "B-10";
+            label37.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.BackColor = Color.Transparent;
+            label36.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label36.ForeColor = SystemColors.InactiveCaption;
+            label36.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label36.Location = new Point(355, 371);
+            label36.Name = "label36";
+            label36.Size = new Size(48, 23);
+            label36.TabIndex = 81;
+            label36.Text = "B-09";
+            label36.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.BackColor = Color.Transparent;
+            label35.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label35.ForeColor = SystemColors.InactiveCaption;
+            label35.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label35.Location = new Point(357, 268);
+            label35.Name = "label35";
+            label35.Size = new Size(48, 23);
+            label35.TabIndex = 80;
+            label35.Text = "B-08";
+            label35.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.BackColor = Color.Transparent;
+            label34.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label34.ForeColor = SystemColors.InactiveCaption;
+            label34.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label34.Location = new Point(355, 164);
+            label34.Name = "label34";
+            label34.Size = new Size(48, 23);
+            label34.TabIndex = 79;
+            label34.Text = "B-07";
+            label34.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.BackColor = Color.Transparent;
+            label33.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label33.ForeColor = Color.Orange;
+            label33.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label33.Location = new Point(22, 475);
+            label33.Name = "label33";
+            label33.Size = new Size(48, 23);
+            label33.TabIndex = 78;
+            label33.Text = "B-05";
+            label33.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.BackColor = Color.Transparent;
+            label32.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label32.ForeColor = Color.Orange;
+            label32.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label32.Location = new Point(22, 370);
+            label32.Name = "label32";
+            label32.Size = new Size(48, 23);
+            label32.TabIndex = 77;
+            label32.Text = "B-04";
+            label32.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.BackColor = Color.Transparent;
+            label31.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label31.ForeColor = Color.Orange;
+            label31.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label31.Location = new Point(22, 268);
+            label31.Name = "label31";
+            label31.Size = new Size(48, 23);
+            label31.TabIndex = 76;
+            label31.Text = "B-03";
+            label31.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.BackColor = Color.Transparent;
+            label30.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label30.ForeColor = Color.Orange;
+            label30.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label30.Location = new Point(21, 164);
+            label30.Name = "label30";
+            label30.Size = new Size(48, 23);
+            label30.TabIndex = 75;
+            label30.Text = "B-02";
+            label30.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.BackColor = Color.Transparent;
+            label22.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = SystemColors.InactiveCaption;
+            label22.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label22.Location = new Point(355, 62);
+            label22.Name = "label22";
+            label22.Size = new Size(48, 23);
+            label22.TabIndex = 74;
+            label22.Text = "B-06";
+            label22.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // c01
+            // 
+            c01.AutoSize = true;
+            c01.BackColor = Color.Transparent;
+            c01.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            c01.ForeColor = Color.Orange;
+            c01.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            c01.Location = new Point(22, 62);
+            c01.Name = "c01";
+            c01.Size = new Size(48, 23);
+            c01.TabIndex = 73;
+            c01.Text = "B-01";
+            c01.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // button48
+            // 
+            button48.BackColor = Color.Transparent;
+            button48.FlatStyle = FlatStyle.Flat;
+            button48.Location = new Point(-953, 335);
+            button48.Name = "button48";
+            button48.Size = new Size(174, 83);
+            button48.TabIndex = 9;
+            button48.UseVisualStyleBackColor = false;
+            // 
+            // button29
+            // 
+            button29.BackColor = Color.Transparent;
+            button29.FlatAppearance.BorderSize = 0;
+            button29.FlatStyle = FlatStyle.Flat;
+            button29.Location = new Point(230, 446);
+            button29.Name = "button29";
+            button29.Size = new Size(174, 83);
+            button29.TabIndex = 9;
+            button29.UseVisualStyleBackColor = false;
+            // 
+            // button47
+            // 
+            button47.BackColor = Color.Transparent;
+            button47.FlatStyle = FlatStyle.Flat;
+            button47.Location = new Point(-952, 231);
+            button47.Name = "button47";
+            button47.Size = new Size(174, 83);
+            button47.TabIndex = 8;
+            button47.UseVisualStyleBackColor = false;
+            // 
+            // button30
+            // 
+            button30.BackColor = Color.Transparent;
+            button30.FlatAppearance.BorderSize = 0;
+            button30.FlatStyle = FlatStyle.Flat;
+            button30.Location = new Point(231, 342);
+            button30.Name = "button30";
+            button30.Size = new Size(174, 83);
+            button30.TabIndex = 8;
+            button30.UseVisualStyleBackColor = false;
+            // 
+            // button46
+            // 
+            button46.BackColor = Color.Transparent;
+            button46.FlatStyle = FlatStyle.Flat;
+            button46.Location = new Point(-953, 128);
+            button46.Name = "button46";
+            button46.Size = new Size(174, 83);
+            button46.TabIndex = 7;
+            button46.UseVisualStyleBackColor = false;
+            // 
+            // button31
+            // 
+            button31.BackColor = Color.Transparent;
+            button31.FlatAppearance.BorderSize = 0;
+            button31.FlatStyle = FlatStyle.Flat;
+            button31.Location = new Point(230, 239);
+            button31.Name = "button31";
+            button31.Size = new Size(174, 83);
+            button31.TabIndex = 7;
+            button31.UseVisualStyleBackColor = false;
+            // 
+            // button45
+            // 
+            button45.BackColor = Color.Transparent;
+            button45.FlatStyle = FlatStyle.Flat;
+            button45.Location = new Point(-954, 24);
+            button45.Name = "button45";
+            button45.Size = new Size(174, 83);
+            button45.TabIndex = 6;
+            button45.UseVisualStyleBackColor = false;
+            // 
+            // button32
+            // 
+            button32.BackColor = Color.Transparent;
+            button32.FlatAppearance.BorderSize = 0;
+            button32.FlatStyle = FlatStyle.Flat;
+            button32.Location = new Point(229, 135);
+            button32.Name = "button32";
+            button32.Size = new Size(174, 83);
+            button32.TabIndex = 6;
+            button32.UseVisualStyleBackColor = false;
+            // 
+            // button44
+            // 
+            button44.BackColor = Color.Transparent;
+            button44.FlatStyle = FlatStyle.Flat;
+            button44.Location = new Point(-953, -78);
+            button44.Name = "button44";
+            button44.Size = new Size(174, 83);
+            button44.TabIndex = 5;
+            button44.UseVisualStyleBackColor = false;
+            // 
+            // button33
+            // 
+            button33.BackColor = Color.Transparent;
+            button33.FlatAppearance.BorderSize = 0;
+            button33.FlatStyle = FlatStyle.Flat;
+            button33.Location = new Point(230, 33);
+            button33.Name = "button33";
+            button33.Size = new Size(174, 83);
+            button33.TabIndex = 5;
+            button33.UseVisualStyleBackColor = false;
+            // 
+            // button43
+            // 
+            button43.BackColor = Color.Transparent;
+            button43.FlatStyle = FlatStyle.Flat;
+            button43.Location = new Point(-1162, 334);
+            button43.Name = "button43";
+            button43.Size = new Size(174, 83);
+            button43.TabIndex = 4;
+            button43.UseVisualStyleBackColor = false;
+            // 
+            // button34
+            // 
+            button34.BackColor = Color.Transparent;
+            button34.FlatAppearance.BorderSize = 0;
+            button34.FlatStyle = FlatStyle.Flat;
+            button34.Location = new Point(21, 445);
+            button34.Name = "button34";
+            button34.Size = new Size(174, 83);
+            button34.TabIndex = 4;
+            button34.UseVisualStyleBackColor = false;
+            // 
+            // button42
+            // 
+            button42.BackColor = Color.Transparent;
+            button42.FlatStyle = FlatStyle.Flat;
+            button42.Location = new Point(-1162, 230);
+            button42.Name = "button42";
+            button42.Size = new Size(174, 83);
+            button42.TabIndex = 3;
+            button42.UseVisualStyleBackColor = false;
+            // 
+            // button35
+            // 
+            button35.BackColor = Color.Transparent;
+            button35.FlatAppearance.BorderSize = 0;
+            button35.FlatStyle = FlatStyle.Flat;
+            button35.Location = new Point(21, 341);
+            button35.Name = "button35";
+            button35.Size = new Size(174, 83);
+            button35.TabIndex = 3;
+            button35.UseVisualStyleBackColor = false;
+            // 
+            // button41
+            // 
+            button41.BackColor = Color.Transparent;
+            button41.FlatStyle = FlatStyle.Flat;
+            button41.Location = new Point(-1161, 128);
+            button41.Name = "button41";
+            button41.Size = new Size(174, 83);
+            button41.TabIndex = 2;
+            button41.UseVisualStyleBackColor = false;
+            // 
+            // button36
+            // 
+            button36.BackColor = Color.Transparent;
+            button36.FlatAppearance.BorderSize = 0;
+            button36.FlatStyle = FlatStyle.Flat;
+            button36.Location = new Point(22, 239);
+            button36.Name = "button36";
+            button36.Size = new Size(174, 83);
+            button36.TabIndex = 2;
+            button36.UseVisualStyleBackColor = false;
+            // 
+            // button40
+            // 
+            button40.BackColor = Color.Transparent;
+            button40.FlatStyle = FlatStyle.Flat;
+            button40.Location = new Point(-1162, 24);
+            button40.Name = "button40";
+            button40.Size = new Size(174, 83);
+            button40.TabIndex = 1;
+            button40.UseVisualStyleBackColor = false;
+            // 
+            // button37
+            // 
+            button37.BackColor = Color.Transparent;
+            button37.FlatAppearance.BorderSize = 0;
+            button37.FlatStyle = FlatStyle.Flat;
+            button37.Location = new Point(21, 135);
+            button37.Name = "button37";
+            button37.Size = new Size(174, 83);
+            button37.TabIndex = 1;
+            button37.UseVisualStyleBackColor = false;
+            // 
+            // button39
+            // 
+            button39.BackColor = Color.Transparent;
+            button39.FlatStyle = FlatStyle.Flat;
+            button39.Location = new Point(-1161, -78);
+            button39.Name = "button39";
+            button39.Size = new Size(174, 83);
+            button39.TabIndex = 0;
+            button39.UseVisualStyleBackColor = false;
+            // 
+            // button38
+            // 
+            button38.BackColor = Color.Transparent;
+            button38.FlatAppearance.BorderSize = 0;
+            button38.FlatStyle = FlatStyle.Flat;
+            button38.Location = new Point(22, 33);
+            button38.Name = "button38";
+            button38.Size = new Size(174, 83);
+            button38.TabIndex = 0;
+            button38.UseVisualStyleBackColor = false;
+            // 
+            // panel17
+            // 
+            panel17.BackgroundImage = Properties.Resources.parkingLot;
+            panel17.BackgroundImageLayout = ImageLayout.Stretch;
+            panel17.Controls.Add(label29);
+            panel17.Controls.Add(label28);
+            panel17.Controls.Add(label27);
+            panel17.Controls.Add(label26);
+            panel17.Controls.Add(label25);
+            panel17.Controls.Add(label24);
+            panel17.Controls.Add(label23);
+            panel17.Controls.Add(labela6);
+            panel17.Controls.Add(label21);
+            panel17.Controls.Add(labela1);
+            panel17.Controls.Add(button19);
+            panel17.Controls.Add(button20);
+            panel17.Controls.Add(button21);
+            panel17.Controls.Add(button22);
+            panel17.Controls.Add(button23);
+            panel17.Controls.Add(button24);
+            panel17.Controls.Add(button25);
+            panel17.Controls.Add(button26);
+            panel17.Controls.Add(button27);
+            panel17.Controls.Add(button28);
+            panel17.Location = new Point(439, 114);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(426, 559);
+            panel17.TabIndex = 10;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.BackColor = Color.Transparent;
+            label29.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label29.ForeColor = SystemColors.AppWorkspace;
+            label29.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label29.Location = new Point(356, 475);
+            label29.Name = "label29";
+            label29.Size = new Size(49, 23);
+            label29.TabIndex = 79;
+            label29.Text = "A-10";
+            label29.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.BackColor = Color.Transparent;
+            label28.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label28.ForeColor = SystemColors.AppWorkspace;
+            label28.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label28.Location = new Point(356, 370);
+            label28.Name = "label28";
+            label28.Size = new Size(49, 23);
+            label28.TabIndex = 78;
+            label28.Text = "A-09";
+            label28.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.BackColor = Color.Transparent;
+            label27.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label27.ForeColor = SystemColors.AppWorkspace;
+            label27.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label27.Location = new Point(356, 268);
+            label27.Name = "label27";
+            label27.Size = new Size(49, 23);
+            label27.TabIndex = 77;
+            label27.Text = "A-08";
+            label27.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.BackColor = Color.Transparent;
+            label26.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label26.ForeColor = SystemColors.AppWorkspace;
+            label26.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label26.Location = new Point(356, 164);
+            label26.Name = "label26";
+            label26.Size = new Size(49, 23);
+            label26.TabIndex = 76;
+            label26.Text = "A-07";
+            label26.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.BackColor = Color.Transparent;
+            label25.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.Khaki;
+            label25.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label25.Location = new Point(22, 475);
+            label25.Name = "label25";
+            label25.Size = new Size(49, 23);
+            label25.TabIndex = 75;
+            label25.Text = "A-05";
+            label25.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.BackColor = Color.Transparent;
+            label24.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.ForeColor = Color.Khaki;
+            label24.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label24.Location = new Point(22, 370);
+            label24.Name = "label24";
+            label24.Size = new Size(49, 23);
+            label24.TabIndex = 74;
+            label24.Text = "A-04";
+            label24.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.BackColor = Color.Transparent;
+            label23.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label23.ForeColor = Color.Khaki;
+            label23.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label23.Location = new Point(22, 268);
+            label23.Name = "label23";
+            label23.Size = new Size(49, 23);
+            label23.TabIndex = 73;
+            label23.Text = "A-03";
+            label23.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labela6
+            // 
+            labela6.AutoSize = true;
+            labela6.BackColor = Color.Transparent;
+            labela6.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela6.ForeColor = SystemColors.AppWorkspace;
+            labela6.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela6.Location = new Point(356, 62);
+            labela6.Name = "labela6";
+            labela6.Size = new Size(49, 23);
+            labela6.TabIndex = 72;
+            labela6.Text = "A-06";
+            labela6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.BackColor = Color.Transparent;
+            label21.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label21.ForeColor = Color.Khaki;
+            label21.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label21.Location = new Point(21, 164);
+            label21.Name = "label21";
+            label21.Size = new Size(49, 23);
+            label21.TabIndex = 71;
+            label21.Text = "A-02";
+            label21.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labela1
+            // 
+            labela1.AutoSize = true;
+            labela1.BackColor = Color.Transparent;
+            labela1.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela1.ForeColor = Color.Khaki;
+            labela1.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela1.Location = new Point(22, 74);
+            labela1.Name = "labela1";
+            labela1.Size = new Size(49, 23);
+            labela1.TabIndex = 70;
+            labela1.Text = "A-01";
+            labela1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // button19
+            // 
+            button19.BackColor = Color.Transparent;
+            button19.FlatAppearance.BorderSize = 0;
+            button19.FlatStyle = FlatStyle.Flat;
+            button19.Location = new Point(230, 446);
+            button19.Name = "button19";
+            button19.Size = new Size(174, 83);
+            button19.TabIndex = 9;
+            button19.UseVisualStyleBackColor = false;
+            // 
+            // button20
+            // 
+            button20.BackColor = Color.Transparent;
+            button20.FlatAppearance.BorderSize = 0;
+            button20.FlatStyle = FlatStyle.Flat;
+            button20.Location = new Point(231, 342);
+            button20.Name = "button20";
+            button20.Size = new Size(174, 83);
+            button20.TabIndex = 8;
+            button20.UseVisualStyleBackColor = false;
+            // 
+            // button21
+            // 
+            button21.BackColor = Color.Transparent;
+            button21.FlatAppearance.BorderSize = 0;
+            button21.FlatStyle = FlatStyle.Flat;
+            button21.Location = new Point(230, 239);
+            button21.Name = "button21";
+            button21.Size = new Size(174, 83);
+            button21.TabIndex = 7;
+            button21.UseVisualStyleBackColor = false;
+            // 
+            // button22
+            // 
+            button22.BackColor = Color.Transparent;
+            button22.FlatAppearance.BorderSize = 0;
+            button22.FlatStyle = FlatStyle.Flat;
+            button22.Location = new Point(229, 135);
+            button22.Name = "button22";
+            button22.Size = new Size(174, 83);
+            button22.TabIndex = 6;
+            button22.UseVisualStyleBackColor = false;
+            // 
+            // button23
+            // 
+            button23.BackColor = Color.Transparent;
+            button23.FlatAppearance.BorderSize = 0;
+            button23.FlatStyle = FlatStyle.Flat;
+            button23.Location = new Point(230, 33);
+            button23.Name = "button23";
+            button23.Size = new Size(174, 83);
+            button23.TabIndex = 5;
+            button23.UseVisualStyleBackColor = false;
+            // 
+            // button24
+            // 
+            button24.BackColor = Color.Transparent;
+            button24.FlatAppearance.BorderSize = 0;
+            button24.FlatStyle = FlatStyle.Flat;
+            button24.Location = new Point(21, 445);
+            button24.Name = "button24";
+            button24.Size = new Size(174, 83);
+            button24.TabIndex = 4;
+            button24.UseVisualStyleBackColor = false;
+            // 
+            // button25
+            // 
+            button25.BackColor = Color.Transparent;
+            button25.FlatAppearance.BorderSize = 0;
+            button25.FlatStyle = FlatStyle.Flat;
+            button25.Location = new Point(21, 341);
+            button25.Name = "button25";
+            button25.Size = new Size(174, 83);
+            button25.TabIndex = 3;
+            button25.UseVisualStyleBackColor = false;
+            // 
+            // button26
+            // 
+            button26.BackColor = Color.Transparent;
+            button26.FlatAppearance.BorderSize = 0;
+            button26.FlatStyle = FlatStyle.Flat;
+            button26.Location = new Point(22, 239);
+            button26.Name = "button26";
+            button26.Size = new Size(174, 83);
+            button26.TabIndex = 2;
+            button26.UseVisualStyleBackColor = false;
+            // 
+            // button27
+            // 
+            button27.BackColor = Color.Transparent;
+            button27.FlatAppearance.BorderSize = 0;
+            button27.FlatStyle = FlatStyle.Flat;
+            button27.Location = new Point(21, 135);
+            button27.Name = "button27";
+            button27.Size = new Size(174, 83);
+            button27.TabIndex = 1;
+            button27.UseVisualStyleBackColor = false;
+            // 
+            // button28
+            // 
+            button28.BackColor = Color.Transparent;
+            button28.FlatAppearance.BorderSize = 0;
+            button28.FlatStyle = FlatStyle.Flat;
+            button28.Location = new Point(22, 33);
+            button28.Name = "button28";
+            button28.Size = new Size(174, 83);
+            button28.TabIndex = 0;
+            button28.UseVisualStyleBackColor = false;
+            // 
+            // panel19
+            // 
+            panel19.Controls.Add(button4);
+            panel19.Controls.Add(textBox1);
+            panel19.Location = new Point(3, 3);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(387, 39);
+            panel19.TabIndex = 2;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(305, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(70, 32);
+            button4.TabIndex = 2;
+            button4.Text = "Search";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search Plate No.";
+            textBox1.Size = new Size(296, 32);
+            textBox1.TabIndex = 2;
+            // 
+            // panel16
+            // 
+            panel16.BackgroundImage = Properties.Resources.parkingLot;
+            panel16.BackgroundImageLayout = ImageLayout.Stretch;
+            panel16.Controls.Add(labelB10);
+            panel16.Controls.Add(labelB9);
+            panel16.Controls.Add(labelB8);
+            panel16.Controls.Add(labelB7);
+            panel16.Controls.Add(labelB6);
+            panel16.Controls.Add(labelB5);
+            panel16.Controls.Add(labelB4);
+            panel16.Controls.Add(labelB3);
+            panel16.Controls.Add(labelB2);
+            panel16.Controls.Add(labelB1);
+            panel16.Controls.Add(b10);
+            panel16.Controls.Add(b09);
+            panel16.Controls.Add(b08);
+            panel16.Controls.Add(b07);
+            panel16.Controls.Add(b06);
+            panel16.Controls.Add(b05);
+            panel16.Controls.Add(b04);
+            panel16.Controls.Add(b03);
+            panel16.Controls.Add(b02);
+            panel16.Controls.Add(b01);
+            panel16.Location = new Point(6, 114);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(426, 559);
+            panel16.TabIndex = 0;
+            // 
+            // labelB10
+            // 
+            labelB10.AutoSize = true;
+            labelB10.BackColor = Color.Transparent;
+            labelB10.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB10.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB10.Location = new Point(339, 475);
+            labelB10.Name = "labelB10";
+            labelB10.Size = new Size(64, 23);
+            labelB10.TabIndex = 69;
+            labelB10.Text = "BM-10";
+            labelB10.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB9
+            // 
+            labelB9.AutoSize = true;
+            labelB9.BackColor = Color.Transparent;
+            labelB9.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB9.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB9.Location = new Point(339, 370);
+            labelB9.Name = "labelB9";
+            labelB9.Size = new Size(64, 23);
+            labelB9.TabIndex = 68;
+            labelB9.Text = "BM-09";
+            labelB9.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB8
+            // 
+            labelB8.AutoSize = true;
+            labelB8.BackColor = Color.Transparent;
+            labelB8.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB8.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB8.Location = new Point(341, 268);
+            labelB8.Name = "labelB8";
+            labelB8.Size = new Size(64, 23);
+            labelB8.TabIndex = 67;
+            labelB8.Text = "BM-08";
+            labelB8.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB7
+            // 
+            labelB7.AutoSize = true;
+            labelB7.BackColor = Color.Transparent;
+            labelB7.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB7.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB7.Location = new Point(341, 164);
+            labelB7.Name = "labelB7";
+            labelB7.Size = new Size(64, 23);
+            labelB7.TabIndex = 66;
+            labelB7.Text = "BM-07";
+            labelB7.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB6
+            // 
+            labelB6.AutoSize = true;
+            labelB6.BackColor = Color.Transparent;
+            labelB6.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB6.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB6.Location = new Point(341, 62);
+            labelB6.Name = "labelB6";
+            labelB6.Size = new Size(64, 23);
+            labelB6.TabIndex = 65;
+            labelB6.Text = "BM-06";
+            labelB6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB5
+            // 
+            labelB5.AutoSize = true;
+            labelB5.BackColor = Color.Transparent;
+            labelB5.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB5.ForeColor = Color.Yellow;
+            labelB5.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB5.Location = new Point(22, 475);
+            labelB5.Name = "labelB5";
+            labelB5.Size = new Size(64, 23);
+            labelB5.TabIndex = 64;
+            labelB5.Text = "BM-05";
+            labelB5.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB4
+            // 
+            labelB4.AutoSize = true;
+            labelB4.BackColor = Color.Transparent;
+            labelB4.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB4.ForeColor = Color.Yellow;
+            labelB4.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB4.Location = new Point(22, 371);
+            labelB4.Name = "labelB4";
+            labelB4.Size = new Size(64, 23);
+            labelB4.TabIndex = 63;
+            labelB4.Text = "BM-04";
+            labelB4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB3
+            // 
+            labelB3.AutoSize = true;
+            labelB3.BackColor = Color.Transparent;
+            labelB3.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB3.ForeColor = Color.Yellow;
+            labelB3.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB3.Location = new Point(22, 268);
+            labelB3.Name = "labelB3";
+            labelB3.Size = new Size(64, 23);
+            labelB3.TabIndex = 62;
+            labelB3.Text = "BM-03";
+            labelB3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB2
+            // 
+            labelB2.AutoSize = true;
+            labelB2.BackColor = Color.Transparent;
+            labelB2.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB2.ForeColor = Color.Yellow;
+            labelB2.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB2.Location = new Point(22, 164);
+            labelB2.Name = "labelB2";
+            labelB2.Size = new Size(64, 23);
+            labelB2.TabIndex = 61;
+            labelB2.Text = "BM-02";
+            labelB2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelB1
+            // 
+            labelB1.AutoSize = true;
+            labelB1.BackColor = Color.Transparent;
+            labelB1.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelB1.ForeColor = Color.Yellow;
+            labelB1.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelB1.Location = new Point(22, 62);
+            labelB1.Name = "labelB1";
+            labelB1.Size = new Size(64, 23);
+            labelB1.TabIndex = 60;
+            labelB1.Text = "BM-01";
+            labelB1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // b10
+            // 
+            b10.BackColor = Color.Transparent;
+            b10.FlatAppearance.BorderSize = 0;
+            b10.FlatStyle = FlatStyle.Flat;
+            b10.Location = new Point(230, 446);
+            b10.Name = "b10";
+            b10.Size = new Size(174, 83);
+            b10.TabIndex = 9;
+            b10.UseVisualStyleBackColor = false;
+            b10.Click += b10_Click;
+            // 
+            // b09
+            // 
+            b09.BackColor = Color.Transparent;
+            b09.FlatAppearance.BorderSize = 0;
+            b09.FlatStyle = FlatStyle.Flat;
+            b09.Location = new Point(231, 342);
+            b09.Name = "b09";
+            b09.Size = new Size(174, 83);
+            b09.TabIndex = 8;
+            b09.UseVisualStyleBackColor = false;
+            b09.Click += b09_Click;
+            // 
+            // b08
+            // 
+            b08.BackColor = Color.Transparent;
+            b08.FlatAppearance.BorderSize = 0;
+            b08.FlatStyle = FlatStyle.Flat;
+            b08.Location = new Point(230, 239);
+            b08.Name = "b08";
+            b08.Size = new Size(174, 83);
+            b08.TabIndex = 7;
+            b08.UseVisualStyleBackColor = false;
+            b08.Click += b08_Click;
+            // 
+            // b07
+            // 
+            b07.BackColor = Color.Transparent;
+            b07.FlatAppearance.BorderSize = 0;
+            b07.FlatStyle = FlatStyle.Flat;
+            b07.Location = new Point(229, 135);
+            b07.Name = "b07";
+            b07.Size = new Size(174, 83);
+            b07.TabIndex = 6;
+            b07.UseVisualStyleBackColor = false;
+            b07.Click += b07_Click;
+            // 
+            // b06
+            // 
+            b06.BackColor = Color.Transparent;
+            b06.FlatAppearance.BorderSize = 0;
+            b06.FlatStyle = FlatStyle.Flat;
+            b06.Location = new Point(230, 33);
+            b06.Name = "b06";
+            b06.Size = new Size(174, 83);
+            b06.TabIndex = 5;
+            b06.UseVisualStyleBackColor = false;
+            b06.Click += b06_Click;
+            // 
+            // b05
+            // 
+            b05.BackColor = Color.Transparent;
+            b05.FlatAppearance.BorderSize = 0;
+            b05.FlatStyle = FlatStyle.Flat;
+            b05.Location = new Point(21, 445);
+            b05.Name = "b05";
+            b05.Size = new Size(174, 83);
+            b05.TabIndex = 4;
+            b05.UseVisualStyleBackColor = false;
+            b05.Click += b05_Click;
+            // 
+            // b04
+            // 
+            b04.BackColor = Color.Transparent;
+            b04.FlatAppearance.BorderSize = 0;
+            b04.FlatStyle = FlatStyle.Flat;
+            b04.Location = new Point(21, 341);
+            b04.Name = "b04";
+            b04.Size = new Size(174, 83);
+            b04.TabIndex = 3;
+            b04.UseVisualStyleBackColor = false;
+            b04.Click += b04_Click;
+            // 
+            // b03
+            // 
+            b03.BackColor = Color.Transparent;
+            b03.FlatAppearance.BorderSize = 0;
+            b03.FlatStyle = FlatStyle.Flat;
+            b03.Location = new Point(22, 239);
+            b03.Name = "b03";
+            b03.Size = new Size(174, 83);
+            b03.TabIndex = 2;
+            b03.UseVisualStyleBackColor = false;
+            b03.Click += b03_Click_1;
+            // 
+            // b02
+            // 
+            b02.BackColor = Color.Transparent;
+            b02.FlatAppearance.BorderSize = 0;
+            b02.FlatStyle = FlatStyle.Flat;
+            b02.Location = new Point(21, 135);
+            b02.Name = "b02";
+            b02.Size = new Size(174, 83);
+            b02.TabIndex = 1;
+            b02.UseVisualStyleBackColor = false;
+            b02.Click += b02_Click;
+            // 
+            // b01
+            // 
+            b01.BackColor = Color.Transparent;
+            b01.FlatAppearance.BorderSize = 0;
+            b01.FlatStyle = FlatStyle.Flat;
+            b01.Location = new Point(22, 33);
+            b01.Name = "b01";
+            b01.Size = new Size(174, 83);
+            b01.TabIndex = 0;
+            b01.UseVisualStyleBackColor = false;
+            b01.Click += b01_Click;
+            // 
+            // Content
+            // 
+            Content.Anchor = AnchorStyles.Top;
+            Content.Controls.Add(vehicleListPanel);
+            Content.Location = new Point(150, 204);
+            Content.Name = "Content";
+            Content.Size = new Size(1344, 792);
+            Content.TabIndex = 18;
+            // 
+            // vehicleListPanel
+            // 
+            vehicleListPanel.Controls.Add(panel12);
+            vehicleListPanel.Controls.Add(panel3);
+            vehicleListPanel.Controls.Add(panel2);
+            vehicleListPanel.Controls.Add(panel7);
+            vehicleListPanel.Controls.Add(panel4);
+            vehicleListPanel.Controls.Add(panel8);
+            vehicleListPanel.Dock = DockStyle.Fill;
+            vehicleListPanel.Location = new Point(0, 0);
+            vehicleListPanel.Name = "vehicleListPanel";
+            vehicleListPanel.Size = new Size(1344, 792);
+            vehicleListPanel.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(flowLayoutPanel2);
+            panel2.Location = new Point(0, 112);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1341, 523);
+            panel2.TabIndex = 2;
+            // 
+            // btnViewParkLot
+            // 
+            btnViewParkLot.Anchor = AnchorStyles.Top;
+            btnViewParkLot.Location = new Point(253, 169);
+            btnViewParkLot.Name = "btnViewParkLot";
+            btnViewParkLot.Size = new Size(94, 29);
+            btnViewParkLot.TabIndex = 17;
+            btnViewParkLot.Text = "V_ParkLot";
+            btnViewParkLot.UseVisualStyleBackColor = true;
+            btnViewParkLot.Click += btnViewParkLot_Click;
+            // 
+            // btnViewParkList
+            // 
+            btnViewParkList.Anchor = AnchorStyles.Top;
+            btnViewParkList.Location = new Point(153, 169);
+            btnViewParkList.Name = "btnViewParkList";
+            btnViewParkList.Size = new Size(94, 29);
+            btnViewParkList.TabIndex = 16;
+            btnViewParkList.Text = "V_ParkList";
+            btnViewParkList.UseVisualStyleBackColor = true;
+            btnViewParkList.Click += btnViewParkList_Click;
+            // 
+            // panelContent
+            // 
+            panelContent.Controls.Add(panel5);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(261, 57);
+            panelContent.Name = "panelContent";
+            panelContent.Size = new Size(1590, 1252);
+            panelContent.TabIndex = 10;
             // 
             // Parkin
             // 
@@ -661,7 +1811,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(22, 19, 64);
-            Controls.Add(panel5);
+            Controls.Add(panelContent);
             Controls.Add(sidebar);
             Controls.Add(panel1);
             Name = "Parkin";
@@ -672,7 +1822,6 @@
             sidebar.ResumeLayout(false);
             menuContainer.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel11.ResumeLayout(false);
@@ -693,6 +1842,20 @@
             panel14.PerformLayout();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            parkingView.ResumeLayout(false);
+            parkingView.PerformLayout();
+            panel18.ResumeLayout(false);
+            panel18.PerformLayout();
+            panel17.ResumeLayout(false);
+            panel17.PerformLayout();
+            panel19.ResumeLayout(false);
+            panel19.PerformLayout();
+            panel16.ResumeLayout(false);
+            panel16.PerformLayout();
+            Content.ResumeLayout(false);
+            vehicleListPanel.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panelContent.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -744,7 +1907,90 @@
         private Panel panel4;
         private Button btnCleared;
         private Panel panel5;
-        private admin admin1;
-        private History history1;
+        private Panel panelContent;
+        private Panel vehicleListPanel;
+        private Panel Content;
+        private Button btnViewParkLot;
+        private Button btnViewParkList;
+        private Panel parkingView;
+        private Panel panel16;
+        private Panel panel19;
+        private Panel panel18;
+        private Button button29;
+        private Button button30;
+        private Button button31;
+        private Button button32;
+        private Button button33;
+        private Button button34;
+        private Button button35;
+        private Button button36;
+        private Button button37;
+        private Button button38;
+        private Panel panel17;
+        private Button button19;
+        private Button button20;
+        private Button button21;
+        private Button button22;
+        private Button button23;
+        private Button button24;
+        private Button button25;
+        private Button button26;
+        private Button button27;
+        private Button button28;
+        private Button button4;
+        private TextBox textBox1;
+        private Button b10;
+        private Button b09;
+        private Button b08;
+        private Button b07;
+        private Button b06;
+        private Button b05;
+        private Button b04;
+        private Button b03;
+        private Button b02;
+        private Button b01;
+        private Button button48;
+        private Button button47;
+        private Button button46;
+        private Button button45;
+        private Button button44;
+        private Button button43;
+        private Button button42;
+        private Button button41;
+        private Button button40;
+        private Button button39;
+        private Label label10;
+        private Label label7;
+        private Label label6;
+        private Label labelB5;
+        private Label labelB4;
+        private Label labelB3;
+        private Label labelB2;
+        private Label labelB1;
+        private Label labelB10;
+        private Label labelB9;
+        private Label labelB8;
+        private Label labelB7;
+        private Label labelB6;
+        private Label label21;
+        private Label labela1;
+        private Label labela6;
+        private Label c01;
+        private Label label22;
+        private Label label28;
+        private Label label27;
+        private Label label26;
+        private Label label25;
+        private Label label24;
+        private Label label23;
+        private Label label37;
+        private Label label36;
+        private Label label35;
+        private Label label34;
+        private Label label33;
+        private Label label32;
+        private Label label31;
+        private Label label30;
+        private Label label29;
     }
 }

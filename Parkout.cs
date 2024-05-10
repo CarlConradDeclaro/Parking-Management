@@ -39,7 +39,7 @@ namespace Parking
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
-                if (record.Status != "Cleared")
+                if (record.Status == "PARKED")
                 {
                     ParkOutList POL = new ParkOutList(flowPanelVH, this, setAmt, setStatus);
                     POL.UpdateLabels(record);

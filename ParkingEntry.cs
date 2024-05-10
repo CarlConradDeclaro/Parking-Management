@@ -34,6 +34,12 @@ namespace Parking
 
             firstFloorPanel.Hide();
             secondFloorPanel.Hide();
+
+
+
+        
+
+
         }
 
 
@@ -301,6 +307,57 @@ namespace Parking
                 labelB8.Text = "";
             }
 
+            if (isOccupied("A-01"))
+            {
+                a01.Image = image;
+                labela1.Text = "";
+            }
+            if (isOccupied("A-02"))
+            {
+                a02.Image = image;
+                labela2.Text = "";
+            }
+            if (isOccupied("A-03"))
+            {
+                a03.Image = image;
+                labela3.Text = "";
+            }
+            if (isOccupied("A-04"))
+            {
+                a04.Image = image;
+                labela4.Text = "";
+            }
+            if (isOccupied("A-05"))
+            {
+                a05.Image = image;
+                labela5.Text = "";
+            }
+            if (isOccupied("A-06"))
+            {
+                a06.Image = image;
+                labela6.Text = "";
+            }
+            if (isOccupied("A-07"))
+            {
+                a07.Image = image;
+                labela7.Text = "";
+            }
+            if (isOccupied("A-08"))
+            {
+                a08.Image = image;
+                labela8.Text = "";
+            }
+            if (isOccupied("A-09"))
+            {
+                a09.Image = image;
+                labela9.Text = "";
+            }
+            if (isOccupied("A-10"))
+            {
+                a10.Image = image;
+                labela10.Text = "";
+            }
+
 
         }
 
@@ -333,6 +390,130 @@ namespace Parking
             }
             return occupiedSlots.Contains(slotName);
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            //basement
+            basementPanel.Dock = DockStyle.Fill;
+            panel5.Controls.Add(basementPanel);
+            basementPanel.Show();
+
+            firstFloorPanel.Dock = DockStyle.None;
+            panel5.Controls.Remove(firstFloorPanel);
+            firstFloorPanel.Hide();
+
+            panel5.Controls.Remove(secondFloorPanel);
+            secondFloorPanel.Dock = DockStyle.None;
+            secondFloorPanel.Hide();
+
+
+            a1 = true;
+            a2 = true;
+            a3 = true;
+            a4 = true;
+            a5 = true;
+            a6 = true;
+            a7 = true;
+            a8 = true;
+            a9 = true;
+            a_10 = true;
+
+
+            a01.Image = null;
+            a02.Image = null;
+            a03.Image = null;
+            a04.Image = null;
+            a05.Image = null;
+            a06.Image = null;
+            a07.Image = null;
+            a08.Image = null;
+            a09.Image = null;
+            a10.Image = null;
+
+            labela1.Text = "A-01";
+            labela2.Text = "A-02";
+            labela3.Text = "A-03";
+            labela4.Text = "A-04";
+            labela5.Text = "A-05";
+            labela6.Text = "A-06";
+            labela7.Text = "A-07";
+            labela8.Text = "A-08";
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
+
+            OccupiedArea();
+            setSloc(null);
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            //firstfloor
+
+            firstFloorPanel.Dock = DockStyle.Fill;
+            panel5.Controls.Add(firstFloorPanel);
+            firstFloorPanel.Show();
+
+
+            panel5.Controls.Remove(basementPanel);
+            basementPanel.Dock = DockStyle.None;
+            basementPanel.Hide();
+
+            panel5.Controls.Remove(secondFloorPanel);
+            secondFloorPanel.Dock = DockStyle.None;
+            secondFloorPanel.Hide();
+
+
+            b1 = true;
+            b2 = true;
+            b3 = true;
+            b4 = true;
+            b5 = true;
+            b6 = true;
+            b7 = true;
+            b8 = true;
+
+
+            b01.Image = null;
+            b02.Image = null;
+            b03.Image = null;
+            b04.Image = null;
+            b05.Image = null;
+            b06.Image = null;
+            b07.Image = null;
+            b08.Image = null;
+
+            labelB1.Text = "BM-01";
+            labelB2.Text = "BM-02";
+            labelB3.Text = "BM-03";
+            labelB4.Text = "BM-04";
+            labelB5.Text = "BM-05";
+            labelB6.Text = "BM-06";
+            labelB7.Text = "BM-07";
+            labelB8.Text = "BM-08";
+            OccupiedArea();
+            setSloc(null);
+
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            panel5.Controls.Add(secondFloorPanel);
+            secondFloorPanel.Dock = DockStyle.Fill;
+            secondFloorPanel.Show();
+
+            firstFloorPanel.Dock = DockStyle.None;
+            panel5.Controls.Remove(firstFloorPanel);
+            firstFloorPanel.Hide();
+
+            panel5.Controls.Remove(basementPanel);
+            basementPanel.Dock = DockStyle.None;
+            basementPanel.Hide();
+
+
+        }
+
 
         bool b1 = true;
         bool b2 = true;
@@ -756,58 +937,7 @@ namespace Parking
             this.Close();
         }
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-            //basement
-            basementPanel.Dock = DockStyle.Fill;
-            panel5.Controls.Add(basementPanel);
-            basementPanel.Show();
-
-            firstFloorPanel.Dock = DockStyle.None;
-            panel5.Controls.Remove(firstFloorPanel);
-            firstFloorPanel.Hide();
-
-            panel5.Controls.Remove(secondFloorPanel);
-            secondFloorPanel.Dock = DockStyle.None;
-            secondFloorPanel.Hide();
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            //firstfloor
-
-            firstFloorPanel.Dock = DockStyle.Fill;
-            panel5.Controls.Add(firstFloorPanel);
-            firstFloorPanel.Show();
-
-
-            panel5.Controls.Remove(basementPanel);
-            basementPanel.Dock = DockStyle.None;
-            basementPanel.Hide();
-
-            panel5.Controls.Remove(secondFloorPanel);
-            secondFloorPanel.Dock = DockStyle.None;
-            secondFloorPanel.Hide();
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            panel5.Controls.Add(secondFloorPanel);
-            secondFloorPanel.Dock = DockStyle.Fill;
-            secondFloorPanel.Show();
-
-            firstFloorPanel.Dock = DockStyle.None;
-            panel5.Controls.Remove(firstFloorPanel);
-            firstFloorPanel.Hide();
-
-            panel5.Controls.Remove(basementPanel);
-            basementPanel.Dock = DockStyle.None;
-            basementPanel.Hide();
-
-
-        }
-
+       
 
         bool a1 = true;
         bool a2 = true;
@@ -864,8 +994,7 @@ namespace Parking
             a_10 = true;
             a09.Image = null;
             a10.Image = null;
-            labela9.Text = "A-09";
-            labela10.Text = "A-10";
+           
 
             labela2.Text = "A-02";
             labela3.Text = "A-03";
@@ -874,13 +1003,11 @@ namespace Parking
             labela6.Text = "A-06";
             labela7.Text = "A-07";
             labela8.Text = "A-08";
+            labela9.Text = "A-09";
+            labela10.Text = "A-10";
 
             OccupiedArea();
-
-            if (!isOccupied("A-01"))
-                setSloc("A-01");
-            else
-                setSloc(null);
+ 
         }
 
         private void a02_Click(object sender, EventArgs e)
@@ -891,6 +1018,10 @@ namespace Parking
             {
                 a02.Image = image;
                 labela2.Text = "";
+                if (!isOccupied("A-02"))
+                    setSloc("A-02");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -932,8 +1063,7 @@ namespace Parking
             labela7.Text = "A-07";
             labela8.Text = "A-08";
             OccupiedArea();
-            if (!isOccupied("A-02"))
-                setSloc("A-02");
+          
         }
 
         private void a03_Click(object sender, EventArgs e)
@@ -944,6 +1074,10 @@ namespace Parking
             {
                 a03.Image = image;
                 labela3.Text = "";
+                if (!isOccupied("A-03"))
+                    setSloc("A-03");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -985,8 +1119,7 @@ namespace Parking
             labela7.Text = "A-07";
             labela8.Text = "A-08";
             OccupiedArea();
-            if (!isOccupied("A-03"))
-                setSloc("A-03");
+          
         }
 
         private void a04_Click(object sender, EventArgs e)
@@ -997,6 +1130,10 @@ namespace Parking
             {
                 a04.Image = image;
                 labela4.Text = "";
+                if (!isOccupied("A-04"))
+                    setSloc("A-04");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -1039,8 +1176,7 @@ namespace Parking
             labela7.Text = "A-07";
             labela8.Text = "A-08";
             OccupiedArea();
-            if (!isOccupied("A-04"))
-                setSloc("A-04");
+            
         }
 
         private void a05_Click(object sender, EventArgs e)
@@ -1051,6 +1187,10 @@ namespace Parking
             {
                 a05.Image = image;
                 labela5.Text = "";
+                if (!isOccupied("A-05"))
+                    setSloc("A-05");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -1093,8 +1233,7 @@ namespace Parking
             labela9.Text = "A-09";
             labela10.Text = "A-10";
             OccupiedArea();
-            if (!isOccupied("A-05"))
-                setSloc("A-05");
+            
         }
 
         private void a06_Click(object sender, EventArgs e)
@@ -1105,6 +1244,10 @@ namespace Parking
             {
                 a06.Image = image;
                 labela6.Text = "";
+                if (!isOccupied("A-06"))
+                    setSloc("A-06");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -1147,8 +1290,7 @@ namespace Parking
             labela9.Text = "A-09";
             labela10.Text = "A-10";
             OccupiedArea();
-            if (!isOccupied("A-06"))
-                setSloc("A-06");
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -1159,6 +1301,10 @@ namespace Parking
             {
                 a07.Image = image;
                 labela7.Text = "";
+                if (!isOccupied("A-07"))
+                    setSloc("A-07");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -1202,8 +1348,7 @@ namespace Parking
             labela10.Text = "A-10";
 
             OccupiedArea();
-            if (!isOccupied("A-07"))
-                setSloc("A-07");
+         
         }
 
         private void a08_Click(object sender, EventArgs e)
@@ -1214,6 +1359,10 @@ namespace Parking
             {
                 a08.Image = image;
                 labela8.Text = "";
+                if (!isOccupied("A-08"))
+                    setSloc("A-08");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -1242,7 +1391,7 @@ namespace Parking
             a05.Image = null;
             a06.Image = null;
             a07.Image = null;
-            a09.Image  = null;
+            a09.Image = null;
             a10.Image = null;
 
 
@@ -1256,8 +1405,7 @@ namespace Parking
             labela9.Text = "A-09";
             labela10.Text = "A-10";
             OccupiedArea();
-            if (!isOccupied("A-08"))
-                setSloc("A-08");
+            
         }
 
         private void a09_Click(object sender, EventArgs e)
@@ -1268,6 +1416,10 @@ namespace Parking
             {
                 a09.Image = image;
                 labela9.Text = "";
+                if (!isOccupied("A-09"))
+                    setSloc("A-09");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -1310,8 +1462,7 @@ namespace Parking
             labela8.Text = "A-08";
             labela10.Text = "A-010";
             OccupiedArea();
-            if (!isOccupied("A-09"))
-                setSloc("A-09");
+            
         }
 
         private void a10_Click(object sender, EventArgs e)
@@ -1322,6 +1473,10 @@ namespace Parking
             {
                 a10.Image = image;
                 labela10.Text = "";
+                if (!isOccupied("A-10"))
+                    setSloc("A-10");
+                else
+                    setSloc(null);
             }
             else
             {
@@ -1364,8 +1519,7 @@ namespace Parking
             labela8.Text = "A-08";
             labela9.Text = "A-09";
             OccupiedArea();
-            if (!isOccupied("A-10"))
-                setSloc("A-10");
+            
         }
     }
 }//

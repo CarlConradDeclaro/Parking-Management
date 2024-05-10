@@ -22,11 +22,11 @@
     <Compile Update="login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ParkingEntry.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Parkin.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ParkingEntry.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="parkinList.cs">
       <SubType>UserControl</SubType>
