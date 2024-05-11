@@ -50,6 +50,7 @@ namespace Parking
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -150,6 +151,9 @@ namespace Parking
                         invalid.ForeColor = Color.Chartreuse;
                         updateAvailability_query();
 
+                        Parkin parkin = new Parkin();
+                        parkin.setIsParkin(true);
+
                     }
                     else
                         MessageBox.Show("Please select a slot area for this vehicle!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,6 +169,9 @@ namespace Parking
                 invalid.Text = "Invalid Fields";
                 invalid.ForeColor = Color.Red;
             }
+
+
+
         }
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {

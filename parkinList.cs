@@ -77,7 +77,9 @@ namespace Parking
                     {
                         parkingRecordsManager.RemoveParkingRecord(record);
                         MessageBox.Show("The vehicle with plate number " + label1.Text + " has been successfully removed.", "Vehicle Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Parent.Controls.Remove(this);                   
+                        Parent.Controls.Remove(this);
+                        
+                       
                         numV.Text = parkingRecordsManager.GetAllParkingRecords().Count.ToString();
                         numCV.Text = parkingRecordsManager.GetAllParkingRecords().Count(r => r.Status == "Cleared").ToString();
                         numPV.Text = parkingRecordsManager.GetAllParkingRecords().Count(r => r.Status == "PARKED").ToString();
@@ -85,6 +87,9 @@ namespace Parking
                     }
                 }
             }
+
+          /*  Parkin p = new Parkin();
+            p.OccupiedArea();*/
         }    
         private void button3_Click_1(object sender, EventArgs e)
         {

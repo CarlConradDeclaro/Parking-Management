@@ -8,6 +8,7 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 namespace Parking
     {
     public partial class Parkin : UserControl
@@ -19,6 +20,9 @@ namespace Parking
         string Sloc;
         ParkingEntry pe1;
         Parkout pOut;
+        private FlowLayoutPanel flowPanelVH;
+        private bool isParkin;
+
         private static Parkin instance;
         public static Parkin Instance
         {
@@ -42,7 +46,13 @@ namespace Parking
 
             parkingView.Hide();
             OccupiedArea();
+          
         }
+        public void  setFlowVH(FlowLayoutPanel flowPanelVH) {
+                this.flowPanelVH = flowPanelVH;
+        }
+
+
         private void ParkinList_EditHandler(object sender, EventArgs e)
         {
             display();
@@ -113,17 +123,23 @@ namespace Parking
             pe1 = new ParkingEntry(flowLayoutPanel2);
             pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
             pe1.ShowDialog();
+           
         }
-
+        public void setIsParkin(bool isPark) {
+            isParkin = isPark;
+        }
         private void ParkingRecordAddedHandler(object sender, EventArgs e)
         {
             display();
+
+
+ 
+           refreshParkingArea();
+
             numV.Text = countVehicle() + "";
             numPV.Text = countParkedVehicle() + "";
             numCV.Text = countClearedVehicle() + "";
         }
-
-
 
         private void parkout_Click(object sender, EventArgs e)
         {
@@ -133,8 +149,7 @@ namespace Parking
             pOut = new Parkout();
             pOut.Parking += ParkingRecordAddedHandler;
             pOut.ShowDialog();
-
-
+ 
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -162,6 +177,17 @@ namespace Parking
                 }
 
             }
+        }
+        public void refreshParkingArea() {
+            b01.Image = null;
+            b02.Image = null;
+            b03.Image = null;
+            b04.Image = null;
+            b05.Image = null;
+            b06.Image = null;
+            b07.Image = null;
+            b08.Image = null;
+            OccupiedArea();
         }
         public void filterDisplay(string category)
         {
@@ -403,6 +429,8 @@ namespace Parking
             parkingView.Dock = DockStyle.None;
             Content.Controls.Remove(parkingView);
             parkingView.Hide();
+            refreshParkingArea();
+
         }
 
         //v_parkLot
@@ -416,7 +444,7 @@ namespace Parking
             Content.Controls.Remove(vehicleListPanel);
             vehicleListPanel.Dock = DockStyle.None;
             vehicleListPanel.Hide();
-            OccupiedArea();
+            refreshParkingArea();
         }
 
 
@@ -461,46 +489,66 @@ namespace Parking
             if (isOccupied("BM-01"))
             {
                 b01.Image = image2;
-                labelB1.Text = "";
+                labelB1.Hide();
             }
+            else
+                labelB1.Show();
 
             if (isOccupied("BM-02"))
             {
                 b02.Image = image2;
-                labelB2.Text = "";
+                labelB2.Hide();
             }
+            else
+                labelB2.Show();
+
             if (isOccupied("BM-03"))
             {
                 b03.Image = image2;
-                labelB3.Text = "";
+                labelB3.Hide();
             }
+            else
+                labelB3.Show();
+
             if (isOccupied("BM-04"))
             {
                 b04.Image = image2;
-                labelB4.Text = "";
+                labelB4.Hide();
             }
+            else
+                labelB4.Show();
 
             if (isOccupied("BM-05"))
             {
                 b05.Image = image2;
-                labelB5.Text = "";
+                labelB5.Hide();
             }
+            else
+                labelB5.Show();
 
             if (isOccupied("BM-06"))
             {
                 b06.Image = image;
-                labelB6.Text = "";
+                labelB6.Hide();
             }
+            else
+                labelB6.Show();
+
             if (isOccupied("BM-07"))
             {
                 b07.Image = image;
-                labelB7.Text = "";
+                labelB7.Hide();
             }
+            else
+                labelB7.Show();
+
             if (isOccupied("BM-08"))
             {
                 b08.Image = image;
-                labelB8.Text = "";
+                labelB8.Hide();
             }
+            else
+                labelB8.Show();
 
             /*  if (isOccupied("A-01"))
               {
@@ -576,135 +624,15 @@ namespace Parking
 
 
 
-        private void handletParkingArea(string btn)
+        private void handleParkingArea(string btn)
         {
-            handleParkingImage(btn);
+        
             handleBool(btn);
             HandleNullImage(btn);
-            handleLabel(btn);
+       
         }
 
-        private void handleParkingImage(string btn)
-        {
-
-            Image image = Image.FromFile(imagePath2);
-
-            switch (btn)
-            {
-                case "b1":
-                    if (b1)
-                    {
-                        b01.Image = image;
-                        labelB1.Text = "";
-                    }
-                    else
-                    {
-                        b01.Image = null;
-                        setSloc(null);
-                        labelB1.Text = "BM-01";
-                    }
-                    b1 = !b1;
-                    break;
-                case "b2":
-                    if (b2)
-                    {
-                        b02.Image = image;
-                        labelB2.Text = "";
-                    }
-                    else
-                    {
-                        b02.Image = null;
-                        setSloc(null);
-                        labelB2.Text = "BM-02";
-                    }
-                    b2 = !b2;
-                    break;
-                case "b3":
-                    if (b3)
-                    {
-                        b03.Image = image;
-                        labelB3.Text = "";
-                    }
-                    else
-                    {
-                        b03.Image = null;
-                        setSloc(null);
-                        labelB3.Text = "BM-03";
-                    }
-                    b3 = !b3;
-                    break;
-                case "b4":
-                    if (b4)
-                    {
-                        b04.Image = image;
-                        labelB4.Text = "";
-                    }
-                    else
-                    {
-                        b04.Image = null;
-                        setSloc(null);
-                        labelB4.Text = "BM-04";
-                    }
-                    b4 = !b4;
-                    break;
-                case "b5":
-                    if (b5)
-                    {
-                        b05.Image = image;
-                        labelB5.Text = "";
-                    }
-                    else
-                    {
-                        b05.Image = null;
-                        setSloc(null);
-                        labelB5.Text = "BM-05";
-                    }
-                    b5 = !b5;
-                    break;
-                case "b6":
-                    if (b6)
-                    {
-                        b06.Image = image;
-                        labelB6.Text = "";
-                    }
-                    else
-                    {
-                        b06.Image = null;
-                        setSloc(null);
-                        labelB6.Text = "BM-06";
-                    }
-                    b6 = !b6;
-                    break;
-                case "b7":
-                    if (b7)
-                    {
-                        b07.Image = image;
-                        labelB7.Text = "";
-                    }
-                    else
-                    {
-                        b07.Image = null;
-                        setSloc(null);
-                        labelB7.Text = "BM-07";
-                    }
-                    b7 = !b7;
-                    break;
-                case "b8":
-                    if (b8)
-                    {
-                        b08.Image = image;
-                        labelB8.Text = "";
-                    }
-                    else
-                    {
-                        b08.Image = null;
-                        setSloc(null);
-                        labelB8.Text = "BM-08";
-                    }
-                    b8 = !b8;
-                    break;
-            }
-        }
+      
 
 
         private void handleBool(string btn)
@@ -864,153 +792,120 @@ namespace Parking
                     break;
             }
         }
+   
+        //ParkingRecord
+        private string[] getVehicleRecord(string slot) {
 
-        private void handleLabel(string btn)
-        {
-            switch (btn)
+            string query = "SELECT v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status FROM Vehicle WHERE status = @status AND s_sloc = @sloc";        
+            string[] VHdetails = new string[8];
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                case "b1":
-                    labelB2.Text = "BM-02";
-                    labelB3.Text = "BM-03";
-                    labelB4.Text = "BM-04";
-                    labelB5.Text = "BM-05";
-                    labelB6.Text = "BM-06";
-                    labelB7.Text = "BM-07";
-                    labelB8.Text = "BM-08";
-                    break;
-                case "b2":
-                    labelB1.Text = "BM-01";
-                    labelB3.Text = "BM-03";
-                    labelB4.Text = "BM-04";
-                    labelB5.Text = "BM-05";
-                    labelB6.Text = "BM-06";
-                    labelB7.Text = "BM-07";
-                    labelB8.Text = "BM-08";
-                    break;
-                case "b3":
-                    labelB1.Text = "BM-01";
-                    labelB2.Text = "BM-02";
-                    labelB4.Text = "BM-04";
-                    labelB5.Text = "BM-05";
-                    labelB6.Text = "BM-06";
-                    labelB7.Text = "BM-07";
-                    labelB8.Text = "BM-08";
-                    break;
-                case "b4":
-                    labelB1.Text = "BM-01";
-                    labelB2.Text = "BM-02";
-                    labelB3.Text = "BM-03";
-                    labelB5.Text = "BM-05";
-                    labelB6.Text = "BM-06";
-                    labelB7.Text = "BM-07";
-                    labelB8.Text = "BM-08";
-                    break;
-                case "b5":
-                    labelB1.Text = "BM-01";
-                    labelB2.Text = "BM-02";
-                    labelB3.Text = "BM-03";
-                    labelB4.Text = "BM-04";
-                    labelB6.Text = "BM-06";
-                    labelB7.Text = "BM-07";
-                    labelB8.Text = "BM-08";
-                    break;
-                case "b6":
-                    labelB1.Text = "BM-01";
-                    labelB2.Text = "BM-02";
-                    labelB3.Text = "BM-03";
-                    labelB4.Text = "BM-04";
-                    labelB5.Text = "BM-05";
-                    labelB7.Text = "BM-07";
-                    labelB8.Text = "BM-08";
-                    break;
-                case "b7":
-                    labelB1.Text = "BM-01";
-                    labelB2.Text = "BM-02";
-                    labelB3.Text = "BM-03";
-                    labelB4.Text = "BM-04";
-                    labelB5.Text = "BM-05";
-                    labelB6.Text = "BM-06";
-                    labelB8.Text = "BM-08";
-                    break;
-                case "b8":
-                    labelB1.Text = "BM-01";
-                    labelB2.Text = "BM-02";
-                    labelB3.Text = "BM-03";
-                    labelB4.Text = "BM-04";
-                    labelB5.Text = "BM-05";
-                    labelB6.Text = "BM-06";
-                    labelB7.Text = "BM-07";
-                    break;
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@status", "PARKED");  
+                command.Parameters.AddWithValue("@sloc", slot);  
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read()) 
+                {
+                    DateTime arrivalDate = (DateTime)reader["arrivalDate"];
+                    TimeSpan arrivalTime = (TimeSpan)reader["arrivalTime"];
+                    DateTime time = DateTime.Today.Add(arrivalTime);
+                    VHdetails[0] = reader["v_plate"].ToString();
+                    VHdetails[1] = reader["v_type"].ToString();
+                    VHdetails[2] = reader["model"].ToString();
+                    VHdetails[3] = reader["driver"].ToString();
+                    VHdetails[4] = reader["phone"].ToString();
+                    VHdetails[5] = arrivalDate.ToString("MM/dd/yyyy");
+                    VHdetails[6] = time.ToString("hh:mm:ss tt");
+                    VHdetails[7] = reader["status"].ToString();                
+                }
+                reader.Close();
             }
-
+            return VHdetails;
         }
+
+        private void handleParkAreaClick(string btn,string s_loc) {
+
+           // handleParkingArea(btn);
+            OccupiedArea();
+            if (!isOccupied(s_loc))
+            {
+                setSloc(s_loc);
+                pe1 = new ParkingEntry(flowLayoutPanel2);
+                pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
+                pe1.ShowDialog();
+            }
+            else
+            {
+                Parkout pOut = new Parkout();
+                pOut.Parking += ParkingRecordAddedHandler;
+                FlowLayoutPanel f = pOut.getFlowVH();
+                setFlowVH(f);
+                flowPanelVH.Controls.Clear();
+
+                string[] vehicleDetails = getVehicleRecord(s_loc);
+                AddVehicleDetail("Plate No.", vehicleDetails[0]);
+                AddVehicleDetail("Type", vehicleDetails[1]);
+                AddVehicleDetail("Model", vehicleDetails[2]);
+                AddVehicleDetail("Driver", vehicleDetails[3]);
+                AddVehicleDetail("Phone", vehicleDetails[4]);
+                AddVehicleDetail("Arrival Date", vehicleDetails[5]);
+                AddVehicleDetail("Arrival Time", vehicleDetails[6]);
+
+                pOut.getVHparkOutnType(vehicleDetails[0], vehicleDetails[1]);
+                pOut.ShowDialog();
+              
+            }
+        }
+
+        private void AddVehicleDetail(string label, string value)
+        {
+            vehicleDetails detail = new vehicleDetails();
+            detail.UpdateLabels(label, value);
+            flowPanelVH.Controls.Add(detail);
+        }
+
 
         private void b01_Click(object sender, EventArgs e)
         {
-            handletParkingArea("b1");
-            OccupiedArea();
-            if (!isOccupied("BM-01"))
-                setSloc("BM-01");
 
+            handleParkAreaClick("b1", "BM-01");
         }
+
         private void b02_Click(object sender, EventArgs e)
         {
-            handletParkingArea("b2");
-            OccupiedArea();
-            OccupiedArea();
-            if (!isOccupied("BM-02"))
-                setSloc("BM-02");
+
+            handleParkAreaClick("b2", "BM-02");
         }
 
         private void b03_Click_1(object sender, EventArgs e)
         {
-            handletParkingArea("b3");
-            OccupiedArea();
-            OccupiedArea();
-            if (!isOccupied("BM-03"))
-                setSloc("BM-03");
+            handleParkAreaClick("b3", "BM-03");
         }
 
         private void b04_Click(object sender, EventArgs e)
         {
-            handletParkingArea("b4");
-            OccupiedArea();
-            OccupiedArea();
-            if (!isOccupied("BM-04"))
-                setSloc("BM-04");
+            handleParkAreaClick("b4", "BM-04");
         }
 
         private void b05_Click(object sender, EventArgs e)
         {
-            handletParkingArea("b5");
-            OccupiedArea();
-            OccupiedArea();
-            if (!isOccupied("BM-05"))
-                setSloc("BM-05");
+            handleParkAreaClick("b5", "BM-05");
         }
 
         private void b06_Click(object sender, EventArgs e)
         {
-            handletParkingArea("b6");
-            OccupiedArea();
-            if (!isOccupied("BM-06"))
-                setSloc("BM-06");
+            handleParkAreaClick("b6", "BM-06");
         }
 
         private void b07_Click(object sender, EventArgs e)
         {
-            handletParkingArea("b7");
-            OccupiedArea();
-            if (!isOccupied("BM-07"))
-                setSloc("BM-07");
+            handleParkAreaClick("b7", "BM-07");
         }
 
         private void b08_Click(object sender, EventArgs e)
         {
-            handletParkingArea("b8");
-            OccupiedArea();
-            if (!isOccupied("BM-08"))
-                setSloc("BM-08");
+            handleParkAreaClick("b8", "BM-08");
         }
 
         private void b09_Click(object sender, EventArgs e)

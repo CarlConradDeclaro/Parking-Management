@@ -13,6 +13,7 @@ using System.Data;
 
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Transactions;
 
 namespace Parking
 {
@@ -187,16 +188,13 @@ namespace Parking
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "DELETE FROM Vehicle WHERE id = @id";
-
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@id", parkingRecord.id);  
-
                     try
                     {
                         connection.Open();
                         int rowsAffected = command.ExecuteNonQuery();
-
                         if (rowsAffected > 0)
                         {
                             Console.WriteLine("Record successfully deleted.");
@@ -213,8 +211,31 @@ namespace Parking
                     }
                 }
             }
-            
+            updateAvailability_query(parkingRecord.S_location);
         }
+
+
+        private void updateAvailability_query(string selectedSlot)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                string updateQuery = "UPDATE V_Slots SET availability = 1 WHERE s_loc = @s_loc";
+                SqlCommand command = new SqlCommand(updateQuery, connection);
+                try
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@s_loc", selectedSlot);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+
         public List<ParkingRecord> GetAllParkingRecords()
         {
             parkingRecords.Clear();

@@ -20,6 +20,26 @@ namespace Parking
         public event EventHandler Parking;
         private string palteNum, Type;
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+ 
+
+        private static Parkout instance;
+
+        public static Parkout Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Parkout();
+                return instance;
+            }
+        }
+
+        public FlowLayoutPanel getFlowVH() {
+            return flowPanelVH;
+        }
+
+
+
 
         public Parkout()
         {
@@ -155,6 +175,8 @@ namespace Parking
                     Parking?.Invoke(this, EventArgs.Empty);
                 }
             }
+            Parkin parkin = new Parkin();
+            parkin.setIsParkin(false);
         }
 
 
@@ -409,6 +431,7 @@ namespace Parking
         private void button5_Click(object sender, EventArgs e)
         {
             //here to compute time/amt
+            setStatus.Text = "Not Paid";
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
             if(flowPanelVH.Controls.Count != 0)

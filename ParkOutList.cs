@@ -19,6 +19,12 @@ namespace Parking
         private Parkout titleLabel;
         private System.Windows.Forms.Label amtTxt;
         private System.Windows.Forms.Label statusTxt;
+
+
+
+
+    
+
         public ParkOutList(FlowLayoutPanel flowPanelVH, Parkout titleLabel, System.Windows.Forms.Label amtTxt, System.Windows.Forms.Label statusTxt)
         {
             InitializeComponent();
