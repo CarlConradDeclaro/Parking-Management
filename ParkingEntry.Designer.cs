@@ -70,6 +70,8 @@
             basementPanel = new Panel();
             labelB10 = new Label();
             labelB9 = new Label();
+            b10 = new Button();
+            b09 = new Button();
             labelB8 = new Label();
             labelB7 = new Label();
             labelB6 = new Label();
@@ -84,26 +86,26 @@
             panel4 = new Panel();
             label3 = new Label();
             secondFloorPanel = new Panel();
-            label6 = new Label();
-            label13 = new Label();
-            c10 = new Button();
-            c09 = new Button();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            c01 = new Label();
-            c04 = new Button();
-            c03 = new Button();
-            c08 = new Button();
-            c07 = new Button();
-            c02 = new Button();
-            button16 = new Button();
-            c05 = new Button();
-            c06 = new Button();
+            labelbB10 = new Label();
+            labelb09 = new Label();
+            bb10 = new Button();
+            bb09 = new Button();
+            labelb08 = new Label();
+            labelb07 = new Label();
+            labelb06 = new Label();
+            labelb05 = new Label();
+            labelb04 = new Label();
+            labelb03 = new Label();
+            labelb02 = new Label();
+            labelb01 = new Label();
+            bb04 = new Button();
+            bb03 = new Button();
+            bb08 = new Button();
+            bb07 = new Button();
+            bb02 = new Button();
+            bb01 = new Button();
+            bb05 = new Button();
+            bb06 = new Button();
             firstFloorPanel = new Panel();
             labela10 = new Label();
             labela9 = new Label();
@@ -370,7 +372,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(850, 43);
+            panel1.Size = new Size(854, 43);
             panel1.TabIndex = 25;
             // 
             // button4
@@ -382,7 +384,7 @@
             button4.ForeColor = Color.Brown;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(805, 1);
+            button4.Location = new Point(809, 1);
             button4.Name = "button4";
             button4.Size = new Size(40, 40);
             button4.TabIndex = 59;
@@ -569,6 +571,8 @@
             basementPanel.BackgroundImageLayout = ImageLayout.Stretch;
             basementPanel.Controls.Add(labelB10);
             basementPanel.Controls.Add(labelB9);
+            basementPanel.Controls.Add(b10);
+            basementPanel.Controls.Add(b09);
             basementPanel.Controls.Add(labelB8);
             basementPanel.Controls.Add(labelB7);
             basementPanel.Controls.Add(labelB6);
@@ -596,10 +600,10 @@
             labelB10.AutoSize = true;
             labelB10.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelB10.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            labelB10.Location = new Point(318, 395);
+            labelB10.Location = new Point(317, 397);
             labelB10.Name = "labelB10";
             labelB10.Size = new Size(64, 23);
-            labelB10.TabIndex = 68;
+            labelB10.TabIndex = 72;
             labelB10.Text = "BM-10";
             labelB10.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -608,12 +612,40 @@
             labelB9.AutoSize = true;
             labelB9.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelB9.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            labelB9.Location = new Point(319, 313);
+            labelB9.Location = new Point(318, 308);
             labelB9.Name = "labelB9";
             labelB9.Size = new Size(64, 23);
-            labelB9.TabIndex = 67;
+            labelB9.TabIndex = 71;
             labelB9.Text = "BM-09";
             labelB9.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // b10
+            // 
+            b10.BackColor = Color.Transparent;
+            b10.FlatAppearance.BorderSize = 0;
+            b10.FlatStyle = FlatStyle.Flat;
+            b10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            b10.Location = new Point(220, 362);
+            b10.Name = "b10";
+            b10.Size = new Size(163, 74);
+            b10.TabIndex = 70;
+            b10.Text = " ";
+            b10.UseVisualStyleBackColor = false;
+            b10.Click += b10_Click;
+            // 
+            // b09
+            // 
+            b09.BackColor = Color.Transparent;
+            b09.FlatAppearance.BorderSize = 0;
+            b09.FlatStyle = FlatStyle.Flat;
+            b09.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            b09.Location = new Point(218, 282);
+            b09.Name = "b09";
+            b09.Size = new Size(163, 74);
+            b09.TabIndex = 69;
+            b09.Text = " ";
+            b09.UseVisualStyleBackColor = false;
+            b09.Click += b09_Click;
             // 
             // labelB8
             // 
@@ -754,7 +786,7 @@
             panel3.Controls.Add(inValidPN);
             panel3.Location = new Point(3, 49);
             panel3.Name = "panel3";
-            panel3.Size = new Size(844, 683);
+            panel3.Size = new Size(843, 683);
             panel3.TabIndex = 59;
             // 
             // label2
@@ -799,288 +831,288 @@
             secondFloorPanel.BackColor = Color.Transparent;
             secondFloorPanel.BackgroundImage = Properties.Resources.parkingLot;
             secondFloorPanel.BackgroundImageLayout = ImageLayout.Stretch;
-            secondFloorPanel.Controls.Add(label6);
-            secondFloorPanel.Controls.Add(label13);
-            secondFloorPanel.Controls.Add(c10);
-            secondFloorPanel.Controls.Add(c09);
-            secondFloorPanel.Controls.Add(label14);
-            secondFloorPanel.Controls.Add(label15);
-            secondFloorPanel.Controls.Add(label16);
-            secondFloorPanel.Controls.Add(label17);
-            secondFloorPanel.Controls.Add(label18);
-            secondFloorPanel.Controls.Add(label19);
-            secondFloorPanel.Controls.Add(label20);
-            secondFloorPanel.Controls.Add(c01);
-            secondFloorPanel.Controls.Add(c04);
-            secondFloorPanel.Controls.Add(c03);
-            secondFloorPanel.Controls.Add(c08);
-            secondFloorPanel.Controls.Add(c07);
-            secondFloorPanel.Controls.Add(c02);
-            secondFloorPanel.Controls.Add(button16);
-            secondFloorPanel.Controls.Add(c05);
-            secondFloorPanel.Controls.Add(c06);
-            secondFloorPanel.Location = new Point(948, 80);
+            secondFloorPanel.Controls.Add(labelbB10);
+            secondFloorPanel.Controls.Add(labelb09);
+            secondFloorPanel.Controls.Add(bb10);
+            secondFloorPanel.Controls.Add(bb09);
+            secondFloorPanel.Controls.Add(labelb08);
+            secondFloorPanel.Controls.Add(labelb07);
+            secondFloorPanel.Controls.Add(labelb06);
+            secondFloorPanel.Controls.Add(labelb05);
+            secondFloorPanel.Controls.Add(labelb04);
+            secondFloorPanel.Controls.Add(labelb03);
+            secondFloorPanel.Controls.Add(labelb02);
+            secondFloorPanel.Controls.Add(labelb01);
+            secondFloorPanel.Controls.Add(bb04);
+            secondFloorPanel.Controls.Add(bb03);
+            secondFloorPanel.Controls.Add(bb08);
+            secondFloorPanel.Controls.Add(bb07);
+            secondFloorPanel.Controls.Add(bb02);
+            secondFloorPanel.Controls.Add(bb01);
+            secondFloorPanel.Controls.Add(bb05);
+            secondFloorPanel.Controls.Add(bb06);
+            secondFloorPanel.Location = new Point(868, 131);
             secondFloorPanel.Name = "secondFloorPanel";
             secondFloorPanel.Size = new Size(395, 460);
             secondFloorPanel.TabIndex = 62;
             // 
-            // label6
+            // labelbB10
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.InactiveCaption;
-            label6.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label6.Location = new Point(326, 397);
-            label6.Name = "label6";
-            label6.Size = new Size(48, 23);
-            label6.TabIndex = 68;
-            label6.Text = "B-10";
-            label6.TextAlign = ContentAlignment.MiddleLeft;
+            labelbB10.AutoSize = true;
+            labelbB10.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelbB10.ForeColor = SystemColors.InactiveCaption;
+            labelbB10.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelbB10.Location = new Point(326, 397);
+            labelbB10.Name = "labelbB10";
+            labelbB10.Size = new Size(48, 23);
+            labelbB10.TabIndex = 68;
+            labelbB10.Text = "B-10";
+            labelbB10.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label13
+            // labelb09
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.ForeColor = SystemColors.InactiveCaption;
-            label13.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label13.Location = new Point(326, 312);
-            label13.Name = "label13";
-            label13.Size = new Size(48, 23);
-            label13.TabIndex = 67;
-            label13.Text = "B-09";
-            label13.TextAlign = ContentAlignment.MiddleLeft;
+            labelb09.AutoSize = true;
+            labelb09.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb09.ForeColor = SystemColors.InactiveCaption;
+            labelb09.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb09.Location = new Point(326, 312);
+            labelb09.Name = "labelb09";
+            labelb09.Size = new Size(48, 23);
+            labelb09.TabIndex = 67;
+            labelb09.Text = "B-09";
+            labelb09.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // c10
+            // bb10
             // 
-            c10.BackColor = Color.Transparent;
-            c10.FlatAppearance.BorderSize = 0;
-            c10.FlatStyle = FlatStyle.Flat;
-            c10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c10.Location = new Point(212, 371);
-            c10.Name = "c10";
-            c10.Size = new Size(163, 74);
-            c10.TabIndex = 69;
-            c10.Text = " ";
-            c10.UseVisualStyleBackColor = false;
+            bb10.BackColor = Color.Transparent;
+            bb10.FlatAppearance.BorderSize = 0;
+            bb10.FlatStyle = FlatStyle.Flat;
+            bb10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb10.Location = new Point(212, 371);
+            bb10.Name = "bb10";
+            bb10.Size = new Size(163, 74);
+            bb10.TabIndex = 69;
+            bb10.Text = " ";
+            bb10.UseVisualStyleBackColor = false;
             // 
-            // c09
+            // bb09
             // 
-            c09.BackColor = Color.Transparent;
-            c09.FlatAppearance.BorderSize = 0;
-            c09.FlatStyle = FlatStyle.Flat;
-            c09.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c09.Location = new Point(216, 289);
-            c09.Name = "c09";
-            c09.Size = new Size(163, 74);
-            c09.TabIndex = 69;
-            c09.Text = " ";
-            c09.UseVisualStyleBackColor = false;
+            bb09.BackColor = Color.Transparent;
+            bb09.FlatAppearance.BorderSize = 0;
+            bb09.FlatStyle = FlatStyle.Flat;
+            bb09.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb09.Location = new Point(216, 289);
+            bb09.Name = "bb09";
+            bb09.Size = new Size(163, 74);
+            bb09.TabIndex = 69;
+            bb09.Text = " ";
+            bb09.UseVisualStyleBackColor = false;
             // 
-            // label14
+            // labelb08
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = SystemColors.InactiveCaption;
-            label14.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label14.Location = new Point(328, 225);
-            label14.Name = "label14";
-            label14.Size = new Size(48, 23);
-            label14.TabIndex = 66;
-            label14.Text = "B-08";
-            label14.TextAlign = ContentAlignment.MiddleLeft;
+            labelb08.AutoSize = true;
+            labelb08.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb08.ForeColor = SystemColors.InactiveCaption;
+            labelb08.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb08.Location = new Point(328, 225);
+            labelb08.Name = "labelb08";
+            labelb08.Size = new Size(48, 23);
+            labelb08.TabIndex = 66;
+            labelb08.Text = "B-08";
+            labelb08.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label15
+            // labelb07
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = SystemColors.InactiveCaption;
-            label15.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label15.Location = new Point(328, 140);
-            label15.Name = "label15";
-            label15.Size = new Size(48, 23);
-            label15.TabIndex = 65;
-            label15.Text = "B-07";
-            label15.TextAlign = ContentAlignment.MiddleLeft;
+            labelb07.AutoSize = true;
+            labelb07.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb07.ForeColor = SystemColors.InactiveCaption;
+            labelb07.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb07.Location = new Point(328, 140);
+            labelb07.Name = "labelb07";
+            labelb07.Size = new Size(48, 23);
+            labelb07.TabIndex = 65;
+            labelb07.Text = "B-07";
+            labelb07.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label16
+            // labelb06
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = SystemColors.InactiveCaption;
-            label16.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label16.Location = new Point(334, 53);
-            label16.Name = "label16";
-            label16.Size = new Size(48, 23);
-            label16.TabIndex = 64;
-            label16.Text = "B-06";
-            label16.TextAlign = ContentAlignment.MiddleLeft;
+            labelb06.AutoSize = true;
+            labelb06.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb06.ForeColor = SystemColors.InactiveCaption;
+            labelb06.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb06.Location = new Point(334, 53);
+            labelb06.Name = "labelb06";
+            labelb06.Size = new Size(48, 23);
+            labelb06.TabIndex = 64;
+            labelb06.Text = "B-06";
+            labelb06.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label17
+            // labelb05
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.Orange;
-            label17.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label17.Location = new Point(20, 397);
-            label17.Name = "label17";
-            label17.Size = new Size(48, 23);
-            label17.TabIndex = 63;
-            label17.Text = "B-05";
-            label17.TextAlign = ContentAlignment.MiddleLeft;
+            labelb05.AutoSize = true;
+            labelb05.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb05.ForeColor = Color.Orange;
+            labelb05.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb05.Location = new Point(20, 397);
+            labelb05.Name = "labelb05";
+            labelb05.Size = new Size(48, 23);
+            labelb05.TabIndex = 63;
+            labelb05.Text = "B-05";
+            labelb05.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label18
+            // labelb04
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.Orange;
-            label18.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label18.Location = new Point(20, 315);
-            label18.Name = "label18";
-            label18.Size = new Size(48, 23);
-            label18.TabIndex = 62;
-            label18.Text = "B-04";
-            label18.TextAlign = ContentAlignment.MiddleLeft;
+            labelb04.AutoSize = true;
+            labelb04.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb04.ForeColor = Color.Orange;
+            labelb04.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb04.Location = new Point(20, 315);
+            labelb04.Name = "labelb04";
+            labelb04.Size = new Size(48, 23);
+            labelb04.TabIndex = 62;
+            labelb04.Text = "B-04";
+            labelb04.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label19
+            // labelb03
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.ForeColor = Color.Orange;
-            label19.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label19.Location = new Point(20, 225);
-            label19.Name = "label19";
-            label19.Size = new Size(48, 23);
-            label19.TabIndex = 61;
-            label19.Text = "B-03";
-            label19.TextAlign = ContentAlignment.MiddleLeft;
+            labelb03.AutoSize = true;
+            labelb03.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb03.ForeColor = Color.Orange;
+            labelb03.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb03.Location = new Point(20, 225);
+            labelb03.Name = "labelb03";
+            labelb03.Size = new Size(48, 23);
+            labelb03.TabIndex = 61;
+            labelb03.Text = "B-03";
+            labelb03.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label20
+            // labelb02
             // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label20.ForeColor = Color.Orange;
-            label20.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label20.Location = new Point(20, 131);
-            label20.Name = "label20";
-            label20.Size = new Size(48, 23);
-            label20.TabIndex = 60;
-            label20.Text = "B-02";
-            label20.TextAlign = ContentAlignment.MiddleLeft;
+            labelb02.AutoSize = true;
+            labelb02.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb02.ForeColor = Color.Orange;
+            labelb02.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb02.Location = new Point(20, 131);
+            labelb02.Name = "labelb02";
+            labelb02.Size = new Size(48, 23);
+            labelb02.TabIndex = 60;
+            labelb02.Text = "B-02";
+            labelb02.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // c01
+            // labelb01
             // 
-            c01.AutoSize = true;
-            c01.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            c01.ForeColor = Color.Orange;
-            c01.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            c01.Location = new Point(20, 53);
-            c01.Name = "c01";
-            c01.Size = new Size(48, 23);
-            c01.TabIndex = 59;
-            c01.Text = "B-01";
-            c01.TextAlign = ContentAlignment.MiddleLeft;
+            labelb01.AutoSize = true;
+            labelb01.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelb01.ForeColor = Color.Orange;
+            labelb01.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labelb01.Location = new Point(20, 53);
+            labelb01.Name = "labelb01";
+            labelb01.Size = new Size(48, 23);
+            labelb01.TabIndex = 59;
+            labelb01.Text = "B-01";
+            labelb01.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // c04
+            // bb04
             // 
-            c04.BackColor = Color.Transparent;
-            c04.FlatAppearance.BorderSize = 0;
-            c04.FlatStyle = FlatStyle.Flat;
-            c04.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c04.Location = new Point(20, 289);
-            c04.Name = "c04";
-            c04.Size = new Size(163, 74);
-            c04.TabIndex = 53;
-            c04.UseVisualStyleBackColor = false;
+            bb04.BackColor = Color.Transparent;
+            bb04.FlatAppearance.BorderSize = 0;
+            bb04.FlatStyle = FlatStyle.Flat;
+            bb04.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb04.Location = new Point(20, 289);
+            bb04.Name = "bb04";
+            bb04.Size = new Size(163, 74);
+            bb04.TabIndex = 53;
+            bb04.UseVisualStyleBackColor = false;
             // 
-            // c03
+            // bb03
             // 
-            c03.BackColor = Color.Transparent;
-            c03.FlatAppearance.BorderSize = 0;
-            c03.FlatStyle = FlatStyle.Flat;
-            c03.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c03.Location = new Point(20, 194);
-            c03.Name = "c03";
-            c03.Size = new Size(163, 74);
-            c03.TabIndex = 52;
-            c03.UseVisualStyleBackColor = false;
+            bb03.BackColor = Color.Transparent;
+            bb03.FlatAppearance.BorderSize = 0;
+            bb03.FlatStyle = FlatStyle.Flat;
+            bb03.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb03.Location = new Point(20, 194);
+            bb03.Name = "bb03";
+            bb03.Size = new Size(163, 74);
+            bb03.TabIndex = 52;
+            bb03.UseVisualStyleBackColor = false;
             // 
-            // c08
+            // bb08
             // 
-            c08.BackColor = Color.Transparent;
-            c08.FlatAppearance.BorderSize = 0;
-            c08.FlatStyle = FlatStyle.Flat;
-            c08.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c08.Location = new Point(213, 199);
-            c08.Name = "c08";
-            c08.Size = new Size(163, 74);
-            c08.TabIndex = 57;
-            c08.Text = " ";
-            c08.UseVisualStyleBackColor = false;
+            bb08.BackColor = Color.Transparent;
+            bb08.FlatAppearance.BorderSize = 0;
+            bb08.FlatStyle = FlatStyle.Flat;
+            bb08.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb08.Location = new Point(213, 199);
+            bb08.Name = "bb08";
+            bb08.Size = new Size(163, 74);
+            bb08.TabIndex = 57;
+            bb08.Text = " ";
+            bb08.UseVisualStyleBackColor = false;
             // 
-            // c07
+            // bb07
             // 
-            c07.BackColor = Color.Transparent;
-            c07.FlatAppearance.BorderSize = 0;
-            c07.FlatStyle = FlatStyle.Flat;
-            c07.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c07.Location = new Point(213, 112);
-            c07.Name = "c07";
-            c07.Size = new Size(163, 74);
-            c07.TabIndex = 56;
-            c07.Text = " ";
-            c07.UseVisualStyleBackColor = false;
+            bb07.BackColor = Color.Transparent;
+            bb07.FlatAppearance.BorderSize = 0;
+            bb07.FlatStyle = FlatStyle.Flat;
+            bb07.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb07.Location = new Point(213, 112);
+            bb07.Name = "bb07";
+            bb07.Size = new Size(163, 74);
+            bb07.TabIndex = 56;
+            bb07.Text = " ";
+            bb07.UseVisualStyleBackColor = false;
             // 
-            // c02
+            // bb02
             // 
-            c02.BackColor = Color.Transparent;
-            c02.FlatAppearance.BorderSize = 0;
-            c02.FlatStyle = FlatStyle.Flat;
-            c02.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c02.Location = new Point(20, 114);
-            c02.Name = "c02";
-            c02.Size = new Size(163, 74);
-            c02.TabIndex = 51;
-            c02.Text = " ";
-            c02.UseVisualStyleBackColor = false;
+            bb02.BackColor = Color.Transparent;
+            bb02.FlatAppearance.BorderSize = 0;
+            bb02.FlatStyle = FlatStyle.Flat;
+            bb02.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb02.Location = new Point(20, 114);
+            bb02.Name = "bb02";
+            bb02.Size = new Size(163, 74);
+            bb02.TabIndex = 51;
+            bb02.Text = " ";
+            bb02.UseVisualStyleBackColor = false;
             // 
-            // button16
+            // bb01
             // 
-            button16.BackColor = Color.Transparent;
-            button16.FlatAppearance.BorderSize = 0;
-            button16.FlatStyle = FlatStyle.Flat;
-            button16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button16.Location = new Point(20, 27);
-            button16.Name = "button16";
-            button16.Size = new Size(163, 74);
-            button16.TabIndex = 50;
-            button16.Text = " ";
-            button16.UseVisualStyleBackColor = false;
+            bb01.BackColor = Color.Transparent;
+            bb01.FlatAppearance.BorderSize = 0;
+            bb01.FlatStyle = FlatStyle.Flat;
+            bb01.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bb01.Location = new Point(20, 27);
+            bb01.Name = "bb01";
+            bb01.Size = new Size(163, 74);
+            bb01.TabIndex = 50;
+            bb01.Text = " ";
+            bb01.UseVisualStyleBackColor = false;
             // 
-            // c05
+            // bb05
             // 
-            c05.BackColor = Color.Transparent;
-            c05.FlatAppearance.BorderSize = 0;
-            c05.FlatStyle = FlatStyle.Flat;
-            c05.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c05.Location = new Point(20, 371);
-            c05.Name = "c05";
-            c05.Size = new Size(163, 74);
-            c05.TabIndex = 54;
-            c05.Text = " ";
-            c05.UseVisualStyleBackColor = false;
+            bb05.BackColor = Color.Transparent;
+            bb05.FlatAppearance.BorderSize = 0;
+            bb05.FlatStyle = FlatStyle.Flat;
+            bb05.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb05.Location = new Point(20, 371);
+            bb05.Name = "bb05";
+            bb05.Size = new Size(163, 74);
+            bb05.TabIndex = 54;
+            bb05.Text = " ";
+            bb05.UseVisualStyleBackColor = false;
             // 
-            // c06
+            // bb06
             // 
-            c06.BackColor = Color.Transparent;
-            c06.FlatAppearance.BorderSize = 0;
-            c06.FlatStyle = FlatStyle.Flat;
-            c06.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            c06.Location = new Point(212, 27);
-            c06.Name = "c06";
-            c06.Size = new Size(163, 74);
-            c06.TabIndex = 55;
-            c06.Text = " ";
-            c06.UseVisualStyleBackColor = false;
+            bb06.BackColor = Color.Transparent;
+            bb06.FlatAppearance.BorderSize = 0;
+            bb06.FlatStyle = FlatStyle.Flat;
+            bb06.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            bb06.Location = new Point(212, 27);
+            bb06.Name = "bb06";
+            bb06.Size = new Size(163, 74);
+            bb06.TabIndex = 55;
+            bb06.Text = " ";
+            bb06.UseVisualStyleBackColor = false;
             // 
             // firstFloorPanel
             // 
@@ -1107,7 +1139,7 @@
             firstFloorPanel.Controls.Add(a01);
             firstFloorPanel.Controls.Add(a05);
             firstFloorPanel.Controls.Add(a06);
-            firstFloorPanel.Location = new Point(547, 80);
+            firstFloorPanel.Location = new Point(467, 131);
             firstFloorPanel.Name = "firstFloorPanel";
             firstFloorPanel.Size = new Size(395, 460);
             firstFloorPanel.TabIndex = 61;
@@ -1394,7 +1426,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(850, 735);
+            ClientSize = new Size(854, 735);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Cursor = Cursors.Hand;
@@ -1464,8 +1496,6 @@
         private Panel basementPanel;
         private Panel panel2;
         private Label labelB1;
-        private Label labelB10;
-        private Label labelB9;
         private Label labelB8;
         private Label labelB7;
         private Label labelB6;
@@ -1498,27 +1528,31 @@
         private Button a09;
         private Panel panel5;
         private Panel secondFloorPanel;
-        private Label label6;
-        private Label label13;
-        private Button c10;
-        private Button c09;
-        private Label label14;
-        private Label label15;
-        private Label label16;
-        private Label label17;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Label c01;
-        private Button c04;
-        private Button c03;
-        private Button c08;
-        private Button c07;
-        private Button c02;
-        private Button button16;
-        private Button c05;
-        private Button c06;
+        private Label labelbB10;
+        private Label labelb09;
+        private Button bb10;
+        private Button bb09;
+        private Label labelb08;
+        private Label labelb07;
+        private Label labelb06;
+        private Label labelb05;
+        private Label labelb04;
+        private Label labelb03;
+        private Label labelb02;
+        private Label labelb01;
+        private Button bb04;
+        private Button bb03;
+        private Button bb08;
+        private Button bb07;
+        private Button bb02;
+        private Button bb01;
+        private Button bb05;
+        private Button bb06;
         private Label label2;
         private Label label3;
+        private Label labelB10;
+        private Label labelB9;
+        private Button b10;
+        private Button b09;
     }
 }

@@ -8,13 +8,12 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+
 namespace Parking
     {
     public partial class Parkin : UserControl
     {
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
         string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
         string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
         string Sloc;
@@ -33,6 +32,10 @@ namespace Parking
                 return instance;
             }
         }
+    
+
+
+
         public Parkin()
         {
             InitializeComponent();
@@ -624,174 +627,10 @@ namespace Parking
 
 
 
-        private void handleParkingArea(string btn)
-        {
-        
-            handleBool(btn);
-            HandleNullImage(btn);
-       
-        }
+     
+
 
       
-
-
-        private void handleBool(string btn)
-        {
-            switch (btn)
-            {
-                case "b1":
-                    b2 = true;
-                    b3 = true;
-                    b4 = true;
-                    b5 = true;
-                    b6 = true;
-                    b7 = true;
-                    b8 = true;
-                    break;
-                case "b2":
-                    b1 = true;
-                    b3 = true;
-                    b4 = true;
-                    b5 = true;
-                    b6 = true;
-                    b7 = true;
-                    b8 = true;
-                    break;
-                case "b3":
-                    b1 = true;
-                    b2 = true;
-                    b4 = true;
-                    b5 = true;
-                    b6 = true;
-                    b7 = true;
-                    b8 = true;
-                    break;
-                case "b4":
-                    b1 = true;
-                    b2 = true;
-                    b3 = true;
-                    b5 = true;
-                    b6 = true;
-                    b7 = true;
-                    b8 = true;
-                    break;
-                case "b5":
-                    b1 = true;
-                    b2 = true;
-                    b3 = true;
-                    b4 = true;
-                    b6 = true;
-                    b7 = true;
-                    b8 = true;
-                    break;
-                case "b6":
-                    b1 = true;
-                    b2 = true;
-                    b3 = true;
-                    b4 = true;
-                    b5 = true;
-                    b7 = true;
-                    b8 = true;
-                    break;
-                case "b7":
-                    b1 = true;
-                    b2 = true;
-                    b3 = true;
-                    b4 = true;
-                    b5 = true;
-                    b6 = true;
-                    b8 = true;
-                    break;
-                case "b8":
-                    b1 = true;
-                    b2 = true;
-                    b3 = true;
-                    b4 = true;
-                    b5 = true;
-                    b6 = true;
-                    b7 = true;
-                    break;
-            }
-        }
-
-        private void HandleNullImage(string btn)
-        {
-            switch (btn)
-            {
-                case "b1":
-                    b02.Image = null;
-                    b03.Image = null;
-                    b04.Image = null;
-                    b05.Image = null;
-                    b06.Image = null;
-                    b07.Image = null;
-                    b08.Image = null;
-                    break;
-                case "b2":
-                    b01.Image = null;
-                    b03.Image = null;
-                    b04.Image = null;
-                    b05.Image = null;
-                    b06.Image = null;
-                    b07.Image = null;
-                    b08.Image = null;
-                    break;
-                case "b3":
-                    b01.Image = null;
-                    b02.Image = null;
-                    b04.Image = null;
-                    b05.Image = null;
-                    b06.Image = null;
-                    b07.Image = null;
-                    b08.Image = null;
-                    break;
-                case "b4":
-                    b01.Image = null;
-                    b02.Image = null;
-                    b03.Image = null;
-                    b05.Image = null;
-                    b06.Image = null;
-                    b07.Image = null;
-                    b08.Image = null;
-                    break;
-                case "b5":
-                    b01.Image = null;
-                    b02.Image = null;
-                    b03.Image = null;
-                    b04.Image = null;
-                    b06.Image = null;
-                    b07.Image = null;
-                    b08.Image = null;
-                    break;
-                case "b6":
-                    b01.Image = null;
-                    b02.Image = null;
-                    b03.Image = null;
-                    b04.Image = null;
-                    b05.Image = null;
-                    b07.Image = null;
-                    b08.Image = null;
-                    break;
-                case "b7":
-                    b01.Image = null;
-                    b02.Image = null;
-                    b03.Image = null;
-                    b04.Image = null;
-                    b05.Image = null;
-                    b06.Image = null;
-                    b08.Image = null;
-                    break;
-                case "b8":
-                    b01.Image = null;
-                    b02.Image = null;
-                    b03.Image = null;
-                    b04.Image = null;
-                    b05.Image = null;
-                    b06.Image = null;
-                    b07.Image = null;
-                    break;
-            }
-        }
    
         //ParkingRecord
         private string[] getVehicleRecord(string slot) {
@@ -833,6 +672,8 @@ namespace Parking
                 setSloc(s_loc);
                 pe1 = new ParkingEntry(flowLayoutPanel2);
                 pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
+                pe1.setLocationArea(s_loc);
+                pe1.setSelectedArea(true);
                 pe1.ShowDialog();
             }
             else
