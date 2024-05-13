@@ -14,8 +14,8 @@ namespace Parking
     public partial class Parkin : UserControl
     {
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-        string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
-        string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
+        string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png"; 
+        string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
         string Sloc;
         ParkingEntry pe1;
         Parkout pOut;
@@ -32,7 +32,7 @@ namespace Parking
                 return instance;
             }
         }
-    
+
 
 
 
@@ -49,10 +49,11 @@ namespace Parking
 
             parkingView.Hide();
             OccupiedArea();
-          
+
         }
-        public void  setFlowVH(FlowLayoutPanel flowPanelVH) {
-                this.flowPanelVH = flowPanelVH;
+        public void setFlowVH(FlowLayoutPanel flowPanelVH)
+        {
+            this.flowPanelVH = flowPanelVH;
         }
 
 
@@ -126,9 +127,10 @@ namespace Parking
             pe1 = new ParkingEntry(flowLayoutPanel2);
             pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
             pe1.ShowDialog();
-           
+
         }
-        public void setIsParkin(bool isPark) {
+        public void setIsParkin(bool isPark)
+        {
             isParkin = isPark;
         }
         private void ParkingRecordAddedHandler(object sender, EventArgs e)
@@ -136,8 +138,8 @@ namespace Parking
             display();
 
 
- 
-           refreshParkingArea();
+
+            refreshParkingArea();
 
             numV.Text = countVehicle() + "";
             numPV.Text = countParkedVehicle() + "";
@@ -152,7 +154,7 @@ namespace Parking
             pOut = new Parkout();
             pOut.Parking += ParkingRecordAddedHandler;
             pOut.ShowDialog();
- 
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -167,7 +169,7 @@ namespace Parking
         {
             flowLayoutPanel2.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords(); // Add a semicolon here
+            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords(); 
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
@@ -181,15 +183,13 @@ namespace Parking
 
             }
         }
-        public void refreshParkingArea() {
-            b01.Image = null;
-            b02.Image = null;
-            b03.Image = null;
-            b04.Image = null;
-            b05.Image = null;
-            b06.Image = null;
-            b07.Image = null;
-            b08.Image = null;
+        public void refreshParkingArea()
+        {
+            Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
+                               button28, button27, button26, button25, button24, button23, button22, button21, button20, button19,
+                              button38, button37, button36, button35, button34, button33, button32, button31, button30, button29];
+            for (int i = 0; i < 30; i++) 
+                    button[i].Image = null;
             OccupiedArea();
         }
         public void filterDisplay(string category)
@@ -428,12 +428,10 @@ namespace Parking
             Content.Controls.Add(vehicleListPanel);
             vehicleListPanel.Dock = DockStyle.Fill;
             vehicleListPanel.Show();
-
             parkingView.Dock = DockStyle.None;
             Content.Controls.Remove(parkingView);
             parkingView.Hide();
             refreshParkingArea();
-
         }
 
         //v_parkLot
@@ -443,29 +441,22 @@ namespace Parking
             parkingView.Dock = DockStyle.Fill;
             Content.Controls.Add(parkingView);
             parkingView.Show();
-
             Content.Controls.Remove(vehicleListPanel);
             vehicleListPanel.Dock = DockStyle.None;
             vehicleListPanel.Hide();
             refreshParkingArea();
         }
-
-
-
         private bool isOccupied(string slotName)
         {
             List<string> occupiedSlots = new List<string>();
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "SELECT s_loc FROM V_Slots WHERE availability = 0";
 
                 SqlCommand command = new SqlCommand(query, connection);
-
                 try
                 {
                     connection.Open();
-
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -485,136 +476,54 @@ namespace Parking
         private void OccupiedArea()
         {
 
-            Image image = Image.FromFile(imagePath1);
-            Image image2 = Image.FromFile(imagePath2);
+            Image motorbikeImage1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike2.png");
+            Image motorbikeImage2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike1.png");
+            Image carImage1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png");
+            Image carImage2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png");
 
-
-            if (isOccupied("BM-01"))
-            {
-                b01.Image = image2;
-                labelB1.Hide();
-            }
-            else
-                labelB1.Show();
-
-            if (isOccupied("BM-02"))
-            {
-                b02.Image = image2;
-                labelB2.Hide();
-            }
-            else
-                labelB2.Show();
-
-            if (isOccupied("BM-03"))
-            {
-                b03.Image = image2;
-                labelB3.Hide();
-            }
-            else
-                labelB3.Show();
-
-            if (isOccupied("BM-04"))
-            {
-                b04.Image = image2;
-                labelB4.Hide();
-            }
-            else
-                labelB4.Show();
-
-            if (isOccupied("BM-05"))
-            {
-                b05.Image = image2;
-                labelB5.Hide();
-            }
-            else
-                labelB5.Show();
-
-            if (isOccupied("BM-06"))
-            {
-                b06.Image = image;
-                labelB6.Hide();
-            }
-            else
-                labelB6.Show();
-
-            if (isOccupied("BM-07"))
-            {
-                b07.Image = image;
-                labelB7.Hide();
-            }
-            else
-                labelB7.Show();
-
-            if (isOccupied("BM-08"))
-            {
-                b08.Image = image;
-                labelB8.Hide();
-            }
-            else
-                labelB8.Show();
-
-            /*  if (isOccupied("A-01"))
-              {
-                  a01.Image = image;
-                  labela1.Text = "";
-              }
-              if (isOccupied("A-02"))
-              {
-                  a02.Image = image;
-                  labela2.Text = "";
-              }
-              if (isOccupied("A-03"))
-              {
-                  a03.Image = image;
-                  labela3.Text = "";
-              }
-              if (isOccupied("A-04"))
-              {
-                  a04.Image = image;
-                  labela4.Text = "";
-              }
-              if (isOccupied("A-05"))
-              {
-                  a05.Image = image;
-                  labela5.Text = "";
-              }
-              if (isOccupied("A-06"))
-              {
-                  a06.Image = image;
-                  labela6.Text = "";
-              }
-              if (isOccupied("A-07"))
-              {
-                  a07.Image = image;
-                  labela7.Text = "";
-              }
-              if (isOccupied("A-08"))
-              {
-                  a08.Image = image;
-                  labela8.Text = "";
-              }
-              if (isOccupied("A-09"))
-              {
-                  a09.Image = image;
-                  labela9.Text = "";
-              }
-              if (isOccupied("A-10"))
-              {
-                  a10.Image = image;
-                  labela10.Text = "";
-              }*/
-
-
+            Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
+                               button28, button27, button26, button25, button24, button23, button22, button21, button20, button19,
+                               button38, button37, button36, button35, button34, button33, button32, button31, button30, button29];
+            Label[] labels = [labelB1, labelB2, labelB3, labelB4, labelB5, labelB6, labelB7, labelB8, labelB9, labelB10,
+                              labela1, labela2,labela3,labela4,labela5,labela6,labela7,labela8,labela9,labela10,
+                              label29, label30, label31, label32, label33,label22,label34, label35, label36,label37];
+            string[] labelNames = ["BM-01", "BM-02", "BM-03", "BM-04", "BM-05", "BM-06", "BM-07", "BM-08", "BM-09", "BM-10",
+                                    "A-01","A-02","A-03","A-04","A-05","A-06","A-07","A-08","A-09","A-10",
+                                    "B-01","B-02","B-03","B-04","B-05","B-06","B-07","B-08","B-09","B-10"];
+            
+            for (int i = 0; i < labelNames.Length; i++)
+                if (isOccupied(labelNames[i]))
+                {
+                    bool ismotorbike = isMotorbike(labelNames[i]);
+                    button[i].Image = ismotorbike ? (i >= 0 && i < 5) || (i >= 10 && i <= 14) || (i >= 19 && i <= 23) ? motorbikeImage1 : motorbikeImage2
+                                       : (i >= 0 && i < 5) || (i >= 10 && i <= 14) || (i >= 19 && i <= 23) ? carImage1 : carImage2;
+                    labels[i].Hide();
+                }
+                else
+                    labels[i].Show();
         }
 
-        bool b1 = true;
-        bool b2 = true;
-        bool b3 = true;
-        bool b4 = true;
-        bool b5 = true;
-        bool b6 = true;
-        bool b7 = true;
-        bool b8 = true;
+        private bool isMotorbike(string s_loc)
+        {
+            bool isMotorbike = false;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM Vehicle WHERE s_sloc = @s_sloc AND status = 'PARKED' AND v_type = 'MOTORBIKE'  ";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@s_sloc", s_loc);
+                try
+                {
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    isMotorbike = count > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            return isMotorbike;
+        }
 
         private void setSloc(string sloc)
         {
@@ -625,26 +534,20 @@ namespace Parking
             return Sloc;
         }
 
-
-
-     
-
-
-      
-   
         //ParkingRecord
-        private string[] getVehicleRecord(string slot) {
+        private string[] getVehicleRecord(string slot)
+        {
 
-            string query = "SELECT v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status FROM Vehicle WHERE status = @status AND s_sloc = @sloc";        
+            string query = "SELECT v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status FROM Vehicle WHERE status = @status AND s_sloc = @sloc";
             string[] VHdetails = new string[8];
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@status", "PARKED");  
-                command.Parameters.AddWithValue("@sloc", slot);  
+                command.Parameters.AddWithValue("@status", "PARKED");
+                command.Parameters.AddWithValue("@sloc", slot);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read()) 
+                if (reader.Read())
                 {
                     DateTime arrivalDate = (DateTime)reader["arrivalDate"];
                     TimeSpan arrivalTime = (TimeSpan)reader["arrivalTime"];
@@ -656,23 +559,24 @@ namespace Parking
                     VHdetails[4] = reader["phone"].ToString();
                     VHdetails[5] = arrivalDate.ToString("MM/dd/yyyy");
                     VHdetails[6] = time.ToString("hh:mm:ss tt");
-                    VHdetails[7] = reader["status"].ToString();                
+                    VHdetails[7] = reader["status"].ToString();
                 }
                 reader.Close();
             }
             return VHdetails;
         }
 
-        private void handleParkAreaClick(string btn,string s_loc) {
+        private void handleParkAreaClick(string btn, string s_loc,int floor)
+        {
 
-           // handleParkingArea(btn);
+
             OccupiedArea();
             if (!isOccupied(s_loc))
             {
                 setSloc(s_loc);
                 pe1 = new ParkingEntry(flowLayoutPanel2);
                 pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
-                pe1.setLocationArea(s_loc);
+                pe1.setLocationArea(s_loc,floor);
                 pe1.setSelectedArea(true);
                 pe1.ShowDialog();
             }
@@ -695,7 +599,7 @@ namespace Parking
 
                 pOut.getVHparkOutnType(vehicleDetails[0], vehicleDetails[1]);
                 pOut.ShowDialog();
-              
+
             }
         }
 
@@ -710,53 +614,151 @@ namespace Parking
         private void b01_Click(object sender, EventArgs e)
         {
 
-            handleParkAreaClick("b1", "BM-01");
+            handleParkAreaClick("b1", "BM-01",1);
         }
 
         private void b02_Click(object sender, EventArgs e)
         {
 
-            handleParkAreaClick("b2", "BM-02");
+            handleParkAreaClick("b2", "BM-02", 1);
         }
 
         private void b03_Click_1(object sender, EventArgs e)
         {
-            handleParkAreaClick("b3", "BM-03");
+            handleParkAreaClick("b3", "BM-03", 1);
         }
 
         private void b04_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("b4", "BM-04");
+            handleParkAreaClick("b4", "BM-04", 1);
         }
 
         private void b05_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("b5", "BM-05");
+            handleParkAreaClick("b5", "BM-05", 1);
         }
 
         private void b06_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("b6", "BM-06");
+            handleParkAreaClick("b6", "BM-06", 1);
         }
 
         private void b07_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("b7", "BM-07");
+            handleParkAreaClick("b7", "BM-07", 1);
         }
 
         private void b08_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("b8", "BM-08");
+            handleParkAreaClick("b8", "BM-08", 1);
         }
 
         private void b09_Click(object sender, EventArgs e)
         {
-
+            handleParkAreaClick("b9", "BM-08", 1);
         }
 
         private void b10_Click(object sender, EventArgs e)
         {
+            handleParkAreaClick("b10", "BM-10", 1);
+        }
 
+        private void button28_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a1", "A-01",2);
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a2", "A-02", 2);
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a3", "A-03", 2);
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a4", "A-04", 2);
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a5", "A-05", 2);
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a6", "A-06", 2);
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a7", "A-07", 2);
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a8", "A-08", 2);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a9", "A-09", 2);
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("a10", "A-10", 2);
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb01", "B-01",3);
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb02", "B-02", 3);
+        }
+        private void button36_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb03", "B-03", 3);
+        }
+        private void button35_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb04", "B-04", 3);
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb05", "B-05", 3);
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb06", "B-06", 3);
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb07", "B-07", 3);
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb08", "B-08", 3);
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb09", "B-09", 3);
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            handleParkAreaClick("bb_10", "B-10", 3);
         }
     }
 }

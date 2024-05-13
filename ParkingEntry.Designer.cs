@@ -146,7 +146,7 @@
             comboBoxType.Font = new Font("Segoe UI", 13.8F);
             comboBoxType.ForeColor = Color.Black;
             comboBoxType.FormattingEnabled = true;
-            comboBoxType.Location = new Point(17, 253);
+            comboBoxType.Location = new Point(22, 254);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(350, 39);
             comboBoxType.TabIndex = 10;
@@ -158,7 +158,7 @@
             palteNo.BackColor = Color.Transparent;
             palteNo.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             palteNo.ForeColor = Color.WhiteSmoke;
-            palteNo.Location = new Point(19, 110);
+            palteNo.Location = new Point(24, 111);
             palteNo.Name = "palteNo";
             palteNo.Size = new Size(127, 23);
             palteNo.TabIndex = 0;
@@ -170,7 +170,7 @@
             plateNo.BorderStyle = BorderStyle.None;
             plateNo.Font = new Font("NSimSun", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             plateNo.ForeColor = Color.Black;
-            plateNo.Location = new Point(19, 145);
+            plateNo.Location = new Point(24, 146);
             plateNo.Name = "plateNo";
             plateNo.Size = new Size(352, 35);
             plateNo.TabIndex = 1;
@@ -181,7 +181,7 @@
             type.BackColor = Color.Transparent;
             type.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             type.ForeColor = Color.WhiteSmoke;
-            type.Location = new Point(17, 222);
+            type.Location = new Point(22, 223);
             type.Name = "type";
             type.Size = new Size(75, 23);
             type.TabIndex = 2;
@@ -193,7 +193,7 @@
             model.BackColor = Color.Transparent;
             model.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             model.ForeColor = Color.WhiteSmoke;
-            model.Location = new Point(17, 325);
+            model.Location = new Point(22, 326);
             model.Name = "model";
             model.Size = new Size(88, 23);
             model.TabIndex = 4;
@@ -206,7 +206,7 @@
             comboBoxModel.Font = new Font("Segoe UI", 13.8F);
             comboBoxModel.ForeColor = Color.Black;
             comboBoxModel.FormattingEnabled = true;
-            comboBoxModel.Location = new Point(17, 356);
+            comboBoxModel.Location = new Point(22, 357);
             comboBoxModel.Name = "comboBoxModel";
             comboBoxModel.Size = new Size(350, 39);
             comboBoxModel.TabIndex = 5;
@@ -217,7 +217,7 @@
             driver.BackColor = Color.White;
             driver.Font = new Font("NSimSun", 16.2F);
             driver.ForeColor = Color.Black;
-            driver.Location = new Point(14, 574);
+            driver.Location = new Point(19, 575);
             driver.Name = "driver";
             driver.Size = new Size(350, 38);
             driver.TabIndex = 9;
@@ -228,7 +228,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             label5.ForeColor = Color.WhiteSmoke;
-            label5.Location = new Point(14, 543);
+            label5.Location = new Point(19, 544);
             label5.Name = "label5";
             label5.Size = new Size(88, 23);
             label5.TabIndex = 8;
@@ -239,7 +239,7 @@
             phoneNo.BackColor = Color.White;
             phoneNo.Font = new Font("NSimSun", 16.2F);
             phoneNo.ForeColor = Color.Black;
-            phoneNo.Location = new Point(14, 463);
+            phoneNo.Location = new Point(19, 464);
             phoneNo.Name = "phoneNo";
             phoneNo.Size = new Size(350, 38);
             phoneNo.TabIndex = 12;
@@ -250,7 +250,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(14, 432);
+            label1.Location = new Point(19, 433);
             label1.Name = "label1";
             label1.Size = new Size(114, 23);
             label1.TabIndex = 11;
@@ -265,7 +265,7 @@
             button1.ForeColor = Color.Brown;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(518, 630);
+            button1.Location = new Point(525, 627);
             button1.Name = "button1";
             button1.Size = new Size(106, 40);
             button1.TabIndex = 16;
@@ -282,7 +282,7 @@
             button2.ForeColor = Color.Lime;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(733, 630);
+            button2.Location = new Point(740, 627);
             button2.Name = "button2";
             button2.Size = new Size(91, 40);
             button2.TabIndex = 17;
@@ -311,7 +311,7 @@
             inValidPN.AutoSize = true;
             inValidPN.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             inValidPN.ForeColor = Color.Red;
-            inValidPN.Location = new Point(19, 186);
+            inValidPN.Location = new Point(24, 187);
             inValidPN.Name = "inValidPN";
             inValidPN.Size = new Size(0, 20);
             inValidPN.TabIndex = 19;
@@ -321,7 +321,7 @@
             invalidT.AutoSize = true;
             invalidT.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             invalidT.ForeColor = Color.Red;
-            invalidT.Location = new Point(17, 295);
+            invalidT.Location = new Point(22, 296);
             invalidT.Name = "invalidT";
             invalidT.Size = new Size(0, 20);
             invalidT.TabIndex = 20;
@@ -331,7 +331,7 @@
             inValidM.AutoSize = true;
             inValidM.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             inValidM.ForeColor = Color.Red;
-            inValidM.Location = new Point(17, 398);
+            inValidM.Location = new Point(22, 399);
             inValidM.Name = "inValidM";
             inValidM.Size = new Size(0, 20);
             inValidM.TabIndex = 21;
@@ -341,7 +341,7 @@
             invalid.AutoSize = true;
             invalid.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             invalid.ForeColor = Color.Lime;
-            invalid.Location = new Point(19, 75);
+            invalid.Location = new Point(24, 76);
             invalid.Name = "invalid";
             invalid.Size = new Size(0, 28);
             invalid.TabIndex = 23;
@@ -355,7 +355,7 @@
             button3.ForeColor = Color.Yellow;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(630, 630);
+            button3.Location = new Point(637, 627);
             button3.Name = "button3";
             button3.Size = new Size(107, 40);
             button3.TabIndex = 24;
@@ -372,7 +372,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(854, 43);
+            panel1.Size = new Size(855, 43);
             panel1.TabIndex = 25;
             // 
             // button4
@@ -397,7 +397,7 @@
             invalidDriver.AutoSize = true;
             invalidDriver.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             invalidDriver.ForeColor = Color.Red;
-            invalidDriver.Location = new Point(14, 630);
+            invalidDriver.Location = new Point(19, 631);
             invalidDriver.Name = "invalidDriver";
             invalidDriver.Size = new Size(0, 20);
             invalidDriver.TabIndex = 26;
@@ -407,7 +407,7 @@
             invalidPhone.AutoSize = true;
             invalidPhone.Font = new Font("Cambria", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             invalidPhone.ForeColor = Color.Red;
-            invalidPhone.Location = new Point(14, 504);
+            invalidPhone.Location = new Point(19, 505);
             invalidPhone.Name = "invalidPhone";
             invalidPhone.Size = new Size(0, 20);
             invalidPhone.TabIndex = 27;
@@ -427,12 +427,13 @@
             // b01
             // 
             b01.BackColor = Color.Transparent;
+            b01.BackgroundImageLayout = ImageLayout.Stretch;
             b01.FlatAppearance.BorderSize = 0;
             b01.FlatStyle = FlatStyle.Flat;
             b01.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             b01.Location = new Point(20, 27);
             b01.Name = "b01";
-            b01.Size = new Size(163, 74);
+            b01.Size = new Size(163, 73);
             b01.TabIndex = 50;
             b01.Text = " ";
             b01.UseVisualStyleBackColor = false;
@@ -441,6 +442,7 @@
             // b08
             // 
             b08.BackColor = Color.Transparent;
+            b08.BackgroundImageLayout = ImageLayout.Stretch;
             b08.FlatAppearance.BorderSize = 0;
             b08.FlatStyle = FlatStyle.Flat;
             b08.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -455,6 +457,7 @@
             // b07
             // 
             b07.BackColor = Color.Transparent;
+            b07.BackgroundImageLayout = ImageLayout.Stretch;
             b07.FlatAppearance.BorderSize = 0;
             b07.FlatStyle = FlatStyle.Flat;
             b07.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -469,10 +472,11 @@
             // b06
             // 
             b06.BackColor = Color.Transparent;
+            b06.BackgroundImageLayout = ImageLayout.Stretch;
             b06.FlatAppearance.BorderSize = 0;
             b06.FlatStyle = FlatStyle.Flat;
             b06.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            b06.Location = new Point(212, 27);
+            b06.Location = new Point(218, 27);
             b06.Name = "b06";
             b06.Size = new Size(163, 74);
             b06.TabIndex = 55;
@@ -483,6 +487,7 @@
             // b05
             // 
             b05.BackColor = Color.Transparent;
+            b05.BackgroundImageLayout = ImageLayout.Stretch;
             b05.FlatAppearance.BorderSize = 0;
             b05.FlatStyle = FlatStyle.Flat;
             b05.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -497,6 +502,7 @@
             // b04
             // 
             b04.BackColor = Color.Transparent;
+            b04.BackgroundImageLayout = ImageLayout.Stretch;
             b04.FlatAppearance.BorderSize = 0;
             b04.FlatStyle = FlatStyle.Flat;
             b04.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -510,6 +516,7 @@
             // b03
             // 
             b03.BackColor = Color.Transparent;
+            b03.BackgroundImageLayout = ImageLayout.Stretch;
             b03.FlatAppearance.BorderSize = 0;
             b03.FlatStyle = FlatStyle.Flat;
             b03.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -523,6 +530,7 @@
             // b02
             // 
             b02.BackColor = Color.Transparent;
+            b02.BackgroundImageLayout = ImageLayout.Stretch;
             b02.FlatAppearance.BorderSize = 0;
             b02.FlatStyle = FlatStyle.Flat;
             b02.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -622,6 +630,7 @@
             // b10
             // 
             b10.BackColor = Color.Transparent;
+            b10.BackgroundImageLayout = ImageLayout.Stretch;
             b10.FlatAppearance.BorderSize = 0;
             b10.FlatStyle = FlatStyle.Flat;
             b10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -636,6 +645,7 @@
             // b09
             // 
             b09.BackColor = Color.Transparent;
+            b09.BackgroundImageLayout = ImageLayout.Stretch;
             b09.FlatAppearance.BorderSize = 0;
             b09.FlatStyle = FlatStyle.Flat;
             b09.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -754,9 +764,9 @@
             panel2.Controls.Add(button14);
             panel2.Controls.Add(button12);
             panel2.Controls.Add(button13);
-            panel2.Location = new Point(10, 66);
+            panel2.Location = new Point(9, 58);
             panel2.Name = "panel2";
-            panel2.Size = new Size(398, 52);
+            panel2.Size = new Size(408, 52);
             panel2.TabIndex = 58;
             // 
             // panel3
@@ -786,7 +796,7 @@
             panel3.Controls.Add(inValidPN);
             panel3.Location = new Point(3, 49);
             panel3.Name = "panel3";
-            panel3.Size = new Size(843, 683);
+            panel3.Size = new Size(847, 676);
             panel3.TabIndex = 59;
             // 
             // label2
@@ -795,7 +805,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             label2.ForeColor = Color.WhiteSmoke;
-            label2.Location = new Point(91, 21);
+            label2.Location = new Point(96, 22);
             label2.Name = "label2";
             label2.Size = new Size(218, 23);
             label2.TabIndex = 61;
@@ -803,15 +813,16 @@
             // 
             // panel4
             // 
+            panel4.BackgroundImageLayout = ImageLayout.Stretch;
             panel4.BorderStyle = BorderStyle.Fixed3D;
             panel4.Controls.Add(label3);
             panel4.Controls.Add(secondFloorPanel);
             panel4.Controls.Add(firstFloorPanel);
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(panel2);
-            panel4.Location = new Point(400, 12);
+            panel4.Location = new Point(410, 22);
             panel4.Name = "panel4";
-            panel4.Size = new Size(424, 605);
+            panel4.Size = new Size(421, 599);
             panel4.TabIndex = 60;
             // 
             // label3
@@ -885,6 +896,7 @@
             // bb10
             // 
             bb10.BackColor = Color.Transparent;
+            bb10.BackgroundImageLayout = ImageLayout.Stretch;
             bb10.FlatAppearance.BorderSize = 0;
             bb10.FlatStyle = FlatStyle.Flat;
             bb10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -894,10 +906,12 @@
             bb10.TabIndex = 69;
             bb10.Text = " ";
             bb10.UseVisualStyleBackColor = false;
+            bb10.Click += bb10_Click;
             // 
             // bb09
             // 
             bb09.BackColor = Color.Transparent;
+            bb09.BackgroundImageLayout = ImageLayout.Stretch;
             bb09.FlatAppearance.BorderSize = 0;
             bb09.FlatStyle = FlatStyle.Flat;
             bb09.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -907,6 +921,7 @@
             bb09.TabIndex = 69;
             bb09.Text = " ";
             bb09.UseVisualStyleBackColor = false;
+            bb09.Click += bb09_Click;
             // 
             // labelb08
             // 
@@ -1015,6 +1030,7 @@
             // bb04
             // 
             bb04.BackColor = Color.Transparent;
+            bb04.BackgroundImageLayout = ImageLayout.Stretch;
             bb04.FlatAppearance.BorderSize = 0;
             bb04.FlatStyle = FlatStyle.Flat;
             bb04.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1023,10 +1039,12 @@
             bb04.Size = new Size(163, 74);
             bb04.TabIndex = 53;
             bb04.UseVisualStyleBackColor = false;
+            bb04.Click += bb04_Click;
             // 
             // bb03
             // 
             bb03.BackColor = Color.Transparent;
+            bb03.BackgroundImageLayout = ImageLayout.Stretch;
             bb03.FlatAppearance.BorderSize = 0;
             bb03.FlatStyle = FlatStyle.Flat;
             bb03.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1035,10 +1053,12 @@
             bb03.Size = new Size(163, 74);
             bb03.TabIndex = 52;
             bb03.UseVisualStyleBackColor = false;
+            bb03.Click += bb03_Click;
             // 
             // bb08
             // 
             bb08.BackColor = Color.Transparent;
+            bb08.BackgroundImageLayout = ImageLayout.Stretch;
             bb08.FlatAppearance.BorderSize = 0;
             bb08.FlatStyle = FlatStyle.Flat;
             bb08.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1048,10 +1068,12 @@
             bb08.TabIndex = 57;
             bb08.Text = " ";
             bb08.UseVisualStyleBackColor = false;
+            bb08.Click += bb08_Click;
             // 
             // bb07
             // 
             bb07.BackColor = Color.Transparent;
+            bb07.BackgroundImageLayout = ImageLayout.Stretch;
             bb07.FlatAppearance.BorderSize = 0;
             bb07.FlatStyle = FlatStyle.Flat;
             bb07.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1061,10 +1083,12 @@
             bb07.TabIndex = 56;
             bb07.Text = " ";
             bb07.UseVisualStyleBackColor = false;
+            bb07.Click += bb07_Click;
             // 
             // bb02
             // 
             bb02.BackColor = Color.Transparent;
+            bb02.BackgroundImageLayout = ImageLayout.Stretch;
             bb02.FlatAppearance.BorderSize = 0;
             bb02.FlatStyle = FlatStyle.Flat;
             bb02.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1074,10 +1098,12 @@
             bb02.TabIndex = 51;
             bb02.Text = " ";
             bb02.UseVisualStyleBackColor = false;
+            bb02.Click += bb02_Click;
             // 
             // bb01
             // 
             bb01.BackColor = Color.Transparent;
+            bb01.BackgroundImageLayout = ImageLayout.Stretch;
             bb01.FlatAppearance.BorderSize = 0;
             bb01.FlatStyle = FlatStyle.Flat;
             bb01.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -1087,10 +1113,12 @@
             bb01.TabIndex = 50;
             bb01.Text = " ";
             bb01.UseVisualStyleBackColor = false;
+            bb01.Click += bb01_Click;
             // 
             // bb05
             // 
             bb05.BackColor = Color.Transparent;
+            bb05.BackgroundImageLayout = ImageLayout.Stretch;
             bb05.FlatAppearance.BorderSize = 0;
             bb05.FlatStyle = FlatStyle.Flat;
             bb05.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1100,10 +1128,12 @@
             bb05.TabIndex = 54;
             bb05.Text = " ";
             bb05.UseVisualStyleBackColor = false;
+            bb05.Click += bb05_Click;
             // 
             // bb06
             // 
             bb06.BackColor = Color.Transparent;
+            bb06.BackgroundImageLayout = ImageLayout.Stretch;
             bb06.FlatAppearance.BorderSize = 0;
             bb06.FlatStyle = FlatStyle.Flat;
             bb06.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1113,6 +1143,7 @@
             bb06.TabIndex = 55;
             bb06.Text = " ";
             bb06.UseVisualStyleBackColor = false;
+            bb06.Click += bb06_Click;
             // 
             // firstFloorPanel
             // 
@@ -1173,6 +1204,7 @@
             // a10
             // 
             a10.BackColor = Color.Transparent;
+            a10.BackgroundImageLayout = ImageLayout.Stretch;
             a10.FlatAppearance.BorderSize = 0;
             a10.FlatStyle = FlatStyle.Flat;
             a10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1187,6 +1219,7 @@
             // a09
             // 
             a09.BackColor = Color.Transparent;
+            a09.BackgroundImageLayout = ImageLayout.Stretch;
             a09.FlatAppearance.BorderSize = 0;
             a09.FlatStyle = FlatStyle.Flat;
             a09.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1305,10 +1338,11 @@
             // a04
             // 
             a04.BackColor = Color.Transparent;
+            a04.BackgroundImageLayout = ImageLayout.Stretch;
             a04.FlatAppearance.BorderSize = 0;
             a04.FlatStyle = FlatStyle.Flat;
             a04.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            a04.Location = new Point(20, 289);
+            a04.Location = new Point(20, 279);
             a04.Name = "a04";
             a04.Size = new Size(163, 74);
             a04.TabIndex = 53;
@@ -1318,6 +1352,7 @@
             // a03
             // 
             a03.BackColor = Color.Transparent;
+            a03.BackgroundImageLayout = ImageLayout.Stretch;
             a03.FlatAppearance.BorderSize = 0;
             a03.FlatStyle = FlatStyle.Flat;
             a03.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1331,6 +1366,7 @@
             // a08
             // 
             a08.BackColor = Color.Transparent;
+            a08.BackgroundImageLayout = ImageLayout.Stretch;
             a08.FlatAppearance.BorderSize = 0;
             a08.FlatStyle = FlatStyle.Flat;
             a08.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1345,6 +1381,7 @@
             // a07
             // 
             a07.BackColor = Color.Transparent;
+            a07.BackgroundImageLayout = ImageLayout.Stretch;
             a07.FlatAppearance.BorderSize = 0;
             a07.FlatStyle = FlatStyle.Flat;
             a07.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1359,6 +1396,7 @@
             // a02
             // 
             a02.BackColor = Color.Transparent;
+            a02.BackgroundImageLayout = ImageLayout.Stretch;
             a02.FlatAppearance.BorderSize = 0;
             a02.FlatStyle = FlatStyle.Flat;
             a02.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1373,6 +1411,7 @@
             // a01
             // 
             a01.BackColor = Color.Transparent;
+            a01.BackgroundImageLayout = ImageLayout.Stretch;
             a01.FlatAppearance.BorderSize = 0;
             a01.FlatStyle = FlatStyle.Flat;
             a01.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -1387,6 +1426,7 @@
             // a05
             // 
             a05.BackColor = Color.Transparent;
+            a05.BackgroundImageLayout = ImageLayout.Stretch;
             a05.FlatAppearance.BorderSize = 0;
             a05.FlatStyle = FlatStyle.Flat;
             a05.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1401,6 +1441,7 @@
             // a06
             // 
             a06.BackColor = Color.Transparent;
+            a06.BackgroundImageLayout = ImageLayout.Stretch;
             a06.FlatAppearance.BorderSize = 0;
             a06.FlatStyle = FlatStyle.Flat;
             a06.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
@@ -1415,7 +1456,7 @@
             // panel5
             // 
             panel5.Controls.Add(basementPanel);
-            panel5.Location = new Point(10, 131);
+            panel5.Location = new Point(9, 122);
             panel5.Name = "panel5";
             panel5.Size = new Size(398, 463);
             panel5.TabIndex = 59;
@@ -1426,7 +1467,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(854, 735);
+            ClientSize = new Size(855, 732);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Cursor = Cursors.Hand;

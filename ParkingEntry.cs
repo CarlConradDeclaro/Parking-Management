@@ -24,10 +24,13 @@ namespace Parking
         public event EventHandler ParkingRecordAdded;
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
 
-        string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
-        string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
+        string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
+        string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
+
         string Sloc;
         bool isSelected;
+        bool setVehicleTypeIcon = false;
+      
 
         public ParkingEntry(FlowLayoutPanel flowLayoutPanel2)
         {
@@ -51,6 +54,23 @@ namespace Parking
             this.Close();
             ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
         }
+
+        public void setVehicleIcon(int i) {
+
+            if (i == 1)
+            {
+                imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
+                imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
+            }
+            if (i == 0) {
+                 imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike2.png";
+                 imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike1.png";
+
+            }
+
+        }
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             //CALCULATE AMD VALIDATE HERE
@@ -65,6 +85,9 @@ namespace Parking
             string ArrivalTime = currentDateTime.ToString("hh:mm:ss tt");
 
             int proccedAddItem = 0;
+
+            
+
 
             if (platenum != "")
             {
@@ -175,6 +198,8 @@ namespace Parking
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Clear existing items in comboBoxModel
+             
+         
             comboBoxModel.Items.Clear();
             string selectedItem = comboBoxType.SelectedItem?.ToString();
             var vehicleBrand = VehicleBrandMAnger.Instance;
@@ -184,9 +209,87 @@ namespace Parking
                 if (record.vehicleType == selectedItem)
                     comboBoxModel.Items.Add(record.vBrand);
             }
+
+
+            string type = comboBoxType.SelectedItem?.ToString().ToUpper();
+            if (type != "MOTORBIKE")
+            {
+                setVehicleIcon(1);
+            }
+
+
+                if (type == "MOTORBIKE")
+                {
+                setVehicleIcon(0);
+
+            }
+
+            
+            setTypeImage(comboBoxType.SelectedItem?.ToString().ToUpper(), getSloc());
+
+        }
+       
+        private void setTypeImage(string type,string sloc) {
+
+            Image image1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png");
+            Image image2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png");
+            Image motorbikeImage1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike2.png");
+            Image motorbikeImage2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike1.png");
+
+            Button[] buttons = { b01, b02, b03, b04, b05, b06, b07, b08, b09, b10,
+                         a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
+                         bb01, bb02, bb03, bb04, bb05, bb06, bb07, bb08, bb09, bb10 };
+            Label[] labels = { labelB1, labelB2, labelB3, labelB4, labelB5, labelB6, labelB7, labelB8, labelB9, labelB10,
+                       labela1, labela2, labela3, labela4, labela5, labela6, labela7, labela8, labela9, labela10,
+                       labelb01, labelb02, labelb03, labelb04, labelb05, labelb06, labelb07, labelb08, labelb09, labelbB10 };
+            string[] labelNames = { "BM-01", "BM-02", "BM-03", "BM-04", "BM-05", "BM-06", "BM-07", "BM-08", "BM-09", "BM-10",
+                            "A-01", "A-02", "A-03", "A-04", "A-05", "A-06", "A-07", "A-08", "A-09", "A-10",
+                            "B-01", "B-02", "B-03", "B-04", "B-05", "B-06", "B-07", "B-08", "B-09", "B-10" };
+
+            if (type != "MOTORBIKE")
+                for (int i = 0; i < labelNames.Length; i++)
+                    if (labelNames[i] == sloc)
+                    {
+                        buttons[i].Image = (i >= 0 && i < 5) || (i >= 10 && i <= 14) || (i >= 19 && i <= 23) ? image1 : image2;
+                        labels[i].Hide();
+                    }
+            if (type == "MOTORBIKE")
+                for (int j = 0; j < labelNames.Length; j++)
+                                      if (labelNames[j] == sloc){
+                                        buttons[j].Image = (j >= 0 && j < 5) || (j >= 10 && j <= 14) || (j >= 19 && j <= 23) ? motorbikeImage1 : motorbikeImage2;
+                                         labels[j].Hide();
+                                     }
+               
+
+
+
+
+
+
+
+            /*if (!isOccupied(btnName))
+                setSloc(btnName);
+            else
+                setSloc(null);*/
         }
 
+        public void refreshParkingArea()
+        {
+            Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
+                               a01,a02,a03,a04,a05,a06,a07,a08,a09,a10,
+                               bb01,bb02,bb03,bb04,bb05,bb06,bb07,bb08,bb09,bb10];
+            Label[] labels = { labelB1, labelB2, labelB3, labelB4, labelB5, labelB6, labelB7, labelB8, labelB9, labelB10,
+                       labela1, labela2, labela3, labela4, labela5, labela6, labela7, labela8, labela9, labela10,
+                       labelb01, labelb02, labelb03, labelb04, labelb05, labelb06, labelb07, labelb08, labelb09, labelbB10 };
 
+            for (int i = 0; i < 30; i++) {
+                button[i].Image = null;
+                labels[i].Show();
+            }
+               
+
+            OccupiedArea();
+        }
 
         private void comboBoxModel_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -281,6 +384,7 @@ namespace Parking
         bool a8 = true;
         bool a9 = true;
         bool a_10 = true;
+
         bool bb1 = true;
         bool bb2 = true;
         bool bb3 = true;
@@ -295,164 +399,30 @@ namespace Parking
 
         private void OccupiedArea()
         {
+            Image motorbikeImage1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike2.png");
+            Image motorbikeImage2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike1.png");
+            Image carImage1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png");
+            Image carImage2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png");
 
-            Image image = Image.FromFile(imagePath1);
-            Image image2 = Image.FromFile(imagePath2);
+            Button[] buttons = { b01, b02, b03, b04, b05, b06, b07, b08, b09, b10,
+                         a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
+                         bb01, bb02, bb03, bb04, bb05, bb06, bb07, bb08, bb09, bb10 };
+            Label[] labels = { labelB1, labelB2, labelB3, labelB4, labelB5, labelB6, labelB7, labelB8, labelB9, labelB10,
+                       labela1, labela2, labela3, labela4, labela5, labela6, labela7, labela8, labela9, labela10,
+                       labelb01, labelb02, labelb03, labelb04, labelb05, labelb06, labelb07, labelb08, labelb09, labelbB10 };
+            string[] labelNames = { "BM-01", "BM-02", "BM-03", "BM-04", "BM-05", "BM-06", "BM-07", "BM-08", "BM-09", "BM-10",
+                            "A-01", "A-02", "A-03", "A-04", "A-05", "A-06", "A-07", "A-08", "A-09", "A-10",
+                            "B-01", "B-02", "B-03", "B-04", "B-05", "B-06", "B-07", "B-08", "B-09", "B-10" };
 
-
-            if (isOccupied("BM-01"))
+            for (int i = 0; i < labelNames.Length; i++)
             {
-                b01.Image = image2;
-                labelB1.Hide();
-            }
-            if (isOccupied("BM-02"))
-            {
-                b02.Image = image2;
-                labelB2.Hide();
-            }
-            if (isOccupied("BM-03"))
-            {
-                b03.Image = image2;
-                labelB3.Hide();
-            }
-            if (isOccupied("BM-04"))
-            {
-                b04.Image = image2;
-                labelB4.Hide();
-            }
-
-            if (isOccupied("BM-05"))
-            {
-                b05.Image = image2;
-                labelB5.Hide();
-            }
-
-            if (isOccupied("BM-06"))
-            {
-                b06.Image = image;
-                labelB6.Hide();
-            }
-            if (isOccupied("BM-07"))
-            {
-                b07.Image = image;
-                labelB7.Hide();
-            }
-            if (isOccupied("BM-08"))
-            {
-                b08.Image = image;
-                labelB8.Hide();
-            }
-            if (isOccupied("BM-09"))
-            {
-                b09.Image = image;
-                labelB9.Hide();
-            }
-            if (isOccupied("BM-10"))
-            {
-                b10.Image = image;
-                labelB10.Hide();
-            }
-
-            if (isOccupied("A-01"))
-            {
-                a01.Image = image;
-                labela1.Hide();
-            }
-            if (isOccupied("A-02"))
-            {
-                a02.Image = image;
-                labela2.Hide();
-            }
-            if (isOccupied("A-03"))
-            {
-                a03.Image = image;
-                labela3.Hide();
-            }
-            if (isOccupied("A-04"))
-            {
-                a04.Image = image;
-                labela4.Hide();
-            }
-            if (isOccupied("A-05"))
-            {
-                a05.Image = image;
-                labela5.Hide();
-            }
-            if (isOccupied("A-06"))
-            {
-                a06.Image = image;
-                labela6.Hide();
-            }
-            if (isOccupied("A-07"))
-            {
-                a07.Image = image;
-                labela7.Hide();
-            }
-            if (isOccupied("A-08"))
-            {
-                a08.Image = image;
-                labela8.Hide();
-            }
-            if (isOccupied("A-09"))
-            {
-                a09.Image = image;
-                labela9.Hide();
-            }
-            if (isOccupied("A-10"))
-            {
-                a10.Image = image;
-                labela10.Hide();
-            }
-
-            if (isOccupied("B-01"))
-            {
-                bb01.Image = image;
-                labelb01.Hide();
-            }
-            if (isOccupied("B-02"))
-            {
-                bb02.Image = image;
-                labelb02.Hide();
-            }
-            if (isOccupied("B-03"))
-            {
-                bb03.Image = image;
-                labelb03.Hide();
-            }
-            if (isOccupied("B-04"))
-            {
-                bb04.Image = image;
-                labelb04.Hide();
-            }
-            if (isOccupied("B-05"))
-            {
-                bb05.Image = image;
-                labelb05.Hide();
-            }
-            if (isOccupied("B-06"))
-            {
-                bb06.Image = image;
-                labelb06.Hide();
-            }
-            if (isOccupied("B-07"))
-            {
-                bb07.Image = image;
-                labelb07.Hide();
-            }
-            if (isOccupied("B-08"))
-            {
-                bb08.Image = image;
-                labelb08.Hide();
-            }
-            if (isOccupied("B-09"))
-            {
-                bb09.Image = image;
-                labelb09.Hide();
-            }
-            if (isOccupied("B-10"))
-            {
-                bb10.Image = image;
-                labelbB10.Hide();
+                if (isOccupied(labelNames[i]))
+                {    
+                    bool ismotorbike = isMotorbike(labelNames[i]);
+                    buttons[i].Image = ismotorbike ? (i >= 0 && i < 5) || (i >= 10 && i <= 14) || (i >= 19 && i <= 23) ? motorbikeImage1 : motorbikeImage2
+                                       : (i >= 0 && i < 5) || (i >= 10 && i <= 14) || (i >= 19 && i <= 23)  ? carImage1 : carImage2;
+                    labels[i].Hide();
+                }         
             }
         }
         private bool isOccupied(string slotName)
@@ -480,19 +450,38 @@ namespace Parking
             }
             return occupiedSlots.Contains(slotName);
         }
+
+        private bool isMotorbike(string s_loc)
+        {
+            bool isMotorbike = false;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM Vehicle WHERE s_sloc = @s_sloc AND status = 'PARKED' AND v_type = 'MOTORBIKE'  ";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@s_sloc", s_loc);
+                try
+                {
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    isMotorbike = count > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            return isMotorbike;
+        }
+
+
+
+
         private void button12_Click(object sender, EventArgs e)
         {
             //basement
-            basementPanel.Dock = DockStyle.Fill;
-            panel5.Controls.Add(basementPanel);
-            basementPanel.Show();
-            firstFloorPanel.Dock = DockStyle.None;
-            panel5.Controls.Remove(firstFloorPanel);
-            firstFloorPanel.Hide();
-            panel5.Controls.Remove(secondFloorPanel);
-            secondFloorPanel.Dock = DockStyle.None;
-            secondFloorPanel.Hide();
-            Button[] firstFloorBtn = [a01, a02, a03, a04, a05, a06, a07, a08, a09, a10];
+            handleDockPanels(1);
+             Button[] firstFloorBtn = [a01, a02, a03, a04, a05, a06, a07, a08, a09, a10];
             Label[] firstFloorLabels = [labela1, labela2, labela3, labela4, labela5, labela6, labela7, labela8, labela8, labela9, labela10];
             Button[] secondFloorBtn = [bb01, bb02, bb03, a04, bb05, bb06, bb07, bb08, bb09, bb10];
             Label[] secondFloorlabels = [labelb01, labelb02, labelb03, labelb04, labelb05, labelb06, labelb07, labelb08, labelb09, labelB10];
@@ -532,16 +521,8 @@ namespace Parking
         private void button13_Click(object sender, EventArgs e)
         {
             //firstfloor
-            firstFloorPanel.Dock = DockStyle.Fill;
-            panel5.Controls.Add(firstFloorPanel);
-            firstFloorPanel.Show();
-            panel5.Controls.Remove(basementPanel);
-            basementPanel.Dock = DockStyle.None;
-            basementPanel.Hide();
-            panel5.Controls.Remove(secondFloorPanel);
-            secondFloorPanel.Dock = DockStyle.None;
-            secondFloorPanel.Hide();
-            Button[] basementBtn = [b01, b02, b03, b04, b05, b06, b07, b08, b09, b10];
+            handleDockPanels(2);
+             Button[] basementBtn = [b01, b02, b03, b04, b05, b06, b07, b08, b09, b10];
             Label[] basementLabels = [labelB1, labelB2, labelB3, labelB4, labelB5, labelB6, labelB7, labelB8, labelB9, labelB10];
             Button[] secondFloorBtn = [bb01, bb02, bb03, a04, bb05, bb06, bb07, bb08, bb09, bb10];
             Label[] secondFloorlabels = [labelb01, labelb02, labelb03, labelb04, labelb05, labelb06, labelb07, labelb08, labelb09, labelB10];
@@ -582,15 +563,7 @@ namespace Parking
 
         private void button14_Click(object sender, EventArgs e)
         {
-            panel5.Controls.Add(secondFloorPanel);
-            secondFloorPanel.Dock = DockStyle.Fill;
-            secondFloorPanel.Show();
-            firstFloorPanel.Dock = DockStyle.None;
-            panel5.Controls.Remove(firstFloorPanel);
-            firstFloorPanel.Hide();
-            panel5.Controls.Remove(basementPanel);
-            basementPanel.Dock = DockStyle.None;
-            basementPanel.Hide();
+            handleDockPanels(3);
             Button[] firstFloorBtn = [a01, a02, a03, a04, a05, a06, a07, a08, a09, a10];
             Label[] firstFloorLabels = [labela1, labela2, labela3, labela4, labela5, labela6, labela7, labela8, labela8, labela9, labela10];
             Button[] basementBtn = [b01, b02, b03, b04, b05, b06, b07, b08, b09, b10];
@@ -646,148 +619,222 @@ namespace Parking
         {
             return isSelected;
         }
-        public void setLocationArea(string btn)
+        private void handleDockPanels(int floor) {
+            switch (floor)
+            {
+                case 1:
+                    basementPanel.Dock = DockStyle.Fill;
+                    panel5.Controls.Add(basementPanel);
+                    basementPanel.Show();
+                    firstFloorPanel.Dock = DockStyle.None;
+                    panel5.Controls.Remove(firstFloorPanel);
+                    firstFloorPanel.Hide();
+                    panel5.Controls.Remove(secondFloorPanel);
+                    secondFloorPanel.Dock = DockStyle.None;
+                    secondFloorPanel.Hide();
+                    break;
+                case 2:
+                    firstFloorPanel.Dock = DockStyle.Fill;
+                    panel5.Controls.Add(firstFloorPanel);
+                    firstFloorPanel.Show();
+                    panel5.Controls.Remove(basementPanel);
+                    basementPanel.Dock = DockStyle.None;
+                    basementPanel.Hide();
+                    panel5.Controls.Remove(secondFloorPanel);
+                    secondFloorPanel.Dock = DockStyle.None;
+                    secondFloorPanel.Hide();
+                    break;
+                case 3:
+                    panel5.Controls.Add(secondFloorPanel);
+                    secondFloorPanel.Dock = DockStyle.Fill;
+                    secondFloorPanel.Show();
+                    firstFloorPanel.Dock = DockStyle.None;
+                    panel5.Controls.Remove(firstFloorPanel);
+                    firstFloorPanel.Hide();
+                    panel5.Controls.Remove(basementPanel);
+                    basementPanel.Dock = DockStyle.None;
+                    basementPanel.Hide();
+                    break;
+            }
+        }
+    
+        private void handleFloorBtn(int floor) {
+            switch (floor)
+            {
+                case 1:
+                    button12.Enabled = true;
+                    button13.Enabled = false;
+                    
+                    button14.Enabled = false;
+                  
+                    break;
+                case 2:
+                    button12.Enabled = false;
+                   
+                    button13.Enabled = true;
+                    button14.Enabled = false;
+                   
+                    break;
+                case 3:
+                    button12.Enabled = false;
+                   
+                    button13.Enabled = false;
+                 
+                    button14.Enabled = true;
+                    break;
+            }
+
+          
+        }
+       
+
+        public void setLocationArea(string btn,int floor)
         {
-            Image image = Image.FromFile(imagePath2);
+            Image image1 = Image.FromFile(imagePath1);
+            Image image2 = Image.FromFile(imagePath2);
+
+            handleDockPanels(floor);
+            handleFloorBtn(floor);
+
             switch (btn)
             {
                 case "BM-01":
-                    b01.Image = image;
-                    labelB1.Text = "";
+                    b01.Image = image1;
+                    labelB1.Hide();
                     if (!isOccupied("BM-01"))
                         setSloc("BM-01");
                     b01.BackColor = Color.GreenYellow;
                     break;
                 case "BM-02":
-                    b02.Image = image;
-                    labelB2.Text = "";
+                    b02.Image = image1;
+                    labelB2.Hide();
                     if (!isOccupied("BM-02"))
                         setSloc("BM-02");
                     b02.BackColor = Color.GreenYellow;
                     break;
                 case "BM-03":
-                    b03.Image = image;
-                    labelB3.Text = "";
+                    b03.Image = image1;
+                    labelB3.Hide();
                     if (!isOccupied("BM-03"))
                         setSloc("BM-03");
                     b03.BackColor = Color.GreenYellow;
                     break;
                 case "BM-04":
-                    b04.Image = image;
-                    labelB4.Text = "";
+                    b04.Image = image1;
+                    labelB4.Hide();
                     if (!isOccupied("BM-04"))
                         setSloc("BM-04");
                     b04.BackColor = Color.GreenYellow;
                     break;
                 case "BM-05":
-                    b05.Image = image;
-                    labelB5.Text = "";
+                    b05.Image = image1;
+                    labelB5.Hide();
                     if (!isOccupied("BM-05"))
                         setSloc("BM-05");
                     b05.BackColor = Color.GreenYellow;
                     break;
                 case "BM-06":
-                    b06.Image = image;
-                    labelB6.Text = "";
+                    b06.Image = image2;
+                    labelB6.Hide();
                     if (!isOccupied("BM-06"))
                         setSloc("BM-06");
                     b06.BackColor = Color.GreenYellow;
                     break;
                 case "BM-07":
-                    b07.Image = image;
-                    labelB7.Text = "";
+                    b07.Image = image2;
+                    labelB7.Hide();
                     if (!isOccupied("BM-07"))
                         setSloc("BM-07");
                     b07.BackColor = Color.GreenYellow;
                     break;
                 case "BM-08":
-                    b08.Image = image;
-                    labelB8.Text = "";
+                    b08.Image = image2;
+                    labelB8.Hide();
                     if (!isOccupied("BM-08"))
                         setSloc("BM-08");
                     b08.BackColor = Color.GreenYellow;
                     break;
                 case "BM-09":
-                    b09.Image = image;
-                    labelB9.Text = "";
+                    b09.Image = image2;
+                    labelB9.Hide();
                     if (!isOccupied("BM-09"))
                         setSloc("BM-09");
                     b09.BackColor = Color.GreenYellow;
                     break;
                 case "BM-10":
-                    b10.Image = image;
-                    labelB10.Text = "";
+                    b10.Image = image2;
+                    labelB10.Hide();
                     if (!isOccupied("BM-10"))
                         setSloc("BM-10");
                     b10.BackColor = Color.GreenYellow;
                     break;
 
                 case "A-01":
-                    a01.Image = image;
+                    a01.Image = image1;
                     labela1.Hide();
                     if (!isOccupied("A-01"))
                         setSloc("A-01");
                     a01.BackColor = Color.GreenYellow;
                     break;
                 case "A-02":
-                    b02.Image = image;
+                    b02.Image = image1;
                     labela2.Hide();
                     if (!isOccupied("A-02"))
                         setSloc("A-02");
                     a02.BackColor = Color.GreenYellow;
                     break;
                 case "A-03":
-                    a03.Image = image;
-                    labela3.Text = "";
+                    a03.Image = image1;
+                    labela3.Hide();
                     if (!isOccupied("A-03"))
                         setSloc("A-03");
                     a03.BackColor = Color.GreenYellow;
                     break;
                 case "A-04":
-                    a04.Image = image;
+                    a04.Image = image1;
                     labela4.Hide();
                     if (!isOccupied("A-04"))
                         setSloc("A-04");
                     a04.BackColor = Color.GreenYellow;
                     break;
                 case "A-05":
-                    a05.Image = image;
-                    labela5.Text = "";
+                    a05.Image = image1;
+                    labela5.Hide();
                     if (!isOccupied("A-05"))
                         setSloc("A-05");
                     a05.BackColor = Color.GreenYellow;
                     break;
                 case "A-06":
-                    a06.Image = image;
-                    labelB6.Text = "";
+                    a06.Image = image2;
+                    labelB6.Hide();
                     if (!isOccupied("A-06"))
                         setSloc("A-06");
                     a06.BackColor = Color.GreenYellow;
                     break;
                 case "A-07":
-                    a07.Image = image;
-                    labela7.Text = "";
+                    a07.Image = image2;
+                    labela7.Hide();
                     if (!isOccupied("A-07"))
                         setSloc("A-07");
                     a07.BackColor = Color.GreenYellow;
                     break;
                 case "A-08":
-                    a08.Image = image;
-                    labela8.Text = "";
+                    a08.Image = image2;
+                    labela8.Hide();
                     if (!isOccupied("A-08"))
                         setSloc("A-08");
                     a08.BackColor = Color.GreenYellow;
                     break;
                 case "A-09":
-                    a09.Image = image;
-                    labela9.Text = "";
+                    a09.Image = image2;
+                    labela9.Hide();
                     if (!isOccupied("A-09"))
                         setSloc("A-09");
                     a09.BackColor = Color.GreenYellow;
                     break;
                 case "A-10":
-                    a10.Image = image;
-                    labela10.Text = "";
+                    a10.Image = image2;
+                    labela10.Hide();
                     if (!isOccupied("A-10"))
                         setSloc("A-10");
                     a10.BackColor = Color.GreenYellow;
@@ -795,70 +842,70 @@ namespace Parking
 
 
                 case "B-01":
-                    bb01.Image = image;
+                    bb01.Image = image1;
                     labelb01.Hide();
                     if (!isOccupied("B-01"))
                         setSloc("B-01");
                     bb01.BackColor = Color.GreenYellow;
                     break;
                 case "B-02":
-                    bb02.Image = image;
+                    bb02.Image = image1;
                     labelb02.Hide();
                     if (!isOccupied("B-02"))
                         setSloc("B-02");
                     bb02.BackColor = Color.GreenYellow;
                     break;
                 case "B-03":
-                    bb03.Image = image;
+                    bb03.Image = image1;
                     labelb03.Hide();
                     if (!isOccupied("B-03"))
                         setSloc("B-03");
                     bb03.BackColor = Color.GreenYellow;
                     break;
                 case "B-04":
-                    bb04.Image = image;
+                    bb04.Image = image1;
                     labelb04.Hide();
                     if (!isOccupied("B-04"))
                         setSloc("B-04");
                     bb04.BackColor = Color.GreenYellow;
                     break;
                 case "B-05":
-                    bb05.Image = image;
+                    bb05.Image = image1;
                     labelb05.Hide();
                     if (!isOccupied("B-05"))
                         setSloc("B-05");
                     bb05.BackColor = Color.GreenYellow;
                     break;
                 case "B-06":
-                    bb06.Image = image;
+                    bb06.Image = image2;
                     labelb06.Hide();
                     if (!isOccupied("B-06"))
                         setSloc("B-06");
                     bb06.BackColor = Color.GreenYellow;
                     break;
                 case "B-07":
-                    bb07.Image = image;
+                    bb07.Image = image2;
                     labelb07.Hide();
                     if (!isOccupied("B-07"))
                         setSloc("B-07");
                     bb07.BackColor = Color.GreenYellow;
                     break;
                 case "B-08":
-                    bb08.Image = image;
+                    bb08.Image = image2;
                     labelb08.Hide();
                     if (!isOccupied("B-08"))
                         setSloc("B-08");
                     bb08.BackColor = Color.GreenYellow;
                     break;
                 case "B-09":
-                    bb09.Image = image;
+                    bb09.Image = image2;
                     labelb09.Hide();
                     if (!isOccupied("B-09"))
                         setSloc("B-09");
                     bb09.BackColor = Color.GreenYellow;
                     break;
                 case "B-10":
-                    bb10.Image = image;
+                    bb10.Image = image2;
                     labelB10.Hide();
                     if (!isOccupied("B-10"))
                         setSloc("B-10");
@@ -952,9 +999,11 @@ namespace Parking
                                  "a1","a2","a3","a4","a5","a6","a7","a8","a9","a10",
                                  "2b1", "2b2","2b3","2b4","2b5","2b6","2b7","2b8","2b9","2b10"
             ];
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 30; i++)
                 if (btnName[i] != btn)
                     button[i].Image = null;
+        
+
         }
         private void handleText(string btn)
         {
@@ -962,21 +1011,26 @@ namespace Parking
             Label[] labels = [labelB1, labelB2, labelB3, labelB4, labelB5, labelB6, labelB7, labelB8,labelB9,labelB10,
                               labela1,labela2,labela3,labela4,labela5,labela6,labela7,labela8,labela9,labela10,
                               labelb01,labelb02,labelb03,labelb04,labelb05,labelb06,labelb07,labelb08,labelb09,labelbB10];
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 30; i++)
                 if (labels[i].Text != btn)
                     labels[i].Show();
+               
         }
-        private void toggleImg(int btn, string btnName)
+        private void toggleImg(int btn, string btnName )
         {
-            Image image = Image.FromFile(imagePath2);
-            Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
-                               a01,a02,a03,a04,a05,a06,a07,a08,a09,a10,
-                               bb01,bb02,bb03,bb04,bb05,bb06,bb07,bb08,bb09,bb10];
+            Image image1 = Image.FromFile(imagePath1);
+            Image image2 =  Image.FromFile(imagePath2);
+            Button[] button = [b01, b02, b03, b04, b05,       b06, b07, b08,b09,b10,
+                               a01,a02,a03,a04,a05,           a06,a07,a08,a09,a10,
+                               bb01,bb02,bb03,bb04,bb05,      bb06,bb07,bb08,bb09,bb10];
             Label[] labels = [labelB1, labelB2, labelB3, labelB4, labelB5, labelB6, labelB7, labelB8,labelB9,labelB10,
                               labela1,labela2,labela3,labela4,labela5,labela6,labela7,labela8,labela9,labela10,
                               labelb01,labelb02,labelb03,labelb04,labelb05,labelb06,labelb07,labelb08,labelb09,labelbB10];
-            button[btn].Image = image;
-            labels[btn].Hide();
+           
+            button[btn].Image = (btn >= 0 && btn < 5) || (btn >= 10 && btn <= 14) || (btn >= 19 && btn <= 23) ? image1 :  image2;
+            
+           labels[btn].Hide();
+
             if (!isOccupied(btnName))
                 setSloc(btnName);
             else
@@ -997,6 +1051,7 @@ namespace Parking
         }
         private void b01_Click(object sender, EventArgs e)
         {
+          
             if (!getSelectedArea())
             {
                 if (b1)
@@ -1008,10 +1063,12 @@ namespace Parking
             }
             else
                 MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            if (!getSelectedArea())
+            
+             if (!getSelectedArea())
             {
                 if (b2)
                     toggleImg(1, "BM-02");
@@ -1022,6 +1079,7 @@ namespace Parking
             }
             else
                 MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
         private void b03_Click(object sender, EventArgs e)
         {
@@ -1172,7 +1230,7 @@ namespace Parking
                 if (a2)
                     toggleImg(11, "A-02");
                 else
-                    unToggleImg(11,11);
+                    unToggleImg(11, 11);
                 a2 = !a2;
                 handleParkingArea("a2", "A-02");
             }
@@ -1202,7 +1260,7 @@ namespace Parking
                 if (a4)
                     toggleImg(13, "A-04");
                 else
-                    unToggleImg(13,13);
+                    unToggleImg(13, 13);
                 a4 = !a4;
                 handleParkingArea("a4", "A-04");
             }
@@ -1236,7 +1294,7 @@ namespace Parking
                 if (a6)
                     toggleImg(15, "A-06");
                 else
-                    unToggleImg(15,15);
+                    unToggleImg(15, 15);
                 a6 = !a6;
                 handleParkingArea("a6", "A-06");
             }
@@ -1313,10 +1371,165 @@ namespace Parking
             }
             else
                 MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void bb01_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb1)
+                    toggleImg(20, "B-01");
+                else
+                    unToggleImg(20, 20);
+                bb1 = !bb1;
+                handleParkingArea("2b1", "B-01");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void bb02_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb2)
+                    toggleImg(21, "B-02");
+                else
+                    unToggleImg(21, 21);
+                bb2 = !bb2;
+                handleParkingArea("2b2", "B-02");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
+        private void bb03_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb3)
+                    toggleImg(22, "B-03");
+                else
+                    unToggleImg(22, 22);
+                bb3 = !bb3;
+                handleParkingArea("2b3", "B-03");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void bb04_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb4)
+                    toggleImg(23, "B-04");
+                else
+                    unToggleImg(23, 23);
+                bb4 = !bb4;
+                handleParkingArea("2b4", "B-04");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void bb05_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb5)
+                    toggleImg(24, "B-05");
+                else
+                    unToggleImg(24, 24);
+                bb5 = !bb5;
+                handleParkingArea("2b5", "B-05");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void bb06_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb6)
+                    toggleImg(25, "B-06");
+                else
+                    unToggleImg(25, 25);
+                bb6 = !bb6;
+                handleParkingArea("2b6", "B-06");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void bb07_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb7)
+                    toggleImg(26, "B-07");
+                else
+                    unToggleImg(26, 26);
+                bb7 = !bb7;
+                handleParkingArea("2b7", "B-07");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void bb08_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb8)
+                    toggleImg(27, "B-08");
+                else
+                    unToggleImg(27, 27);
+                bb8 = !bb8;
+                handleParkingArea("2b8", "B-08");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void bb09_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb9)
+                    toggleImg(28, "B-09");
+                else
+                    unToggleImg(28, 28);
+                bb9 = !bb9;
+                handleParkingArea("2b9", "B-09");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void bb10_Click(object sender, EventArgs e)
+        {
+            if (!getSelectedArea())
+            {
+                if (bb_10)
+                    toggleImg(29, "B-10");
+                else
+                    unToggleImg(29, 29);
+                bb_10 = !bb_10;
+                handleParkingArea("2b10", "B-10");
+            }
+            else
+                MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

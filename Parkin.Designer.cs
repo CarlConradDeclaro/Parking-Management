@@ -89,7 +89,7 @@
             label31 = new Label();
             label30 = new Label();
             label22 = new Label();
-            c01 = new Label();
+            label29 = new Label();
             button48 = new Button();
             button29 = new Button();
             button47 = new Button();
@@ -111,15 +111,15 @@
             button39 = new Button();
             button38 = new Button();
             panel17 = new Panel();
-            label29 = new Label();
-            label28 = new Label();
-            label27 = new Label();
-            label26 = new Label();
-            label25 = new Label();
-            label24 = new Label();
-            label23 = new Label();
+            labela10 = new Label();
+            labela9 = new Label();
+            labela8 = new Label();
+            labela7 = new Label();
+            labela5 = new Label();
+            labela4 = new Label();
+            labela3 = new Label();
             labela6 = new Label();
-            label21 = new Label();
+            labela2 = new Label();
             labela1 = new Label();
             button19 = new Button();
             button20 = new Button();
@@ -776,7 +776,7 @@
             panel18.Controls.Add(label31);
             panel18.Controls.Add(label30);
             panel18.Controls.Add(label22);
-            panel18.Controls.Add(c01);
+            panel18.Controls.Add(label29);
             panel18.Controls.Add(button48);
             panel18.Controls.Add(button29);
             panel18.Controls.Add(button47);
@@ -928,19 +928,19 @@
             label22.Text = "B-06";
             label22.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // c01
+            // label29
             // 
-            c01.AutoSize = true;
-            c01.BackColor = Color.Transparent;
-            c01.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            c01.ForeColor = Color.Orange;
-            c01.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            c01.Location = new Point(22, 62);
-            c01.Name = "c01";
-            c01.Size = new Size(48, 23);
-            c01.TabIndex = 73;
-            c01.Text = "B-01";
-            c01.TextAlign = ContentAlignment.MiddleLeft;
+            label29.AutoSize = true;
+            label29.BackColor = Color.Transparent;
+            label29.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label29.ForeColor = Color.Orange;
+            label29.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label29.Location = new Point(22, 62);
+            label29.Name = "label29";
+            label29.Size = new Size(48, 23);
+            label29.TabIndex = 73;
+            label29.Text = "B-01";
+            label29.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // button48
             // 
@@ -955,6 +955,7 @@
             // button29
             // 
             button29.BackColor = Color.Transparent;
+            button29.BackgroundImageLayout = ImageLayout.Stretch;
             button29.FlatAppearance.BorderSize = 0;
             button29.FlatStyle = FlatStyle.Flat;
             button29.Location = new Point(230, 446);
@@ -962,6 +963,7 @@
             button29.Size = new Size(174, 83);
             button29.TabIndex = 9;
             button29.UseVisualStyleBackColor = false;
+            button29.Click += button29_Click;
             // 
             // button47
             // 
@@ -976,6 +978,7 @@
             // button30
             // 
             button30.BackColor = Color.Transparent;
+            button30.BackgroundImageLayout = ImageLayout.Stretch;
             button30.FlatAppearance.BorderSize = 0;
             button30.FlatStyle = FlatStyle.Flat;
             button30.Location = new Point(231, 342);
@@ -983,6 +986,7 @@
             button30.Size = new Size(174, 83);
             button30.TabIndex = 8;
             button30.UseVisualStyleBackColor = false;
+            button30.Click += button30_Click;
             // 
             // button46
             // 
@@ -997,6 +1001,7 @@
             // button31
             // 
             button31.BackColor = Color.Transparent;
+            button31.BackgroundImageLayout = ImageLayout.Stretch;
             button31.FlatAppearance.BorderSize = 0;
             button31.FlatStyle = FlatStyle.Flat;
             button31.Location = new Point(230, 239);
@@ -1004,6 +1009,7 @@
             button31.Size = new Size(174, 83);
             button31.TabIndex = 7;
             button31.UseVisualStyleBackColor = false;
+            button31.Click += button31_Click;
             // 
             // button45
             // 
@@ -1018,6 +1024,7 @@
             // button32
             // 
             button32.BackColor = Color.Transparent;
+            button32.BackgroundImageLayout = ImageLayout.Stretch;
             button32.FlatAppearance.BorderSize = 0;
             button32.FlatStyle = FlatStyle.Flat;
             button32.Location = new Point(229, 135);
@@ -1025,6 +1032,7 @@
             button32.Size = new Size(174, 83);
             button32.TabIndex = 6;
             button32.UseVisualStyleBackColor = false;
+            button32.Click += button32_Click;
             // 
             // button44
             // 
@@ -1039,6 +1047,7 @@
             // button33
             // 
             button33.BackColor = Color.Transparent;
+            button33.BackgroundImageLayout = ImageLayout.Stretch;
             button33.FlatAppearance.BorderSize = 0;
             button33.FlatStyle = FlatStyle.Flat;
             button33.Location = new Point(230, 33);
@@ -1046,6 +1055,7 @@
             button33.Size = new Size(174, 83);
             button33.TabIndex = 5;
             button33.UseVisualStyleBackColor = false;
+            button33.Click += button33_Click;
             // 
             // button43
             // 
@@ -1060,6 +1070,7 @@
             // button34
             // 
             button34.BackColor = Color.Transparent;
+            button34.BackgroundImageLayout = ImageLayout.Stretch;
             button34.FlatAppearance.BorderSize = 0;
             button34.FlatStyle = FlatStyle.Flat;
             button34.Location = new Point(21, 445);
@@ -1067,6 +1078,7 @@
             button34.Size = new Size(174, 83);
             button34.TabIndex = 4;
             button34.UseVisualStyleBackColor = false;
+            button34.Click += button34_Click;
             // 
             // button42
             // 
@@ -1081,6 +1093,7 @@
             // button35
             // 
             button35.BackColor = Color.Transparent;
+            button35.BackgroundImageLayout = ImageLayout.Stretch;
             button35.FlatAppearance.BorderSize = 0;
             button35.FlatStyle = FlatStyle.Flat;
             button35.Location = new Point(21, 341);
@@ -1088,6 +1101,7 @@
             button35.Size = new Size(174, 83);
             button35.TabIndex = 3;
             button35.UseVisualStyleBackColor = false;
+            button35.Click += button35_Click;
             // 
             // button41
             // 
@@ -1102,6 +1116,7 @@
             // button36
             // 
             button36.BackColor = Color.Transparent;
+            button36.BackgroundImageLayout = ImageLayout.Stretch;
             button36.FlatAppearance.BorderSize = 0;
             button36.FlatStyle = FlatStyle.Flat;
             button36.Location = new Point(22, 239);
@@ -1109,6 +1124,7 @@
             button36.Size = new Size(174, 83);
             button36.TabIndex = 2;
             button36.UseVisualStyleBackColor = false;
+            button36.Click += button36_Click;
             // 
             // button40
             // 
@@ -1123,6 +1139,7 @@
             // button37
             // 
             button37.BackColor = Color.Transparent;
+            button37.BackgroundImageLayout = ImageLayout.Stretch;
             button37.FlatAppearance.BorderSize = 0;
             button37.FlatStyle = FlatStyle.Flat;
             button37.Location = new Point(21, 135);
@@ -1130,6 +1147,7 @@
             button37.Size = new Size(174, 83);
             button37.TabIndex = 1;
             button37.UseVisualStyleBackColor = false;
+            button37.Click += button37_Click;
             // 
             // button39
             // 
@@ -1144,6 +1162,7 @@
             // button38
             // 
             button38.BackColor = Color.Transparent;
+            button38.BackgroundImageLayout = ImageLayout.Stretch;
             button38.FlatAppearance.BorderSize = 0;
             button38.FlatStyle = FlatStyle.Flat;
             button38.Location = new Point(22, 33);
@@ -1151,20 +1170,21 @@
             button38.Size = new Size(174, 83);
             button38.TabIndex = 0;
             button38.UseVisualStyleBackColor = false;
+            button38.Click += button38_Click;
             // 
             // panel17
             // 
             panel17.BackgroundImage = Properties.Resources.parkingLot;
             panel17.BackgroundImageLayout = ImageLayout.Stretch;
-            panel17.Controls.Add(label29);
-            panel17.Controls.Add(label28);
-            panel17.Controls.Add(label27);
-            panel17.Controls.Add(label26);
-            panel17.Controls.Add(label25);
-            panel17.Controls.Add(label24);
-            panel17.Controls.Add(label23);
+            panel17.Controls.Add(labela10);
+            panel17.Controls.Add(labela9);
+            panel17.Controls.Add(labela8);
+            panel17.Controls.Add(labela7);
+            panel17.Controls.Add(labela5);
+            panel17.Controls.Add(labela4);
+            panel17.Controls.Add(labela3);
             panel17.Controls.Add(labela6);
-            panel17.Controls.Add(label21);
+            panel17.Controls.Add(labela2);
             panel17.Controls.Add(labela1);
             panel17.Controls.Add(button19);
             panel17.Controls.Add(button20);
@@ -1181,103 +1201,103 @@
             panel17.Size = new Size(426, 559);
             panel17.TabIndex = 10;
             // 
-            // label29
+            // labela10
             // 
-            label29.AutoSize = true;
-            label29.BackColor = Color.Transparent;
-            label29.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label29.ForeColor = SystemColors.AppWorkspace;
-            label29.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label29.Location = new Point(356, 475);
-            label29.Name = "label29";
-            label29.Size = new Size(49, 23);
-            label29.TabIndex = 79;
-            label29.Text = "A-10";
-            label29.TextAlign = ContentAlignment.MiddleLeft;
+            labela10.AutoSize = true;
+            labela10.BackColor = Color.Transparent;
+            labela10.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela10.ForeColor = SystemColors.AppWorkspace;
+            labela10.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela10.Location = new Point(356, 475);
+            labela10.Name = "labela10";
+            labela10.Size = new Size(49, 23);
+            labela10.TabIndex = 79;
+            labela10.Text = "A-10";
+            labela10.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label28
+            // labela9
             // 
-            label28.AutoSize = true;
-            label28.BackColor = Color.Transparent;
-            label28.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label28.ForeColor = SystemColors.AppWorkspace;
-            label28.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label28.Location = new Point(356, 370);
-            label28.Name = "label28";
-            label28.Size = new Size(49, 23);
-            label28.TabIndex = 78;
-            label28.Text = "A-09";
-            label28.TextAlign = ContentAlignment.MiddleLeft;
+            labela9.AutoSize = true;
+            labela9.BackColor = Color.Transparent;
+            labela9.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela9.ForeColor = SystemColors.AppWorkspace;
+            labela9.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela9.Location = new Point(356, 370);
+            labela9.Name = "labela9";
+            labela9.Size = new Size(49, 23);
+            labela9.TabIndex = 78;
+            labela9.Text = "A-09";
+            labela9.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label27
+            // labela8
             // 
-            label27.AutoSize = true;
-            label27.BackColor = Color.Transparent;
-            label27.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label27.ForeColor = SystemColors.AppWorkspace;
-            label27.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label27.Location = new Point(356, 268);
-            label27.Name = "label27";
-            label27.Size = new Size(49, 23);
-            label27.TabIndex = 77;
-            label27.Text = "A-08";
-            label27.TextAlign = ContentAlignment.MiddleLeft;
+            labela8.AutoSize = true;
+            labela8.BackColor = Color.Transparent;
+            labela8.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela8.ForeColor = SystemColors.AppWorkspace;
+            labela8.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela8.Location = new Point(356, 268);
+            labela8.Name = "labela8";
+            labela8.Size = new Size(49, 23);
+            labela8.TabIndex = 77;
+            labela8.Text = "A-08";
+            labela8.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label26
+            // labela7
             // 
-            label26.AutoSize = true;
-            label26.BackColor = Color.Transparent;
-            label26.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label26.ForeColor = SystemColors.AppWorkspace;
-            label26.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label26.Location = new Point(356, 164);
-            label26.Name = "label26";
-            label26.Size = new Size(49, 23);
-            label26.TabIndex = 76;
-            label26.Text = "A-07";
-            label26.TextAlign = ContentAlignment.MiddleLeft;
+            labela7.AutoSize = true;
+            labela7.BackColor = Color.Transparent;
+            labela7.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela7.ForeColor = SystemColors.AppWorkspace;
+            labela7.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela7.Location = new Point(356, 164);
+            labela7.Name = "labela7";
+            labela7.Size = new Size(49, 23);
+            labela7.TabIndex = 76;
+            labela7.Text = "A-07";
+            labela7.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label25
+            // labela5
             // 
-            label25.AutoSize = true;
-            label25.BackColor = Color.Transparent;
-            label25.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.ForeColor = Color.Khaki;
-            label25.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label25.Location = new Point(22, 475);
-            label25.Name = "label25";
-            label25.Size = new Size(49, 23);
-            label25.TabIndex = 75;
-            label25.Text = "A-05";
-            label25.TextAlign = ContentAlignment.MiddleLeft;
+            labela5.AutoSize = true;
+            labela5.BackColor = Color.Transparent;
+            labela5.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela5.ForeColor = Color.Khaki;
+            labela5.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela5.Location = new Point(22, 475);
+            labela5.Name = "labela5";
+            labela5.Size = new Size(49, 23);
+            labela5.TabIndex = 75;
+            labela5.Text = "A-05";
+            labela5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label24
+            // labela4
             // 
-            label24.AutoSize = true;
-            label24.BackColor = Color.Transparent;
-            label24.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.ForeColor = Color.Khaki;
-            label24.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label24.Location = new Point(22, 370);
-            label24.Name = "label24";
-            label24.Size = new Size(49, 23);
-            label24.TabIndex = 74;
-            label24.Text = "A-04";
-            label24.TextAlign = ContentAlignment.MiddleLeft;
+            labela4.AutoSize = true;
+            labela4.BackColor = Color.Transparent;
+            labela4.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela4.ForeColor = Color.Khaki;
+            labela4.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela4.Location = new Point(22, 370);
+            labela4.Name = "labela4";
+            labela4.Size = new Size(49, 23);
+            labela4.TabIndex = 74;
+            labela4.Text = "A-04";
+            labela4.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label23
+            // labela3
             // 
-            label23.AutoSize = true;
-            label23.BackColor = Color.Transparent;
-            label23.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label23.ForeColor = Color.Khaki;
-            label23.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label23.Location = new Point(22, 268);
-            label23.Name = "label23";
-            label23.Size = new Size(49, 23);
-            label23.TabIndex = 73;
-            label23.Text = "A-03";
-            label23.TextAlign = ContentAlignment.MiddleLeft;
+            labela3.AutoSize = true;
+            labela3.BackColor = Color.Transparent;
+            labela3.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela3.ForeColor = Color.Khaki;
+            labela3.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela3.Location = new Point(22, 268);
+            labela3.Name = "labela3";
+            labela3.Size = new Size(49, 23);
+            labela3.TabIndex = 73;
+            labela3.Text = "A-03";
+            labela3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labela6
             // 
@@ -1293,19 +1313,19 @@
             labela6.Text = "A-06";
             labela6.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label21
+            // labela2
             // 
-            label21.AutoSize = true;
-            label21.BackColor = Color.Transparent;
-            label21.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label21.ForeColor = Color.Khaki;
-            label21.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label21.Location = new Point(21, 164);
-            label21.Name = "label21";
-            label21.Size = new Size(49, 23);
-            label21.TabIndex = 71;
-            label21.Text = "A-02";
-            label21.TextAlign = ContentAlignment.MiddleLeft;
+            labela2.AutoSize = true;
+            labela2.BackColor = Color.Transparent;
+            labela2.Font = new Font("Leelawadee UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labela2.ForeColor = Color.Khaki;
+            labela2.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            labela2.Location = new Point(21, 164);
+            labela2.Name = "labela2";
+            labela2.Size = new Size(49, 23);
+            labela2.TabIndex = 71;
+            labela2.Text = "A-02";
+            labela2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labela1
             // 
@@ -1324,6 +1344,7 @@
             // button19
             // 
             button19.BackColor = Color.Transparent;
+            button19.BackgroundImageLayout = ImageLayout.Stretch;
             button19.FlatAppearance.BorderSize = 0;
             button19.FlatStyle = FlatStyle.Flat;
             button19.Location = new Point(230, 446);
@@ -1331,10 +1352,12 @@
             button19.Size = new Size(174, 83);
             button19.TabIndex = 9;
             button19.UseVisualStyleBackColor = false;
+            button19.Click += button19_Click;
             // 
             // button20
             // 
             button20.BackColor = Color.Transparent;
+            button20.BackgroundImageLayout = ImageLayout.Stretch;
             button20.FlatAppearance.BorderSize = 0;
             button20.FlatStyle = FlatStyle.Flat;
             button20.Location = new Point(231, 342);
@@ -1342,10 +1365,12 @@
             button20.Size = new Size(174, 83);
             button20.TabIndex = 8;
             button20.UseVisualStyleBackColor = false;
+            button20.Click += button20_Click;
             // 
             // button21
             // 
             button21.BackColor = Color.Transparent;
+            button21.BackgroundImageLayout = ImageLayout.Stretch;
             button21.FlatAppearance.BorderSize = 0;
             button21.FlatStyle = FlatStyle.Flat;
             button21.Location = new Point(230, 239);
@@ -1353,10 +1378,12 @@
             button21.Size = new Size(174, 83);
             button21.TabIndex = 7;
             button21.UseVisualStyleBackColor = false;
+            button21.Click += button21_Click;
             // 
             // button22
             // 
             button22.BackColor = Color.Transparent;
+            button22.BackgroundImageLayout = ImageLayout.Stretch;
             button22.FlatAppearance.BorderSize = 0;
             button22.FlatStyle = FlatStyle.Flat;
             button22.Location = new Point(229, 135);
@@ -1364,10 +1391,12 @@
             button22.Size = new Size(174, 83);
             button22.TabIndex = 6;
             button22.UseVisualStyleBackColor = false;
+            button22.Click += button22_Click;
             // 
             // button23
             // 
             button23.BackColor = Color.Transparent;
+            button23.BackgroundImageLayout = ImageLayout.Stretch;
             button23.FlatAppearance.BorderSize = 0;
             button23.FlatStyle = FlatStyle.Flat;
             button23.Location = new Point(230, 33);
@@ -1375,10 +1404,12 @@
             button23.Size = new Size(174, 83);
             button23.TabIndex = 5;
             button23.UseVisualStyleBackColor = false;
+            button23.Click += button23_Click;
             // 
             // button24
             // 
             button24.BackColor = Color.Transparent;
+            button24.BackgroundImageLayout = ImageLayout.Stretch;
             button24.FlatAppearance.BorderSize = 0;
             button24.FlatStyle = FlatStyle.Flat;
             button24.Location = new Point(21, 445);
@@ -1386,10 +1417,12 @@
             button24.Size = new Size(174, 83);
             button24.TabIndex = 4;
             button24.UseVisualStyleBackColor = false;
+            button24.Click += button24_Click;
             // 
             // button25
             // 
             button25.BackColor = Color.Transparent;
+            button25.BackgroundImageLayout = ImageLayout.Stretch;
             button25.FlatAppearance.BorderSize = 0;
             button25.FlatStyle = FlatStyle.Flat;
             button25.Location = new Point(21, 341);
@@ -1397,10 +1430,12 @@
             button25.Size = new Size(174, 83);
             button25.TabIndex = 3;
             button25.UseVisualStyleBackColor = false;
+            button25.Click += button25_Click;
             // 
             // button26
             // 
             button26.BackColor = Color.Transparent;
+            button26.BackgroundImageLayout = ImageLayout.Stretch;
             button26.FlatAppearance.BorderSize = 0;
             button26.FlatStyle = FlatStyle.Flat;
             button26.Location = new Point(22, 239);
@@ -1408,10 +1443,12 @@
             button26.Size = new Size(174, 83);
             button26.TabIndex = 2;
             button26.UseVisualStyleBackColor = false;
+            button26.Click += button26_Click;
             // 
             // button27
             // 
             button27.BackColor = Color.Transparent;
+            button27.BackgroundImageLayout = ImageLayout.Stretch;
             button27.FlatAppearance.BorderSize = 0;
             button27.FlatStyle = FlatStyle.Flat;
             button27.Location = new Point(21, 135);
@@ -1419,10 +1456,12 @@
             button27.Size = new Size(174, 83);
             button27.TabIndex = 1;
             button27.UseVisualStyleBackColor = false;
+            button27.Click += button27_Click;
             // 
             // button28
             // 
             button28.BackColor = Color.Transparent;
+            button28.BackgroundImageLayout = ImageLayout.Stretch;
             button28.FlatAppearance.BorderSize = 0;
             button28.FlatStyle = FlatStyle.Flat;
             button28.Location = new Point(22, 33);
@@ -1430,6 +1469,7 @@
             button28.Size = new Size(174, 83);
             button28.TabIndex = 0;
             button28.UseVisualStyleBackColor = false;
+            button28.Click += button28_Click;
             // 
             // panel19
             // 
@@ -1625,6 +1665,7 @@
             // b10
             // 
             b10.BackColor = Color.Transparent;
+            b10.BackgroundImageLayout = ImageLayout.Stretch;
             b10.FlatAppearance.BorderSize = 0;
             b10.FlatStyle = FlatStyle.Flat;
             b10.Location = new Point(230, 446);
@@ -1637,6 +1678,7 @@
             // b09
             // 
             b09.BackColor = Color.Transparent;
+            b09.BackgroundImageLayout = ImageLayout.Stretch;
             b09.FlatAppearance.BorderSize = 0;
             b09.FlatStyle = FlatStyle.Flat;
             b09.Location = new Point(231, 342);
@@ -1649,6 +1691,7 @@
             // b08
             // 
             b08.BackColor = Color.Transparent;
+            b08.BackgroundImageLayout = ImageLayout.Stretch;
             b08.FlatAppearance.BorderSize = 0;
             b08.FlatStyle = FlatStyle.Flat;
             b08.Location = new Point(230, 239);
@@ -1661,6 +1704,7 @@
             // b07
             // 
             b07.BackColor = Color.Transparent;
+            b07.BackgroundImageLayout = ImageLayout.Stretch;
             b07.FlatAppearance.BorderSize = 0;
             b07.FlatStyle = FlatStyle.Flat;
             b07.Location = new Point(229, 135);
@@ -1673,6 +1717,7 @@
             // b06
             // 
             b06.BackColor = Color.Transparent;
+            b06.BackgroundImageLayout = ImageLayout.Stretch;
             b06.FlatAppearance.BorderSize = 0;
             b06.FlatStyle = FlatStyle.Flat;
             b06.Location = new Point(230, 33);
@@ -1685,6 +1730,7 @@
             // b05
             // 
             b05.BackColor = Color.Transparent;
+            b05.BackgroundImageLayout = ImageLayout.Stretch;
             b05.FlatAppearance.BorderSize = 0;
             b05.FlatStyle = FlatStyle.Flat;
             b05.Location = new Point(21, 445);
@@ -1697,6 +1743,7 @@
             // b04
             // 
             b04.BackColor = Color.Transparent;
+            b04.BackgroundImageLayout = ImageLayout.Stretch;
             b04.FlatAppearance.BorderSize = 0;
             b04.FlatStyle = FlatStyle.Flat;
             b04.Location = new Point(21, 341);
@@ -1709,6 +1756,7 @@
             // b03
             // 
             b03.BackColor = Color.Transparent;
+            b03.BackgroundImageLayout = ImageLayout.Stretch;
             b03.FlatAppearance.BorderSize = 0;
             b03.FlatStyle = FlatStyle.Flat;
             b03.Location = new Point(22, 239);
@@ -1721,6 +1769,7 @@
             // b02
             // 
             b02.BackColor = Color.Transparent;
+            b02.BackgroundImageLayout = ImageLayout.Stretch;
             b02.FlatAppearance.BorderSize = 0;
             b02.FlatStyle = FlatStyle.Flat;
             b02.Location = new Point(21, 135);
@@ -1733,6 +1782,7 @@
             // b01
             // 
             b01.BackColor = Color.Transparent;
+            b01.BackgroundImageLayout = ImageLayout.Stretch;
             b01.FlatAppearance.BorderSize = 0;
             b01.FlatStyle = FlatStyle.Flat;
             b01.Location = new Point(22, 33);
@@ -1972,17 +2022,17 @@
         private Label labelB8;
         private Label labelB7;
         private Label labelB6;
-        private Label label21;
+        private Label labela2;
         private Label labela1;
         private Label labela6;
-        private Label c01;
+        private Label label29;
         private Label label22;
-        private Label label28;
-        private Label label27;
-        private Label label26;
-        private Label label25;
-        private Label label24;
-        private Label label23;
+        private Label labela9;
+        private Label labela8;
+        private Label labela7;
+        private Label labela5;
+        private Label labela4;
+        private Label labela3;
         private Label label37;
         private Label label36;
         private Label label35;
@@ -1991,6 +2041,6 @@
         private Label label32;
         private Label label31;
         private Label label30;
-        private Label label29;
+        private Label labela10;
     }
 }
