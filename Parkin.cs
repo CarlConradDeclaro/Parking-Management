@@ -14,7 +14,7 @@ namespace Parking
     public partial class Parkin : UserControl
     {
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-        string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png"; 
+        string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
         string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
         string Sloc;
         ParkingEntry pe1;
@@ -42,7 +42,7 @@ namespace Parking
             filterDisplay("PARKED");
             numV.Text = countVehicle() + "";
             numPV.Text = countParkedVehicle() + "";
-            numCV.Text = countClearedVehicle() + "";
+
             panel5.Show();
             /*  history1.Hide();
              admin1.Hide();     */
@@ -143,7 +143,7 @@ namespace Parking
 
             numV.Text = countVehicle() + "";
             numPV.Text = countParkedVehicle() + "";
-            numCV.Text = countClearedVehicle() + "";
+
         }
 
         private void parkout_Click(object sender, EventArgs e)
@@ -169,13 +169,13 @@ namespace Parking
         {
             flowLayoutPanel2.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords(); 
+            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
                 if (record.Status == "PARKED")
                 {
-                    parkinList pL = new parkinList(numV, numCV, numPV);
+                    parkinList pL = new parkinList(numV, numPV);
                     pL.UpdateLabels(record);
                     pL.EditParking += ParkingRecordAddedHandler;
                     flowLayoutPanel2.Controls.Add(pL);
@@ -188,8 +188,8 @@ namespace Parking
             Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
                                button28, button27, button26, button25, button24, button23, button22, button21, button20, button19,
                               button38, button37, button36, button35, button34, button33, button32, button31, button30, button29];
-            for (int i = 0; i < 30; i++) 
-                    button[i].Image = null;
+            for (int i = 0; i < 30; i++)
+                button[i].Image = null;
             OccupiedArea();
         }
         public void filterDisplay(string category)
@@ -203,13 +203,13 @@ namespace Parking
                 var record = allParkingRecords[i];
                 if (record.Status == category)
                 {
-                    parkinList pL = new parkinList(numV, numCV, numPV);
+                    parkinList pL = new parkinList(numV, numPV);
                     pL.UpdateLabels(record);
                     flowLayoutPanel2.Controls.Add(pL);
                 }
                 else if (category == "ALL")
                 {
-                    parkinList pL = new parkinList(numV, numCV, numPV);
+                    parkinList pL = new parkinList(numV, numPV);
                     pL.UpdateLabels(record);
                     flowLayoutPanel2.Controls.Add(pL);
                 }
@@ -260,7 +260,7 @@ namespace Parking
                 {
                     if (record.Status != "Cleared")
                     {
-                        parkinList pL = new parkinList(numV, numCV, numPV);
+                        parkinList pL = new parkinList(numV, numPV);
                         pL.UpdateLabels(record);
                         flowLayoutPanel2.Controls.Add(pL);
                         foundRecord = true;
@@ -490,7 +490,7 @@ namespace Parking
             string[] labelNames = ["BM-01", "BM-02", "BM-03", "BM-04", "BM-05", "BM-06", "BM-07", "BM-08", "BM-09", "BM-10",
                                     "A-01","A-02","A-03","A-04","A-05","A-06","A-07","A-08","A-09","A-10",
                                     "B-01","B-02","B-03","B-04","B-05","B-06","B-07","B-08","B-09","B-10"];
-            
+
             for (int i = 0; i < labelNames.Length; i++)
                 if (isOccupied(labelNames[i]))
                 {
@@ -566,7 +566,7 @@ namespace Parking
             return VHdetails;
         }
 
-        private void handleParkAreaClick(string btn, string s_loc,int floor)
+        private void handleParkAreaClick(string btn, string s_loc, int floor)
         {
 
 
@@ -576,7 +576,7 @@ namespace Parking
                 setSloc(s_loc);
                 pe1 = new ParkingEntry(flowLayoutPanel2);
                 pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
-                pe1.setLocationArea(s_loc,floor);
+                pe1.setLocationArea(s_loc, floor);
                 pe1.setSelectedArea(true);
                 pe1.ShowDialog();
             }
@@ -614,7 +614,7 @@ namespace Parking
         private void b01_Click(object sender, EventArgs e)
         {
 
-            handleParkAreaClick("b1", "BM-01",1);
+            handleParkAreaClick("b1", "BM-01", 1);
         }
 
         private void b02_Click(object sender, EventArgs e)
@@ -665,7 +665,7 @@ namespace Parking
 
         private void button28_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("a1", "A-01",2);
+            handleParkAreaClick("a1", "A-01", 2);
         }
 
         private void button27_Click(object sender, EventArgs e)
@@ -715,7 +715,7 @@ namespace Parking
 
         private void button38_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("bb01", "B-01",3);
+            handleParkAreaClick("bb01", "B-01", 3);
         }
 
         private void button37_Click(object sender, EventArgs e)
@@ -759,6 +759,35 @@ namespace Parking
         private void button29_Click(object sender, EventArgs e)
         {
             handleParkAreaClick("bb_10", "B-10", 3);
+        }
+
+        private void btnViewParkLot_MouseHover(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Content.Controls.Add(vehicleListPanel);
+            vehicleListPanel.Dock = DockStyle.Fill;
+            vehicleListPanel.Show();
+            parkingView.Dock = DockStyle.None;
+            Content.Controls.Remove(parkingView);
+            parkingView.Hide();
+            refreshParkingArea();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            pe1 = new ParkingEntry(flowLayoutPanel2);
+            pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
+            pe1.ShowDialog();
         }
     }
 }

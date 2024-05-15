@@ -231,8 +231,8 @@ namespace Parking
        
         private void setTypeImage(string type,string sloc) {
 
-            Image image1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png");
-            Image image2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png");
+            Image image1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png");
+            Image image2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png");
             Image motorbikeImage1 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike2.png");
             Image motorbikeImage2 = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\motorbike1.png");
 
@@ -259,18 +259,7 @@ namespace Parking
                                         buttons[j].Image = (j >= 0 && j < 5) || (j >= 10 && j <= 14) || (j >= 19 && j <= 23) ? motorbikeImage1 : motorbikeImage2;
                                          labels[j].Hide();
                                      }
-               
 
-
-
-
-
-
-
-            /*if (!isOccupied(btnName))
-                setSloc(btnName);
-            else
-                setSloc(null);*/
         }
 
         public void refreshParkingArea()

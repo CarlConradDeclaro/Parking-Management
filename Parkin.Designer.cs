@@ -50,11 +50,6 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            panel11 = new Panel();
-            button3 = new Button();
-            panel15 = new Panel();
-            numCV = new Label();
-            label14 = new Label();
             panel12 = new Panel();
             button1 = new Button();
             searchVH = new TextBox();
@@ -76,6 +71,15 @@
             btnCleared = new Button();
             panel5 = new Panel();
             parkingView = new Panel();
+            panel20 = new Panel();
+            button10 = new Button();
+            panel21 = new Panel();
+            button11 = new Button();
+            panel15 = new Panel();
+            button3 = new Button();
+            button9 = new Button();
+            panel22 = new Panel();
+            button12 = new Button();
             label10 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -157,18 +161,19 @@
             b01 = new Button();
             Content = new Panel();
             vehicleListPanel = new Panel();
-            panel2 = new Panel();
-            btnViewParkLot = new Button();
+            panel11 = new Panel();
             btnViewParkList = new Button();
+            btnViewParkLot = new Button();
+            panel2 = new Panel();
             panelContent = new Panel();
+            toolTip1 = new ToolTip(components);
+            toolTip2 = new ToolTip(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)humBtn).BeginInit();
             sidebar.SuspendLayout();
             menuContainer.SuspendLayout();
             panel6.SuspendLayout();
             panel3.SuspendLayout();
-            panel11.SuspendLayout();
-            panel15.SuspendLayout();
             panel12.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
@@ -179,12 +184,17 @@
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             parkingView.SuspendLayout();
+            panel20.SuspendLayout();
+            panel21.SuspendLayout();
+            panel15.SuspendLayout();
+            panel22.SuspendLayout();
             panel18.SuspendLayout();
             panel17.SuspendLayout();
             panel19.SuspendLayout();
             panel16.SuspendLayout();
             Content.SuspendLayout();
             vehicleListPanel.SuspendLayout();
+            panel11.SuspendLayout();
             panel2.SuspendLayout();
             panelContent.SuspendLayout();
             SuspendLayout();
@@ -332,7 +342,7 @@
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(1341, 523);
+            flowLayoutPanel2.Size = new Size(1343, 523);
             flowLayoutPanel2.TabIndex = 1;
             flowLayoutPanel2.Click += flowLayoutPanel2_Click;
             // 
@@ -346,9 +356,9 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(2, 66);
+            panel3.Location = new Point(3, 66);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1305, 40);
+            panel3.Size = new Size(1303, 40);
             panel3.TabIndex = 3;
             // 
             // label1
@@ -369,9 +379,9 @@
             label12.ForeColor = Color.White;
             label12.Location = new Point(1043, 5);
             label12.Name = "label12";
-            label12.Size = new Size(67, 28);
+            label12.Size = new Size(89, 28);
             label12.TabIndex = 10;
-            label12.Text = "Status";
+            label12.Text = "Location";
             // 
             // label8
             // 
@@ -418,80 +428,30 @@
             label2.Text = "Plate No.";
             label2.Click += label2_Click;
             // 
-            // panel11
-            // 
-            panel11.Anchor = AnchorStyles.Top;
-            panel11.BackColor = Color.FromArgb(22, 19, 75);
-            panel11.Controls.Add(button3);
-            panel11.Controls.Add(panel15);
-            panel11.Controls.Add(label14);
-            panel11.Location = new Point(903, 24);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(260, 125);
-            panel11.TabIndex = 10;
-            panel11.Paint += panel11_Paint;
-            // 
-            // button3
-            // 
-            button3.BackgroundImageLayout = ImageLayout.None;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(6, 17);
-            button3.Name = "button3";
-            button3.Size = new Size(87, 48);
-            button3.TabIndex = 16;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // panel15
-            // 
-            panel15.Controls.Add(numCV);
-            panel15.Location = new Point(6, 75);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(251, 42);
-            panel15.TabIndex = 15;
-            // 
-            // numCV
-            // 
-            numCV.AutoSize = true;
-            numCV.Dock = DockStyle.Right;
-            numCV.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            numCV.ForeColor = Color.White;
-            numCV.Location = new Point(217, 0);
-            numCV.Name = "numCV";
-            numCV.Size = new Size(34, 37);
-            numCV.TabIndex = 0;
-            numCV.Text = "0";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(99, 29);
-            label14.Name = "label14";
-            label14.Size = new Size(146, 28);
-            label14.TabIndex = 14;
-            label14.Text = "Cleared Vihicle";
-            // 
             // panel12
             // 
             panel12.Anchor = AnchorStyles.Top;
             panel12.Controls.Add(button1);
             panel12.Controls.Add(searchVH);
-            panel12.Location = new Point(2, 3);
+            panel12.Location = new Point(3, 3);
             panel12.Name = "panel12";
-            panel12.Size = new Size(387, 36);
+            panel12.Size = new Size(353, 36);
             panel12.TabIndex = 11;
             // 
             // button1
             // 
+            button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = Properties.Resources.search;
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.CausesValidation = false;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(302, 3);
             button1.Name = "button1";
-            button1.Size = new Size(70, 32);
+            button1.Size = new Size(36, 32);
             button1.TabIndex = 1;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // searchVH
@@ -508,7 +468,7 @@
             panel7.Anchor = AnchorStyles.Top;
             panel7.BackgroundImageLayout = ImageLayout.None;
             panel7.Controls.Add(button2);
-            panel7.Location = new Point(1052, 6);
+            panel7.Location = new Point(1049, 6);
             panel7.Name = "panel7";
             panel7.Size = new Size(122, 53);
             panel7.TabIndex = 2;
@@ -537,7 +497,7 @@
             panel8.Anchor = AnchorStyles.Top;
             panel8.BackgroundImageLayout = ImageLayout.None;
             panel8.Controls.Add(parkout);
-            panel8.Location = new Point(1180, 6);
+            panel8.Location = new Point(1177, 6);
             panel8.Name = "panel8";
             panel8.Size = new Size(127, 53);
             panel8.TabIndex = 5;
@@ -568,7 +528,7 @@
             panel9.Controls.Add(logo);
             panel9.Controls.Add(panel13);
             panel9.Controls.Add(label5);
-            panel9.Location = new Point(298, 21);
+            panel9.Location = new Point(893, 42);
             panel9.Name = "panel9";
             panel9.Size = new Size(261, 125);
             panel9.TabIndex = 9;
@@ -625,7 +585,7 @@
             panel10.Controls.Add(label9);
             panel10.Controls.Add(button8);
             panel10.Controls.Add(panel14);
-            panel10.Location = new Point(600, 21);
+            panel10.Location = new Point(1195, 42);
             panel10.Name = "panel10";
             panel10.Size = new Size(261, 125);
             panel10.TabIndex = 13;
@@ -678,7 +638,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.Controls.Add(btnCleared);
-            panel4.Location = new Point(909, 6);
+            panel4.Location = new Point(906, 6);
             panel4.Name = "panel4";
             panel4.Size = new Size(137, 52);
             panel4.TabIndex = 14;
@@ -704,11 +664,8 @@
             // 
             panel5.Controls.Add(parkingView);
             panel5.Controls.Add(Content);
-            panel5.Controls.Add(btnViewParkLot);
-            panel5.Controls.Add(btnViewParkList);
             panel5.Controls.Add(panel10);
             panel5.Controls.Add(panel9);
-            panel5.Controls.Add(panel11);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
@@ -718,6 +675,10 @@
             // parkingView
             // 
             parkingView.BackColor = Color.FromArgb(22, 19, 64);
+            parkingView.Controls.Add(panel20);
+            parkingView.Controls.Add(panel21);
+            parkingView.Controls.Add(panel15);
+            parkingView.Controls.Add(panel22);
             parkingView.Controls.Add(label10);
             parkingView.Controls.Add(label7);
             parkingView.Controls.Add(label6);
@@ -730,23 +691,146 @@
             parkingView.Size = new Size(1308, 757);
             parkingView.TabIndex = 19;
             // 
+            // panel20
+            // 
+            panel20.Anchor = AnchorStyles.Top;
+            panel20.BackgroundImageLayout = ImageLayout.None;
+            panel20.Controls.Add(button10);
+            panel20.Location = new Point(1051, 3);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(122, 53);
+            panel20.TabIndex = 20;
+            // 
+            // button10
+            // 
+            button10.BackColor = Color.FromArgb(31, 28, 75);
+            button10.BackgroundImageLayout = ImageLayout.None;
+            button10.Cursor = Cursors.Hand;
+            button10.FlatAppearance.BorderSize = 0;
+            button10.FlatStyle = FlatStyle.Flat;
+            button10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button10.ForeColor = Color.White;
+            button10.Image = (Image)resources.GetObject("button10.Image");
+            button10.ImageAlign = ContentAlignment.MiddleLeft;
+            button10.Location = new Point(0, -3);
+            button10.Name = "button10";
+            button10.Size = new Size(179, 61);
+            button10.TabIndex = 3;
+            button10.Text = "Parkin";
+            button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
+            // 
+            // panel21
+            // 
+            panel21.Anchor = AnchorStyles.Top;
+            panel21.Controls.Add(button11);
+            panel21.Location = new Point(908, 3);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(137, 52);
+            panel21.TabIndex = 22;
+            // 
+            // button11
+            // 
+            button11.Anchor = AnchorStyles.Top;
+            button11.FlatAppearance.BorderSize = 0;
+            button11.FlatStyle = FlatStyle.Flat;
+            button11.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button11.ForeColor = Color.White;
+            button11.Image = (Image)resources.GetObject("button11.Image");
+            button11.ImageAlign = ContentAlignment.MiddleLeft;
+            button11.Location = new Point(0, 4);
+            button11.Name = "button11";
+            button11.Size = new Size(134, 42);
+            button11.TabIndex = 9;
+            button11.Text = "           Clear list";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // panel15
+            // 
+            panel15.Anchor = AnchorStyles.Top;
+            panel15.Controls.Add(button3);
+            panel15.Controls.Add(button9);
+            panel15.Location = new Point(362, -2);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(103, 48);
+            panel15.TabIndex = 20;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top;
+            button3.BackColor = Color.Transparent;
+            button3.BackgroundImage = Properties.Resources.listView2;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(4, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(46, 38);
+            button3.TabIndex = 16;
+            toolTip2.SetToolTip(button3, "List View");
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button9
+            // 
+            button9.Anchor = AnchorStyles.Top;
+            button9.BackColor = Color.Transparent;
+            button9.BackgroundImage = Properties.Resources.tableView1;
+            button9.BackgroundImageLayout = ImageLayout.Stretch;
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Location = new Point(54, 4);
+            button9.Name = "button9";
+            button9.Size = new Size(48, 38);
+            button9.TabIndex = 17;
+            toolTip1.SetToolTip(button9, "Table View");
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // panel22
+            // 
+            panel22.Anchor = AnchorStyles.Top;
+            panel22.BackgroundImageLayout = ImageLayout.None;
+            panel22.Controls.Add(button12);
+            panel22.Location = new Point(1179, 3);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(127, 53);
+            panel22.TabIndex = 21;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.FromArgb(31, 28, 75);
+            button12.BackgroundImageLayout = ImageLayout.None;
+            button12.Cursor = Cursors.Hand;
+            button12.FlatAppearance.BorderSize = 0;
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button12.ForeColor = Color.White;
+            button12.Image = (Image)resources.GetObject("button12.Image");
+            button12.ImageAlign = ContentAlignment.MiddleLeft;
+            button12.Location = new Point(0, -11);
+            button12.Name = "button12";
+            button12.Size = new Size(173, 66);
+            button12.TabIndex = 3;
+            button12.Text = "Parkout";
+            button12.UseVisualStyleBackColor = false;
+            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(1186, 88);
+            label10.Location = new Point(1179, 85);
             label10.Name = "label10";
-            label10.Size = new Size(114, 23);
+            label10.Size = new Size(127, 23);
             label10.TabIndex = 13;
-            label10.Text = "2nd Flor";
+            label10.Text = "2nd Floor";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(584, 88);
+            label7.Location = new Point(584, 85);
             label7.Name = "label7";
             label7.Size = new Size(127, 23);
             label7.TabIndex = 12;
@@ -757,7 +841,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(6, 88);
+            label6.Location = new Point(6, 85);
             label6.Name = "label6";
             label6.Size = new Size(114, 23);
             label6.TabIndex = 11;
@@ -797,7 +881,7 @@
             panel18.Controls.Add(button37);
             panel18.Controls.Add(button39);
             panel18.Controls.Add(button38);
-            panel18.Location = new Point(874, 114);
+            panel18.Location = new Point(874, 111);
             panel18.Name = "panel18";
             panel18.Size = new Size(426, 559);
             panel18.TabIndex = 10;
@@ -1196,7 +1280,7 @@
             panel17.Controls.Add(button26);
             panel17.Controls.Add(button27);
             panel17.Controls.Add(button28);
-            panel17.Location = new Point(439, 114);
+            panel17.Location = new Point(439, 111);
             panel17.Name = "panel17";
             panel17.Size = new Size(426, 559);
             panel17.TabIndex = 10;
@@ -1477,16 +1561,19 @@
             panel19.Controls.Add(textBox1);
             panel19.Location = new Point(3, 3);
             panel19.Name = "panel19";
-            panel19.Size = new Size(387, 39);
+            panel19.Size = new Size(353, 39);
             panel19.TabIndex = 2;
             // 
             // button4
             // 
-            button4.Location = new Point(305, 4);
+            button4.BackgroundImage = Properties.Resources.search;
+            button4.BackgroundImageLayout = ImageLayout.Zoom;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Location = new Point(308, 4);
             button4.Name = "button4";
-            button4.Size = new Size(70, 32);
+            button4.Size = new Size(36, 32);
             button4.TabIndex = 2;
-            button4.Text = "Search";
             button4.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -1522,7 +1609,7 @@
             panel16.Controls.Add(b03);
             panel16.Controls.Add(b02);
             panel16.Controls.Add(b01);
-            panel16.Location = new Point(6, 114);
+            panel16.Location = new Point(6, 111);
             panel16.Name = "panel16";
             panel16.Size = new Size(426, 559);
             panel16.TabIndex = 0;
@@ -1798,11 +1885,12 @@
             Content.Controls.Add(vehicleListPanel);
             Content.Location = new Point(150, 204);
             Content.Name = "Content";
-            Content.Size = new Size(1344, 792);
+            Content.Size = new Size(1346, 761);
             Content.TabIndex = 18;
             // 
             // vehicleListPanel
             // 
+            vehicleListPanel.Controls.Add(panel11);
             vehicleListPanel.Controls.Add(panel12);
             vehicleListPanel.Controls.Add(panel3);
             vehicleListPanel.Controls.Add(panel2);
@@ -1812,39 +1900,60 @@
             vehicleListPanel.Dock = DockStyle.Fill;
             vehicleListPanel.Location = new Point(0, 0);
             vehicleListPanel.Name = "vehicleListPanel";
-            vehicleListPanel.Size = new Size(1344, 792);
+            vehicleListPanel.Size = new Size(1346, 761);
             vehicleListPanel.TabIndex = 15;
+            // 
+            // panel11
+            // 
+            panel11.Anchor = AnchorStyles.Top;
+            panel11.Controls.Add(btnViewParkList);
+            panel11.Controls.Add(btnViewParkLot);
+            panel11.Location = new Point(362, -2);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(107, 48);
+            panel11.TabIndex = 3;
+            // 
+            // btnViewParkList
+            // 
+            btnViewParkList.Anchor = AnchorStyles.Top;
+            btnViewParkList.BackColor = Color.Transparent;
+            btnViewParkList.BackgroundImage = Properties.Resources.listView2;
+            btnViewParkList.BackgroundImageLayout = ImageLayout.Stretch;
+            btnViewParkList.FlatAppearance.BorderSize = 0;
+            btnViewParkList.FlatStyle = FlatStyle.Flat;
+            btnViewParkList.Location = new Point(3, 4);
+            btnViewParkList.Name = "btnViewParkList";
+            btnViewParkList.Size = new Size(46, 38);
+            btnViewParkList.TabIndex = 16;
+            toolTip2.SetToolTip(btnViewParkList, "List View");
+            btnViewParkList.UseVisualStyleBackColor = false;
+            btnViewParkList.Click += btnViewParkList_Click;
+            // 
+            // btnViewParkLot
+            // 
+            btnViewParkLot.Anchor = AnchorStyles.Top;
+            btnViewParkLot.BackColor = Color.Transparent;
+            btnViewParkLot.BackgroundImage = Properties.Resources.tableView1;
+            btnViewParkLot.BackgroundImageLayout = ImageLayout.Stretch;
+            btnViewParkLot.FlatAppearance.BorderSize = 0;
+            btnViewParkLot.FlatStyle = FlatStyle.Flat;
+            btnViewParkLot.Location = new Point(54, 5);
+            btnViewParkLot.Name = "btnViewParkLot";
+            btnViewParkLot.Size = new Size(48, 38);
+            btnViewParkLot.TabIndex = 17;
+            toolTip1.SetToolTip(btnViewParkLot, "Table View");
+            btnViewParkLot.UseVisualStyleBackColor = false;
+            btnViewParkLot.Click += btnViewParkLot_Click;
+            btnViewParkLot.MouseHover += btnViewParkLot_MouseHover;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(flowLayoutPanel2);
-            panel2.Location = new Point(0, 112);
+            panel2.Location = new Point(2, 112);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1341, 523);
+            panel2.Size = new Size(1343, 523);
             panel2.TabIndex = 2;
-            // 
-            // btnViewParkLot
-            // 
-            btnViewParkLot.Anchor = AnchorStyles.Top;
-            btnViewParkLot.Location = new Point(253, 169);
-            btnViewParkLot.Name = "btnViewParkLot";
-            btnViewParkLot.Size = new Size(94, 29);
-            btnViewParkLot.TabIndex = 17;
-            btnViewParkLot.Text = "V_ParkLot";
-            btnViewParkLot.UseVisualStyleBackColor = true;
-            btnViewParkLot.Click += btnViewParkLot_Click;
-            // 
-            // btnViewParkList
-            // 
-            btnViewParkList.Anchor = AnchorStyles.Top;
-            btnViewParkList.Location = new Point(153, 169);
-            btnViewParkList.Name = "btnViewParkList";
-            btnViewParkList.Size = new Size(94, 29);
-            btnViewParkList.TabIndex = 16;
-            btnViewParkList.Text = "V_ParkList";
-            btnViewParkList.UseVisualStyleBackColor = true;
-            btnViewParkList.Click += btnViewParkList_Click;
             // 
             // panelContent
             // 
@@ -1874,10 +1983,6 @@
             panel6.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
             panel7.ResumeLayout(false);
@@ -1894,6 +1999,10 @@
             panel5.ResumeLayout(false);
             parkingView.ResumeLayout(false);
             parkingView.PerformLayout();
+            panel20.ResumeLayout(false);
+            panel21.ResumeLayout(false);
+            panel15.ResumeLayout(false);
+            panel22.ResumeLayout(false);
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
             panel17.ResumeLayout(false);
@@ -1904,6 +2013,7 @@
             panel16.PerformLayout();
             Content.ResumeLayout(false);
             vehicleListPanel.ResumeLayout(false);
+            panel11.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panelContent.ResumeLayout(false);
             ResumeLayout(false);
@@ -1932,11 +2042,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Panel panel11;
-        private Button button3;
-        private Panel panel15;
-        private Label numCV;
-        private Label label14;
         private Panel panel12;
         private Button button1;
         private TextBox searchVH;
@@ -2042,5 +2147,17 @@
         private Label label31;
         private Label label30;
         private Label labela10;
+        private Panel panel11;
+        private ToolTip toolTip1;
+        private ToolTip toolTip2;
+        private Panel panel15;
+        private Button button3;
+        private Button button9;
+        private Panel panel20;
+        private Button button10;
+        private Panel panel21;
+        private Button button11;
+        private Panel panel22;
+        private Button button12;
     }
 }

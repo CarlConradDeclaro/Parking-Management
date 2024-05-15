@@ -126,3 +126,4 @@ C:\Users\carlconrad\source\Parking-Management-System\bin\Debug\net8.0-windows\ru
 C:\Users\carlconrad\source\Parking-Management-System\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\Parking.csproj.AssemblyReference.cache
 C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\Parking.csproj.Up2Date
+C:\Users\carlconrad\source\Parking-Management-System\obj\Debug\net8.0-windows\Parking.Registration.resources

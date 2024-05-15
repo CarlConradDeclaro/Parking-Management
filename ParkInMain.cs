@@ -14,11 +14,48 @@ using System.Data;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Transactions;
+using System.Globalization;
 
 
 
 namespace Parking
 {
+    public static class UserStore
+    {
+        public static List<User> Users = new List<User>();
+    }
+    public class User {
+
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Pnumber { get; set; }
+        public string Gender { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+
+        public User() { }
+
+        public User(string firstName, string lastName, int pnumber, string gender, string email, string password)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Pnumber = pnumber;
+            Gender = gender;
+            Email = email;
+            Password = password;
+        }
+
+        public string getFirstname() { return FirstName; }
+        public string getLastname() { return LastName; }
+        public int getPnumber() { return Pnumber; }
+        public string getGender() { return Gender; }
+        public string getEmail() { return Email; }
+        public string getPassword() { return Password; }
+
+
+    }
+
     public class ParkingRecord
     {
         // Attributes

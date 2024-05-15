@@ -34,12 +34,13 @@
             panel4 = new Panel();
             button2 = new Button();
             panel3 = new Panel();
+            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             password = new TextBox();
             label1 = new Label();
             loginbtn = new Button();
-            username = new TextBox();
+            email = new TextBox();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.Controls.Add(button2);
-            panel4.Location = new Point(357, 35);
+            panel4.Location = new Point(347, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(237, 136);
             panel4.TabIndex = 1;
@@ -90,16 +91,29 @@
             // 
             panel3.Anchor = AnchorStyles.Top;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(password);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(loginbtn);
-            panel3.Controls.Add(username);
-            panel3.Location = new Point(122, 114);
+            panel3.Controls.Add(email);
+            panel3.Location = new Point(112, 119);
             panel3.Name = "panel3";
             panel3.Size = new Size(709, 538);
             panel3.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(279, 438);
+            label4.Name = "label4";
+            label4.Size = new Size(128, 20);
+            label4.TabIndex = 7;
+            label4.Text = "don't have accout?";
+            label4.Click += label4_Click;
             // 
             // label3
             // 
@@ -142,9 +156,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(179, 166);
             label1.Name = "label1";
-            label1.Size = new Size(117, 31);
+            label1.Size = new Size(70, 31);
             label1.TabIndex = 3;
-            label1.Text = "Username";
+            label1.Text = "Email";
             // 
             // loginbtn
             // 
@@ -155,7 +169,7 @@
             loginbtn.FlatStyle = FlatStyle.Flat;
             loginbtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginbtn.ForeColor = Color.White;
-            loginbtn.Location = new Point(282, 455);
+            loginbtn.Location = new Point(274, 389);
             loginbtn.Name = "loginbtn";
             loginbtn.Size = new Size(136, 37);
             loginbtn.TabIndex = 2;
@@ -163,16 +177,16 @@
             loginbtn.UseVisualStyleBackColor = false;
             loginbtn.Click += loginbtn_Click;
             // 
-            // username
+            // email
             // 
-            username.BackColor = Color.FromArgb(12, 11, 45);
-            username.BorderStyle = BorderStyle.FixedSingle;
-            username.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            username.ForeColor = Color.White;
-            username.Location = new Point(170, 188);
-            username.Name = "username";
-            username.Size = new Size(354, 43);
-            username.TabIndex = 1;
+            email.BackColor = Color.FromArgb(12, 11, 45);
+            email.BorderStyle = BorderStyle.FixedSingle;
+            email.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            email.ForeColor = Color.White;
+            email.Location = new Point(170, 188);
+            email.Name = "email";
+            email.Size = new Size(354, 43);
+            email.TabIndex = 1;
             // 
             // login
             // 
@@ -198,12 +212,13 @@
         private Panel panel2;
         private Panel panel3;
         private Button loginbtn;
-        private TextBox username;
+        private TextBox email;
         private Label label2;
         private TextBox password;
         private Label label1;
         private Panel panel4;
         private Button button2;
         private Label label3;
+        private Label label4;
     }
 }

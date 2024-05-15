@@ -58,7 +58,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Ebrima", 9F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(229, 12);
             label2.Name = "label2";
             label2.Size = new Size(38, 20);
@@ -70,7 +70,7 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Ebrima", 9F, FontStyle.Bold);
-            label7.ForeColor = Color.Gainsboro;
+            label7.ForeColor = Color.Silver;
             label7.Location = new Point(634, 12);
             label7.Name = "label7";
             label7.Size = new Size(77, 20);
@@ -82,7 +82,7 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Ebrima", 9F, FontStyle.Bold);
-            label8.ForeColor = Color.Gainsboro;
+            label8.ForeColor = Color.Silver;
             label8.Location = new Point(875, 12);
             label8.Name = "label8";
             label8.Size = new Size(67, 20);
@@ -122,7 +122,7 @@
             label11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label11.AutoSize = true;
             label11.Font = new Font("Ebrima", 9F, FontStyle.Bold);
-            label11.ForeColor = Color.White;
+            label11.ForeColor = SystemColors.ButtonHighlight;
             label11.Location = new Point(404, 13);
             label11.Name = "label11";
             label11.Size = new Size(45, 20);
@@ -134,7 +134,7 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Ebrima", 9F, FontStyle.Bold);
-            label3.ForeColor = Color.Red;
+            label3.ForeColor = Color.DarkOrange;
             label3.Location = new Point(1040, 12);
             label3.Name = "label3";
             label3.Size = new Size(68, 20);

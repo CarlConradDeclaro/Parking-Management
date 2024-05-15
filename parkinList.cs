@@ -21,11 +21,11 @@ namespace Parking
         edit edt;
         public event EventHandler  editHandler;
 
-        public parkinList(System.Windows.Forms.Label numV, System.Windows.Forms.Label numCV, System.Windows.Forms.Label numPV)
+        public parkinList(System.Windows.Forms.Label numV  ,System.Windows.Forms.Label numPV)
         {
             InitializeComponent();
             this.numV = numV;
-            this.numCV = numCV;
+        
             this.numPV = numPV;
         }
 
@@ -39,7 +39,7 @@ namespace Parking
             vehicleRecord =  parkRecord;
             label1.Text = parkRecord.PlateNumber;
             label2.Text = parkRecord.Type;
-            label3.Text = parkRecord.Status;          
+            label3.Text = parkRecord.S_location;          
             label7.Text = parkRecord.ArrivalDate;
             label8.Text = parkRecord.ArrivalTime;          
             label11.Text = parkRecord.Model;             
@@ -81,7 +81,6 @@ namespace Parking
                         
                        
                         numV.Text = parkingRecordsManager.GetAllParkingRecords().Count.ToString();
-                        numCV.Text = parkingRecordsManager.GetAllParkingRecords().Count(r => r.Status == "Cleared").ToString();
                         numPV.Text = parkingRecordsManager.GetAllParkingRecords().Count(r => r.Status == "PARKED").ToString();
                         break;
                     }
