@@ -70,6 +70,8 @@
             panel4 = new Panel();
             btnCleared = new Button();
             panel5 = new Panel();
+            admin1 = new admin();
+            history1 = new History();
             parkingView = new Panel();
             panel20 = new Panel();
             button10 = new Button();
@@ -662,6 +664,8 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(admin1);
+            panel5.Controls.Add(history1);
             panel5.Controls.Add(parkingView);
             panel5.Controls.Add(Content);
             panel5.Controls.Add(panel10);
@@ -671,6 +675,22 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1590, 1252);
             panel5.TabIndex = 9;
+            // 
+            // admin1
+            // 
+            admin1.BackColor = Color.FromArgb(22, 19, 64);
+            admin1.Location = new Point(582, 1038);
+            admin1.Name = "admin1";
+            admin1.Size = new Size(241, 142);
+            admin1.TabIndex = 21;
+            // 
+            // history1
+            // 
+            history1.BackColor = Color.FromArgb(22, 19, 64);
+            history1.Location = new Point(310, 1064);
+            history1.Name = "history1";
+            history1.Size = new Size(261, 80);
+            history1.TabIndex = 20;
             // 
             // parkingView
             // 
@@ -686,9 +706,9 @@
             parkingView.Controls.Add(panel17);
             parkingView.Controls.Add(panel19);
             parkingView.Controls.Add(panel16);
-            parkingView.Location = new Point(73, 345);
+            parkingView.Location = new Point(112, 1072);
             parkingView.Name = "parkingView";
-            parkingView.Size = new Size(1308, 757);
+            parkingView.Size = new Size(114, 92);
             parkingView.TabIndex = 19;
             // 
             // panel20
@@ -696,7 +716,7 @@
             panel20.Anchor = AnchorStyles.Top;
             panel20.BackgroundImageLayout = ImageLayout.None;
             panel20.Controls.Add(button10);
-            panel20.Location = new Point(1051, 3);
+            panel20.Location = new Point(454, 3);
             panel20.Name = "panel20";
             panel20.Size = new Size(122, 53);
             panel20.TabIndex = 20;
@@ -724,7 +744,7 @@
             // 
             panel21.Anchor = AnchorStyles.Top;
             panel21.Controls.Add(button11);
-            panel21.Location = new Point(908, 3);
+            panel21.Location = new Point(311, 3);
             panel21.Name = "panel21";
             panel21.Size = new Size(137, 52);
             panel21.TabIndex = 22;
@@ -750,7 +770,7 @@
             panel15.Anchor = AnchorStyles.Top;
             panel15.Controls.Add(button3);
             panel15.Controls.Add(button9);
-            panel15.Location = new Point(362, -2);
+            panel15.Location = new Point(-235, -2);
             panel15.Name = "panel15";
             panel15.Size = new Size(103, 48);
             panel15.TabIndex = 20;
@@ -791,7 +811,7 @@
             panel22.Anchor = AnchorStyles.Top;
             panel22.BackgroundImageLayout = ImageLayout.None;
             panel22.Controls.Add(button12);
-            panel22.Location = new Point(1179, 3);
+            panel22.Location = new Point(582, 3);
             panel22.Name = "panel22";
             panel22.Size = new Size(127, 53);
             panel22.TabIndex = 21;
@@ -2159,5 +2179,7 @@
         private Button button11;
         private Panel panel22;
         private Button button12;
+        private admin admin1;
+        private History history1;
     }
 }

@@ -192,24 +192,16 @@ namespace Parking
 
                 try
                 {
-
                     connection.Open();
-
-
                     command.Parameters.AddWithValue("@s_loc", selectedSlot);
-
-
                     command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
-
-
 
         private int convertSlocToSId(string s_loc) {
             int s_id = 0;
@@ -335,7 +327,7 @@ namespace Parking
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
-                if (record.Status != "Cleared")
+                if (record.Status != "cleared")
                 {
                     ParkOutList POL = new ParkOutList(flowPanelVH, this, setAmt, setStatus);
                     POL.UpdateLabels(record);
@@ -373,7 +365,7 @@ namespace Parking
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
-                if (record.Status != "Cleared")
+                if (record.Status != "cleared")
                 {
                     if (record.PlateNumber.Contains(searchVHTxt.Text))
                     {
@@ -403,7 +395,7 @@ namespace Parking
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
-                if (record.Status != "Cleared")
+                if (record.Status != "cleared")
                 {
                     ParkOutList POL = new ParkOutList(flowPanelVH, this, setAmt, setStatus);
                     POL.UpdateLabels(record);
@@ -454,7 +446,6 @@ namespace Parking
                                 flagDown = vpm.flagDown;
                                 succeedingAmt = vpm.additionalAmtPerHour;
                             }
-
                         }
                         // arrival dateTime
                         string arrivalDate = record.ArrivalDate;

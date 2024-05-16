@@ -329,11 +329,38 @@ namespace Parking
 
         private void button6_Click(object sender, EventArgs e)
         {
+            //panelContent
+            /*
+                        Content.Controls.Add(vehicleListPanel);
+                        vehicleListPanel.Dock = DockStyle.Fill;
+                        vehicleListPanel.Show();
+
+                        parkingView.Dock = DockStyle.None;
+                        Content.Controls.Remove(parkingView);
+                        parkingView.Hide();
+                        refreshParkingArea();
+             */
 
             /*  admin1.Hide();
                history1.deleteHistoryV += ParkingRecordAddedHandler;
                history1.Hide();*/
+            panelContent.Controls.Add(panel5);
+            panel5.Dock = DockStyle.Fill;
             panel5.Show();
+
+
+            history1.Dock = DockStyle.None;
+            panelContent.Controls.Remove(history1);
+            history1.Hide();
+
+            admin1.Dock = DockStyle.None;
+            panelContent.Controls.Remove(admin1);
+            admin1.Hide();
+
+
+
+
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -342,6 +369,18 @@ namespace Parking
               history1.Show();
               admin1.Hide();*/
 
+            panelContent.Controls.Remove(panel5);
+            panel5.Dock = DockStyle.None;
+            panel5.Hide();
+      
+            panelContent.Controls.Add(history1);
+            history1.Dock = DockStyle.Fill;
+            history1.Show();
+
+            admin1.Dock = DockStyle.None;
+            panelContent.Controls.Remove(admin1);
+            admin1.Hide();
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -349,6 +388,19 @@ namespace Parking
             /*   history1.deleteHistoryV += ParkingRecordAddedHandler;
                admin1.Show();
                history1.Hide();*/
+
+            panelContent.Controls.Remove(panel5);
+            panel5.Dock = DockStyle.None;
+            panel5.Hide();
+
+            panelContent.Controls.Remove(history1);
+            history1.Dock = DockStyle.None;
+            history1.Hide();
+
+            admin1.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(admin1);
+            admin1.Show();
+
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)

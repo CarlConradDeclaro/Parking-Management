@@ -172,11 +172,8 @@ namespace Parking
         }
         private void AddDefaultValues()
         {
-
-        
-
-
         }
+
         public void AddParkingRecord(ParkingRecord parkingRecord)
         {
          
@@ -253,7 +250,6 @@ namespace Parking
             updateAvailability_query(parkingRecord.S_location);
         }
 
-
         private void updateAvailability_query(string selectedSlot)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -309,9 +305,9 @@ namespace Parking
                 }
                 reader.Close();
             }
-
             return parkingRecords; 
         }
+
         public void AddParkingHistoryRecord(ParkingHistoyRecord parkinghistoryRecords)
         {
             string query = "insert into Transactions" +
@@ -331,15 +327,11 @@ namespace Parking
                     command.Parameters.AddWithValue("@hours", parkinghistoryRecords.Hours);
                     command.Parameters.AddWithValue("@amount", parkinghistoryRecords.Amount);
                     command.Parameters.AddWithValue("@change", parkinghistoryRecords.Changed);
-                    command.Parameters.AddWithValue("@cash", parkinghistoryRecords.Cash);
-
-        
+                    command.Parameters.AddWithValue("@cash", parkinghistoryRecords.Cash);      
                     connection.Open();
-
                
                     int rowsAffected = command.ExecuteNonQuery();
-
-                   
+                  
                     if (rowsAffected > 0)
                     {
                         Console.WriteLine("Parking record inserted successfully.");
@@ -350,9 +342,43 @@ namespace Parking
                     }
                 }
             }
- 
-         
+         //   removeVehicle(parkinghistoryRecords.v_id);
         }
+
+        public void removeVehicle(int id) {
+             
+          
+
+           
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+              
+                string query = "DELETE FROM Vehicle WHERE id = @id";
+
+             
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                  
+                    command.Parameters.AddWithValue("@id", id);
+
+                     
+                    connection.Open();
+
+                
+                    int rowsAffected = command.ExecuteNonQuery();
+                      
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Vehicle deleted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No vehicle found with the provided id.");
+                    }
+                }
+            }
+        }
+
         public void RemoveParkingHistoryRecord(ParkingHistoyRecord parkinghistoryRecords)
         {
             parkingHistoryRecords.Remove(parkinghistoryRecords);

@@ -167,15 +167,20 @@ namespace Parking
                 {
                     if (getSloc() != null)
                     {
-                        parkingRecordsManager.AddParkingRecord(carDetails);
-                        ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
-                        invalid.Text = "Successfully added new Vehicle!";
-                        invalid.ForeColor = Color.Chartreuse;
-                        updateAvailability_query();
+                        if (!isOccupied(getSloc()))
+                        {
+                            parkingRecordsManager.AddParkingRecord(carDetails);
+                            ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
+                            invalid.Text = "Successfully added new Vehicle!";
+                            invalid.ForeColor = Color.Chartreuse;
+                            updateAvailability_query();
 
-                        Parkin parkin = new Parkin();
-                        parkin.setIsParkin(true);
-
+                            Parkin parkin = new Parkin();
+                            parkin.setIsParkin(true);
+                        }
+                        else {
+                            MessageBox.Show("Please select another slot", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                         MessageBox.Show("Please select a slot area for this vehicle!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
