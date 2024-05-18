@@ -132,7 +132,7 @@
             Label8.AutoSize = true;
             Label8.Font = new Font("Ebrima", 9F, FontStyle.Bold);
             Label8.ForeColor = Color.Gainsboro;
-            Label8.Location = new Point(979, 14);
+            Label8.Location = new Point(973, 14);
             Label8.Name = "Label8";
             Label8.Size = new Size(18, 20);
             Label8.TabIndex = 21;
@@ -144,18 +144,19 @@
             Label9.AutoSize = true;
             Label9.Font = new Font("Ebrima", 9F, FontStyle.Bold);
             Label9.ForeColor = Color.Lime;
-            Label9.Location = new Point(1081, 14);
+            Label9.Location = new Point(1088, 14);
             Label9.Name = "Label9";
             Label9.Size = new Size(18, 20);
             Label9.TabIndex = 22;
             Label9.Text = "0";
+            Label9.Click += Label9_Click;
             // 
             // button1
             // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1172, 10);
+            button1.Location = new Point(1204, 10);
             button1.Name = "button1";
             button1.Size = new Size(51, 29);
             button1.TabIndex = 23;
@@ -167,9 +168,9 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(1229, 10);
+            button2.Location = new Point(1254, 48);
             button2.Name = "button2";
-            button2.Size = new Size(63, 29);
+            button2.Size = new Size(10, 14);
             button2.TabIndex = 24;
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -191,7 +192,7 @@
             Controls.Add(Label2);
             Controls.Add(Label1);
             Name = "HistoryList";
-            Size = new Size(1332, 46);
+            Size = new Size(1294, 46);
             Load += HistoryList_Load;
             ResumeLayout(false);
             PerformLayout();

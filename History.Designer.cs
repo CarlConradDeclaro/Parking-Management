@@ -159,7 +159,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(1051, 22);
+            label8.Location = new Point(1073, 22);
             label8.Name = "label8";
             label8.Size = new Size(83, 23);
             label8.TabIndex = 6;
@@ -170,11 +170,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(962, 22);
+            label7.Location = new Point(952, 22);
             label7.Name = "label7";
-            label7.Size = new Size(58, 23);
+            label7.Size = new Size(88, 23);
             label7.TabIndex = 5;
-            label7.Text = "Time";
+            label7.Text = "Location";
             // 
             // label6
             // 

@@ -40,11 +40,23 @@
             fname = new TextBox();
             label3 = new Label();
             panel2 = new Panel();
+            errorLabelFN = new Label();
+            errorLabelLN = new Label();
+            errorLabelPass = new Label();
+            errorLabelEmail = new Label();
+            errorLabelPhoneNum = new Label();
+            errorLabelGender = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(errorLabelGender);
+            panel1.Controls.Add(errorLabelPhoneNum);
+            panel1.Controls.Add(errorLabelEmail);
+            panel1.Controls.Add(errorLabelPass);
+            panel1.Controls.Add(errorLabelLN);
+            panel1.Controls.Add(errorLabelFN);
             panel1.Controls.Add(number);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -177,6 +189,60 @@
             panel2.Size = new Size(335, 297);
             panel2.TabIndex = 2;
             // 
+            // errorLabelFN
+            // 
+            errorLabelFN.AutoSize = true;
+            errorLabelFN.ForeColor = Color.Red;
+            errorLabelFN.Location = new Point(34, 155);
+            errorLabelFN.Name = "errorLabelFN";
+            errorLabelFN.Size = new Size(0, 20);
+            errorLabelFN.TabIndex = 9;
+            // 
+            // errorLabelLN
+            // 
+            errorLabelLN.AutoSize = true;
+            errorLabelLN.ForeColor = Color.Red;
+            errorLabelLN.Location = new Point(34, 265);
+            errorLabelLN.Name = "errorLabelLN";
+            errorLabelLN.Size = new Size(0, 20);
+            errorLabelLN.TabIndex = 10;
+            // 
+            // errorLabelPass
+            // 
+            errorLabelPass.AutoSize = true;
+            errorLabelPass.ForeColor = Color.Red;
+            errorLabelPass.Location = new Point(34, 394);
+            errorLabelPass.Name = "errorLabelPass";
+            errorLabelPass.Size = new Size(0, 20);
+            errorLabelPass.TabIndex = 11;
+            // 
+            // errorLabelEmail
+            // 
+            errorLabelEmail.AutoSize = true;
+            errorLabelEmail.ForeColor = Color.Red;
+            errorLabelEmail.Location = new Point(358, 155);
+            errorLabelEmail.Name = "errorLabelEmail";
+            errorLabelEmail.Size = new Size(0, 20);
+            errorLabelEmail.TabIndex = 12;
+            // 
+            // errorLabelPhoneNum
+            // 
+            errorLabelPhoneNum.AutoSize = true;
+            errorLabelPhoneNum.ForeColor = Color.Red;
+            errorLabelPhoneNum.Location = new Point(352, 265);
+            errorLabelPhoneNum.Name = "errorLabelPhoneNum";
+            errorLabelPhoneNum.Size = new Size(0, 20);
+            errorLabelPhoneNum.TabIndex = 13;
+            // 
+            // errorLabelGender
+            // 
+            errorLabelGender.AutoSize = true;
+            errorLabelGender.ForeColor = Color.Red;
+            errorLabelGender.Location = new Point(358, 389);
+            errorLabelGender.Name = "errorLabelGender";
+            errorLabelGender.Size = new Size(0, 20);
+            errorLabelGender.TabIndex = 14;
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -209,5 +275,11 @@
         private Label label3;
         private Panel panel2;
         private TextBox number;
+        private Label errorLabelPass;
+        private Label errorLabelLN;
+        private Label errorLabelFN;
+        private Label errorLabelGender;
+        private Label errorLabelPhoneNum;
+        private Label errorLabelEmail;
     }
 }

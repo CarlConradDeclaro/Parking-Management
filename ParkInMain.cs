@@ -15,28 +15,86 @@ using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Transactions;
 using System.Globalization;
+using System.Collections;
 
 
 
 namespace Parking
 {
-    public static class UserStore
-    {
-        public static List<User> Users = new List<User>();
-    }
-    public class User {
 
+    public class UserDetails
+    {
+
+        private string name;
+
+        private static UserDetails instance;
+        public static List<User> Usersdata = new List<User>();
+        public static UserDetails Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new UserDetails();
+                return instance;
+            }
+            set
+            {
+                instance = value;
+            }
+        }
+
+        public UserDetails() 
+        {
+          /*  Usersdata.Add(new User("John", "Doe", 12345670, "Male", "john@example.com", "password"));
+            Usersdata.Add(new User("Jane", "Doe", 98765210, "Female", "jane@example.com", "password"));*/
+        }
+
+        public void addUser(User user)
+        {
+            Usersdata.Add(user);
+        }
+
+        public string getName()
+        {
+
+            if (Usersdata.Count > 0)
+            {
+                return Usersdata[0].FirstName + ", " + Usersdata[0].LastName;
+            }
+            return null;
+        }
+
+        public int getId()
+        {
+            int x = 0;
+            if (Usersdata.Count > 0)
+            {
+                x =  Usersdata[0].Id;
+            }
+            return x;
+        }
+
+
+        public void clearUser()
+        {
+            Usersdata.Clear();
+
+        }
+    }
+
+
+    public class User {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Pnumber { get; set; }
+        public string Pnumber { get; set; }
         public string Gender { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 
         public User() { }
 
-        public User(string firstName, string lastName, int pnumber, string gender, string email, string password)
+        public User(string firstName, string lastName, string pnumber, string gender, string email, string password)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -48,11 +106,14 @@ namespace Parking
 
         public string getFirstname() { return FirstName; }
         public string getLastname() { return LastName; }
-        public int getPnumber() { return Pnumber; }
+        public string getPnumber() { return Pnumber; }
         public string getGender() { return Gender; }
         public string getEmail() { return Email; }
         public string getPassword() { return Password; }
 
+      
+
+       
 
     }
 
@@ -70,8 +131,9 @@ namespace Parking
         
         public string Status { get; set; }
         public string S_location { get; set; }
+        public int adminId { get; set; }
 
-       
+
         public ParkingRecord()
         {
           
@@ -79,7 +141,7 @@ namespace Parking
       
         public ParkingRecord(int Id,string plateNumber, string type, string model,
                              string driver, string phone, string arrivalDate,
-                             string arrivalTime, string status,string s_location)
+                             string arrivalTime, string status,string s_location,int adminid)
         {
             id = Id;
             PlateNumber = plateNumber;
@@ -92,6 +154,7 @@ namespace Parking
          
             Status = status;
             S_location = s_location;
+            adminId = adminid;
          
         }
 
@@ -115,6 +178,7 @@ namespace Parking
          public double Amount { get; set; }
         public double Cash { get; set; }
         public double Changed { get; set; }
+         
         public ParkingHistoyRecord()
         {
              
@@ -142,6 +206,7 @@ namespace Parking
                 Amount = amount;
                 Cash = cash;
                 Changed = change;
+                
         }     
     }
     public class ParkingRecordsManager
@@ -175,12 +240,10 @@ namespace Parking
         }
 
         public void AddParkingRecord(ParkingRecord parkingRecord)
-        {
-         
+        {        
             string query = @"INSERT INTO 
-                     Vehicle (v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status,s_sloc) 
-                     VALUES (@v_plate, @v_type, @model, @driver, @phone, @arrivalDate, @arrivalTime, @status,@s_sloc)";
-
+                     Vehicle (v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status,s_sloc,admin) 
+                     VALUES (@v_plate, @v_type, @model, @driver, @phone, @arrivalDate, @arrivalTime, @status,@s_sloc,@admin)";
 
 
            
@@ -199,8 +262,9 @@ namespace Parking
                     command.Parameters.AddWithValue("@arrivalTime", parkingRecord.ArrivalTime);
                     command.Parameters.AddWithValue("@status", parkingRecord.Status);
                     command.Parameters.AddWithValue("@s_sloc", parkingRecord.S_location);
+                    command.Parameters.AddWithValue("@admin", parkingRecord.adminId);
 
-                  
+
                     connection.Open();
 
                  
@@ -276,7 +340,7 @@ namespace Parking
             parkingRecords.Clear();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT id, v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status,s_sloc FROM Vehicle";
+                string query = "SELECT id, v_plate, v_type, model, driver, phone, arrivalDate, arrivalTime, status,s_sloc,admin FROM Vehicle";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -298,7 +362,8 @@ namespace Parking
                         arrivalDate.ToString("MM/dd/yyyy"),
                         time.ToString("hh:mm:ss tt"),
                         reader["status"].ToString(),
-                        reader["s_sloc"].ToString()
+                        reader["s_sloc"].ToString(),
+                        (int)reader["admin"]
                     )
                         );
 
@@ -315,13 +380,11 @@ namespace Parking
                 " values (@v_id, @s_id,@admin_id,@departureDate,@departureTime,@hours,@amount ,@change,@cash ) ";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-              
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                 
                     command.Parameters.AddWithValue("@v_id", parkinghistoryRecords.v_id);
                     command.Parameters.AddWithValue("@s_id", parkinghistoryRecords.s_id);       
-                    command.Parameters.AddWithValue("@admin_id", 1010);
+                    command.Parameters.AddWithValue("@admin_id", UserDetails.Instance.getId());
                     command.Parameters.AddWithValue("@departureDate", parkinghistoryRecords.DepartureDate);
                     command.Parameters.AddWithValue("@departureTime", parkinghistoryRecords.DepartureTime);
                     command.Parameters.AddWithValue("@hours", parkinghistoryRecords.Hours);
@@ -405,24 +468,26 @@ namespace Parking
 
                     while (reader.Read())
                     {
-                        
                         parkingHistoryRecords.Add(
                             new ParkingHistoyRecord(
                                 (int)reader["v_id"],
                                 (int)reader["s_id"],
-                                reader["v_plate"].ToString(), 
+                                reader["v_plate"].ToString(),
                                 reader["v_type"].ToString(),
                                 reader["model"].ToString(),
                                 reader["driver"].ToString(),
                                 reader["phone"].ToString(),
-                                reader["arrivalDate"].ToString(), 
-                                reader["arrivalTime"].ToString(), 
+                                reader["arrivalDate"].ToString(),
+                                reader["arrivalTime"].ToString(),
                                 reader["departureDate"].ToString(),
                                 reader["departureTime"].ToString(),
                                 (double)reader["hours"],
-                                (double)reader["amount"], 
+                                (double)reader["amount"],
                                 (double)reader["cash"],
-                                (double)reader["change"]));
+                                (double)reader["change"])
+                              
+                            );
+                              
                     }
                     reader.Close();
                 }
@@ -455,6 +520,8 @@ namespace Parking
     }
 
     public class VehicleManger {
+        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+
         private List<Vehicle> vehiclePaymentMatrix;
         private static VehicleManger instance;
         public static VehicleManger Instance
@@ -469,7 +536,7 @@ namespace Parking
         public VehicleManger()
         {
             vehiclePaymentMatrix = new List<Vehicle>();
-            AddDefaultValues();
+           // AddDefaultValues();
         }
 
        
@@ -484,10 +551,61 @@ namespace Parking
         }
         public void addVPM(Vehicle vehicle)
         {
-            vehiclePaymentMatrix.Add(vehicle);
+            string sqlQuery =
+                "INSERT INTO Vehicle_Type (vType, flagdown, addAmtPerHOur) " +
+                "VALUES (@vType, @flagdown, @addAmtPerHOur)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {            
+                    command.Parameters.AddWithValue("@vType", vehicle.vehicleType);
+                    command.Parameters.AddWithValue("@flagdown", vehicle.flagDown);
+                    command.Parameters.AddWithValue("@addAmtPerHOur", vehicle.additionalAmtPerHour);
+                    connection.Open();
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Parking record inserted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to insert parking record.");
+                    }
+                }
+            }
+
+            //vehiclePaymentMatrix.Add(vehicle);
         }
         public List<Vehicle> GetVPM()
         {
+            vehiclePaymentMatrix.Clear();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT vType, flagdown, addAmtPerHOur FROM Vehicle_Type";
+                SqlCommand command = new SqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        vehiclePaymentMatrix.Add(
+                              new Vehicle(
+                                    reader["vType"].ToString(),
+                                    (int)reader["flagdown"],
+                                    (int)reader["addAmtPerHOur"]));   
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+
+                }
+            }
             return vehiclePaymentMatrix;
         }
     }
@@ -504,6 +622,8 @@ namespace Parking
     }
     public class VehicleBrandMAnger
     {
+        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+
         private List<VehicleBrand> vehicleBrand;
         private static VehicleBrandMAnger instance;
         public static VehicleBrandMAnger Instance
@@ -518,11 +638,11 @@ namespace Parking
         public VehicleBrandMAnger()
         {
             vehicleBrand = new List<VehicleBrand>();
-            AddDefaultValues();
+           // AddDefaultValues();
         }
         private void AddDefaultValues()
         {
-            vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Honda"));
+           /* vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Honda"));
             vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Yamaha"));
             vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Suzuki"));
             vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Kawasaki"));
@@ -537,18 +657,64 @@ namespace Parking
             vehicleBrand.Add(new VehicleBrand("SEDAN", "BMW"));
             vehicleBrand.Add(new VehicleBrand("SEDAN", "Mercedes-Benz"));
             vehicleBrand.Add(new VehicleBrand("SEDAN", "Audi"));
-            vehicleBrand.Add(new VehicleBrand("SEDAN", "Lexus"));
+            vehicleBrand.Add(new VehicleBrand("SEDAN", "Lexus"));*/
         }
         public void addVB(VehicleBrand vbrand)
         {
-            vehicleBrand.Add(vbrand);
+            string sqlQuery =
+               "INSERT INTO Vehicle_Brand (vehicleType, vBrand) " +
+               "VALUES (@vehicleType, @vBrand)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@vehicleType", vbrand.vehicleType);
+                    command.Parameters.AddWithValue("@vBrand", vbrand.vBrand);
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Parking record inserted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to insert parking record.");
+                    }
+                }
+            }
+          //  vehicleBrand.Add(vbrand);
         }
         public List<VehicleBrand> GetVB()
         {
+            vehicleBrand.Clear();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT vehicleType,vBrand FROM Vehicle_Brand";
+                SqlCommand command = new SqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        vehicleBrand.Add(
+                              new VehicleBrand(
+                                    reader["vehicleType"].ToString(),
+                                    reader["vBrand"].ToString()));
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }    
             return vehicleBrand;
         }
         public void RemoveParkingHistoryRecord(VehicleBrand parkinghistoryRecords)
         {
+
             vehicleBrand.Remove(parkinghistoryRecords);
         }
     }

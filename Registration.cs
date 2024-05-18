@@ -72,20 +72,107 @@ namespace Parking
 
         private void createAccBtn_Click(object sender, EventArgs e)
         {
-            User user = new User(
-                        fname.Text,
-                        Lname.Text,
-                        int.Parse(number.Text),
-                        comboBoxGender.SelectedItem?.ToString(),
-                        email.Text,
-                        password.Text
-                    );
+          
+            string firstname = fname.Text;
+            string lastname = Lname.Text;
+            string Password = password.Text;
+            string Email = email.Text;
+            string phoneNum = number.Text;
+            string gender = comboBoxGender.SelectedItem?.ToString();
 
-            AddUser(user);
+            
+            bool hasError = false;
 
-            login logIn = new login();
-            logIn.Show();
-            this.Hide();
+             
+            string namePattern = @"^[a-zA-Z]+$";
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            string phonePattern = @"^\d+$";
+
+           
+            if (string.IsNullOrWhiteSpace(firstname) || !System.Text.RegularExpressions.Regex.IsMatch(firstname, namePattern))
+            {
+                errorLabelFN.Text = "Please enter a valid first name (letters only)";
+                hasError = true;
+            }
+            else
+            {
+                errorLabelFN.Text = "";
+            }
+
+           
+            if (string.IsNullOrWhiteSpace(lastname) || !System.Text.RegularExpressions.Regex.IsMatch(lastname, namePattern))
+            {
+                errorLabelLN.Text = "Please enter a valid last name (letters only)";
+                hasError = true;
+            }
+            else
+            {
+                errorLabelLN.Text = "";
+            }
+
+           
+            if (string.IsNullOrWhiteSpace(Password))
+            {
+                errorLabelPass.Text = "Please enter a specified value";
+                hasError = true;
+            }
+            else
+            {
+                errorLabelPass.Text = "";
+            }
+         
+            if (string.IsNullOrWhiteSpace(Email) || !System.Text.RegularExpressions.Regex.IsMatch(Email, emailPattern))
+            {
+                errorLabelEmail.Text = "Please enter a valid email address";
+                hasError = true;
+            }
+            else
+            {
+                errorLabelEmail.Text = "";
+            }
+         
+            if (string.IsNullOrWhiteSpace(phoneNum) || !System.Text.RegularExpressions.Regex.IsMatch(phoneNum, phonePattern))
+            {
+                errorLabelPhoneNum.Text = "Please enter a valid phone number (digits only)";
+                hasError = true;
+            }
+            else
+            {
+                errorLabelPhoneNum.Text = "";
+            }
+           
+            if (string.IsNullOrWhiteSpace(gender))
+            {
+                errorLabelGender.Text = "Please select a gender";
+                hasError = true;
+            }
+            else
+            {
+                errorLabelGender.Text = "";
+            }
+           
+            if (!hasError)
+            {
+                User user = new User(
+                    firstname,
+                    lastname,
+                    phoneNum,
+                    gender,
+                    Email,
+                    Password
+                );
+
+                AddUser(user);
+
+                /*login logIn = new login();
+                logIn.Show();
+                this.Hide();*/
+                var c = UserDetails.Instance;
+                c.addUser(user);
+                Form1 content = new Form1();
+                content.Show();
+                this.Hide();
+            }
         }
        
 

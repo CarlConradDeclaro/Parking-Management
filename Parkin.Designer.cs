@@ -31,6 +31,9 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parkin));
             panel1 = new Panel();
+            panel24 = new Panel();
+            panel23 = new Panel();
+            User = new Label();
             humBtn = new PictureBox();
             sidebar = new Panel();
             menuContainer = new FlowLayoutPanel();
@@ -39,6 +42,7 @@
             button6 = new Button();
             button5 = new Button();
             button7 = new Button();
+            button13 = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -67,19 +71,12 @@
             button8 = new Button();
             panel14 = new Panel();
             numPV = new Label();
-            panel4 = new Panel();
-            btnCleared = new Button();
             panel5 = new Panel();
             admin1 = new admin();
             history1 = new History();
             parkingView = new Panel();
             panel20 = new Panel();
             button10 = new Button();
-            panel21 = new Panel();
-            button11 = new Button();
-            panel15 = new Panel();
-            button3 = new Button();
-            button9 = new Button();
             panel22 = new Panel();
             button12 = new Button();
             label10 = new Label();
@@ -139,6 +136,9 @@
             button28 = new Button();
             panel19 = new Panel();
             button4 = new Button();
+            panel15 = new Panel();
+            button3 = new Button();
+            button9 = new Button();
             textBox1 = new TextBox();
             panel16 = new Panel();
             labelB10 = new Label();
@@ -171,6 +171,8 @@
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             panel1.SuspendLayout();
+            panel24.SuspendLayout();
+            panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)humBtn).BeginInit();
             sidebar.SuspendLayout();
             menuContainer.SuspendLayout();
@@ -183,16 +185,14 @@
             panel13.SuspendLayout();
             panel10.SuspendLayout();
             panel14.SuspendLayout();
-            panel4.SuspendLayout();
             panel5.SuspendLayout();
             parkingView.SuspendLayout();
             panel20.SuspendLayout();
-            panel21.SuspendLayout();
-            panel15.SuspendLayout();
             panel22.SuspendLayout();
             panel18.SuspendLayout();
             panel17.SuspendLayout();
             panel19.SuspendLayout();
+            panel15.SuspendLayout();
             panel16.SuspendLayout();
             Content.SuspendLayout();
             vehicleListPanel.SuspendLayout();
@@ -204,6 +204,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(panel24);
             panel1.Controls.Add(humBtn);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -211,6 +212,35 @@
             panel1.Size = new Size(1851, 57);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // panel24
+            // 
+            panel24.Anchor = AnchorStyles.Top;
+            panel24.Controls.Add(panel23);
+            panel24.Location = new Point(1268, 0);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(449, 51);
+            panel24.TabIndex = 22;
+            // 
+            // panel23
+            // 
+            panel23.Controls.Add(User);
+            panel23.Location = new Point(64, 6);
+            panel23.Name = "panel23";
+            panel23.Size = new Size(382, 42);
+            panel23.TabIndex = 16;
+            // 
+            // User
+            // 
+            User.AutoSize = true;
+            User.Dock = DockStyle.Right;
+            User.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            User.ForeColor = Color.White;
+            User.Location = new Point(382, 0);
+            User.Name = "User";
+            User.Size = new Size(0, 37);
+            User.TabIndex = 0;
+            User.Click += label11_Click;
             // 
             // humBtn
             // 
@@ -229,7 +259,7 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 57);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(261, 1252);
+            sidebar.Size = new Size(65, 1252);
             sidebar.TabIndex = 6;
             // 
             // menuContainer
@@ -238,9 +268,10 @@
             menuContainer.Controls.Add(button6);
             menuContainer.Controls.Add(button5);
             menuContainer.Controls.Add(button7);
-            menuContainer.Location = new Point(6, 3);
+            menuContainer.Controls.Add(button13);
+            menuContainer.Location = new Point(0, 3);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(255, 395);
+            menuContainer.Size = new Size(255, 61);
             menuContainer.TabIndex = 7;
             // 
             // panel6
@@ -263,7 +294,7 @@
             menu.ForeColor = Color.White;
             menu.Image = (Image)resources.GetObject("menu.Image");
             menu.ImageAlign = ContentAlignment.MiddleLeft;
-            menu.Location = new Point(-3, -9);
+            menu.Location = new Point(1, -9);
             menu.Name = "menu";
             menu.Size = new Size(252, 75);
             menu.TabIndex = 3;
@@ -327,6 +358,25 @@
             button7.Text = "     Vehicle Setting";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
+            // 
+            // button13
+            // 
+            button13.BackColor = Color.FromArgb(31, 28, 75);
+            button13.BackgroundImageLayout = ImageLayout.None;
+            button13.Cursor = Cursors.Hand;
+            button13.FlatAppearance.BorderSize = 0;
+            button13.FlatStyle = FlatStyle.Flat;
+            button13.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button13.ForeColor = Color.White;
+            button13.Image = (Image)resources.GetObject("button13.Image");
+            button13.ImageAlign = ContentAlignment.MiddleLeft;
+            button13.Location = new Point(3, 297);
+            button13.Name = "button13";
+            button13.Size = new Size(249, 68);
+            button13.TabIndex = 15;
+            button13.Text = "Logout";
+            button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
             // 
             // menuTransition
             // 
@@ -437,7 +487,7 @@
             panel12.Controls.Add(searchVH);
             panel12.Location = new Point(3, 3);
             panel12.Name = "panel12";
-            panel12.Size = new Size(353, 36);
+            panel12.Size = new Size(347, 36);
             panel12.TabIndex = 11;
             // 
             // button1
@@ -530,7 +580,7 @@
             panel9.Controls.Add(logo);
             panel9.Controls.Add(panel13);
             panel9.Controls.Add(label5);
-            panel9.Location = new Point(893, 42);
+            panel9.Location = new Point(991, 42);
             panel9.Name = "panel9";
             panel9.Size = new Size(261, 125);
             panel9.TabIndex = 9;
@@ -542,7 +592,7 @@
             logo.FlatAppearance.BorderSize = 0;
             logo.FlatStyle = FlatStyle.Flat;
             logo.Image = (Image)resources.GetObject("logo.Image");
-            logo.Location = new Point(54, 12);
+            logo.Location = new Point(44, 12);
             logo.Name = "logo";
             logo.Size = new Size(48, 48);
             logo.TabIndex = 0;
@@ -555,6 +605,7 @@
             panel13.Name = "panel13";
             panel13.Size = new Size(238, 42);
             panel13.TabIndex = 12;
+            panel13.Paint += panel13_Paint;
             // 
             // numV
             // 
@@ -574,11 +625,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(137, 24);
+            label5.Location = new Point(103, 24);
             label5.Name = "label5";
-            label5.Size = new Size(77, 28);
+            label5.Size = new Size(143, 28);
             label5.TabIndex = 1;
-            label5.Text = "Vehicle";
+            label5.Text = "Available Slots";
             // 
             // panel10
             // 
@@ -587,7 +638,7 @@
             panel10.Controls.Add(label9);
             panel10.Controls.Add(button8);
             panel10.Controls.Add(panel14);
-            panel10.Location = new Point(1195, 42);
+            panel10.Location = new Point(1293, 42);
             panel10.Name = "panel10";
             panel10.Size = new Size(261, 125);
             panel10.TabIndex = 13;
@@ -636,32 +687,6 @@
             numPV.TabIndex = 0;
             numPV.Text = "0";
             // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Top;
-            panel4.Controls.Add(btnCleared);
-            panel4.Location = new Point(906, 6);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(137, 52);
-            panel4.TabIndex = 14;
-            // 
-            // btnCleared
-            // 
-            btnCleared.Anchor = AnchorStyles.Top;
-            btnCleared.FlatAppearance.BorderSize = 0;
-            btnCleared.FlatStyle = FlatStyle.Flat;
-            btnCleared.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCleared.ForeColor = Color.White;
-            btnCleared.Image = (Image)resources.GetObject("btnCleared.Image");
-            btnCleared.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCleared.Location = new Point(0, 7);
-            btnCleared.Name = "btnCleared";
-            btnCleared.Size = new Size(134, 42);
-            btnCleared.TabIndex = 9;
-            btnCleared.Text = "           Clear list";
-            btnCleared.UseVisualStyleBackColor = true;
-            btnCleared.Click += btnCleared_Click;
-            // 
             // panel5
             // 
             panel5.Controls.Add(admin1);
@@ -673,8 +698,9 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1590, 1252);
+            panel5.Size = new Size(1786, 1252);
             panel5.TabIndex = 9;
+            panel5.Paint += panel5_Paint_1;
             // 
             // admin1
             // 
@@ -696,8 +722,6 @@
             // 
             parkingView.BackColor = Color.FromArgb(22, 19, 64);
             parkingView.Controls.Add(panel20);
-            parkingView.Controls.Add(panel21);
-            parkingView.Controls.Add(panel15);
             parkingView.Controls.Add(panel22);
             parkingView.Controls.Add(label10);
             parkingView.Controls.Add(label7);
@@ -706,9 +730,9 @@
             parkingView.Controls.Add(panel17);
             parkingView.Controls.Add(panel19);
             parkingView.Controls.Add(panel16);
-            parkingView.Location = new Point(112, 1072);
+            parkingView.Location = new Point(121, 1016);
             parkingView.Name = "parkingView";
-            parkingView.Size = new Size(114, 92);
+            parkingView.Size = new Size(139, 164);
             parkingView.TabIndex = 19;
             // 
             // panel20
@@ -716,7 +740,7 @@
             panel20.Anchor = AnchorStyles.Top;
             panel20.BackgroundImageLayout = ImageLayout.None;
             panel20.Controls.Add(button10);
-            panel20.Location = new Point(454, 3);
+            panel20.Location = new Point(466, 3);
             panel20.Name = "panel20";
             panel20.Size = new Size(122, 53);
             panel20.TabIndex = 20;
@@ -740,78 +764,12 @@
             button10.UseVisualStyleBackColor = false;
             button10.Click += button10_Click;
             // 
-            // panel21
-            // 
-            panel21.Anchor = AnchorStyles.Top;
-            panel21.Controls.Add(button11);
-            panel21.Location = new Point(311, 3);
-            panel21.Name = "panel21";
-            panel21.Size = new Size(137, 52);
-            panel21.TabIndex = 22;
-            // 
-            // button11
-            // 
-            button11.Anchor = AnchorStyles.Top;
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.White;
-            button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(0, 4);
-            button11.Name = "button11";
-            button11.Size = new Size(134, 42);
-            button11.TabIndex = 9;
-            button11.Text = "           Clear list";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // panel15
-            // 
-            panel15.Anchor = AnchorStyles.Top;
-            panel15.Controls.Add(button3);
-            panel15.Controls.Add(button9);
-            panel15.Location = new Point(-235, -2);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(103, 48);
-            panel15.TabIndex = 20;
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.Top;
-            button3.BackColor = Color.Transparent;
-            button3.BackgroundImage = Properties.Resources.listView2;
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(4, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(46, 38);
-            button3.TabIndex = 16;
-            toolTip2.SetToolTip(button3, "List View");
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // button9
-            // 
-            button9.Anchor = AnchorStyles.Top;
-            button9.BackColor = Color.Transparent;
-            button9.BackgroundImage = Properties.Resources.tableView1;
-            button9.BackgroundImageLayout = ImageLayout.Stretch;
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Location = new Point(54, 4);
-            button9.Name = "button9";
-            button9.Size = new Size(48, 38);
-            button9.TabIndex = 17;
-            toolTip1.SetToolTip(button9, "Table View");
-            button9.UseVisualStyleBackColor = false;
-            // 
             // panel22
             // 
             panel22.Anchor = AnchorStyles.Top;
             panel22.BackgroundImageLayout = ImageLayout.None;
             panel22.Controls.Add(button12);
-            panel22.Location = new Point(582, 3);
+            panel22.Location = new Point(594, 3);
             panel22.Name = "panel22";
             panel22.Size = new Size(127, 53);
             panel22.TabIndex = 21;
@@ -1578,10 +1536,11 @@
             // panel19
             // 
             panel19.Controls.Add(button4);
+            panel19.Controls.Add(panel15);
             panel19.Controls.Add(textBox1);
             panel19.Location = new Point(3, 3);
             panel19.Name = "panel19";
-            panel19.Size = new Size(353, 39);
+            panel19.Size = new Size(437, 39);
             panel19.TabIndex = 2;
             // 
             // button4
@@ -1590,11 +1549,52 @@
             button4.BackgroundImageLayout = ImageLayout.Zoom;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(308, 4);
+            button4.Location = new Point(305, 3);
             button4.Name = "button4";
             button4.Size = new Size(36, 32);
             button4.TabIndex = 2;
             button4.UseVisualStyleBackColor = true;
+            // 
+            // panel15
+            // 
+            panel15.Anchor = AnchorStyles.Top;
+            panel15.Controls.Add(button3);
+            panel15.Controls.Add(button9);
+            panel15.Location = new Point(341, -3);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(103, 48);
+            panel15.TabIndex = 20;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top;
+            button3.BackColor = Color.Transparent;
+            button3.BackgroundImage = Properties.Resources.listView2;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(3, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(46, 38);
+            button3.TabIndex = 16;
+            toolTip2.SetToolTip(button3, "List View");
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button9
+            // 
+            button9.Anchor = AnchorStyles.Top;
+            button9.BackColor = Color.Transparent;
+            button9.BackgroundImage = Properties.Resources.tableView1;
+            button9.BackgroundImageLayout = ImageLayout.Stretch;
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Location = new Point(54, 4);
+            button9.Name = "button9";
+            button9.Size = new Size(48, 38);
+            button9.TabIndex = 17;
+            toolTip1.SetToolTip(button9, "Table View");
+            button9.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -1602,7 +1602,7 @@
             textBox1.Location = new Point(3, 4);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Search Plate No.";
-            textBox1.Size = new Size(296, 32);
+            textBox1.Size = new Size(298, 32);
             textBox1.TabIndex = 2;
             // 
             // panel16
@@ -1903,7 +1903,7 @@
             // 
             Content.Anchor = AnchorStyles.Top;
             Content.Controls.Add(vehicleListPanel);
-            Content.Location = new Point(150, 204);
+            Content.Location = new Point(248, 204);
             Content.Name = "Content";
             Content.Size = new Size(1346, 761);
             Content.TabIndex = 18;
@@ -1915,7 +1915,6 @@
             vehicleListPanel.Controls.Add(panel3);
             vehicleListPanel.Controls.Add(panel2);
             vehicleListPanel.Controls.Add(panel7);
-            vehicleListPanel.Controls.Add(panel4);
             vehicleListPanel.Controls.Add(panel8);
             vehicleListPanel.Dock = DockStyle.Fill;
             vehicleListPanel.Location = new Point(0, 0);
@@ -1928,7 +1927,7 @@
             panel11.Anchor = AnchorStyles.Top;
             panel11.Controls.Add(btnViewParkList);
             panel11.Controls.Add(btnViewParkLot);
-            panel11.Location = new Point(362, -2);
+            panel11.Location = new Point(350, -2);
             panel11.Name = "panel11";
             panel11.Size = new Size(107, 48);
             panel11.TabIndex = 3;
@@ -1941,7 +1940,7 @@
             btnViewParkList.BackgroundImageLayout = ImageLayout.Stretch;
             btnViewParkList.FlatAppearance.BorderSize = 0;
             btnViewParkList.FlatStyle = FlatStyle.Flat;
-            btnViewParkList.Location = new Point(3, 4);
+            btnViewParkList.Location = new Point(2, 4);
             btnViewParkList.Name = "btnViewParkList";
             btnViewParkList.Size = new Size(46, 38);
             btnViewParkList.TabIndex = 16;
@@ -1979,9 +1978,9 @@
             // 
             panelContent.Controls.Add(panel5);
             panelContent.Dock = DockStyle.Fill;
-            panelContent.Location = new Point(261, 57);
+            panelContent.Location = new Point(65, 57);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(1590, 1252);
+            panelContent.Size = new Size(1786, 1252);
             panelContent.TabIndex = 10;
             // 
             // Parkin
@@ -1997,6 +1996,9 @@
             Size = new Size(1851, 1309);
             Load += Parkin_Load;
             panel1.ResumeLayout(false);
+            panel24.ResumeLayout(false);
+            panel23.ResumeLayout(false);
+            panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)humBtn).EndInit();
             sidebar.ResumeLayout(false);
             menuContainer.ResumeLayout(false);
@@ -2015,13 +2017,10 @@
             panel10.PerformLayout();
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
-            panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             parkingView.ResumeLayout(false);
             parkingView.PerformLayout();
             panel20.ResumeLayout(false);
-            panel21.ResumeLayout(false);
-            panel15.ResumeLayout(false);
             panel22.ResumeLayout(false);
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
@@ -2029,6 +2028,7 @@
             panel17.PerformLayout();
             panel19.ResumeLayout(false);
             panel19.PerformLayout();
+            panel15.ResumeLayout(false);
             panel16.ResumeLayout(false);
             panel16.PerformLayout();
             Content.ResumeLayout(false);
@@ -2079,8 +2079,6 @@
         private Button button8;
         private Panel panel14;
         private Label numPV;
-        private Panel panel4;
-        private Button btnCleared;
         private Panel panel5;
         private Panel panelContent;
         private Panel vehicleListPanel;
@@ -2175,11 +2173,13 @@
         private Button button9;
         private Panel panel20;
         private Button button10;
-        private Panel panel21;
-        private Button button11;
         private Panel panel22;
         private Button button12;
         private admin admin1;
         private History history1;
+        private Panel panel23;
+        private Label User;
+        private Panel panel24;
+        private Button button13;
     }
 }

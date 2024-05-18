@@ -21,6 +21,9 @@ namespace Parking
         Parkout pOut;
         private FlowLayoutPanel flowPanelVH;
         private bool isParkin;
+        public string username;
+        public int userID;
+
 
         private static Parkin instance;
         public static Parkin Instance
@@ -34,23 +37,24 @@ namespace Parking
         }
 
 
-
-
         public Parkin()
         {
             InitializeComponent();
             filterDisplay("PARKED");
-            numV.Text = countVehicle() + "";
+            numV.Text = 30 - countParkedVehicle() + "";
             numPV.Text = countParkedVehicle() + "";
-
             panel5.Show();
-            /*  history1.Hide();
-             admin1.Hide();     */
-
             parkingView.Hide();
             OccupiedArea();
 
+            var c = UserDetails.Instance;
+            User.Text = c.getName();
+
         }
+
+
+
+
         public void setFlowVH(FlowLayoutPanel flowPanelVH)
         {
             this.flowPanelVH = flowPanelVH;
@@ -141,7 +145,7 @@ namespace Parking
 
             refreshParkingArea();
 
-            numV.Text = countVehicle() + "";
+            numV.Text = (30 - countParkedVehicle() ) + "" ; // slot
             numPV.Text = countParkedVehicle() + "";
 
         }
@@ -258,7 +262,7 @@ namespace Parking
                 var record = allParkingRecords[i];
                 if (record.PlateNumber.Contains(searchVH.Text))
                 {
-                    if (record.Status != "Cleared")
+                    if (record.Status != "cleared")
                     {
                         parkinList pL = new parkinList(numV, numPV);
                         pL.UpdateLabels(record);
@@ -329,21 +333,6 @@ namespace Parking
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //panelContent
-            /*
-                        Content.Controls.Add(vehicleListPanel);
-                        vehicleListPanel.Dock = DockStyle.Fill;
-                        vehicleListPanel.Show();
-
-                        parkingView.Dock = DockStyle.None;
-                        Content.Controls.Remove(parkingView);
-                        parkingView.Hide();
-                        refreshParkingArea();
-             */
-
-            /*  admin1.Hide();
-               history1.deleteHistoryV += ParkingRecordAddedHandler;
-               history1.Hide();*/
             panelContent.Controls.Add(panel5);
             panel5.Dock = DockStyle.Fill;
             panel5.Show();
@@ -356,23 +345,15 @@ namespace Parking
             admin1.Dock = DockStyle.None;
             panelContent.Controls.Remove(admin1);
             admin1.Hide();
-
-
-
-
-
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            /*  history1.deleteHistoryV += ParkingRecordAddedHandler;
-              history1.Show();
-              admin1.Hide();*/
 
             panelContent.Controls.Remove(panel5);
             panel5.Dock = DockStyle.None;
             panel5.Hide();
-      
+
             panelContent.Controls.Add(history1);
             history1.Dock = DockStyle.Fill;
             history1.Show();
@@ -385,9 +366,6 @@ namespace Parking
 
         private void button7_Click(object sender, EventArgs e)
         {
-            /*   history1.deleteHistoryV += ParkingRecordAddedHandler;
-               admin1.Show();
-               history1.Hide();*/
 
             panelContent.Controls.Remove(panel5);
             panel5.Dock = DockStyle.None;
@@ -474,7 +452,7 @@ namespace Parking
 
         }
 
-        //vLits
+
         private void btnViewParkList_Click(object sender, EventArgs e)
         {
             Content.Controls.Add(vehicleListPanel);
@@ -486,10 +464,10 @@ namespace Parking
             refreshParkingArea();
         }
 
-        //v_parkLot
+
         private void btnViewParkLot_Click(object sender, EventArgs e)
         {
-            //  vehicleListPanel.
+
             parkingView.Dock = DockStyle.Fill;
             Content.Controls.Add(parkingView);
             parkingView.Show();
@@ -840,6 +818,33 @@ namespace Parking
             pe1 = new ParkingEntry(flowLayoutPanel2);
             pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
             pe1.ShowDialog();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            var c = UserDetails.Instance;
+            c.clearUser();
+
+            Form mainForm = this.FindForm();
+            mainForm.Close();
+
+            login login = new login();
+            login.Show();
+        }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

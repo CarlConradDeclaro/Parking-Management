@@ -143,12 +143,13 @@ namespace Parking
                                 record.Status = "Cleared";
                                 setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
                                 setStatus.Text = "Successfully paid the amount";
-                                setStatus.ForeColor = Color.GreenYellow;              
+                                setStatus.ForeColor = Color.GreenYellow;    
+                               
                                 ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id,convertSlocToSId(record.S_location), record.PlateNumber,
                                                                                         record.Type, record.Model, record.Driver, record.Phone,
                                                                                         record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"),
                                                                                         parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text),
-                                                                                        Double.Parse(enterAmt.Text));
+                                                                                        Double.Parse(enterAmt.Text) );
                                 parkingRecordsManager.AddParkingHistoryRecord(carDetails);
                                 UpdateVehicleFromList(record.PlateNumber);
                                 updateAvailability_query(record.S_location);
@@ -276,7 +277,6 @@ namespace Parking
                 }
             }
         }
-
 
         private void UpdateVehicleFromList(String PlateNumber)
         {

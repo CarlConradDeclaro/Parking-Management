@@ -143,11 +143,13 @@ namespace Parking
                 invalidPhone.Text = "";
             }
 
-
+            
+            
             if (proccedAddItem == 4)
             {
+
                 ParkingRecord carDetails = new ParkingRecord(0, platenum.ToUpper(), type, model,
-                    driverName, phoneNUm, ArrivalDate, ArrivalTime, "PARKED", s_loc);
+                    driverName, phoneNUm, ArrivalDate, ArrivalTime, "PARKED", s_loc,UserDetails.Instance.getId());
                 var parkingRecordsManager = ParkingRecordsManager.Instance;
                 var records = parkingRecordsManager.GetAllParkingRecords();
 
@@ -357,38 +359,38 @@ namespace Parking
 
 
 
-        bool b1 = true;
-        bool b2 = true;
-        bool b3 = true;
-        bool b4 = true;
-        bool b5 = true;
-        bool b6 = true;
-        bool b7 = true;
-        bool b8 = true;
-        bool b9 = true;
-        bool b_10 = true;
+        bool bm1 = true;
+        bool bm2 = true;
+        bool bm3 = true;
+        bool bm4 = true;
+        bool bm5 = true;
+        bool bm6 = true;
+        bool bm7 = true;
+        bool bm8 = true;
+        bool bm9 = true;
+        bool bm_10 = true;
 
-        bool a1 = true;
-        bool a2 = true;
-        bool a3 = true;
-        bool a4 = true;
-        bool a5 = true;
-        bool a6 = true;
-        bool a7 = true;
-        bool a8 = true;
-        bool a9 = true;
-        bool a_10 = true;
+        bool a1_1 = true;
+        bool a1_2 = true;
+        bool a1_3 = true;
+        bool a1_4 = true;
+        bool a1_5 = true;
+        bool a1_6 = true;
+        bool a1_7 = true;
+        bool a1_8 = true;
+        bool a1_9 = true;
+        bool a1_10 = true;
 
-        bool bb1 = true;
-        bool bb2 = true;
-        bool bb3 = true;
-        bool bb4 = true;
-        bool bb5 = true;
-        bool bb6 = true;
-        bool bb7 = true;
-        bool bb8 = true;
-        bool bb9 = true;
-        bool bb_10 = true;
+        bool b2_1 = true;
+        bool b2_2 = true;
+        bool b2_3 = true;
+        bool b2_4 = true;
+        bool b2_5 = true;
+        bool b2_6 = true;
+        bool b2_7 = true;
+        bool b2_8 = true;
+        bool b2_9 = true;
+        bool b2_10 = true;
 
 
         private void OccupiedArea()
@@ -489,26 +491,26 @@ namespace Parking
                 secondFloorBtn[i].Image = null;
                 secondFloorlabels[i].Show();
             }
-            a1 = true;
-            a2 = true;
-            a3 = true;
-            a4 = true;
-            a5 = true;
-            a6 = true;
-            a7 = true;
-            a8 = true;
-            a9 = true;
-            a_10 = true;
-            bb1 = true;
-            bb2 = true;
-            bb3 = true;
-            bb4 = true;
-            bb5 = true;
-            bb6 = true;
-            bb7 = true;
-            bb8 = true;
-            bb9 = true;
-            bb_10 = true;
+            a1_1 = true;
+            a1_2 = true;
+            a1_3 = true;
+            a1_4 = true;
+            a1_5 = true;
+            a1_6 = true;
+            a1_7 = true;
+            a1_8 = true;
+            a1_9 = true;
+            a1_10 = true;
+            b2_1 = true;
+            b2_2 = true;
+            b2_3 = true;
+            b2_4 = true;
+            b2_5 = true;
+            b2_6 = true;
+            b2_7 = true;
+            b2_8 = true;
+            b2_9 = true;
+            b2_10 = true;
             OccupiedArea();
             setSloc(null);
         }
@@ -530,27 +532,27 @@ namespace Parking
                 secondFloorBtn[i].Image = null;
                 secondFloorlabels[i].Show();
             }
-            b1 = true;
-            b2 = true;
-            b3 = true;
-            b4 = true;
-            b5 = true;
-            b6 = true;
-            b7 = true;
-            b8 = true;
-            b9 = true;
-            b_10 = true;
+            bm1 = true;
+            bm2 = true;
+            bm3 = true;
+            bm4 = true;
+            bm5 = true;
+            bm6 = true;
+            bm7 = true;
+            bm8 = true;
+            bm9 = true;
+            bm_10 = true;
             //secondfloor
-            bb1 = true;
-            bb2 = true;
-            bb3 = true;
-            bb4 = true;
-            bb5 = true;
-            bb6 = true;
-            bb7 = true;
-            bb8 = true;
-            bb9 = true;
-            bb_10 = true;
+            b2_1 = true;
+            b2_2 = true;
+            b2_3 = true;
+            b2_4 = true;
+            b2_5 = true;
+            b2_6 = true;
+            b2_7 = true;
+            b2_8 = true;
+            b2_9 = true;
+            b2_10 = true;
             OccupiedArea();
             setSloc(null);
         }
@@ -573,26 +575,26 @@ namespace Parking
                 basementBtn[i].Image = null;
                 basementLabels[i].Show();
             }
-            b1 = true;
-            b2 = true;
-            b3 = true;
-            b4 = true;
-            b5 = true;
-            b6 = true;
-            b7 = true;
-            b8 = true;
-            b9 = true;
-            b_10 = true;
-            a1 = true;
-            a2 = true;
-            a3 = true;
-            a4 = true;
-            a5 = true;
-            a6 = true;
-            a7 = true;
-            a8 = true;
-            a9 = true;
-            a_10 = true;
+            bm1 = true;
+            bm2 = true;
+            bm3 = true;
+            bm4 = true;
+            bm5 = true;
+            bm6 = true;
+            bm7 = true;
+            bm8 = true;
+            bm9 = true;
+            bm_10 = true;
+            a1_1 = true;
+            a1_2 = true;
+            a1_3 = true;
+            a1_4 = true;
+            a1_5 = true;
+            a1_6 = true;
+            a1_7 = true;
+            a1_8 = true;
+            a1_9 = true;
+            a1_10 = true;
             OccupiedArea();
             setSloc(null);
         }
@@ -918,68 +920,68 @@ namespace Parking
         private void handleBool(string btn)
         {
             if (btn != "b1")
-                b1 = true;
+                bm1 = true;
             if (btn != "b2")
-                b2 = true;
+                bm2 = true;
             if (btn != "b3")
-                b3 = true;
+                bm3 = true;
             if (btn != "b4")
-                b4 = true;
+                bm4 = true;
             if (btn != "b5")
-                b5 = true;
+                bm5 = true;
             if (btn != "b6")
-                b6 = true;
+                bm6 = true;
             if (btn != "b7")
-                b7 = true;
+                bm7 = true;
             if (btn != "b8")
-                b8 = true;
+                bm8 = true;
             if (btn != "b9")
-                b9 = true;
+                bm9 = true;
             if (btn != "b10")
-                b_10 = true;
+                bm_10 = true;
 
 
             if (btn != "a1")
-                a1 = true;
+                a1_1 = true;
             if (btn != "a2")
-                a2 = true;
+                a1_2 = true;
             if (btn != "a3")
-                a3 = true;
+                a1_3 = true;
             if (btn != "a4")
-                a4 = true;
+                a1_4 = true;
             if (btn != "a5")
-                a5 = true;
+                a1_5 = true;
             if (btn != "a6")
-                a6 = true;
+                a1_6 = true;
             if (btn != "a7")
-                a7 = true;
+                a1_7 = true;
             if (btn != "a8")
-                a8 = true;
+                a1_8 = true;
             if (btn != "a9")
-                a9 = true;
+                a1_9 = true;
             if (btn != "a10")
-                a_10 = true;
+                a1_10 = true;
 
             if (btn != "2b1")
-                bb1 = true;
+                b2_1 = true;
             if (btn != "2b2")
-                bb2 = true;
+                b2_2 = true;
             if (btn != "2b3")
-                bb3 = true;
+                b2_3 = true;
             if (btn != "2b4")
-                bb4 = true;
+                b2_4 = true;
             if (btn != "2b5")
-                bb5 = true;
+                b2_5 = true;
             if (btn != "2b6")
-                bb6 = true;
+                b2_6 = true;
             if (btn != "2b7")
-                bb7 = true;
+                b2_7 = true;
             if (btn != "2b8")
-                bb8 = true;
+                b2_8 = true;
             if (btn != "2b9")
-                bb9 = true;
+                b2_9 = true;
             if (btn != "2b10")
-                bb_10 = true;
+                b2_10 = true;
 
 
 
@@ -1048,11 +1050,11 @@ namespace Parking
           
             if (!getSelectedArea())
             {
-                if (b1)
+                if (bm1)
                     toggleImg(0, "BM-01");
                 else
                     unToggleImg(0, 0);
-                b1 = !b1;
+                bm1 = !bm1;
                 handleParkingArea("b1", "BM-01");
             }
             else
@@ -1064,11 +1066,11 @@ namespace Parking
             
              if (!getSelectedArea())
             {
-                if (b2)
+                if (bm2)
                     toggleImg(1, "BM-02");
                 else
                     unToggleImg(1, 1);
-                b2 = !b2;
+                bm2 = !bm2;
                 handleParkingArea("b2", "BM-02");
             }
             else
@@ -1079,11 +1081,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b3)
+                if (bm3)
                     toggleImg(2, "BM-03");
                 else
                     unToggleImg(2, 2);
-                b3 = !b3;
+                bm3 = !bm3;
                 handleParkingArea("b3", "BM-03");
             }
             else
@@ -1093,11 +1095,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b4)
+                if (bm4)
                     toggleImg(3, "BM-04");
                 else
                     unToggleImg(3, 3);
-                b4 = !b4;
+                bm4 = !bm4;
                 handleParkingArea("b4", "BM-04");
             }
             else
@@ -1107,11 +1109,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b5)
+                if (bm5)
                     toggleImg(4, "BM-05");
                 else
                     unToggleImg(4, 4);
-                b5 = !b5;
+                bm5 = !bm5;
                 handleParkingArea("b5", "BM-05");
             }
             else
@@ -1121,11 +1123,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b6)
+                if (bm6)
                     toggleImg(5, "BM-06");
                 else
                     unToggleImg(5, 5);
-                b6 = !b6;
+                bm6 = !bm6;
                 handleParkingArea("b6", "BM-06");
             }
             else
@@ -1135,11 +1137,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b7)
+                if (bm7)
                     toggleImg(6, "BM-07");
                 else
                     unToggleImg(6, 6);
-                b7 = !b7;
+                bm7 = !bm7;
                 handleParkingArea("b7", "BM-07");
             }
             else
@@ -1149,11 +1151,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b8)
+                if (bm8)
                     toggleImg(7, "BM-08");
                 else
                     unToggleImg(7, 7);
-                b8 = !b8;
+                bm8 = !bm8;
                 handleParkingArea("b8", "BM-08");
             }
             else
@@ -1163,11 +1165,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b9)
+                if (bm9)
                     toggleImg(8, "BM-09");
                 else
                     unToggleImg(8, 8);
-                b9 = !b9;
+                bm9 = !bm9;
                 handleParkingArea("b9", "BM-09");
             }
             else
@@ -1179,11 +1181,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (b_10)
+                if (bm_10)
                     toggleImg(9, "BM-10");
                 else
                     unToggleImg(9, 9);
-                b_10 = !b_10;
+                bm_10 = !bm_10;
                 handleParkingArea("b10", "BM-10");
             }
             else
@@ -1204,11 +1206,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a1)
+                if (a1_1)
                     toggleImg(10, "A-01");
                 else
                     unToggleImg(10, 10);
-                a1 = !a1;
+                a1_1 = !a1_1;
                 handleParkingArea("a1", "A-01");
             }
             else
@@ -1221,11 +1223,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a2)
+                if (a1_2)
                     toggleImg(11, "A-02");
                 else
                     unToggleImg(11, 11);
-                a2 = !a2;
+                a1_2 = !a1_2;
                 handleParkingArea("a2", "A-02");
             }
             else
@@ -1236,11 +1238,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a3)
+                if (a1_3)
                     toggleImg(12, "A-03");
                 else
                     unToggleImg(12, 12);
-                a3 = !a3;
+                a1_3 = !a1_3;
                 handleParkingArea("a3", "A-03");
             }
             else
@@ -1251,11 +1253,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a4)
+                if (a1_4)
                     toggleImg(13, "A-04");
                 else
                     unToggleImg(13, 13);
-                a4 = !a4;
+                a1_4 = !a1_4;
                 handleParkingArea("a4", "A-04");
             }
             else
@@ -1268,11 +1270,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a5)
+                if (a1_5)
                     toggleImg(14, "A-05");
                 else
                     unToggleImg(14, 14);
-                a5 = !a5;
+                a1_ = !a1_5;
                 handleParkingArea("a5", "A-05");
             }
             else
@@ -1285,11 +1287,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a6)
+                if (a1_6)
                     toggleImg(15, "A-06");
                 else
                     unToggleImg(15, 15);
-                a6 = !a6;
+                a1_6 = !a1_6;
                 handleParkingArea("a6", "A-06");
             }
             else
@@ -1302,11 +1304,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a7)
+                if (a1_7)
                     toggleImg(16, "A-07");
                 else
                     unToggleImg(16, 16);
-                a7 = !a7;
+                a1_7 = !a1_7;
                 handleParkingArea("a7", "A-07");
             }
             else
@@ -1320,11 +1322,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a8)
+                if (a1_8)
                     toggleImg(17, "A-08");
                 else
                     unToggleImg(17, 17);
-                a8 = !a8;
+                a1_8 = !a1_8;
                 handleParkingArea("a8", "A-08");
             }
             else
@@ -1338,11 +1340,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a9)
+                if (a1_9)
                     toggleImg(18, "A-09");
                 else
                     unToggleImg(18, 18);
-                a9 = !a9;
+                a1_9 = !a1_9;
                 handleParkingArea("a9", "A-09");
             }
             else
@@ -1356,11 +1358,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (a_10)
+                if (a1_10)
                     toggleImg(19, "A-10");
                 else
                     unToggleImg(19, 19);
-                a_10 = !a_10;
+                a1_10 = !a1_10;
                 handleParkingArea("a10", "A-10");
             }
             else
@@ -1371,11 +1373,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb1)
+                if (b2_1)
                     toggleImg(20, "B-01");
                 else
                     unToggleImg(20, 20);
-                bb1 = !bb1;
+                b2_1 = !b2_1;
                 handleParkingArea("2b1", "B-01");
             }
             else
@@ -1386,11 +1388,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb2)
+                if (b2_2)
                     toggleImg(21, "B-02");
                 else
                     unToggleImg(21, 21);
-                bb2 = !bb2;
+                b2_2 = !b2_2;
                 handleParkingArea("2b2", "B-02");
             }
             else
@@ -1402,11 +1404,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb3)
+                if (b2_3)
                     toggleImg(22, "B-03");
                 else
                     unToggleImg(22, 22);
-                bb3 = !bb3;
+                b2_3 = !b2_3;
                 handleParkingArea("2b3", "B-03");
             }
             else
@@ -1418,11 +1420,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb4)
+                if (b2_4)
                     toggleImg(23, "B-04");
                 else
                     unToggleImg(23, 23);
-                bb4 = !bb4;
+                b2_4 = !b2_4;
                 handleParkingArea("2b4", "B-04");
             }
             else
@@ -1434,11 +1436,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb5)
+                if (b2_5)
                     toggleImg(24, "B-05");
                 else
                     unToggleImg(24, 24);
-                bb5 = !bb5;
+                b2_5 = !b2_5;
                 handleParkingArea("2b5", "B-05");
             }
             else
@@ -1450,11 +1452,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb6)
+                if (b2_6)
                     toggleImg(25, "B-06");
                 else
                     unToggleImg(25, 25);
-                bb6 = !bb6;
+                b2_6 = !b2_6;
                 handleParkingArea("2b6", "B-06");
             }
             else
@@ -1466,11 +1468,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb7)
+                if (b2_7)
                     toggleImg(26, "B-07");
                 else
                     unToggleImg(26, 26);
-                bb7 = !bb7;
+                b2_7 = !b2_7;
                 handleParkingArea("2b7", "B-07");
             }
             else
@@ -1482,11 +1484,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb8)
+                if (b2_8)
                     toggleImg(27, "B-08");
                 else
                     unToggleImg(27, 27);
-                bb8 = !bb8;
+                b2_8 = !b2_8;
                 handleParkingArea("2b8", "B-08");
             }
             else
@@ -1498,11 +1500,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb9)
+                if (b2_9)
                     toggleImg(28, "B-09");
                 else
                     unToggleImg(28, 28);
-                bb9 = !bb9;
+                b2_9 = !b2_9;
                 handleParkingArea("2b9", "B-09");
             }
             else
@@ -1514,11 +1516,11 @@ namespace Parking
         {
             if (!getSelectedArea())
             {
-                if (bb_10)
+                if (b2_10)
                     toggleImg(29, "B-10");
                 else
                     unToggleImg(29, 29);
-                bb_10 = !bb_10;
+                b2_10 = !b2_10;
                 handleParkingArea("2b10", "B-10");
             }
             else

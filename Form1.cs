@@ -5,10 +5,37 @@ namespace Parking
 
         ParkingEntry pe1;
         Parkout pOut;
+        Parkin content;
+
+        private static Form1 instance;
+      
+        public static Form1 Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Form1();
+                return instance;
+            }
+            set
+            {
+                instance = value;
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
+          
         }
+
+        public void CloseForm() {
+            this.Close();
+        }
+
+     
+
+
         bool menuExpand = true;
         private void menuTransition_Tick(object sender, EventArgs e)
         { 

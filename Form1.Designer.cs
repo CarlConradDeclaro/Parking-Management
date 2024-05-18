@@ -48,6 +48,7 @@
             // 
             // parkin1
             // 
+            parkin1.AutoSize = true;
             parkin1.BackColor = Color.FromArgb(22, 19, 64);
             parkin1.Dock = DockStyle.Fill;
             parkin1.Location = new Point(0, 0);
@@ -70,6 +71,7 @@
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

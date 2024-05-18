@@ -16,14 +16,15 @@ namespace Parking
     {
         string userEmail;
         string userPassword;
-        public login(string userEmail, string userPassword) {
+        public login(string userEmail, string userPassword)
+        {
             this.userEmail = userEmail;
             this.userPassword = userPassword;
             InitializeComponent();
         }
         public login()
         {
-            
+
             InitializeComponent();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -38,6 +39,8 @@ namespace Parking
             User foundUser = GetUserByEmail(enteredEmail);
             if (foundUser != null && foundUser.Password == enteredPassword)
             {
+                var c = UserDetails.Instance;
+                c.addUser(foundUser);
                 Form1 content = new Form1();
                 content.Show();
                 this.Hide();
@@ -69,7 +72,7 @@ namespace Parking
                             Id = (int)reader["id"],
                             FirstName = reader["firstName"].ToString(),
                             LastName = reader["lastName"].ToString(),
-                            Pnumber = (int)reader["phoneNum"],
+                            Pnumber = (string)reader["phoneNum"],
                             Gender = reader["gender"].ToString(),
                             Email = reader["email"].ToString(),
                             Password = reader["uPassword"].ToString()
@@ -85,6 +88,11 @@ namespace Parking
             Registration register = new Registration();
             register.Show();
             this.Hide();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
