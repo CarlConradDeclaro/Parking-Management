@@ -78,9 +78,16 @@ namespace Parking
                         parkingRecordsManager.RemoveParkingRecord(record);
                         MessageBox.Show("The vehicle with plate number " + label1.Text + " has been successfully removed.", "Vehicle Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Parent.Controls.Remove(this);
-                        
-                       
-                        numV.Text = parkingRecordsManager.GetAllParkingRecords().Count.ToString();
+
+                      
+                        var records = parkingRecordsManager.GetAllParkingRecords();
+                        int countParkedVehicle = 0;
+                        foreach (var vehicle in records)
+                        {
+                            if (vehicle.Status == "PARKED")
+                                countParkedVehicle++;
+                        }
+                        numV.Text = (30 - countParkedVehicle) + "";
                         numPV.Text = parkingRecordsManager.GetAllParkingRecords().Count(r => r.Status == "PARKED").ToString();
                         break;
                     }

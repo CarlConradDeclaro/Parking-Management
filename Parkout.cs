@@ -121,13 +121,20 @@ namespace Parking
             //parkout
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
+
+            if (palteNum == null || palteNum == "")
+            {
+                MessageBox.Show("Please select a vehicle", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else
             for (int i = allParkingRecords.Count - 1; i >= 0; i--)
             {
                 var record = allParkingRecords[i];
+
                 if (record.Status != "Cleared" && record.PlateNumber == palteNum)
                 {
-                  var parkingHistoryRecords = ParkingRecordsManager.Instance;
-                
+                    var parkingHistoryRecords = ParkingRecordsManager.Instance;
+
+                 
                     if (enterAmt.Text != "")
                     {
                         if (!double.TryParse(enterAmt.Text, out double amt))
@@ -139,31 +146,35 @@ namespace Parking
                         {
                             if (setAmt.Text != "" && double.Parse(enterAmt.Text) >= double.Parse(setAmt.Text))
                             {
-                             
+
                                 record.Status = "Cleared";
                                 setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
                                 setStatus.Text = "Successfully paid the amount";
-                                setStatus.ForeColor = Color.GreenYellow;    
-                               
-                                ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id,convertSlocToSId(record.S_location), record.PlateNumber,
+                                setStatus.ForeColor = Color.GreenYellow;
+
+                                ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id, convertSlocToSId(record.S_location), record.PlateNumber,
                                                                                         record.Type, record.Model, record.Driver, record.Phone,
                                                                                         record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"),
                                                                                         parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text),
-                                                                                        Double.Parse(enterAmt.Text) );
+                                                                                        Double.Parse(enterAmt.Text));
                                 parkingRecordsManager.AddParkingHistoryRecord(carDetails);
                                 UpdateVehicleFromList(record.PlateNumber);
                                 updateAvailability_query(record.S_location);
+                                palteNum = null;
                                 return;
-                            }                           
-                            else 
+                            }
+                            else
                             {
-
-                                if (setHours.Text != "") {
+                                if (setHours.Text != "")
+                                {
                                     MessageBox.Show("Insufficient amount", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     break;
                                 }
                                 else
+                                {
                                     MessageBox.Show("Please set Date/Time", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+
                                 break;
                             }
                         }
@@ -172,12 +183,15 @@ namespace Parking
                     {
                         MessageBox.Show("Please enter amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
-                    }
-                    Parking?.Invoke(this, EventArgs.Empty);
+                    } 
+                        Parking?.Invoke(this, EventArgs.Empty);
                 }
+                
+                  
             }
             Parkin parkin = new Parkin();
             parkin.setIsParkin(false);
+            
         }
 
 

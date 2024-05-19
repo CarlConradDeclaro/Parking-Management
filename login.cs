@@ -16,6 +16,7 @@ namespace Parking
     {
         string userEmail;
         string userPassword;
+
         public login(string userEmail, string userPassword)
         {
             this.userEmail = userEmail;
@@ -39,6 +40,7 @@ namespace Parking
             User foundUser = GetUserByEmail(enteredEmail);
             if (foundUser != null && foundUser.Password == enteredPassword)
             {
+                InsertAdminLog((int)foundUser.Id, foundUser.FirstName + foundUser.LastName);
                 var c = UserDetails.Instance;
                 c.addUser(foundUser);
                 Form1 content = new Form1();
@@ -50,6 +52,30 @@ namespace Parking
                 MessageBox.Show("Invalid username or password. Please try again.", "Invalid Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.email.Text = "";
                 password.Text = "";
+            }
+        }
+        private void InsertAdminLog(int adminID, string adminName)
+        {
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+          
+            string query = "INSERT INTO Admin_logs (adminID, adminName, timestamp) VALUES (@adminID, @adminName, GETDATE())";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@adminID", adminID);
+                        command.Parameters.AddWithValue("@adminName", adminName);
+                        command.ExecuteNonQuery();
+                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

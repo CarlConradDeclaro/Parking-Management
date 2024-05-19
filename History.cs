@@ -33,67 +33,45 @@ namespace Parking
 
         private void History_Load(object sender, EventArgs e)
         {
+            DisplayTransactions();
+        }
+        private void DisplayTransactions() {
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();
 
-            foreach (var record in allParkingHistoryRecords)
+            for (int i = allParkingHistoryRecords.Count - 1; i >= 0; i--)
             {
+                var record = allParkingHistoryRecords[i];
                 HistoryList pL = new HistoryList();
                 pL.UpdateLabels(record);
                 flowPanelHistory.Controls.Add(pL);
+
             }
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            flowPanelHistory.Controls.Clear();
-            var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
-
-            foreach (var record in allParkingHistoryRecords)
-            {
-                HistoryList pL = new HistoryList();
-                pL.UpdateLabels(record);
-                flowPanelHistory.Controls.Add(pL);
-            }
+            DisplayTransactions();
         }
         public void display()
         {
-
-            flowPanelHistory.Controls.Clear();
-            var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
-
-            foreach (var record in allParkingHistoryRecords)
-            {
-                HistoryList pL = new HistoryList();
-                pL.UpdateLabels(record);
-                flowPanelHistory.Controls.Add(pL);
-            }
+            DisplayTransactions();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            flowPanelHistory.Controls.Clear();
-            var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();  
-
-            foreach (var record in allParkingHistoryRecords)
-            {
-                HistoryList pL = new HistoryList();
-                pL.UpdateLabels(record);
-                flowPanelHistory.Controls.Add(pL);
-            }
+            DisplayTransactions();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             flowPanelHistory.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
-            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords(); 
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();
             bool foundRecord = false;
-            foreach (var record in allParkingHistoryRecords)
+            for (int i = allParkingHistoryRecords.Count - 1; i >= 0; i--)
             {
+                var record = allParkingHistoryRecords[i];
                 if (searchVH.Text == record.PlateNumber) {
                     HistoryList pL = new HistoryList();
                     pL.deleteHistoryHandler += DeLeteHandler;

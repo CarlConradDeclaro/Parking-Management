@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parkin));
             panel1 = new Panel();
+            button11 = new Button();
             panel24 = new Panel();
             panel23 = new Panel();
             User = new Label();
@@ -75,10 +76,11 @@
             admin1 = new admin();
             history1 = new History();
             parkingView = new Panel();
+            noFoundLabel = new Label();
+            panel4 = new Panel();
+            button4 = new Button();
             panel20 = new Panel();
             button10 = new Button();
-            panel22 = new Panel();
-            button12 = new Button();
             label10 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -135,11 +137,11 @@
             button27 = new Button();
             button28 = new Button();
             panel19 = new Panel();
-            button4 = new Button();
+            btnSearch = new Button();
             panel15 = new Panel();
             button3 = new Button();
             button9 = new Button();
-            textBox1 = new TextBox();
+            searchPlateNo = new TextBox();
             panel16 = new Panel();
             labelB10 = new Label();
             labelB9 = new Label();
@@ -163,6 +165,7 @@
             b01 = new Button();
             Content = new Panel();
             vehicleListPanel = new Panel();
+            All = new Label();
             panel11 = new Panel();
             btnViewParkList = new Button();
             btnViewParkLot = new Button();
@@ -187,8 +190,8 @@
             panel14.SuspendLayout();
             panel5.SuspendLayout();
             parkingView.SuspendLayout();
+            panel4.SuspendLayout();
             panel20.SuspendLayout();
-            panel22.SuspendLayout();
             panel18.SuspendLayout();
             panel17.SuspendLayout();
             panel19.SuspendLayout();
@@ -204,6 +207,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(button11);
             panel1.Controls.Add(panel24);
             panel1.Controls.Add(humBtn);
             panel1.Dock = DockStyle.Top;
@@ -213,11 +217,27 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // button11
+            // 
+            button11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button11.BackColor = Color.Transparent;
+            button11.BackgroundImage = Properties.Resources.logout;
+            button11.BackgroundImageLayout = ImageLayout.Zoom;
+            button11.FlatAppearance.BorderSize = 0;
+            button11.FlatStyle = FlatStyle.Flat;
+            button11.Location = new Point(1789, 10);
+            button11.Name = "button11";
+            button11.Size = new Size(48, 38);
+            button11.TabIndex = 18;
+            toolTip1.SetToolTip(button11, "Table View");
+            button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
+            // 
             // panel24
             // 
-            panel24.Anchor = AnchorStyles.Top;
+            panel24.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel24.Controls.Add(panel23);
-            panel24.Location = new Point(1268, 0);
+            panel24.Location = new Point(1334, 0);
             panel24.Name = "panel24";
             panel24.Size = new Size(449, 51);
             panel24.TabIndex = 22;
@@ -271,7 +291,7 @@
             menuContainer.Controls.Add(button13);
             menuContainer.Location = new Point(0, 3);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(255, 61);
+            menuContainer.Size = new Size(255, 60);
             menuContainer.TabIndex = 7;
             // 
             // panel6
@@ -368,7 +388,7 @@
             button13.FlatStyle = FlatStyle.Flat;
             button13.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button13.ForeColor = Color.White;
-            button13.Image = (Image)resources.GetObject("button13.Image");
+            button13.Image = Properties.Resources.logout;
             button13.ImageAlign = ContentAlignment.MiddleLeft;
             button13.Location = new Point(3, 297);
             button13.Name = "button13";
@@ -508,6 +528,7 @@
             // 
             // searchVH
             // 
+            searchVH.CharacterCasing = CharacterCasing.Upper;
             searchVH.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchVH.Location = new Point(0, 4);
             searchVH.Name = "searchVH";
@@ -721,8 +742,9 @@
             // parkingView
             // 
             parkingView.BackColor = Color.FromArgb(22, 19, 64);
+            parkingView.Controls.Add(noFoundLabel);
+            parkingView.Controls.Add(panel4);
             parkingView.Controls.Add(panel20);
-            parkingView.Controls.Add(panel22);
             parkingView.Controls.Add(label10);
             parkingView.Controls.Add(label7);
             parkingView.Controls.Add(label6);
@@ -730,17 +752,56 @@
             parkingView.Controls.Add(panel17);
             parkingView.Controls.Add(panel19);
             parkingView.Controls.Add(panel16);
-            parkingView.Location = new Point(121, 1016);
+            parkingView.Location = new Point(34, 1038);
             parkingView.Name = "parkingView";
-            parkingView.Size = new Size(139, 164);
+            parkingView.Size = new Size(228, 183);
             parkingView.TabIndex = 19;
+            // 
+            // noFoundLabel
+            // 
+            noFoundLabel.AutoSize = true;
+            noFoundLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            noFoundLabel.ForeColor = Color.White;
+            noFoundLabel.Location = new Point(9, 41);
+            noFoundLabel.Name = "noFoundLabel";
+            noFoundLabel.Size = new Size(0, 28);
+            noFoundLabel.TabIndex = 23;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top;
+            panel4.BackgroundImageLayout = ImageLayout.None;
+            panel4.Controls.Add(button4);
+            panel4.Location = new Point(615, 9);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(127, 53);
+            panel4.TabIndex = 6;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(31, 28, 75);
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.Cursor = Cursors.Hand;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.White;
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.Location = new Point(0, -11);
+            button4.Name = "button4";
+            button4.Size = new Size(173, 66);
+            button4.TabIndex = 3;
+            button4.Text = "Parkout";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // panel20
             // 
             panel20.Anchor = AnchorStyles.Top;
             panel20.BackgroundImageLayout = ImageLayout.None;
             panel20.Controls.Add(button10);
-            panel20.Location = new Point(466, 3);
+            panel20.Location = new Point(488, 9);
             panel20.Name = "panel20";
             panel20.Size = new Size(122, 53);
             panel20.TabIndex = 20;
@@ -763,34 +824,6 @@
             button10.Text = "Parkin";
             button10.UseVisualStyleBackColor = false;
             button10.Click += button10_Click;
-            // 
-            // panel22
-            // 
-            panel22.Anchor = AnchorStyles.Top;
-            panel22.BackgroundImageLayout = ImageLayout.None;
-            panel22.Controls.Add(button12);
-            panel22.Location = new Point(594, 3);
-            panel22.Name = "panel22";
-            panel22.Size = new Size(127, 53);
-            panel22.TabIndex = 21;
-            // 
-            // button12
-            // 
-            button12.BackColor = Color.FromArgb(31, 28, 75);
-            button12.BackgroundImageLayout = ImageLayout.None;
-            button12.Cursor = Cursors.Hand;
-            button12.FlatAppearance.BorderSize = 0;
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button12.ForeColor = Color.White;
-            button12.Image = (Image)resources.GetObject("button12.Image");
-            button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(0, -11);
-            button12.Name = "button12";
-            button12.Size = new Size(173, 66);
-            button12.TabIndex = 3;
-            button12.Text = "Parkout";
-            button12.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -1461,7 +1494,7 @@
             button23.BackgroundImageLayout = ImageLayout.Stretch;
             button23.FlatAppearance.BorderSize = 0;
             button23.FlatStyle = FlatStyle.Flat;
-            button23.Location = new Point(230, 33);
+            button23.Location = new Point(229, 33);
             button23.Name = "button23";
             button23.Size = new Size(174, 83);
             button23.TabIndex = 5;
@@ -1535,32 +1568,33 @@
             // 
             // panel19
             // 
-            panel19.Controls.Add(button4);
+            panel19.Controls.Add(btnSearch);
             panel19.Controls.Add(panel15);
-            panel19.Controls.Add(textBox1);
+            panel19.Controls.Add(searchPlateNo);
             panel19.Location = new Point(3, 3);
             panel19.Name = "panel19";
-            panel19.Size = new Size(437, 39);
+            panel19.Size = new Size(456, 39);
             panel19.TabIndex = 2;
             // 
-            // button4
+            // btnSearch
             // 
-            button4.BackgroundImage = Properties.Resources.search;
-            button4.BackgroundImageLayout = ImageLayout.Zoom;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(305, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(36, 32);
-            button4.TabIndex = 2;
-            button4.UseVisualStyleBackColor = true;
+            btnSearch.BackgroundImage = Properties.Resources.search;
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Location = new Point(305, 3);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(36, 32);
+            btnSearch.TabIndex = 2;
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // panel15
             // 
             panel15.Anchor = AnchorStyles.Top;
             panel15.Controls.Add(button3);
             panel15.Controls.Add(button9);
-            panel15.Location = new Point(341, -3);
+            panel15.Location = new Point(348, -3);
             panel15.Name = "panel15";
             panel15.Size = new Size(103, 48);
             panel15.TabIndex = 20;
@@ -1589,21 +1623,22 @@
             button9.BackgroundImageLayout = ImageLayout.Stretch;
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
-            button9.Location = new Point(54, 4);
+            button9.Location = new Point(56, 4);
             button9.Name = "button9";
             button9.Size = new Size(48, 38);
             button9.TabIndex = 17;
             toolTip1.SetToolTip(button9, "Table View");
             button9.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // searchPlateNo
             // 
-            textBox1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search Plate No.";
-            textBox1.Size = new Size(298, 32);
-            textBox1.TabIndex = 2;
+            searchPlateNo.CharacterCasing = CharacterCasing.Upper;
+            searchPlateNo.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchPlateNo.Location = new Point(3, 4);
+            searchPlateNo.Name = "searchPlateNo";
+            searchPlateNo.PlaceholderText = "Search Plate No.";
+            searchPlateNo.Size = new Size(298, 32);
+            searchPlateNo.TabIndex = 2;
             // 
             // panel16
             // 
@@ -1910,6 +1945,7 @@
             // 
             // vehicleListPanel
             // 
+            vehicleListPanel.Controls.Add(All);
             vehicleListPanel.Controls.Add(panel11);
             vehicleListPanel.Controls.Add(panel12);
             vehicleListPanel.Controls.Add(panel3);
@@ -1921,6 +1957,18 @@
             vehicleListPanel.Name = "vehicleListPanel";
             vehicleListPanel.Size = new Size(1346, 761);
             vehicleListPanel.TabIndex = 15;
+            // 
+            // All
+            // 
+            All.AutoSize = true;
+            All.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            All.ForeColor = Color.White;
+            All.Location = new Point(463, 8);
+            All.Name = "All";
+            All.Size = new Size(35, 28);
+            All.TabIndex = 22;
+            All.Text = "All";
+            All.Click += All_Click;
             // 
             // panel11
             // 
@@ -2020,8 +2068,8 @@
             panel5.ResumeLayout(false);
             parkingView.ResumeLayout(false);
             parkingView.PerformLayout();
+            panel4.ResumeLayout(false);
             panel20.ResumeLayout(false);
-            panel22.ResumeLayout(false);
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
             panel17.ResumeLayout(false);
@@ -2033,6 +2081,7 @@
             panel16.PerformLayout();
             Content.ResumeLayout(false);
             vehicleListPanel.ResumeLayout(false);
+            vehicleListPanel.PerformLayout();
             panel11.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panelContent.ResumeLayout(false);
@@ -2110,8 +2159,8 @@
         private Button button26;
         private Button button27;
         private Button button28;
-        private Button button4;
-        private TextBox textBox1;
+        private Button btnSearch;
+        private TextBox searchPlateNo;
         private Button b10;
         private Button b09;
         private Button b08;
@@ -2173,13 +2222,16 @@
         private Button button9;
         private Panel panel20;
         private Button button10;
-        private Panel panel22;
-        private Button button12;
         private admin admin1;
         private History history1;
         private Panel panel23;
         private Label User;
         private Panel panel24;
         private Button button13;
+        private Label All;
+        private Panel panel4;
+        private Button button4;
+        private Label noFoundLabel;
+        private Button button11;
     }
 }

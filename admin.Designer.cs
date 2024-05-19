@@ -62,6 +62,7 @@
             flagDown = new NumericUpDown();
             AAPH = new NumericUpDown();
             panel4 = new Panel();
+            button9 = new Button();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -347,7 +348,7 @@
             // flowLayoutBrands
             // 
             flowLayoutBrands.AutoScroll = true;
-            flowLayoutBrands.Location = new Point(624, 200);
+            flowLayoutBrands.Location = new Point(624, 139);
             flowLayoutBrands.Name = "flowLayoutBrands";
             flowLayoutBrands.Size = new Size(418, 166);
             flowLayoutBrands.TabIndex = 3;
@@ -355,7 +356,7 @@
             // 
             // typeName
             // 
-            typeName.Location = new Point(236, 213);
+            typeName.Location = new Point(236, 154);
             typeName.Name = "typeName";
             typeName.Size = new Size(207, 27);
             typeName.TabIndex = 17;
@@ -365,18 +366,18 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(160, 213);
+            label10.Location = new Point(149, 152);
             label10.Name = "label10";
-            label10.Size = new Size(54, 31);
+            label10.Size = new Size(82, 31);
             label10.TabIndex = 16;
-            label10.Text = "Edit";
+            label10.Text = "Name:";
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(210, 265);
+            label12.Location = new Point(210, 204);
             label12.Name = "label12";
             label12.Size = new Size(122, 31);
             label12.TabIndex = 18;
@@ -387,7 +388,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(21, 318);
+            label11.Location = new Point(21, 257);
             label11.Name = "label11";
             label11.Size = new Size(311, 31);
             label11.TabIndex = 20;
@@ -395,7 +396,7 @@
             // 
             // flagDown
             // 
-            flagDown.Location = new Point(338, 269);
+            flagDown.Location = new Point(338, 208);
             flagDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             flagDown.Name = "flagDown";
             flagDown.Size = new Size(100, 27);
@@ -403,7 +404,7 @@
             // 
             // AAPH
             // 
-            AAPH.Location = new Point(338, 325);
+            AAPH.Location = new Point(338, 264);
             AAPH.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             AAPH.Name = "AAPH";
             AAPH.Size = new Size(100, 27);
@@ -413,6 +414,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(button9);
             panel4.Controls.Add(button6);
             panel4.Controls.Add(button5);
             panel4.Controls.Add(button4);
@@ -427,15 +429,27 @@
             panel4.Controls.Add(panel5);
             panel4.Location = new Point(131, 369);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1289, 587);
+            panel4.Size = new Size(1289, 368);
             panel4.TabIndex = 1;
+            // 
+            // button9
+            // 
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Image = Properties.Resources.delete;
+            button9.Location = new Point(493, 147);
+            button9.Name = "button9";
+            button9.Size = new Size(31, 37);
+            button9.TabIndex = 18;
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button6
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(449, 325);
+            button6.Location = new Point(446, 264);
             button6.Name = "button6";
             button6.Size = new Size(68, 41);
             button6.TabIndex = 23;
@@ -447,7 +461,7 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(449, 269);
+            button5.Location = new Point(446, 208);
             button5.Name = "button5";
             button5.Size = new Size(68, 41);
             button5.TabIndex = 22;
@@ -459,7 +473,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(449, 200);
+            button4.Location = new Point(446, 139);
             button4.Name = "button4";
             button4.Size = new Size(68, 54);
             button4.TabIndex = 17;
@@ -531,5 +545,6 @@
         private Button button4;
         private Button button7;
         private Button button8;
+        private Button button9;
     }
 }

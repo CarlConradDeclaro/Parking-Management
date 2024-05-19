@@ -41,7 +41,7 @@ namespace Parking
         {
             InitializeComponent();
             filterDisplay("PARKED");
-            numV.Text = 30 - countParkedVehicle() + "";
+            countSlots();
             numPV.Text = countParkedVehicle() + "";
             panel5.Show();
             parkingView.Hide();
@@ -69,7 +69,7 @@ namespace Parking
         {
         }
 
-        bool sidebarExpand = true;
+        bool sidebarExpand = false;
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -93,13 +93,13 @@ namespace Parking
                 }
             }
         }
-        bool menuExpand = true;
+        bool menuExpand = false;
         private void menuTransition_Tick(object sender, EventArgs e)
         {
             if (menuExpand == false)
             {
                 menuContainer.Height += 10;
-                if (menuContainer.Height >= 350)
+                if (menuContainer.Height >= 400)
                 {
                     menuTransition.Stop();
                     menuExpand = true;
@@ -144,8 +144,6 @@ namespace Parking
 
 
             refreshParkingArea();
-
-            numV.Text = (30 - countParkedVehicle() ) + "" ; // slot
             numPV.Text = countParkedVehicle() + "";
 
         }
@@ -155,9 +153,16 @@ namespace Parking
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
 
-            pOut = new Parkout();
-            pOut.Parking += ParkingRecordAddedHandler;
-            pOut.ShowDialog();
+            if (allParkingRecords.Count(r => r.Status == "PARKED") != 0 )
+            {
+                pOut = new Parkout();
+                pOut.Parking += ParkingRecordAddedHandler;
+                pOut.ShowDialog();
+
+            }else
+                MessageBox.Show("Opps, there are no vehicles to parkout.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
 
         }
 
@@ -184,9 +189,15 @@ namespace Parking
                     pL.EditParking += ParkingRecordAddedHandler;
                     flowLayoutPanel2.Controls.Add(pL);
                 }
-
             }
+            refreshSearcHighlights();
+            countSlots();
         }
+
+        public void countSlots() {
+            numV.Text = 30 - countParkedVehicle() + "";
+        }
+
         public void refreshParkingArea()
         {
             Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
@@ -462,7 +473,10 @@ namespace Parking
             Content.Controls.Remove(parkingView);
             parkingView.Hide();
             refreshParkingArea();
+
         }
+
+
 
 
         private void btnViewParkLot_Click(object sender, EventArgs e)
@@ -811,6 +825,17 @@ namespace Parking
             Content.Controls.Remove(parkingView);
             parkingView.Hide();
             refreshParkingArea();
+            refreshSearcHighlights();
+        }
+        private void refreshSearcHighlights()
+        {
+            Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
+                               button28, button27, button26, button25, button24, button23, button22, button21, button20, button19,
+                              button38, button37, button36, button35, button34, button33, button32, button31, button30, button29];
+            for (int i = 0; i < 30; i++)
+                button[i].BackColor = Color.Transparent;
+            searchPlateNo.Text = "";
+            noFoundLabel.Text = "";
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -832,6 +857,10 @@ namespace Parking
 
         private void button13_Click(object sender, EventArgs e)
         {
+            logOut();
+        }
+
+        private void logOut() {
             var c = UserDetails.Instance;
             c.clearUser();
 
@@ -845,6 +874,78 @@ namespace Parking
         private void panel13_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string sLoc = "";
+            string plateNumber = searchPlateNo.Text.ToUpper();
+            string query = "SELECT s_sloc FROM Vehicle WHERE v_plate = @platenumber AND status = 'PARKED'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@platenumber", plateNumber);
+
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    sLoc = reader["s_sloc"].ToString();
+                    Console.WriteLine(sLoc);
+                }
+            }
+
+
+            Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
+                               button28, button27, button26, button25, button24, button23, button22, button21, button20, button19,
+                              button38, button37, button36, button35, button34, button33, button32, button31, button30, button29];
+            string[] labelNames = { "BM-01", "BM-02", "BM-03", "BM-04", "BM-05", "BM-06", "BM-07", "BM-08", "BM-09", "BM-10",
+                            "A-01", "A-02", "A-03", "A-04", "A-05", "A-06", "A-07", "A-08", "A-09", "A-10",
+                            "B-01", "B-02", "B-03", "B-04", "B-05", "B-06", "B-07", "B-08", "B-09", "B-10" };
+
+            for (int i = 0; i < 30; i++)
+                if (labelNames[i] == sLoc)
+                {
+                    button[i].BackColor = Color.YellowGreen;
+                    noFoundLabel.Text = "";
+                }
+                else
+                {
+                    button[i].BackColor = Color.Transparent;
+                    noFoundLabel.Text = "Not Found!";
+                }
+        }
+
+
+
+        private void All_Click(object sender, EventArgs e)
+        {
+            display();
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
+            if (allParkingRecords.Count(r => r.Status == "PARKED") != 0)
+            {
+                pOut = new Parkout();
+                pOut.Parking += ParkingRecordAddedHandler;
+                pOut.ShowDialog();
+            }
+            else
+                MessageBox.Show("Opps, there are no vehicles to parkout.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+          
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            logOut();
         }
     }
 }

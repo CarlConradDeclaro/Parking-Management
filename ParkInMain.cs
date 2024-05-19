@@ -59,7 +59,7 @@ namespace Parking
 
             if (Usersdata.Count > 0)
             {
-                return Usersdata[0].FirstName + ", " + Usersdata[0].LastName;
+                return Usersdata[0].FirstName + " " + Usersdata[0].LastName;
             }
             return null;
         }

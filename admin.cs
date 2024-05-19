@@ -92,6 +92,7 @@ namespace Parking
         {
             editType(1);
             selectTypeCB();
+            display();
         }
 
 
@@ -289,19 +290,21 @@ namespace Parking
             }
         }
 
-    
+
 
 
         private void button5_Click(object sender, EventArgs e)
         {
             editType(2);
             selectTypeCB();
+            display();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             editType(3);
             selectTypeCB();
+            display();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -433,33 +436,46 @@ namespace Parking
 
         }
 
-        /* private void button9_Click(object sender, EventArgs e)
-         {
-             //flowLayoutBrands
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string selectedItemType = this.selectedItemType.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selectedItemType))
+            {
+                MessageBox.Show("Please select a vehicle type to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+        
+            string query = "DELETE FROM Vehicle_Type WHERE vType = @vType";
 
-             flowLayoutBrands.Controls.Clear();
-             string selecteditemType = this.selectedItemType.SelectedItem?.ToString();
-             var vehicleBrand = VehicleBrandMAnger.Instance;
-             if(newBrand.Text != "")
-             vehicleBrand.addVB(new VehicleBrand(selecteditemType, newBrand.Text));
-             else
-             MessageBox.Show("Please enter value", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             var VB = vehicleBrand.GetVB();
-             flowLayoutBrands.Controls.Clear();
-             foreach (var record in VB)
-             {
-                 if (selecteditemType == record.vehicleType)
-                 {
-                     BrandType bt = new BrandType();
-                     bt.UpdateLabels(record);
-                     flowLayoutBrands.Controls.Add(bt);
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@vType", selectedItemType);
+                        int rowsAffected = command.ExecuteNonQuery();
 
-                     BrandType pT = new BrandType();
-                     pT.getVType(selecteditemType, flowLayoutBrands);
-                 }
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Vehicle type deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            display();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No matching vehicle type found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
-             }
-         }*/
+       
     }
 }

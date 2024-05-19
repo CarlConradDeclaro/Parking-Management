@@ -179,6 +179,12 @@ namespace Parking
 
                             Parkin parkin = new Parkin();
                             parkin.setIsParkin(true);
+
+                            if (getSelectedArea()) {
+                                setSelectedArea(false);
+                                this.Close();
+                                ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
+                            }
                         }
                         else {
                             MessageBox.Show("Please select another slot", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -773,7 +779,7 @@ namespace Parking
                     a01.BackColor = Color.GreenYellow;
                     break;
                 case "A-02":
-                    b02.Image = image1;
+                    a02.Image = image1;
                     labela2.Hide();
                     if (!isOccupied("A-02"))
                         setSloc("A-02");
@@ -1023,7 +1029,7 @@ namespace Parking
                               labela1,labela2,labela3,labela4,labela5,labela6,labela7,labela8,labela9,labela10,
                               labelb01,labelb02,labelb03,labelb04,labelb05,labelb06,labelb07,labelb08,labelb09,labelbB10];
            
-            button[btn].Image = (btn >= 0 && btn < 5) || (btn >= 10 && btn <= 14) || (btn >= 19 && btn <= 23) ? image1 :  image2;
+            button[btn].Image = (btn >= 0 && btn < 5) || (btn >= 10 && btn <= 14) || (btn >= 19 && btn <= 24) ? image1 :  image2;
             
            labels[btn].Hide();
 
@@ -1274,7 +1280,7 @@ namespace Parking
                     toggleImg(14, "A-05");
                 else
                     unToggleImg(14, 14);
-                a1_ = !a1_5;
+                a1_5 = !a1_5;
                 handleParkingArea("a5", "A-05");
             }
             else
