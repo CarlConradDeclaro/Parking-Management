@@ -43,7 +43,7 @@ namespace Parking
         {
             string brandToDelete = brandName.Text;
 
-            // Construct the SQL DELETE query
+            
             string sql = "DELETE FROM Vehicle_Brand WHERE vBrand = @BrandToDelete";
         
             using (SqlConnection connection = new SqlConnection(connectionString))

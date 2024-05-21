@@ -38,7 +38,7 @@
             // 
             panel5.Controls.Add(vLabel1Data);
             panel5.Controls.Add(vLabel1);
-            panel5.Location = new Point(9, 3);
+            panel5.Location = new Point(9, 5);
             panel5.Name = "panel5";
             panel5.Size = new Size(479, 25);
             panel5.TabIndex = 3;
@@ -47,24 +47,26 @@
             // vLabel1Data
             // 
             vLabel1Data.AutoSize = true;
+            vLabel1Data.BackColor = Color.FromArgb(22, 10, 110);
             vLabel1Data.Dock = DockStyle.Right;
-            vLabel1Data.Font = new Font("PMingLiU-ExtB", 13.8F, FontStyle.Bold);
+            vLabel1Data.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             vLabel1Data.ForeColor = Color.White;
-            vLabel1Data.Location = new Point(378, 0);
+            vLabel1Data.Location = new Point(365, 0);
             vLabel1Data.Name = "vLabel1Data";
-            vLabel1Data.Size = new Size(101, 23);
+            vLabel1Data.Size = new Size(114, 23);
             vLabel1Data.TabIndex = 1;
             vLabel1Data.Text = "9807oipu";
             // 
             // vLabel1
             // 
             vLabel1.AutoSize = true;
+            vLabel1.BackColor = Color.FromArgb(22, 10, 110);
             vLabel1.Dock = DockStyle.Left;
-            vLabel1.Font = new Font("PMingLiU-ExtB", 13.8F, FontStyle.Bold);
+            vLabel1.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
             vLabel1.ForeColor = Color.White;
             vLabel1.Location = new Point(0, 0);
             vLabel1.Name = "vLabel1";
-            vLabel1.Size = new Size(158, 23);
+            vLabel1.Size = new Size(192, 23);
             vLabel1.TabIndex = 0;
             vLabel1.Text = "Plate Number: ";
             // 
@@ -72,7 +74,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(26, 25, 80);
+            BackColor = Color.FromArgb(22, 10, 110);
             Controls.Add(panel5);
             Name = "vehicleDetails";
             Size = new Size(491, 35);

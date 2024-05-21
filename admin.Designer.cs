@@ -30,8 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             panel1 = new Panel();
+            panel28 = new Panel();
+            label1 = new Label();
             button8 = new Button();
             panel3 = new Panel();
+            panel18 = new Panel();
+            panel17 = new Panel();
+            panel16 = new Panel();
+            panel15 = new Panel();
+            panel14 = new Panel();
             selectType = new ComboBox();
             label7 = new Label();
             button2 = new Button();
@@ -39,6 +46,13 @@
             setBrandName = new TextBox();
             label6 = new Label();
             panel2 = new Panel();
+            panel13 = new Panel();
+            panel12 = new Panel();
+            panel11 = new Panel();
+            panel10 = new Panel();
+            panel9 = new Panel();
+            panel8 = new Panel();
+            panel7 = new Panel();
             setAAPH = new NumericUpDown();
             setFlagDown = new NumericUpDown();
             label8 = new Label();
@@ -46,9 +60,9 @@
             setTypeName = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            label1 = new Label();
             panel5 = new Panel();
             panel6 = new Panel();
+            panel19 = new Panel();
             button7 = new Button();
             label13 = new Label();
             label9 = new Label();
@@ -62,11 +76,20 @@
             flagDown = new NumericUpDown();
             AAPH = new NumericUpDown();
             panel4 = new Panel();
+            panel27 = new Panel();
+            panel26 = new Panel();
+            panel25 = new Panel();
+            panel24 = new Panel();
+            panel23 = new Panel();
+            panel22 = new Panel();
+            panel21 = new Panel();
+            panel20 = new Panel();
             button9 = new Button();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             panel1.SuspendLayout();
+            panel28.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)setAAPH).BeginInit();
@@ -80,16 +103,36 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.BackColor = Color.FromArgb(26, 22, 71);
+            panel1.Controls.Add(panel28);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(131, 23);
+            panel1.Location = new Point(131, 43);
             panel1.Name = "panel1";
             panel1.Size = new Size(1291, 308);
             panel1.TabIndex = 0;
+            // 
+            // panel28
+            // 
+            panel28.BackColor = Color.FromArgb(0, 50, 120);
+            panel28.Controls.Add(label1);
+            panel28.Location = new Point(0, -1);
+            panel28.Name = "panel28";
+            panel28.Size = new Size(1291, 52);
+            panel28.TabIndex = 24;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(12, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(234, 31);
+            label1.TabIndex = 0;
+            label1.Text = "Create Vechicle Type:";
             // 
             // button8
             // 
@@ -105,7 +148,12 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(22, 19, 75);
+            panel3.BackColor = Color.FromArgb(26, 22, 71);
+            panel3.Controls.Add(panel18);
+            panel3.Controls.Add(panel17);
+            panel3.Controls.Add(panel16);
+            panel3.Controls.Add(panel15);
+            panel3.Controls.Add(panel14);
             panel3.Controls.Add(selectType);
             panel3.Controls.Add(label7);
             panel3.Controls.Add(button2);
@@ -116,12 +164,50 @@
             panel3.Size = new Size(1285, 69);
             panel3.TabIndex = 10;
             // 
+            // panel18
+            // 
+            panel18.Location = new Point(483, 16);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(10, 39);
+            panel18.TabIndex = 16;
+            // 
+            // panel17
+            // 
+            panel17.Location = new Point(490, 12);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(200, 10);
+            panel17.TabIndex = 17;
+            // 
+            // panel16
+            // 
+            panel16.Location = new Point(312, 16);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(10, 39);
+            panel16.TabIndex = 15;
+            // 
+            // panel15
+            // 
+            panel15.Location = new Point(103, 13);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(209, 10);
+            panel15.TabIndex = 16;
+            // 
+            // panel14
+            // 
+            panel14.Location = new Point(99, 20);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(10, 35);
+            panel14.TabIndex = 14;
+            // 
             // selectType
             // 
+            selectType.BackColor = Color.FromArgb(26, 22, 71);
+            selectType.Font = new Font("Segoe UI", 12F);
+            selectType.ForeColor = Color.White;
             selectType.FormattingEnabled = true;
             selectType.Location = new Point(490, 19);
             selectType.Name = "selectType";
-            selectType.Size = new Size(200, 28);
+            selectType.Size = new Size(200, 36);
             selectType.TabIndex = 9;
             // 
             // label7
@@ -160,9 +246,12 @@
             // 
             // setBrandName
             // 
+            setBrandName.BackColor = Color.FromArgb(26, 22, 71);
+            setBrandName.Font = new Font("Segoe UI", 12F);
+            setBrandName.ForeColor = Color.White;
             setBrandName.Location = new Point(107, 21);
             setBrandName.Name = "setBrandName";
-            setBrandName.Size = new Size(207, 27);
+            setBrandName.Size = new Size(207, 34);
             setBrandName.TabIndex = 2;
             // 
             // label6
@@ -178,7 +267,14 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(22, 19, 75);
+            panel2.BackColor = Color.FromArgb(26, 22, 71);
+            panel2.Controls.Add(panel13);
+            panel2.Controls.Add(panel12);
+            panel2.Controls.Add(panel11);
+            panel2.Controls.Add(panel10);
+            panel2.Controls.Add(panel9);
+            panel2.Controls.Add(panel8);
+            panel2.Controls.Add(panel7);
             panel2.Controls.Add(setAAPH);
             panel2.Controls.Add(setFlagDown);
             panel2.Controls.Add(label8);
@@ -191,20 +287,75 @@
             panel2.Size = new Size(1288, 69);
             panel2.TabIndex = 9;
             // 
+            // panel13
+            // 
+            panel13.Location = new Point(1002, 25);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(10, 35);
+            panel13.TabIndex = 15;
+            // 
+            // panel12
+            // 
+            panel12.Location = new Point(1006, 17);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(105, 10);
+            panel12.TabIndex = 17;
+            // 
+            // panel11
+            // 
+            panel11.Location = new Point(497, 20);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(105, 10);
+            panel11.TabIndex = 16;
+            // 
+            // panel10
+            // 
+            panel10.Location = new Point(493, 28);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(10, 35);
+            panel10.TabIndex = 14;
+            // 
+            // panel9
+            // 
+            panel9.Location = new Point(108, 17);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(209, 10);
+            panel9.TabIndex = 15;
+            // 
+            // panel8
+            // 
+            panel8.Location = new Point(315, 22);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(10, 35);
+            panel8.TabIndex = 14;
+            // 
+            // panel7
+            // 
+            panel7.Location = new Point(102, 21);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(10, 35);
+            panel7.TabIndex = 13;
+            // 
             // setAAPH
             // 
+            setAAPH.BackColor = Color.FromArgb(26, 22, 71);
+            setAAPH.Font = new Font("Segoe UI", 12F);
+            setAAPH.ForeColor = Color.White;
             setAAPH.Location = new Point(1011, 25);
             setAAPH.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             setAAPH.Name = "setAAPH";
-            setAAPH.Size = new Size(100, 27);
+            setAAPH.Size = new Size(100, 34);
             setAAPH.TabIndex = 12;
             // 
             // setFlagDown
             // 
+            setFlagDown.BackColor = Color.FromArgb(26, 22, 71);
+            setFlagDown.Font = new Font("Segoe UI", 12F);
+            setFlagDown.ForeColor = Color.White;
             setFlagDown.Location = new Point(502, 28);
             setFlagDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             setFlagDown.Name = "setFlagDown";
-            setFlagDown.Size = new Size(100, 27);
+            setFlagDown.Size = new Size(100, 34);
             setFlagDown.TabIndex = 11;
             // 
             // label8
@@ -232,9 +383,12 @@
             // 
             // setTypeName
             // 
+            setTypeName.BackColor = Color.FromArgb(26, 22, 71);
+            setTypeName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            setTypeName.ForeColor = Color.White;
             setTypeName.Location = new Point(110, 25);
             setTypeName.Name = "setTypeName";
-            setTypeName.Size = new Size(207, 27);
+            setTypeName.Size = new Size(207, 34);
             setTypeName.TabIndex = 2;
             // 
             // label3
@@ -259,29 +413,19 @@
             label4.TabIndex = 8;
             label4.Text = "Name";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(9, 5);
-            label1.Name = "label1";
-            label1.Size = new Size(234, 31);
-            label1.TabIndex = 0;
-            label1.Text = "Create Vechicle Type:";
-            // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(22, 19, 75);
-            panel5.Location = new Point(3, 3);
+            panel5.BackColor = Color.FromArgb(0, 50, 120);
+            panel5.Location = new Point(-2, -1);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1342, 52);
+            panel5.Size = new Size(1291, 52);
             panel5.TabIndex = 11;
             panel5.Paint += panel5_Paint;
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(22, 19, 75);
+            panel6.BackColor = Color.FromArgb(26, 22, 71);
+            panel6.Controls.Add(panel19);
             panel6.Controls.Add(button7);
             panel6.Controls.Add(label13);
             panel6.Controls.Add(label9);
@@ -291,6 +435,13 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(891, 52);
             panel6.TabIndex = 15;
+            // 
+            // panel19
+            // 
+            panel19.Location = new Point(83, 7);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(10, 35);
+            panel19.TabIndex = 15;
             // 
             // button7
             // 
@@ -328,10 +479,13 @@
             // 
             // selectedItemType
             // 
+            selectedItemType.BackColor = Color.FromArgb(26, 22, 71);
+            selectedItemType.Font = new Font("Segoe UI", 12F);
+            selectedItemType.ForeColor = Color.White;
             selectedItemType.FormattingEnabled = true;
-            selectedItemType.Location = new Point(90, 14);
+            selectedItemType.Location = new Point(90, 8);
             selectedItemType.Name = "selectedItemType";
-            selectedItemType.Size = new Size(167, 28);
+            selectedItemType.Size = new Size(167, 36);
             selectedItemType.TabIndex = 11;
             selectedItemType.SelectedIndexChanged += selectedItemType_SelectedIndexChanged;
             // 
@@ -356,9 +510,12 @@
             // 
             // typeName
             // 
-            typeName.Location = new Point(236, 154);
+            typeName.BackColor = Color.FromArgb(26, 22, 71);
+            typeName.Font = new Font("Segoe UI", 12F);
+            typeName.ForeColor = Color.White;
+            typeName.Location = new Point(236, 148);
             typeName.Name = "typeName";
-            typeName.Size = new Size(207, 27);
+            typeName.Size = new Size(207, 34);
             typeName.TabIndex = 17;
             // 
             // label10
@@ -396,24 +553,38 @@
             // 
             // flagDown
             // 
-            flagDown.Location = new Point(338, 208);
+            flagDown.BackColor = Color.FromArgb(26, 22, 71);
+            flagDown.Font = new Font("Segoe UI", 12F);
+            flagDown.ForeColor = Color.White;
+            flagDown.Location = new Point(338, 202);
             flagDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             flagDown.Name = "flagDown";
-            flagDown.Size = new Size(100, 27);
+            flagDown.Size = new Size(100, 34);
             flagDown.TabIndex = 19;
             // 
             // AAPH
             // 
-            AAPH.Location = new Point(338, 264);
+            AAPH.BackColor = Color.FromArgb(26, 22, 71);
+            AAPH.Font = new Font("Segoe UI", 12F);
+            AAPH.ForeColor = Color.White;
+            AAPH.Location = new Point(338, 258);
             AAPH.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             AAPH.Name = "AAPH";
-            AAPH.Size = new Size(100, 27);
+            AAPH.Size = new Size(100, 34);
             AAPH.TabIndex = 21;
             // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top;
-            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.BackColor = Color.FromArgb(26, 22, 71);
+            panel4.Controls.Add(panel27);
+            panel4.Controls.Add(panel26);
+            panel4.Controls.Add(panel25);
+            panel4.Controls.Add(panel24);
+            panel4.Controls.Add(panel23);
+            panel4.Controls.Add(panel22);
+            panel4.Controls.Add(panel21);
+            panel4.Controls.Add(panel20);
             panel4.Controls.Add(button9);
             panel4.Controls.Add(button6);
             panel4.Controls.Add(button5);
@@ -427,10 +598,66 @@
             panel4.Controls.Add(flowLayoutBrands);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-            panel4.Location = new Point(131, 369);
+            panel4.Location = new Point(131, 389);
             panel4.Name = "panel4";
             panel4.Size = new Size(1289, 368);
             panel4.TabIndex = 1;
+            // 
+            // panel27
+            // 
+            panel27.Location = new Point(329, 255);
+            panel27.Name = "panel27";
+            panel27.Size = new Size(10, 39);
+            panel27.TabIndex = 19;
+            // 
+            // panel26
+            // 
+            panel26.Location = new Point(335, 249);
+            panel26.Name = "panel26";
+            panel26.Size = new Size(103, 10);
+            panel26.TabIndex = 19;
+            // 
+            // panel25
+            // 
+            panel25.Location = new Point(329, 200);
+            panel25.Name = "panel25";
+            panel25.Size = new Size(10, 39);
+            panel25.TabIndex = 18;
+            // 
+            // panel24
+            // 
+            panel24.Location = new Point(335, 194);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(103, 10);
+            panel24.TabIndex = 18;
+            // 
+            // panel23
+            // 
+            panel23.Location = new Point(228, 144);
+            panel23.Name = "panel23";
+            panel23.Size = new Size(10, 39);
+            panel23.TabIndex = 17;
+            // 
+            // panel22
+            // 
+            panel22.Location = new Point(235, 140);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(209, 10);
+            panel22.TabIndex = 17;
+            // 
+            // panel21
+            // 
+            panel21.Location = new Point(232, 82);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(180, 10);
+            panel21.TabIndex = 17;
+            // 
+            // panel20
+            // 
+            panel20.Location = new Point(441, 145);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(10, 39);
+            panel20.TabIndex = 16;
             // 
             // button9
             // 
@@ -492,6 +719,8 @@
             Load += admin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel28.ResumeLayout(false);
+            panel28.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
@@ -546,5 +775,27 @@
         private Button button7;
         private Button button8;
         private Button button9;
+        private Panel panel7;
+        private Panel panel18;
+        private Panel panel17;
+        private Panel panel16;
+        private Panel panel15;
+        private Panel panel14;
+        private Panel panel13;
+        private Panel panel12;
+        private Panel panel11;
+        private Panel panel10;
+        private Panel panel9;
+        private Panel panel8;
+        private Panel panel19;
+        private Panel panel27;
+        private Panel panel26;
+        private Panel panel25;
+        private Panel panel24;
+        private Panel panel23;
+        private Panel panel22;
+        private Panel panel21;
+        private Panel panel20;
+        private Panel panel28;
     }
 }

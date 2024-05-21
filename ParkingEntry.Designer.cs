@@ -31,15 +31,10 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParkingEntry));
             comboBoxType = new ComboBox();
-            palteNo = new Label();
             plateNo = new TextBox();
-            type = new Label();
-            model = new Label();
             comboBoxModel = new ComboBox();
             driver = new TextBox();
-            label5 = new Label();
             phoneNo = new TextBox();
-            label1 = new Label();
             button1 = new Button();
             button2 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -82,6 +77,24 @@
             labelB1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
+            label7 = new Label();
+            panel18 = new Panel();
+            panel17 = new Panel();
+            panel16 = new Panel();
+            panel15 = new Panel();
+            label6 = new Label();
+            panel14 = new Panel();
+            panel13 = new Panel();
+            label5 = new Label();
+            panel12 = new Panel();
+            panel11 = new Panel();
+            label4 = new Label();
+            panel10 = new Panel();
+            panel9 = new Panel();
+            label1 = new Label();
+            panel8 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
             label2 = new Label();
             panel4 = new Panel();
             label3 = new Label();
@@ -140,11 +153,12 @@
             // 
             // comboBoxType
             // 
-            comboBoxType.BackColor = Color.White;
+            comboBoxType.BackColor = Color.FromArgb(22, 10, 95);
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.DropDownWidth = 350;
+            comboBoxType.FlatStyle = FlatStyle.Flat;
             comboBoxType.Font = new Font("Segoe UI", 13.8F);
-            comboBoxType.ForeColor = Color.Black;
+            comboBoxType.ForeColor = Color.White;
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Location = new Point(22, 254);
             comboBoxType.Name = "comboBoxType";
@@ -152,59 +166,23 @@
             comboBoxType.TabIndex = 10;
             comboBoxType.SelectedIndexChanged += comboBoxType_SelectedIndexChanged;
             // 
-            // palteNo
-            // 
-            palteNo.AutoSize = true;
-            palteNo.BackColor = Color.Transparent;
-            palteNo.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
-            palteNo.ForeColor = Color.WhiteSmoke;
-            palteNo.Location = new Point(24, 111);
-            palteNo.Name = "palteNo";
-            palteNo.Size = new Size(127, 23);
-            palteNo.TabIndex = 0;
-            palteNo.Text = "Plate No*";
-            // 
             // plateNo
             // 
-            plateNo.BackColor = Color.White;
-            plateNo.BorderStyle = BorderStyle.None;
+            plateNo.BackColor = Color.FromArgb(22, 10, 95);
             plateNo.Font = new Font("NSimSun", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            plateNo.ForeColor = Color.Black;
-            plateNo.Location = new Point(24, 146);
+            plateNo.ForeColor = Color.White;
+            plateNo.Location = new Point(19, 146);
             plateNo.Name = "plateNo";
-            plateNo.Size = new Size(352, 35);
+            plateNo.PlaceholderText = "  ";
+            plateNo.Size = new Size(357, 42);
             plateNo.TabIndex = 1;
-            // 
-            // type
-            // 
-            type.AutoSize = true;
-            type.BackColor = Color.Transparent;
-            type.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
-            type.ForeColor = Color.WhiteSmoke;
-            type.Location = new Point(22, 223);
-            type.Name = "type";
-            type.Size = new Size(75, 23);
-            type.TabIndex = 2;
-            type.Text = "Type*";
-            // 
-            // model
-            // 
-            model.AutoSize = true;
-            model.BackColor = Color.Transparent;
-            model.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
-            model.ForeColor = Color.WhiteSmoke;
-            model.Location = new Point(22, 326);
-            model.Name = "model";
-            model.Size = new Size(88, 23);
-            model.TabIndex = 4;
-            model.Text = "Model*";
+            plateNo.UseWaitCursor = true;
             // 
             // comboBoxModel
             // 
-            comboBoxModel.BackColor = Color.White;
-            comboBoxModel.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxModel.BackColor = Color.FromArgb(22, 10, 95);
             comboBoxModel.Font = new Font("Segoe UI", 13.8F);
-            comboBoxModel.ForeColor = Color.Black;
+            comboBoxModel.ForeColor = Color.White;
             comboBoxModel.FormattingEnabled = true;
             comboBoxModel.Location = new Point(22, 357);
             comboBoxModel.Name = "comboBoxModel";
@@ -214,47 +192,23 @@
             // 
             // driver
             // 
-            driver.BackColor = Color.White;
+            driver.BackColor = Color.FromArgb(22, 10, 95);
             driver.Font = new Font("NSimSun", 16.2F);
-            driver.ForeColor = Color.Black;
+            driver.ForeColor = Color.White;
             driver.Location = new Point(19, 575);
             driver.Name = "driver";
             driver.Size = new Size(350, 38);
             driver.TabIndex = 9;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
-            label5.ForeColor = Color.WhiteSmoke;
-            label5.Location = new Point(19, 544);
-            label5.Name = "label5";
-            label5.Size = new Size(88, 23);
-            label5.TabIndex = 8;
-            label5.Text = "Driver";
-            // 
             // phoneNo
             // 
-            phoneNo.BackColor = Color.White;
+            phoneNo.BackColor = Color.FromArgb(22, 10, 95);
             phoneNo.Font = new Font("NSimSun", 16.2F);
-            phoneNo.ForeColor = Color.Black;
+            phoneNo.ForeColor = Color.White;
             phoneNo.Location = new Point(19, 464);
             phoneNo.Name = "phoneNo";
             phoneNo.Size = new Size(350, 38);
             phoneNo.TabIndex = 12;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
-            label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(19, 433);
-            label1.Name = "label1";
-            label1.Size = new Size(114, 23);
-            label1.TabIndex = 11;
-            label1.Text = "Phone No";
             // 
             // button1
             // 
@@ -298,11 +252,11 @@
             // 
             title.AutoSize = true;
             title.BackColor = Color.Transparent;
-            title.Font = new Font("Sans Serif Collection", 7.8F, FontStyle.Bold);
+            title.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(3, 9);
+            title.Location = new Point(3, 7);
             title.Name = "title";
-            title.Size = new Size(81, 32);
+            title.Size = new Size(88, 23);
             title.TabIndex = 18;
             title.Text = "Parkin";
             // 
@@ -365,8 +319,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 10, 60);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.BackColor = Color.FromArgb(22, 10, 95);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(title);
             panel1.Dock = DockStyle.Top;
@@ -377,16 +330,16 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.Transparent;
+            button4.BackColor = Color.FromArgb(22, 10, 95);
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button4.ForeColor = Color.Brown;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(809, 1);
+            button4.Location = new Point(816, -1);
             button4.Name = "button4";
-            button4.Size = new Size(40, 40);
+            button4.Size = new Size(38, 42);
             button4.TabIndex = 59;
             button4.Text = "      Close";
             button4.UseVisualStyleBackColor = false;
@@ -771,25 +724,37 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(0, 0, 64);
-            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.BackColor = Color.FromArgb(22, 10, 95);
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(panel18);
+            panel3.Controls.Add(panel17);
+            panel3.Controls.Add(panel16);
+            panel3.Controls.Add(panel15);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(panel14);
+            panel3.Controls.Add(panel13);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(panel12);
+            panel3.Controls.Add(panel11);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(panel10);
+            panel3.Controls.Add(panel9);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(panel8);
+            panel3.Controls.Add(panel7);
+            panel3.Controls.Add(panel6);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(invalid);
-            panel3.Controls.Add(type);
-            panel3.Controls.Add(model);
             panel3.Controls.Add(button2);
             panel3.Controls.Add(button3);
             panel3.Controls.Add(comboBoxModel);
             panel3.Controls.Add(button1);
-            panel3.Controls.Add(label5);
             panel3.Controls.Add(driver);
             panel3.Controls.Add(plateNo);
             panel3.Controls.Add(invalidPhone);
-            panel3.Controls.Add(palteNo);
             panel3.Controls.Add(invalidDriver);
             panel3.Controls.Add(comboBoxType);
-            panel3.Controls.Add(label1);
             panel3.Controls.Add(phoneNo);
             panel3.Controls.Add(inValidM);
             panel3.Controls.Add(invalidT);
@@ -798,6 +763,152 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(847, 676);
             panel3.TabIndex = 59;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(19, 549);
+            label7.Name = "label7";
+            label7.Size = new Size(231, 23);
+            label7.TabIndex = 69;
+            label7.Text = "Driver (optional)";
+            // 
+            // panel18
+            // 
+            panel18.Location = new Point(11, 565);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(10, 47);
+            panel18.TabIndex = 68;
+            // 
+            // panel17
+            // 
+            panel17.Location = new Point(367, 568);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(10, 47);
+            panel17.TabIndex = 67;
+            // 
+            // panel16
+            // 
+            panel16.Location = new Point(15, 567);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(366, 10);
+            panel16.TabIndex = 67;
+            // 
+            // panel15
+            // 
+            panel15.Location = new Point(366, 453);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(10, 49);
+            panel15.TabIndex = 66;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(22, 438);
+            label6.Name = "label6";
+            label6.Size = new Size(257, 23);
+            label6.TabIndex = 68;
+            label6.Text = "Phone No (optional)";
+            // 
+            // panel14
+            // 
+            panel14.Location = new Point(11, 455);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(10, 47);
+            panel14.TabIndex = 67;
+            // 
+            // panel13
+            // 
+            panel13.Location = new Point(13, 456);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(366, 10);
+            panel13.TabIndex = 66;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(24, 337);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 23);
+            label5.TabIndex = 67;
+            label5.Text = "Model*";
+            // 
+            // panel12
+            // 
+            panel12.Location = new Point(12, 350);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(366, 10);
+            panel12.TabIndex = 65;
+            // 
+            // panel11
+            // 
+            panel11.Location = new Point(18, 349);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(10, 47);
+            panel11.TabIndex = 66;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(22, 228);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 23);
+            label4.TabIndex = 66;
+            label4.Text = "Type*";
+            // 
+            // panel10
+            // 
+            panel10.Location = new Point(14, 246);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(10, 47);
+            panel10.TabIndex = 65;
+            // 
+            // panel9
+            // 
+            panel9.Location = new Point(12, 246);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(366, 10);
+            panel9.TabIndex = 64;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("NSimSun", 13.8F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(22, 120);
+            label1.Name = "label1";
+            label1.Size = new Size(127, 23);
+            label1.TabIndex = 62;
+            label1.Text = "Plate No*";
+            // 
+            // panel8
+            // 
+            panel8.Location = new Point(374, 143);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(10, 44);
+            panel8.TabIndex = 65;
+            // 
+            // panel7
+            // 
+            panel7.Location = new Point(12, 141);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(10, 47);
+            panel7.TabIndex = 64;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(15, 138);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(366, 10);
+            panel6.TabIndex = 63;
             // 
             // label2
             // 
@@ -813,8 +924,8 @@
             // 
             // panel4
             // 
+            panel4.BackColor = Color.FromArgb(22, 10, 95);
             panel4.BackgroundImageLayout = ImageLayout.Stretch;
-            panel4.BorderStyle = BorderStyle.Fixed3D;
             panel4.Controls.Add(label3);
             panel4.Controls.Add(secondFloorPanel);
             panel4.Controls.Add(firstFloorPanel);
@@ -1346,7 +1457,7 @@
             a04.Name = "a04";
             a04.Size = new Size(163, 74);
             a04.TabIndex = 53;
-            a04.UseVisualStyleBackColor = false;
+            a04.UseVisualStyleBackColor = true;
             a04.Click += a04_Click;
             // 
             // a03
@@ -1465,7 +1576,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(0, 0, 64);
+            BackColor = Color.FromArgb(28, 22, 120);
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(855, 732);
             Controls.Add(panel3);
@@ -1496,17 +1607,11 @@
         }
 
         #endregion
-
-        private Label palteNo;
         private TextBox plateNo;
-        private Label type;
-        private Label model;
         private ComboBox comboBoxModel;
         private TextBox driver;
-        private Label label5;
         private ComboBox comboBoxType;
         private TextBox phoneNo;
-        private Label label1;
         private Button button1;
         private Button button2;
         private System.Windows.Forms.Timer timer1;
@@ -1595,5 +1700,23 @@
         private Label labelB9;
         private Button b10;
         private Button b09;
+        private Label label1;
+        private Panel panel8;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel18;
+        private Panel panel17;
+        private Panel panel16;
+        private Label label7;
+        private Panel panel15;
+        private Label label6;
+        private Panel panel14;
+        private Panel panel13;
+        private Label label5;
+        private Panel panel12;
+        private Panel panel11;
+        private Label label4;
+        private Panel panel10;
+        private Panel panel9;
     }
 }

@@ -46,6 +46,9 @@
             label3 = new Label();
             label2 = new Label();
             colorDialog1 = new ColorDialog();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -83,13 +86,16 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top;
+            panel2.Controls.Add(panel6);
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(panel4);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(searchVH);
-            panel2.Location = new Point(872, 71);
+            panel2.Location = new Point(833, 63);
             panel2.Name = "panel2";
-            panel2.Size = new Size(517, 60);
+            panel2.Size = new Size(556, 68);
             panel2.TabIndex = 3;
             // 
             // button2
@@ -97,7 +103,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(441, 18);
+            button2.Location = new Point(482, 21);
             button2.Name = "button2";
             button2.Size = new Size(64, 29);
             button2.TabIndex = 4;
@@ -110,7 +116,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(371, 18);
+            button3.Location = new Point(412, 21);
             button3.Name = "button3";
             button3.Size = new Size(64, 29);
             button3.TabIndex = 5;
@@ -123,7 +129,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(271, 10);
+            button1.Location = new Point(312, 13);
             button1.Name = "button1";
             button1.Size = new Size(48, 44);
             button1.TabIndex = 1;
@@ -132,10 +138,13 @@
             // 
             // searchVH
             // 
-            searchVH.Location = new Point(16, 18);
+            searchVH.BackColor = Color.FromArgb(22, 19, 64);
+            searchVH.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchVH.ForeColor = Color.White;
+            searchVH.Location = new Point(57, 18);
             searchVH.Name = "searchVH";
             searchVH.PlaceholderText = "Enter Plate No.";
-            searchVH.Size = new Size(249, 27);
+            searchVH.Size = new Size(249, 34);
             searchVH.TabIndex = 0;
             // 
             // panel3
@@ -181,7 +190,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(718, 22);
+            label6.Location = new Point(721, 22);
             label6.Name = "label6";
             label6.Size = new Size(179, 23);
             label6.TabIndex = 4;
@@ -192,7 +201,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(543, 22);
+            label5.Location = new Point(541, 22);
             label5.Name = "label5";
             label5.Size = new Size(169, 23);
             label5.TabIndex = 3;
@@ -230,6 +239,27 @@
             label2.Size = new Size(91, 23);
             label2.TabIndex = 0;
             label2.Text = "Plate No.";
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(50, 16);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(10, 35);
+            panel4.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            panel5.Location = new Point(54, 10);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(258, 10);
+            panel5.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(304, 17);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(10, 35);
+            panel6.TabIndex = 6;
             // 
             // History
             // 
@@ -272,5 +302,8 @@
         private Label label2;
         private ColorDialog colorDialog1;
         private Button button2;
+        private Panel panel6;
+        private Panel panel5;
+        private Panel panel4;
     }
 }

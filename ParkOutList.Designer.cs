@@ -70,6 +70,7 @@
             // parkout
             // 
             parkout.BackColor = SystemColors.ButtonFace;
+            parkout.Cursor = Cursors.Hand;
             parkout.FlatStyle = FlatStyle.Flat;
             parkout.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             parkout.ForeColor = Color.Black;
@@ -85,7 +86,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(26, 22, 71);
+            BackColor = Color.FromArgb(22, 10, 115);
             Controls.Add(parkout);
             Controls.Add(brand);
             Controls.Add(type);

@@ -49,6 +49,12 @@ namespace Parking
             Usersdata.Add(new User("Jane", "Doe", 98765210, "Female", "jane@example.com", "password"));*/
         }
 
+        public string getFirstname() {
+            return Usersdata[0].FirstName;
+        }
+        public string getGender() {
+            return Usersdata[0].Gender;
+        }
         public void addUser(User user)
         {
             Usersdata.Add(user);
@@ -178,7 +184,8 @@ namespace Parking
          public double Amount { get; set; }
         public double Cash { get; set; }
         public double Changed { get; set; }
-         
+      
+
         public ParkingHistoyRecord()
         {
              
@@ -206,6 +213,7 @@ namespace Parking
                 Amount = amount;
                 Cash = cash;
                 Changed = change;
+                 
                 
         }     
     }
@@ -282,7 +290,9 @@ namespace Parking
                 }
             }
             
-        }       
+        }   
+        
+
         public void RemoveParkingRecord(ParkingRecord parkingRecord)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -468,6 +478,9 @@ namespace Parking
 
                     while (reader.Read())
                     {
+                        DateTime arrivalDate = (DateTime)reader["arrivalDate"];
+                        TimeSpan arrivalTime = (TimeSpan)reader["arrivalTime"];
+                        DateTime time = DateTime.Today.Add(arrivalTime);
                         parkingHistoryRecords.Add(
                             new ParkingHistoyRecord(
                                 (int)reader["v_id"],
@@ -477,15 +490,15 @@ namespace Parking
                                 reader["model"].ToString(),
                                 reader["driver"].ToString(),
                                 reader["phone"].ToString(),
-                                reader["arrivalDate"].ToString(),
-                                reader["arrivalTime"].ToString(),
+                                arrivalDate.ToString("MM/dd/yyyy"),
+                                time.ToString("hh:mm:ss tt"),
                                 reader["departureDate"].ToString(),
                                 reader["departureTime"].ToString(),
                                 (double)reader["hours"],
                                 (double)reader["amount"],
                                 (double)reader["cash"],
                                 (double)reader["change"])
-                              
+                               
                             );
                               
                     }

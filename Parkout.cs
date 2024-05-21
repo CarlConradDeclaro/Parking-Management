@@ -10,17 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
 
 namespace Parking
 {
     public partial class Parkout : Form
     {
 
-       public event EventHandler ParkingRecordAdded;
+        public event EventHandler ParkingRecordAdded;
         public event EventHandler Parking;
         private string palteNum, Type;
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
- 
+
 
         private static Parkout instance;
 
@@ -34,7 +35,8 @@ namespace Parking
             }
         }
 
-        public FlowLayoutPanel getFlowVH() {
+        public FlowLayoutPanel getFlowVH()
+        {
             return flowPanelVH;
         }
 
@@ -44,7 +46,12 @@ namespace Parking
         public Parkout()
         {
             InitializeComponent();
+            panel1.SetRoundedCorners(15);
+            flowPanel.SetRoundedCorners(15);
+            listOfVehicle.SetRoundedCorners(2);
+           
         }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -114,7 +121,7 @@ namespace Parking
             Type = type;
         }
 
-       
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -125,73 +132,74 @@ namespace Parking
             if (palteNum == null || palteNum == "")
             {
                 MessageBox.Show("Please select a vehicle", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else
-            for (int i = allParkingRecords.Count - 1; i >= 0; i--)
-            {
-                var record = allParkingRecords[i];
-
-                if (record.Status != "Cleared" && record.PlateNumber == palteNum)
+            }
+            else
+                for (int i = allParkingRecords.Count - 1; i >= 0; i--)
                 {
-                    var parkingHistoryRecords = ParkingRecordsManager.Instance;
+                    var record = allParkingRecords[i];
 
-                 
-                    if (enterAmt.Text != "")
+                    if (record.Status != "Cleared" && record.PlateNumber == palteNum)
                     {
-                        if (!double.TryParse(enterAmt.Text, out double amt))
+                        var parkingHistoryRecords = ParkingRecordsManager.Instance;
+
+
+                        if (enterAmt.Text != "")
                         {
-                            MessageBox.Show("Invalid input. Please enter a valid numeric amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                        else
-                        {
-                            if (setAmt.Text != "" && double.Parse(enterAmt.Text) >= double.Parse(setAmt.Text))
+                            if (!double.TryParse(enterAmt.Text, out double amt))
                             {
-
-                                record.Status = "Cleared";
-                                setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
-                                setStatus.Text = "Successfully paid the amount";
-                                setStatus.ForeColor = Color.GreenYellow;
-
-                                ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id, convertSlocToSId(record.S_location), record.PlateNumber,
-                                                                                        record.Type, record.Model, record.Driver, record.Phone,
-                                                                                        record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"),
-                                                                                        parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text),
-                                                                                        Double.Parse(enterAmt.Text));
-                                parkingRecordsManager.AddParkingHistoryRecord(carDetails);
-                                UpdateVehicleFromList(record.PlateNumber);
-                                updateAvailability_query(record.S_location);
-                                palteNum = null;
+                                MessageBox.Show("Invalid input. Please enter a valid numeric amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                             else
                             {
-                                if (setHours.Text != "")
+                                if (setAmt.Text != "" && double.Parse(enterAmt.Text) >= double.Parse(setAmt.Text))
                                 {
-                                    MessageBox.Show("Insufficient amount", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    break;
+
+                                    record.Status = "Cleared";
+                                    setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
+                                    setStatus.Text = "Successfully paid the amount";
+                                    setStatus.ForeColor = Color.Green;
+
+                                    ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id, convertSlocToSId(record.S_location), record.PlateNumber,
+                                                                                            record.Type, record.Model, record.Driver, record.Phone,
+                                                                                            record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"),
+                                                                                            parkOutTime.Value.ToString("hh:mm:ss tt"), setTIME, setHOURS, Double.Parse(setChange.Text),
+                                                                                            Double.Parse(enterAmt.Text));
+                                    parkingRecordsManager.AddParkingHistoryRecord(carDetails);
+                                    UpdateVehicleFromList(record.PlateNumber);
+                                    updateAvailability_query(record.S_location);
+                                    palteNum = null;
+                                    return;
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Please set Date/Time", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
+                                    if (setHours.Text != "")
+                                    {
+                                        MessageBox.Show("Insufficient amount", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Please set Date/Time", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
 
-                                break;
+                                    break;
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    } 
+                        else
+                        {
+                            MessageBox.Show("Please enter amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        }
                         Parking?.Invoke(this, EventArgs.Empty);
+                    }
+
+
                 }
-                
-                  
-            }
             Parkin parkin = new Parkin();
             parkin.setIsParkin(false);
-            
+
         }
 
 
@@ -218,7 +226,8 @@ namespace Parking
             }
         }
 
-        private int convertSlocToSId(string s_loc) {
+        private int convertSlocToSId(string s_loc)
+        {
             int s_id = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -235,13 +244,13 @@ namespace Parking
 
                     if (result != null)
                     {
-                        s_id = (int)result; 
+                        s_id = (int)result;
                     }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error: " + ex.Message);
-                     
+
                 }
             }
 
@@ -256,10 +265,10 @@ namespace Parking
             DateTime transactionDate = DateTime.Now;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                
+
                 using (SqlCommand command = new SqlCommand(insertQuery, connection))
                 {
-                  
+
                     command.Parameters.AddWithValue("@v_id", vehicleId);
                     command.Parameters.AddWithValue("@s_id", slotId);
                     command.Parameters.AddWithValue("@transaction_date", transactionDate);
@@ -268,13 +277,13 @@ namespace Parking
 
                     try
                     {
-                         
+
                         connection.Open();
 
-                     
+
                         int rowsAffected = command.ExecuteNonQuery();
 
-                        
+
                         if (rowsAffected > 0)
                         {
                             Console.WriteLine("Data inserted successfully.");
@@ -375,23 +384,23 @@ namespace Parking
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
             bool foundRecord = false;
-            if(searchVHTxt.Text != "")
-            for (int i = allParkingRecords.Count - 1; i >= 0; i--)
-            {
-                var record = allParkingRecords[i];
-                if (record.Status != "cleared")
+            if (searchVHTxt.Text != "")
+                for (int i = allParkingRecords.Count - 1; i >= 0; i--)
                 {
-                    if (record.PlateNumber.Contains(searchVHTxt.Text))
+                    var record = allParkingRecords[i];
+                    if (record.Status != "cleared")
                     {
-                        ParkOutList POL = new ParkOutList(flowPanelVH, this, setAmt, setStatus);
-                        POL.UpdateLabels(record);
-                        POL.ParkingRecordAdded += ParkOutList_ParkingRecordAdded;
-                        listOfVehicle.Controls.Add(POL);
-                        foundRecord = true;
+                        if (record.PlateNumber.Contains(searchVHTxt.Text))
+                        {
+                            ParkOutList POL = new ParkOutList(flowPanelVH, this, setAmt, setStatus);
+                            POL.UpdateLabels(record);
+                            POL.ParkingRecordAdded += ParkOutList_ParkingRecordAdded;
+                            listOfVehicle.Controls.Add(POL);
+                            foundRecord = true;
+                        }
                     }
-                }
 
-            }
+                }
             if (!foundRecord)
             {
                 Label noResultsLabel = new Label();
@@ -433,116 +442,158 @@ namespace Parking
         {
 
         }
-        double setHOURS,setTIME;   
+        double setHOURS, setTIME;
         private void button5_Click(object sender, EventArgs e)
         {
             //here to compute time/amt
             setStatus.Text = "Not Paid";
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
-            if(flowPanelVH.Controls.Count != 0)
-            for (int i = allParkingRecords.Count - 1; i >= 0; i--)
-            {
-                var record = allParkingRecords[i];
-                if (record.PlateNumber == palteNum)
-                {           
+            if (flowPanelVH.Controls.Count != 0)
+                for (int i = allParkingRecords.Count - 1; i >= 0; i--)
+                {
+                    var record = allParkingRecords[i];
+                    if (record.PlateNumber == palteNum)
+                    {
                         if (record.Status != "Cleared")
                         {
 
-                        double flagDown = 0;
-                        double succeedingAmt = 0;
-                        var vehiclemanger = VehicleManger.Instance;
-                        var VPM = vehiclemanger.GetVPM();
-                        foreach (var vpm in VPM)
-                        {
-                            if (vpm.vehicleType == Type)
+                            double flagDown = 0;
+                            double succeedingAmt = 0;
+                            var vehiclemanger = VehicleManger.Instance;
+                            var VPM = vehiclemanger.GetVPM();
+                            foreach (var vpm in VPM)
                             {
-                                flagDown = vpm.flagDown;
-                                succeedingAmt = vpm.additionalAmtPerHour;
+                                if (vpm.vehicleType == Type)
+                                {
+                                    flagDown = vpm.flagDown;
+                                    succeedingAmt = vpm.additionalAmtPerHour;
+                                }
+                            }
+                            // arrival dateTime
+                            string arrivalDate = record.ArrivalDate;
+                            string arrvalTime = record.ArrivalTime;
+                            string arrivalDateTime = arrivalDate + " " + arrvalTime;
+                            DateTime parkin = DateTime.Parse(arrivalDateTime);
+                            // Park out time
+                            DateTime selectedDate = parkOutDate.Value;
+                            DateTime selectedTime = parkOutTime.Value;
+                            string formattedDateTime = selectedDate.ToString("MM/dd/yyyy");
+                            string time = selectedTime.ToString("hh:mm:ss tt");
+                            string parkout = formattedDateTime + " " + time;
+                            DateTime toPARKOUT = DateTime.Parse(parkout);
+                            TimeSpan duration = toPARKOUT - parkin;
+                            int HOURS = 0;
+                            int day = 0;
+                            int year = toPARKOUT.Year - parkin.Year;
+
+                            if (year >= 1)
+                            {
+                                day = (int)duration.TotalDays % 365;
+                                HOURS = ((int)duration.TotalHours - year * 24 * 365) % 24;
+                                Console.WriteLine("Parking Time: " + year + " Year/s " + day + " Day/s " + " and " + HOURS.ToString("0.00") + " Hour/s");
+                            }
+                            else if (duration.TotalHours > 23)
+                            {
+                                day = (int)duration.TotalDays;
+                                HOURS = (int)duration.TotalHours % 24;
+                                Console.WriteLine("Parking Time: " + day + " Day/s " + " and " + HOURS.ToString("0.00") + " Hour/s");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Parking Time: " + duration.Hours.ToString("0.00") + " Hour/s");
+                            }
+
+                            HOURS = (int)duration.TotalHours;
+                            double amount = flagDown;
+                            double totalAmount = 0;
+
+                            if (HOURS >= 1)
+                            {
+                                totalAmount = (int)(amount + succeedingAmt * HOURS);
+                            }
+                            else
+                            {
+                                totalAmount = amount;
+                            }
+
+
+                            int hours = HOURS;
+                            int amt = (int)totalAmount;
+
+
+
+                            if (toPARKOUT >= parkin)
+                            {
+                                setHOURS = amt;
+                                setTIME = hours;
+                                setAmt.Text = amt + "";
+                                setHours.Text = hours + "";
+                                invalidT.Text = "";
+                                invalidD.Text = "";
+                            }
+                            else
+                            {
+                                DateTime p1 = DateTime.Parse(arrivalDate);
+                                DateTime p2 = DateTime.Parse(arrvalTime);
+
+                                if (parkOutDate.Value < p1 && parkOutTime.Value < p2)
+                                {
+                                    invalidD.Text = "Cannot set on Past Date!";
+                                    invalidT.Text = "Invalid Time!";
+                                }
+                                else if (parkOutDate.Value < p1)
+                                    invalidD.Text = "Cannot set on PastDate!";
+                                else if (parkOutTime.Value < p2)
+                                {
+                                    invalidT.Text = "Invalid Time!";
+                                }
                             }
                         }
-                        // arrival dateTime
-                        string arrivalDate = record.ArrivalDate;
-                        string arrvalTime = record.ArrivalTime;
-                        string arrivalDateTime = arrivalDate + " " + arrvalTime;
-                        DateTime parkin = DateTime.Parse(arrivalDateTime);                 
-                        // Park out time
-                        DateTime selectedDate = parkOutDate.Value;
-                        DateTime selectedTime = parkOutTime.Value;
-                        string formattedDateTime = selectedDate.ToString("MM/dd/yyyy");
-                        string time = selectedTime.ToString("hh:mm:ss tt");
-                        string parkout = formattedDateTime + " " + time;
-                        DateTime toPARKOUT = DateTime.Parse(parkout);
-                        TimeSpan duration = toPARKOUT -  parkin;
-                        int HOURS = 0;
-                        int day = 0;
-                        int year = toPARKOUT.Year - parkin.Year;
-
-                        if (year >= 1)
-                        {
-                            day = (int)duration.TotalDays % 365;
-                            HOURS = ((int)duration.TotalHours - year * 24 * 365) % 24;
-                            Console.WriteLine("Parking Time: " + year + " Year/s " + day + " Day/s " + " and " + HOURS.ToString("0.00") + " Hour/s");
-                        }
-                        else if (duration.TotalHours > 23)
-                        {
-                            day = (int)duration.TotalDays;
-                            HOURS = (int)duration.TotalHours % 24;
-                            Console.WriteLine("Parking Time: " + day + " Day/s " + " and " + HOURS.ToString("0.00") + " Hour/s");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Parking Time: " + duration.Hours.ToString("0.00") + " Hour/s");
-                        }
-
-                        HOURS =(int) duration.TotalHours;
-                        double amount = flagDown;
-                        double totalAmount = 0;
-
-                        if (HOURS >= 1)
-                        {
-                            totalAmount = (int)(amount + succeedingAmt * HOURS);
-                        }
-                        else
-                        {
-                            totalAmount =amount;
-                        }
-
-
-                        int hours = HOURS;
-                        int amt =(int) totalAmount;
-
-
-
-                        if (toPARKOUT >= parkin)
-                        {
-                            setHOURS = amt;
-                            setTIME = hours;
-                            setAmt.Text = amt + "";
-                            setHours.Text = hours + "";
-                            invalidT.Text = "";
-                            invalidD.Text = "";
-                        }
-                        else
-                        {
-                             DateTime p1 = DateTime.Parse(arrivalDate);
-                            DateTime p2 = DateTime.Parse(arrvalTime);
-
-                            if (parkOutDate.Value < p1 && parkOutTime.Value < p2)
-                            {
-                                invalidD.Text = "Cannot set on Past Date!";
-                                invalidT.Text = "Invalid Time!";
-                            }
-                            else if (parkOutDate.Value < p1)
-                                invalidD.Text = "Cannot set on PastDate!";
-                            else if (parkOutTime.Value < p2)
-                            {
-                                invalidT.Text = "Invalid Time!";
-                            }                                                    
-                        }
-                    }            
+                    }
                 }
-            }           
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Parking?.Invoke(this, EventArgs.Empty);
+            this.Close();
+        }
+    }
+
+
+    public static class PanelExtensions
+    {
+        public static void SetRoundedCorners(this Panel panel, int borderRadius)
+        {
+            panel.Paint += (sender, e) =>
+            {
+                Graphics g = e.Graphics;
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+
+                Rectangle bounds = new Rectangle(0, 0, panel.Width, panel.Height);
+                int diameter = borderRadius * 2;
+                GraphicsPath path = new GraphicsPath();
+                path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+                path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y, diameter, diameter, 270, 90);
+                path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y + bounds.Height - diameter, diameter, diameter, 0, 90);
+                path.AddArc(bounds.X, bounds.Y + bounds.Height - diameter, diameter, diameter, 90, 90);
+                path.CloseFigure();
+
+                panel.Region = new Region(path);
+
+                using (Pen pen = new Pen(panel.BackColor, 2))
+                {
+                    g.DrawPath(pen, path);
+                }
+            };
+
+            // Invalidate to ensure the panel is redrawn
+            panel.Invalidate();
         }
     }
 }
+
+
+
+

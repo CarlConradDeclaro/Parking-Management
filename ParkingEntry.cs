@@ -14,6 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Net.Mime.MediaTypeNames;
 using Image = System.Drawing.Image;
 using Button = System.Windows.Forms.Button;
+using System.Drawing.Drawing2D;
 
 namespace Parking
 {
@@ -41,6 +42,7 @@ namespace Parking
 
             firstFloorPanel.Hide();
             secondFloorPanel.Hide();
+         
         }
 
 
@@ -48,6 +50,7 @@ namespace Parking
         public ParkingEntry()
         {
             InitializeComponent();
+          
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -73,103 +76,90 @@ namespace Parking
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //CALCULATE AMD VALIDATE HERE
+           
             string platenum = plateNo.Text;
             string type = comboBoxType.SelectedItem?.ToString();
             string model = comboBoxModel.SelectedItem?.ToString();
             string s_loc = getSloc();
             string driverName = driver.Text;
-            string phoneNUm = phoneNo.Text;
+            string phoneNum = phoneNo.Text;
             DateTime currentDateTime = DateTime.Now;
             string ArrivalDate = currentDateTime.ToString("MM/dd/yyyy");
             string ArrivalTime = currentDateTime.ToString("hh:mm:ss tt");
 
-            int proccedAddItem = 0;
+            int proceedAddItem = 0;
+
+         
+            inValidPN.Text = "";
+            invalidT.Text = "";
+            inValidM.Text = "";
+            invalidDriver.Text = "";
+            invalidPhone.Text = "";
+            invalid.Text = "";
 
             
-
-
-            if (platenum != "")
+            if (!string.IsNullOrWhiteSpace(platenum) && platenum.All(char.IsLetterOrDigit))
             {
-                proccedAddItem++;
-                inValidPN.Text = "";
+                proceedAddItem++;
             }
             else
             {
-                inValidPN.Text = "please enter specified value";
+                inValidPN.Text = "Please enter a valid plate number.";
             }
 
+         
             if (type != null)
             {
-                proccedAddItem++;
-                invalidT.Text = "";
+                proceedAddItem++;
             }
             else
             {
-                invalidT.Text = "please enter specified value";
+                invalidT.Text = "Please select a type.";
             }
+
+       
             if (model != null)
             {
-                proccedAddItem++;
-                inValidM.Text = "";
+                proceedAddItem++;
             }
             else
             {
-                inValidM.Text = "please enter specified value";
+                inValidM.Text = "Please select a model.";
             }
-            if (double.TryParse(driver.Text, out _))
+
+           
+            if (string.IsNullOrWhiteSpace(driverName) || !double.TryParse(driverName, out _))
             {
-                invalidDriver.Text = "Invalid name";
+                proceedAddItem++;
             }
             else
             {
-
-                invalidDriver.Text = "";
+                invalidDriver.Text = "Invalid name. Name should not be numeric.";
             }
 
-            if (phoneNUm != "")
-                if (!double.TryParse(phoneNo.Text, out _))
-                {
-                    invalidPhone.Text = "Please enter a valid numeric number";
-                }
-                else
-                {
-                    proccedAddItem++;
-                    invalidPhone.Text = "";
-                }
+           
+            if (string.IsNullOrWhiteSpace(phoneNum) || double.TryParse(phoneNum, out _))
+            {
+                proceedAddItem++;
+            }
             else
             {
-                proccedAddItem++;
-                invalidPhone.Text = "";
+                invalidPhone.Text = "Please enter a valid numeric phone number.";
             }
 
-            
-            
-            if (proccedAddItem == 4)
+            if (proceedAddItem == 5)
             {
-
-                ParkingRecord carDetails = new ParkingRecord(0, platenum.ToUpper(), type, model,
-                    driverName, phoneNUm, ArrivalDate, ArrivalTime, "PARKED", s_loc,UserDetails.Instance.getId());
+                ParkingRecord carDetails = new ParkingRecord(0, platenum.ToUpper(), type, model, driverName, phoneNum, ArrivalDate, ArrivalTime, "PARKED", s_loc, UserDetails.Instance.getId());
                 var parkingRecordsManager = ParkingRecordsManager.Instance;
                 var records = parkingRecordsManager.GetAllParkingRecords();
 
-                bool isAlreadyInList = false;
-
-                foreach (var record in records)
-                {
-                    // Assuming Platenum uniquely identifies a parking record
-                    if (record.PlateNumber.ToUpper() == platenum.ToUpper() && record.Status == "PARKED")
-                    {
-                        isAlreadyInList = true;
-                        break;
-                    }
-                }
+                bool isAlreadyInList = records.Any(record => record.PlateNumber.ToUpper() == platenum.ToUpper() && record.Status == "PARKED");
 
                 if (!isAlreadyInList)
                 {
-                    if (getSloc() != null)
+                    if (s_loc != null)
                     {
-                        if (!isOccupied(getSloc()))
+                        if (!isOccupied(s_loc))
                         {
                             parkingRecordsManager.AddParkingRecord(carDetails);
                             ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
@@ -180,37 +170,37 @@ namespace Parking
                             Parkin parkin = new Parkin();
                             parkin.setIsParkin(true);
 
-                            if (getSelectedArea()) {
+                            if (getSelectedArea())
+                            {
                                 setSelectedArea(false);
                                 this.Close();
                                 ParkingRecordAdded?.Invoke(this, EventArgs.Empty);
                             }
                         }
-                        else {
+                        else
+                        {
                             MessageBox.Show("Please select another slot", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
+                    {
                         MessageBox.Show("Please select a slot area for this vehicle!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("OPPS!, Vehicle is already in the list", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("OOPS! Vehicle is already in the list", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             else
             {
                 invalid.Text = "Invalid Fields";
                 invalid.ForeColor = Color.Red;
             }
-
-
-
         }
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Clear existing items in comboBoxModel
+            
              
          
             comboBoxModel.Items.Clear();
@@ -306,6 +296,8 @@ namespace Parking
             {
                 comboBoxType.Items.Add(record.vehicleType);
             }
+           
+
 
         }
 
@@ -426,6 +418,7 @@ namespace Parking
                     labels[i].Hide();
                 }         
             }
+          
         }
         private bool isOccupied(string slotName)
         {
@@ -1533,5 +1526,11 @@ namespace Parking
                 MessageBox.Show("Can't perform action, you have already selected a slot area!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+
+       
     }
+
+    
+
 }

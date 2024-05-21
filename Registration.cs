@@ -17,7 +17,8 @@ namespace Parking
 
     public partial class Registration : Form
     {
-       
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+
         public Registration()
         {
             InitializeComponent();
@@ -72,7 +73,7 @@ namespace Parking
 
         private void createAccBtn_Click(object sender, EventArgs e)
         {
-          
+
             string firstname = fname.Text;
             string lastname = Lname.Text;
             string Password = password.Text;
@@ -80,15 +81,15 @@ namespace Parking
             string phoneNum = number.Text;
             string gender = comboBoxGender.SelectedItem?.ToString();
 
-            
+
             bool hasError = false;
 
-             
+
             string namePattern = @"^[a-zA-Z]+$";
             string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             string phonePattern = @"^\d+$";
 
-           
+
             if (string.IsNullOrWhiteSpace(firstname) || !System.Text.RegularExpressions.Regex.IsMatch(firstname, namePattern))
             {
                 errorLabelFN.Text = "Please enter a valid first name (letters only)";
@@ -99,7 +100,7 @@ namespace Parking
                 errorLabelFN.Text = "";
             }
 
-           
+
             if (string.IsNullOrWhiteSpace(lastname) || !System.Text.RegularExpressions.Regex.IsMatch(lastname, namePattern))
             {
                 errorLabelLN.Text = "Please enter a valid last name (letters only)";
@@ -110,7 +111,7 @@ namespace Parking
                 errorLabelLN.Text = "";
             }
 
-           
+
             if (string.IsNullOrWhiteSpace(Password))
             {
                 errorLabelPass.Text = "Please enter a specified value";
@@ -120,7 +121,7 @@ namespace Parking
             {
                 errorLabelPass.Text = "";
             }
-         
+
             if (string.IsNullOrWhiteSpace(Email) || !System.Text.RegularExpressions.Regex.IsMatch(Email, emailPattern))
             {
                 errorLabelEmail.Text = "Please enter a valid email address";
@@ -130,7 +131,7 @@ namespace Parking
             {
                 errorLabelEmail.Text = "";
             }
-         
+
             if (string.IsNullOrWhiteSpace(phoneNum) || !System.Text.RegularExpressions.Regex.IsMatch(phoneNum, phonePattern))
             {
                 errorLabelPhoneNum.Text = "Please enter a valid phone number (digits only)";
@@ -140,7 +141,7 @@ namespace Parking
             {
                 errorLabelPhoneNum.Text = "";
             }
-           
+
             if (string.IsNullOrWhiteSpace(gender))
             {
                 errorLabelGender.Text = "Please select a gender";
@@ -150,7 +151,7 @@ namespace Parking
             {
                 errorLabelGender.Text = "";
             }
-           
+
             if (!hasError)
             {
                 User user = new User(
@@ -162,23 +163,17 @@ namespace Parking
                     Password
                 );
 
-                AddUser(user);
-
-                /*login logIn = new login();
-                logIn.Show();
-                this.Hide();*/
+                AddUser(user, connectionString);
                 var c = UserDetails.Instance;
                 c.addUser(user);
                 Form1 content = new Form1();
                 content.Show();
+                InsertAdminLog(getAdminId(Email, connectionString), firstname + " " + lastname, connectionString);
                 this.Hide();
             }
         }
-       
-
-        public static void AddUser(User user)
+        public static void AddUser(User user, string connectionString)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -193,6 +188,63 @@ namespace Parking
                 cmd.Parameters.AddWithValue("@Password", user.getPassword());
                 cmd.ExecuteNonQuery();
             }
+
+        }
+
+        private void InsertAdminLog(int adminID, string adminName, string connectionString)
+        {
+
+            string query = "INSERT INTO Admin_logs (adminID, adminName, timestamp) VALUES (@adminID, @adminName, GETDATE())";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@adminID", adminID);
+                        command.Parameters.AddWithValue("@adminName", adminName);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private int getAdminId(string email, string connectionString)
+        {
+            string query = "SELECT id FROM UsersData WHERE email = @email";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@email", email);
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 0;
+                }
+            }
+        }
+
+        private void Registration_Load(object sender, EventArgs e)
+        {
 
         }
     }

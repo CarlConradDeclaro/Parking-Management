@@ -124,6 +124,9 @@
   <data name="listView2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\listView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="maleAdmin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\maleAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Car11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Car11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,8 +142,11 @@
   <data name="Car17" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Car12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Car12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carIcon21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\carIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Car110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,20 +154,26 @@
   <data name="Car16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="maleAdmin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\maleAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="motorbike1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\motorbike1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backgroundParkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\backgroundParkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="parkingLot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\parkingLot.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maleAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\maleAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="listView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\listView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Car13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Car13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Car18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caarTranspa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caarTranspa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,29 +190,38 @@
   <data name="1736" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\underground-car-parking-garage-with-vacant-places\1736.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Car19" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Car12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tableView1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\tableView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Car15" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Car2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Car2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carIcon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Car18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Car15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Car19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carIcon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\carIcon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="motorBikeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\motorBikeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="registerIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\registerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Car23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Car2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,13 +235,13 @@
   <data name="registerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\registerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Car110" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backgroundParkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\backgroundParkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Car14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Car14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caricon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\caricon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

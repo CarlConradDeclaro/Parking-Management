@@ -8,6 +8,7 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
 
 namespace Parking
     {
@@ -48,11 +49,35 @@ namespace Parking
             OccupiedArea();
 
             var c = UserDetails.Instance;
-            User.Text = c.getName();
 
+            Image maleAdmin = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\maleAdmin.png");
+            Image femaleAdmin = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\femaleAdmin.png");
+
+            adminIcon.Image = c.getGender() == "MALE" ? maleAdmin : femaleAdmin;
+            adminName.Text = c.getFirstname();
+            adminPanel.SetRoundedCorners(20);
+            panel7.SetRoundedCorners(10);
+            panel8.SetRoundedCorners(10);
+            panel9.SetRoundedCorners(10);
+            panel10.SetRoundedCorners(10);
+            panel20.SetRoundedCorners(10);
+            panel4.SetRoundedCorners(10);
+            panel3.SetRoundedCorners(8);
+
+            panel16.SetRoundedCorners(10);
+            panel17.SetRoundedCorners(10);
+            panel18.SetRoundedCorners(10);
+
+           
         }
 
+      
 
+        private void isParkEmpty(bool isEmpty) {
+            if (isEmpty)
+                flowLayoutPanel2.Controls.Add(emptyPark);
+         
+        }
 
 
         public void setFlowVH(FlowLayoutPanel flowPanelVH)
@@ -153,13 +178,14 @@ namespace Parking
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
 
-            if (allParkingRecords.Count(r => r.Status == "PARKED") != 0 )
+            if (allParkingRecords.Count(r => r.Status == "PARKED") != 0)
             {
                 pOut = new Parkout();
                 pOut.Parking += ParkingRecordAddedHandler;
                 pOut.ShowDialog();
 
-            }else
+            }
+            else
                 MessageBox.Show("Opps, there are no vehicles to parkout.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -192,9 +218,16 @@ namespace Parking
             }
             refreshSearcHighlights();
             countSlots();
+
+
+            if (countParkedVehicle() == 0)
+                isParkEmpty(true);
+            else
+                isParkEmpty(false);
         }
 
-        public void countSlots() {
+        public void countSlots()
+        {
             numV.Text = 30 - countParkedVehicle() + "";
         }
 
@@ -229,6 +262,11 @@ namespace Parking
                     flowLayoutPanel2.Controls.Add(pL);
                 }
             }
+
+            if (countParkedVehicle() == 0)
+                isParkEmpty(true);
+            else
+                isParkEmpty(false);
         }
 
         private void btnCleared_Click(object sender, EventArgs e)
@@ -394,37 +432,39 @@ namespace Parking
 
         private void panel9_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            int width = panel9.Width;
-            int height = panel9.Height;
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddArc(0, 0, 20, 20, 180, 90); // Top-left corner
-            path.AddArc(width - 20, 0, 20, 20, 270, 90); // Top-right corner
-            path.AddArc(width - 20, height - 20, 20, 20, 0, 90); // Bottom-right corner
-            path.AddArc(0, height - 20, 20, 20, 90, 90); // Bottom-left corner
-            path.CloseFigure();
-            using (Pen pen = new Pen(Color.Black, 1)) // You can adjust color and thickness as needed
-            {
-                g.DrawPath(pen, path);
-            }
+            /* Graphics g = e.Graphics;
+             int width = panel9.Width;
+             int height = panel9.Height;
+             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+             path.AddArc(0, 0, 20, 20, 180, 90); // Top-left corner
+             path.AddArc(width - 20, 0, 20, 20, 270, 90); // Top-right corner
+             path.AddArc(width - 20, height - 20, 20, 20, 0, 90); // Bottom-right corner
+             path.AddArc(0, height - 20, 20, 20, 90, 90); // Bottom-left corner
+             path.CloseFigure();
+             using (Pen pen = new Pen(Color.Black, 1)) // You can adjust color and thickness as needed
+             {
+                 g.DrawPath(pen, path);
+             }*/
         }
         private void panel10_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            int width = panel10.Width;
-            int height = panel10.Height;
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddArc(0, 0, 20, 20, 180, 90);
-            path.AddArc(0, 0, 20, 20, 180, 90);
-            path.AddArc(width - 20, 0, 20, 20, 270, 90);
-            path.AddArc(width - 20, height - 20, 20, 20, 0, 90);
-            path.AddArc(0, height - 20, 20, 20, 90, 90);
-            path.CloseFigure();
-            using (Pen pen = new Pen(Color.Black, 1))
-            {
-                g.DrawPath(pen, path);
-            }
+            /* Graphics g = e.Graphics;
+             int width = panel10.Width;
+             int height = panel10.Height;
+             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+             path.AddArc(0, 0, 20, 20, 180, 90);
+             path.AddArc(0, 0, 20, 20, 180, 90);
+             path.AddArc(width - 20, 0, 20, 20, 270, 90);
+             path.AddArc(width - 20, height - 20, 20, 20, 0, 90);
+             path.AddArc(0, height - 20, 20, 20, 90, 90);
+             path.CloseFigure();
+             using (Pen pen = new Pen(Color.Black, 1))
+             {
+                 g.DrawPath(pen, path);
+             }*/
         }
+
+
 
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
@@ -699,7 +739,7 @@ namespace Parking
 
         private void b09_Click(object sender, EventArgs e)
         {
-            handleParkAreaClick("b9", "BM-08", 1);
+            handleParkAreaClick("b9", "BM-09", 1);
         }
 
         private void b10_Click(object sender, EventArgs e)
@@ -860,7 +900,8 @@ namespace Parking
             logOut();
         }
 
-        private void logOut() {
+        private void logOut()
+        {
             var c = UserDetails.Instance;
             c.clearUser();
 
@@ -910,11 +951,13 @@ namespace Parking
                 {
                     button[i].BackColor = Color.YellowGreen;
                     noFoundLabel.Text = "";
+                    break;
                 }
                 else
                 {
                     button[i].BackColor = Color.Transparent;
                     noFoundLabel.Text = "Not Found!";
+
                 }
         }
 
@@ -940,12 +983,59 @@ namespace Parking
                 MessageBox.Show("Opps, there are no vehicles to parkout.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-          
+
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             logOut();
         }
+
+        private void adminName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+}
+
+
+public static class PanelExtensions
+{
+    public static void SetRoundedCorners(this Panel panel, int borderRadius)
+    {
+        panel.Paint += (sender, e) =>
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            Rectangle bounds = new Rectangle(0, 0, panel.Width, panel.Height);
+            int diameter = borderRadius * 2;
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+            path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y, diameter, diameter, 270, 90);
+            path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y + bounds.Height - diameter, diameter, diameter, 0, 90);
+            path.AddArc(bounds.X, bounds.Y + bounds.Height - diameter, diameter, diameter, 90, 90);
+            path.CloseFigure();
+
+            panel.Region = new Region(path);
+
+            using (Pen pen = new Pen(panel.BackColor, 2))
+            {
+                g.DrawPath(pen, path);
+            }
+        };
+
+        
+        panel.Invalidate();
     }
 }

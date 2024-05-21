@@ -293,6 +293,26 @@ namespace Parking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carIcon21 {
+            get {
+                object obj = ResourceManager.GetObject("carIcon21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carIcon3 {
+            get {
+                object obj = ResourceManager.GetObject("carIcon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -343,6 +363,36 @@ namespace Parking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maleAdmin {
+            get {
+                object obj = ResourceManager.GetObject("maleAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maleAdmin1 {
+            get {
+                object obj = ResourceManager.GetObject("maleAdmin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maleAdmin2 {
+            get {
+                object obj = ResourceManager.GetObject("maleAdmin2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap motorbike1 {
             get {
                 object obj = ResourceManager.GetObject("motorbike1", resourceCulture);
@@ -376,6 +426,16 @@ namespace Parking.Properties {
         internal static System.Drawing.Bitmap registerIcon {
             get {
                 object obj = ResourceManager.GetObject("registerIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap registerIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("registerIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

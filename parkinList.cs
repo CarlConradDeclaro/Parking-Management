@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Parking
 {
@@ -27,11 +28,12 @@ namespace Parking
             this.numV = numV;
         
             this.numPV = numPV;
+            this.setRounded(8);
         }
 
         private void parkinList_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         public void UpdateLabels(ParkingRecord parkRecord)
@@ -115,5 +117,42 @@ namespace Parking
             editVehicle.editHandler += ParkOutList_ParkingRecordAdded;
             editVehicle.Show();
         }
+
+        public  void setRounded( int borderRadius)
+        {
+            this.Paint += (sender, e) =>
+            {
+                Graphics g = e.Graphics;
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+
+                Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
+                int diameter = borderRadius * 2;
+                GraphicsPath path = new GraphicsPath();
+                path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+                path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y, diameter, diameter, 270, 90);
+                path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y + bounds.Height - diameter, diameter, diameter, 0, 90);
+                path.AddArc(bounds.X, bounds.Y + bounds.Height - diameter, diameter, diameter, 90, 90);
+                path.CloseFigure();
+
+                this.Region = new Region(path);
+
+                using (Pen pen = new Pen(this.BackColor, 2))
+                {
+                    g.DrawPath(pen, path);
+                }
+            };
+
+            // Invalidate to ensure the panel is redrawn
+            this.Invalidate();
+        }
     }
+
+
+   
+
 }
+
+
+
+
+ 
