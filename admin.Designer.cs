@@ -169,7 +169,7 @@
             // 
             errorName.AutoSize = true;
             errorName.ForeColor = Color.Red;
-            errorName.Location = new Point(108, 127);
+            errorName.Location = new Point(108, 131);
             errorName.Name = "errorName";
             errorName.Size = new Size(0, 20);
             errorName.TabIndex = 25;
@@ -250,7 +250,7 @@
             // 
             panel15.Location = new Point(103, 13);
             panel15.Name = "panel15";
-            panel15.Size = new Size(209, 10);
+            panel15.Size = new Size(214, 10);
             panel15.TabIndex = 16;
             // 
             // panel14
@@ -265,12 +265,12 @@
             selectType.BackColor = Color.FromArgb(26, 22, 71);
             selectType.DropDownStyle = ComboBoxStyle.DropDownList;
             selectType.FlatStyle = FlatStyle.Flat;
-            selectType.Font = new Font("Segoe UI", 12F);
+            selectType.Font = new Font("Microsoft Sans Serif", 13.8F);
             selectType.ForeColor = Color.White;
             selectType.FormattingEnabled = true;
             selectType.Location = new Point(490, 19);
             selectType.Name = "selectType";
-            selectType.Size = new Size(200, 36);
+            selectType.Size = new Size(200, 37);
             selectType.TabIndex = 9;
             // 
             // label7
@@ -310,7 +310,7 @@
             // setBrandName
             // 
             setBrandName.BackColor = Color.FromArgb(26, 22, 71);
-            setBrandName.Font = new Font("Segoe UI", 12F);
+            setBrandName.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             setBrandName.ForeColor = Color.White;
             setBrandName.Location = new Point(107, 21);
             setBrandName.Name = "setBrandName";
@@ -447,7 +447,7 @@
             // setTypeName
             // 
             setTypeName.BackColor = Color.FromArgb(26, 22, 71);
-            setTypeName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            setTypeName.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             setTypeName.ForeColor = Color.White;
             setTypeName.Location = new Point(110, 25);
             setTypeName.Name = "setTypeName";
@@ -513,7 +513,7 @@
             // 
             // panel19
             // 
-            panel19.Location = new Point(68, 7);
+            panel19.Location = new Point(68, 10);
             panel19.Name = "panel19";
             panel19.Size = new Size(10, 35);
             panel19.TabIndex = 15;
@@ -557,12 +557,12 @@
             selectedItemType.BackColor = Color.FromArgb(26, 22, 71);
             selectedItemType.DropDownStyle = ComboBoxStyle.DropDownList;
             selectedItemType.FlatStyle = FlatStyle.Flat;
-            selectedItemType.Font = new Font("Segoe UI", 12F);
+            selectedItemType.Font = new Font("Microsoft Sans Serif", 13.8F);
             selectedItemType.ForeColor = Color.White;
             selectedItemType.FormattingEnabled = true;
             selectedItemType.Location = new Point(75, 8);
             selectedItemType.Name = "selectedItemType";
-            selectedItemType.Size = new Size(191, 36);
+            selectedItemType.Size = new Size(191, 37);
             selectedItemType.TabIndex = 11;
             selectedItemType.SelectedIndexChanged += selectedItemType_SelectedIndexChanged;
             // 
@@ -588,7 +588,7 @@
             // typeName
             // 
             typeName.BackColor = Color.FromArgb(26, 22, 71);
-            typeName.Font = new Font("Segoe UI", 12F);
+            typeName.Font = new Font("Microsoft Sans Serif", 13.8F);
             typeName.ForeColor = Color.White;
             typeName.Location = new Point(236, 174);
             typeName.Name = "typeName";
@@ -753,9 +753,9 @@
             // 
             // panel21
             // 
-            panel21.Location = new Point(228, 82);
+            panel21.Location = new Point(217, 82);
             panel21.Name = "panel21";
-            panel21.Size = new Size(189, 10);
+            panel21.Size = new Size(200, 10);
             panel21.TabIndex = 17;
             // 
             // panel20

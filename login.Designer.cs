@@ -110,7 +110,7 @@
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top;
-            panel3.BackColor = Color.FromArgb(12, 11, 50);
+            panel3.BackColor = Color.FromArgb(12, 11, 45);
             panel3.Controls.Add(loginbtn);
             panel3.Controls.Add(errorPass);
             panel3.Controls.Add(errorEmail);
@@ -198,7 +198,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(426, 309);
+            pictureBox4.Location = new Point(425, 309);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(10, 43);
             pictureBox4.TabIndex = 12;
@@ -262,7 +262,7 @@
             // 
             // password
             // 
-            password.BackColor = Color.FromArgb(12, 11, 50);
+            password.BackColor = Color.FromArgb(12, 11, 45);
             password.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             password.ForeColor = Color.White;
             password.Location = new Point(71, 309);
@@ -274,7 +274,7 @@
             // 
             // email
             // 
-            email.BackColor = Color.FromArgb(12, 11, 50);
+            email.BackColor = Color.FromArgb(12, 11, 45);
             email.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             email.ForeColor = Color.White;
             email.Location = new Point(71, 186);

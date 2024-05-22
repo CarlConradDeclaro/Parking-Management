@@ -452,7 +452,7 @@
             emptyPark.Controls.Add(panel28);
             emptyPark.Location = new Point(3, 3);
             emptyPark.Name = "emptyPark";
-            emptyPark.Size = new Size(1337, 239);
+            emptyPark.Size = new Size(1337, 421);
             emptyPark.TabIndex = 0;
             // 
             // label11
@@ -460,17 +460,17 @@
             label11.AutoSize = true;
             label11.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(489, 158);
+            label11.Location = new Point(472, 257);
             label11.Name = "label11";
-            label11.Size = new Size(270, 23);
+            label11.Size = new Size(283, 23);
             label11.TabIndex = 1;
-            label11.Text = "Parking lot is empty";
+            label11.Text = "Parking area is empty";
             // 
             // panel28
             // 
             panel28.BackgroundImage = (Image)resources.GetObject("panel28.BackgroundImage");
             panel28.BackgroundImageLayout = ImageLayout.Stretch;
-            panel28.Location = new Point(476, 71);
+            panel28.Location = new Point(468, 170);
             panel28.Name = "panel28";
             panel28.Size = new Size(291, 84);
             panel28.TabIndex = 0;
@@ -812,9 +812,9 @@
             // 
             profilePanel.Controls.Add(panel27);
             profilePanel.Controls.Add(profileDetailsPanel);
-            profilePanel.Location = new Point(34, 250);
+            profilePanel.Location = new Point(938, 1045);
             profilePanel.Name = "profilePanel";
-            profilePanel.Size = new Size(1649, 802);
+            profilePanel.Size = new Size(191, 130);
             profilePanel.TabIndex = 22;
             profilePanel.Paint += profilePanel_Paint;
             // 
@@ -829,7 +829,7 @@
             panel27.Controls.Add(label25);
             panel27.Controls.Add(label19);
             panel27.Controls.Add(passLabel);
-            panel27.Location = new Point(156, 423);
+            panel27.Location = new Point(-573, 423);
             panel27.Name = "panel27";
             panel27.Size = new Size(1368, 279);
             panel27.TabIndex = 7;
@@ -933,7 +933,7 @@
             profileDetailsPanel.Controls.Add(profileName);
             profileDetailsPanel.Controls.Add(panel30);
             profileDetailsPanel.Controls.Add(profileIcon);
-            profileDetailsPanel.Location = new Point(155, 36);
+            profileDetailsPanel.Location = new Point(-574, 36);
             profileDetailsPanel.Name = "profileDetailsPanel";
             profileDetailsPanel.Size = new Size(1368, 366);
             profileDetailsPanel.TabIndex = 0;

@@ -210,7 +210,7 @@
             btnCancel.ForeColor = Color.White;
             btnCancel.Image = (Image)resources.GetObject("btnCancel.Image");
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(547, 466);
+            btnCancel.Location = new Point(547, 471);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(108, 41);
             btnCancel.TabIndex = 14;
@@ -287,7 +287,7 @@
             // 
             // panel4
             // 
-            panel4.Location = new Point(436, 312);
+            panel4.Location = new Point(436, 313);
             panel4.Name = "panel4";
             panel4.Size = new Size(333, 14);
             panel4.TabIndex = 23;
