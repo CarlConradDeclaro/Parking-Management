@@ -33,14 +33,14 @@ namespace Parking
             {
                 setDriver.Text = parkingRecords.Driver;
             }
-            else
+            if (parkingRecords.Driver == "")
                 setDriver.Text = "N/A";
 
             if (parkingRecords.Phone != null)
             {
                 setPhone.Text = parkingRecords.Phone;
             }
-            else
+            if (parkingRecords.Phone == "")
                 setPhone.Text = "N/A";
 
         }

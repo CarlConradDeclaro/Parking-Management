@@ -49,7 +49,7 @@ namespace Parking
             panel1.SetRoundedCorners(15);
             flowPanel.SetRoundedCorners(15);
             listOfVehicle.SetRoundedCorners(2);
-           
+            SetButtonRoundedCorners(button5);
         }
 
 
@@ -158,7 +158,7 @@ namespace Parking
                                     record.Status = "Cleared";
                                     setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
                                     setStatus.Text = "Successfully paid the amount";
-                                    setStatus.ForeColor = Color.Green;
+                                    setStatus.ForeColor = Color.Lime;
 
                                     ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id, convertSlocToSId(record.S_location), record.PlateNumber,
                                                                                             record.Type, record.Model, record.Driver, record.Phone,
@@ -336,12 +336,13 @@ namespace Parking
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            palteNum = null;
             Parking?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            palteNum = null;
             listOfVehicle.Controls.Clear();
             var parkingRecordsManager = ParkingRecordsManager.Instance;
             var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
@@ -558,6 +559,22 @@ namespace Parking
         {
             Parking?.Invoke(this, EventArgs.Empty);
             this.Close();
+        }
+        private void SetButtonRoundedCorners(Button button)
+        {
+            int radius = 20; // Radius for the rounded corners
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
+            path.AddLine(radius, 0, button.Width - radius, 0);
+            path.AddArc(new Rectangle(button.Width - radius, 0, radius, radius), -90, 90);
+            path.AddLine(button.Width, radius, button.Width, button.Height - radius);
+            path.AddArc(new Rectangle(button.Width - radius, button.Height - radius, radius, radius), 0, 90);
+            path.AddLine(button.Width - radius, button.Height, radius, button.Height);
+            path.AddArc(new Rectangle(0, button.Height - radius, radius, radius), 90, 90);
+            path.CloseFigure();
+
+            button.Region = new Region(path);
         }
     }
 

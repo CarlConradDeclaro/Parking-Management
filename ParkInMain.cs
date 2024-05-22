@@ -43,18 +43,7 @@ namespace Parking
             }
         }
 
-        public UserDetails() 
-        {
-          /*  Usersdata.Add(new User("John", "Doe", 12345670, "Male", "john@example.com", "password"));
-            Usersdata.Add(new User("Jane", "Doe", 98765210, "Female", "jane@example.com", "password"));*/
-        }
 
-        public string getFirstname() {
-            return Usersdata[0].FirstName;
-        }
-        public string getGender() {
-            return Usersdata[0].Gender;
-        }
         public void addUser(User user)
         {
             Usersdata.Add(user);
@@ -70,6 +59,41 @@ namespace Parking
             return null;
         }
 
+        public string getFirstname()
+        {
+            return Usersdata[0].FirstName;
+        }
+        public string getLastname()
+        {
+            return Usersdata[0].LastName;
+        }
+        public string getEmail() {
+            return Usersdata[0].Email;
+        }
+
+        public string getPhoneNum()
+        {
+            return Usersdata[0].Pnumber;
+        }
+        public string getGender()
+        {
+            return Usersdata[0].Gender;
+        }
+
+        public void setPassword(string newPass) {
+            Usersdata[0].Password = newPass;
+        }
+
+        public string getPassword()
+        {
+            //   return Usersdata[0].Password;
+
+            return Usersdata[0].getPassword();
+        }
+
+        public void setId(int id) {
+             Usersdata[0].Id = id;
+        }
         public int getId()
         {
             int x = 0;
@@ -86,6 +110,12 @@ namespace Parking
             Usersdata.Clear();
 
         }
+
+        public List<User> getUsersdata()
+        {
+
+            return Usersdata;
+        }
     }
 
 
@@ -98,6 +128,19 @@ namespace Parking
         public string Email { get; set; }
         public string Password { get; set; }
 
+
+        private static User instance;
+        public static User Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new User();
+                return instance;
+            }
+        }
+
+
         public User() { }
 
         public User(string firstName, string lastName, string pnumber, string gender, string email, string password)
@@ -109,7 +152,9 @@ namespace Parking
             Email = email;
             Password = password;
         }
-
+        public void setId(int id) {
+            Id = id;
+        }
         public string getFirstname() { return FirstName; }
         public string getLastname() { return LastName; }
         public string getPnumber() { return Pnumber; }

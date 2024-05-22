@@ -33,6 +33,9 @@
             flowPanelHistory = new FlowLayoutPanel();
             panel1 = new Panel();
             panel2 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
             button2 = new Button();
             button3 = new Button();
             button1 = new Button();
@@ -46,9 +49,6 @@
             label3 = new Label();
             label2 = new Label();
             colorDialog1 = new ColorDialog();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -98,6 +98,27 @@
             panel2.Size = new Size(556, 68);
             panel2.TabIndex = 3;
             // 
+            // panel6
+            // 
+            panel6.Location = new Point(304, 17);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(10, 35);
+            panel6.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            panel5.Location = new Point(54, 10);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(258, 10);
+            panel5.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(50, 16);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(10, 35);
+            panel4.TabIndex = 5;
+            // 
             // button2
             // 
             button2.FlatAppearance.BorderSize = 0;
@@ -139,6 +160,7 @@
             // searchVH
             // 
             searchVH.BackColor = Color.FromArgb(22, 19, 64);
+            searchVH.CharacterCasing = CharacterCasing.Upper;
             searchVH.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             searchVH.ForeColor = Color.White;
             searchVH.Location = new Point(57, 18);
@@ -239,27 +261,6 @@
             label2.Size = new Size(91, 23);
             label2.TabIndex = 0;
             label2.Text = "Plate No.";
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(50, 16);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(10, 35);
-            panel4.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            panel5.Location = new Point(54, 10);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(258, 10);
-            panel5.TabIndex = 6;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(304, 17);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(10, 35);
-            panel6.TabIndex = 6;
             // 
             // History
             // 

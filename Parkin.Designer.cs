@@ -40,6 +40,7 @@
             button6 = new Button();
             button5 = new Button();
             button7 = new Button();
+            button12 = new Button();
             button13 = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
@@ -76,6 +77,27 @@
             panel14 = new Panel();
             numPV = new Label();
             panel5 = new Panel();
+            profilePanel = new Panel();
+            panel27 = new Panel();
+            btnChangePass = new Button();
+            btnViewPass = new Button();
+            newPass = new TextBox();
+            label20 = new Label();
+            label25 = new Label();
+            label19 = new Label();
+            passLabel = new Label();
+            profileDetailsPanel = new Panel();
+            button14 = new Button();
+            label26 = new Label();
+            label23 = new Label();
+            label21 = new Label();
+            label18 = new Label();
+            profileNum = new Label();
+            profileGender = new Label();
+            profileEmail = new Label();
+            profileName = new Label();
+            panel30 = new Panel();
+            profileIcon = new Panel();
             adminPanel = new Panel();
             adminName = new Label();
             adminIcon = new Button();
@@ -199,6 +221,9 @@
             panel10.SuspendLayout();
             panel14.SuspendLayout();
             panel5.SuspendLayout();
+            profilePanel.SuspendLayout();
+            panel27.SuspendLayout();
+            profileDetailsPanel.SuspendLayout();
             adminPanel.SuspendLayout();
             parkingView.SuspendLayout();
             panel4.SuspendLayout();
@@ -246,9 +271,9 @@
             // humBtn
             // 
             humBtn.Image = (Image)resources.GetObject("humBtn.Image");
-            humBtn.Location = new Point(6, 12);
+            humBtn.Location = new Point(7, 6);
             humBtn.Name = "humBtn";
-            humBtn.Size = new Size(59, 39);
+            humBtn.Size = new Size(52, 47);
             humBtn.TabIndex = 2;
             humBtn.TabStop = false;
             humBtn.Click += humBtn_Click;
@@ -269,10 +294,11 @@
             menuContainer.Controls.Add(button6);
             menuContainer.Controls.Add(button5);
             menuContainer.Controls.Add(button7);
+            menuContainer.Controls.Add(button12);
             menuContainer.Controls.Add(button13);
             menuContainer.Location = new Point(0, 3);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(255, 64);
+            menuContainer.Size = new Size(255, 65);
             menuContainer.TabIndex = 7;
             // 
             // panel6
@@ -360,6 +386,25 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
+            // button12
+            // 
+            button12.BackColor = Color.FromArgb(31, 28, 75);
+            button12.BackgroundImageLayout = ImageLayout.None;
+            button12.Cursor = Cursors.Hand;
+            button12.FlatAppearance.BorderSize = 0;
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button12.ForeColor = Color.White;
+            button12.Image = (Image)resources.GetObject("button12.Image");
+            button12.ImageAlign = ContentAlignment.MiddleLeft;
+            button12.Location = new Point(3, 297);
+            button12.Name = "button12";
+            button12.Size = new Size(249, 68);
+            button12.TabIndex = 16;
+            button12.Text = "Profile";
+            button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
+            // 
             // button13
             // 
             button13.BackColor = Color.FromArgb(31, 28, 75);
@@ -371,7 +416,7 @@
             button13.ForeColor = Color.White;
             button13.Image = Properties.Resources.logout;
             button13.ImageAlign = ContentAlignment.MiddleLeft;
-            button13.Location = new Point(3, 297);
+            button13.Location = new Point(3, 371);
             button13.Name = "button13";
             button13.Size = new Size(249, 68);
             button13.TabIndex = 15;
@@ -748,6 +793,7 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(profilePanel);
             panel5.Controls.Add(adminPanel);
             panel5.Controls.Add(admin1);
             panel5.Controls.Add(history1);
@@ -761,6 +807,265 @@
             panel5.Size = new Size(1792, 1252);
             panel5.TabIndex = 9;
             panel5.Paint += panel5_Paint_1;
+            // 
+            // profilePanel
+            // 
+            profilePanel.Controls.Add(panel27);
+            profilePanel.Controls.Add(profileDetailsPanel);
+            profilePanel.Location = new Point(34, 250);
+            profilePanel.Name = "profilePanel";
+            profilePanel.Size = new Size(1649, 802);
+            profilePanel.TabIndex = 22;
+            profilePanel.Paint += profilePanel_Paint;
+            // 
+            // panel27
+            // 
+            panel27.Anchor = AnchorStyles.Top;
+            panel27.BackColor = Color.FromArgb(22, 19, 74);
+            panel27.Controls.Add(btnChangePass);
+            panel27.Controls.Add(btnViewPass);
+            panel27.Controls.Add(newPass);
+            panel27.Controls.Add(label20);
+            panel27.Controls.Add(label25);
+            panel27.Controls.Add(label19);
+            panel27.Controls.Add(passLabel);
+            panel27.Location = new Point(156, 423);
+            panel27.Name = "panel27";
+            panel27.Size = new Size(1368, 279);
+            panel27.TabIndex = 7;
+            // 
+            // btnChangePass
+            // 
+            btnChangePass.Anchor = AnchorStyles.Top;
+            btnChangePass.BackgroundImage = (Image)resources.GetObject("btnChangePass.BackgroundImage");
+            btnChangePass.BackgroundImageLayout = ImageLayout.Zoom;
+            btnChangePass.FlatAppearance.BorderSize = 0;
+            btnChangePass.FlatStyle = FlatStyle.Flat;
+            btnChangePass.ForeColor = SystemColors.ControlDarkDark;
+            btnChangePass.Location = new Point(685, 148);
+            btnChangePass.Name = "btnChangePass";
+            btnChangePass.Size = new Size(34, 29);
+            btnChangePass.TabIndex = 13;
+            btnChangePass.UseVisualStyleBackColor = true;
+            btnChangePass.Click += btnChangePass_Click;
+            // 
+            // btnViewPass
+            // 
+            btnViewPass.Anchor = AnchorStyles.Top;
+            btnViewPass.BackgroundImage = (Image)resources.GetObject("btnViewPass.BackgroundImage");
+            btnViewPass.BackgroundImageLayout = ImageLayout.Zoom;
+            btnViewPass.FlatAppearance.BorderSize = 0;
+            btnViewPass.FlatStyle = FlatStyle.Flat;
+            btnViewPass.ForeColor = SystemColors.ControlDarkDark;
+            btnViewPass.Location = new Point(685, 84);
+            btnViewPass.Name = "btnViewPass";
+            btnViewPass.Size = new Size(34, 29);
+            btnViewPass.TabIndex = 12;
+            btnViewPass.UseVisualStyleBackColor = true;
+            btnViewPass.Click += btnViewPass_Click;
+            // 
+            // newPass
+            // 
+            newPass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            newPass.Location = new Point(359, 154);
+            newPass.Name = "newPass";
+            newPass.Size = new Size(277, 27);
+            newPass.TabIndex = 9;
+            // 
+            // label20
+            // 
+            label20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label20.AutoSize = true;
+            label20.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label20.ForeColor = Color.White;
+            label20.Location = new Point(90, 154);
+            label20.Name = "label20";
+            label20.Size = new Size(231, 23);
+            label20.TabIndex = 8;
+            label20.Text = "Change Password: ";
+            // 
+            // label25
+            // 
+            label25.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label25.AutoSize = true;
+            label25.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.White;
+            label25.Location = new Point(90, 89);
+            label25.Name = "label25";
+            label25.Size = new Size(244, 23);
+            label25.TabIndex = 7;
+            label25.Text = "Current Password: ";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(384, 276);
+            label19.Name = "label19";
+            label19.Size = new Size(0, 23);
+            label19.TabIndex = 6;
+            // 
+            // passLabel
+            // 
+            passLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            passLabel.AutoSize = true;
+            passLabel.Font = new Font("NSimSun", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            passLabel.ForeColor = Color.White;
+            passLabel.Location = new Point(359, 83);
+            passLabel.Name = "passLabel";
+            passLabel.Size = new Size(285, 30);
+            passLabel.TabIndex = 2;
+            passLabel.Text = "*****************";
+            // 
+            // profileDetailsPanel
+            // 
+            profileDetailsPanel.Anchor = AnchorStyles.Top;
+            profileDetailsPanel.BackColor = Color.FromArgb(22, 19, 74);
+            profileDetailsPanel.Controls.Add(button14);
+            profileDetailsPanel.Controls.Add(label26);
+            profileDetailsPanel.Controls.Add(label23);
+            profileDetailsPanel.Controls.Add(label21);
+            profileDetailsPanel.Controls.Add(label18);
+            profileDetailsPanel.Controls.Add(profileNum);
+            profileDetailsPanel.Controls.Add(profileGender);
+            profileDetailsPanel.Controls.Add(profileEmail);
+            profileDetailsPanel.Controls.Add(profileName);
+            profileDetailsPanel.Controls.Add(panel30);
+            profileDetailsPanel.Controls.Add(profileIcon);
+            profileDetailsPanel.Location = new Point(155, 36);
+            profileDetailsPanel.Name = "profileDetailsPanel";
+            profileDetailsPanel.Size = new Size(1368, 366);
+            profileDetailsPanel.TabIndex = 0;
+            // 
+            // button14
+            // 
+            button14.Anchor = AnchorStyles.Top;
+            button14.BackgroundImage = (Image)resources.GetObject("button14.BackgroundImage");
+            button14.BackgroundImageLayout = ImageLayout.Zoom;
+            button14.FlatAppearance.BorderSize = 0;
+            button14.FlatStyle = FlatStyle.Flat;
+            button14.ForeColor = SystemColors.ControlDarkDark;
+            button14.Location = new Point(781, 70);
+            button14.Name = "button14";
+            button14.Size = new Size(34, 29);
+            button14.TabIndex = 11;
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
+            // 
+            // label26
+            // 
+            label26.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label26.AutoSize = true;
+            label26.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label26.ForeColor = Color.Silver;
+            label26.Location = new Point(360, 109);
+            label26.Name = "label26";
+            label26.Size = new Size(58, 17);
+            label26.TabIndex = 9;
+            label26.Text = "Name:";
+            // 
+            // label23
+            // 
+            label23.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label23.AutoSize = true;
+            label23.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label23.ForeColor = Color.Silver;
+            label23.Location = new Point(360, 151);
+            label23.Name = "label23";
+            label23.Size = new Size(68, 17);
+            label23.TabIndex = 8;
+            label23.Text = "Email:";
+            // 
+            // label21
+            // 
+            label21.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label21.AutoSize = true;
+            label21.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label21.ForeColor = Color.Silver;
+            label21.Location = new Point(360, 193);
+            label21.Name = "label21";
+            label21.Size = new Size(98, 17);
+            label21.TabIndex = 7;
+            label21.Text = "Phone No:";
+            // 
+            // label18
+            // 
+            label18.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label18.AutoSize = true;
+            label18.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.ForeColor = Color.Silver;
+            label18.Location = new Point(360, 236);
+            label18.Name = "label18";
+            label18.Size = new Size(78, 17);
+            label18.TabIndex = 6;
+            label18.Text = "Gender:";
+            // 
+            // profileNum
+            // 
+            profileNum.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            profileNum.AutoSize = true;
+            profileNum.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            profileNum.ForeColor = Color.White;
+            profileNum.Location = new Point(469, 192);
+            profileNum.Name = "profileNum";
+            profileNum.Size = new Size(140, 23);
+            profileNum.TabIndex = 5;
+            profileNum.Text = "0912345678";
+            // 
+            // profileGender
+            // 
+            profileGender.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            profileGender.AutoSize = true;
+            profileGender.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            profileGender.ForeColor = Color.White;
+            profileGender.Location = new Point(469, 230);
+            profileGender.Name = "profileGender";
+            profileGender.Size = new Size(62, 23);
+            profileGender.TabIndex = 4;
+            profileGender.Text = "Male";
+            profileGender.Click += label16_Click;
+            // 
+            // profileEmail
+            // 
+            profileEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            profileEmail.AutoSize = true;
+            profileEmail.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            profileEmail.ForeColor = Color.White;
+            profileEmail.Location = new Point(469, 151);
+            profileEmail.Name = "profileEmail";
+            profileEmail.Size = new Size(257, 23);
+            profileEmail.TabIndex = 3;
+            profileEmail.Text = "UserAdmin@gmail.com";
+            // 
+            // profileName
+            // 
+            profileName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            profileName.AutoSize = true;
+            profileName.Font = new Font("NSimSun", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            profileName.ForeColor = Color.White;
+            profileName.Location = new Point(469, 105);
+            profileName.Name = "profileName";
+            profileName.Size = new Size(282, 28);
+            profileName.TabIndex = 2;
+            profileName.Text = "CarlConrad Declaro";
+            // 
+            // panel30
+            // 
+            panel30.Location = new Point(0, 0);
+            panel30.Name = "panel30";
+            panel30.Size = new Size(200, 100);
+            panel30.TabIndex = 10;
+            // 
+            // profileIcon
+            // 
+            profileIcon.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            profileIcon.BackgroundImage = (Image)resources.GetObject("profileIcon.BackgroundImage");
+            profileIcon.BackgroundImageLayout = ImageLayout.Zoom;
+            profileIcon.Location = new Point(137, 99);
+            profileIcon.Name = "profileIcon";
+            profileIcon.Size = new Size(198, 162);
+            profileIcon.TabIndex = 0;
             // 
             // adminPanel
             // 
@@ -786,12 +1091,12 @@
             // 
             // adminIcon
             // 
-            adminIcon.BackgroundImageLayout = ImageLayout.Stretch;
+            adminIcon.BackgroundImageLayout = ImageLayout.Zoom;
             adminIcon.FlatAppearance.BorderSize = 0;
             adminIcon.FlatStyle = FlatStyle.Flat;
-            adminIcon.Location = new Point(13, 56);
+            adminIcon.Location = new Point(11, 44);
             adminIcon.Name = "adminIcon";
-            adminIcon.Size = new Size(75, 65);
+            adminIcon.Size = new Size(81, 78);
             adminIcon.TabIndex = 0;
             adminIcon.UseVisualStyleBackColor = true;
             // 
@@ -810,7 +1115,7 @@
             // admin1
             // 
             admin1.BackColor = Color.FromArgb(22, 19, 64);
-            admin1.Location = new Point(582, 1038);
+            admin1.Location = new Point(562, 1076);
             admin1.Name = "admin1";
             admin1.Size = new Size(241, 142);
             admin1.TabIndex = 21;
@@ -838,9 +1143,9 @@
             parkingView.Controls.Add(panel17);
             parkingView.Controls.Add(panel19);
             parkingView.Controls.Add(panel16);
-            parkingView.Location = new Point(36, 833);
+            parkingView.Location = new Point(24, 1047);
             parkingView.Name = "parkingView";
-            parkingView.Size = new Size(566, 183);
+            parkingView.Size = new Size(211, 183);
             parkingView.TabIndex = 19;
             // 
             // panel25
@@ -872,7 +1177,7 @@
             panel4.Anchor = AnchorStyles.Top;
             panel4.BackgroundImageLayout = ImageLayout.None;
             panel4.Controls.Add(button4);
-            panel4.Location = new Point(784, 9);
+            panel4.Location = new Point(606, 9);
             panel4.Name = "panel4";
             panel4.Size = new Size(127, 53);
             panel4.TabIndex = 6;
@@ -901,7 +1206,7 @@
             panel20.Anchor = AnchorStyles.Top;
             panel20.BackgroundImageLayout = ImageLayout.None;
             panel20.Controls.Add(button10);
-            panel20.Location = new Point(657, 9);
+            panel20.Location = new Point(479, 9);
             panel20.Name = "panel20";
             panel20.Size = new Size(122, 53);
             panel20.TabIndex = 20;
@@ -1711,7 +2016,7 @@
             // 
             button3.Anchor = AnchorStyles.Top;
             button3.BackColor = Color.Transparent;
-            button3.BackgroundImage = Properties.Resources.listView2;
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Stretch;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
@@ -2094,13 +2399,13 @@
             // 
             btnViewParkList.Anchor = AnchorStyles.Top;
             btnViewParkList.BackColor = Color.Transparent;
-            btnViewParkList.BackgroundImage = Properties.Resources.listView2;
+            btnViewParkList.BackgroundImage = (Image)resources.GetObject("btnViewParkList.BackgroundImage");
             btnViewParkList.BackgroundImageLayout = ImageLayout.Stretch;
             btnViewParkList.FlatAppearance.BorderSize = 0;
             btnViewParkList.FlatStyle = FlatStyle.Flat;
-            btnViewParkList.Location = new Point(2, 4);
+            btnViewParkList.Location = new Point(3, 4);
             btnViewParkList.Name = "btnViewParkList";
-            btnViewParkList.Size = new Size(46, 38);
+            btnViewParkList.Size = new Size(45, 42);
             btnViewParkList.TabIndex = 16;
             toolTip2.SetToolTip(btnViewParkList, "List View");
             btnViewParkList.UseVisualStyleBackColor = false;
@@ -2176,6 +2481,11 @@
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
             panel5.ResumeLayout(false);
+            profilePanel.ResumeLayout(false);
+            panel27.ResumeLayout(false);
+            panel27.PerformLayout();
+            profileDetailsPanel.ResumeLayout(false);
+            profileDetailsPanel.PerformLayout();
             adminPanel.ResumeLayout(false);
             adminPanel.PerformLayout();
             parkingView.ResumeLayout(false);
@@ -2355,5 +2665,28 @@
         private Panel emptyPark;
         private Panel panel28;
         private Label label11;
+        private Panel profilePanel;
+        private Panel profileDetailsPanel;
+        private Label profileNum;
+        private Label profileGender;
+        private Label profileEmail;
+        private Label profileName;
+        private Panel panel30;
+        private Panel profileIcon;
+        private Button button12;
+        private Panel panel27;
+        private TextBox newPass;
+        private Label label20;
+        private Label label25;
+        private Label label19;
+        private Label passLabel;
+        private Panel panel31;
+        private Label label23;
+        private Label label21;
+        private Label label18;
+        private Label label26;
+        private Button button14;
+        private Button btnViewPass;
+        private Button btnChangePass;
     }
 }

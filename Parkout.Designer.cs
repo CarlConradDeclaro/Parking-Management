@@ -352,14 +352,14 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(22, 10, 95);
+            panel3.BackColor = Color.FromArgb(28, 22, 120);
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(panel6);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(seeAll);
             panel3.Controls.Add(button3);
             panel3.Controls.Add(searchVHTxt);
-            panel3.Location = new Point(14, 43);
+            panel3.Location = new Point(14, 38);
             panel3.Name = "panel3";
             panel3.Size = new Size(1006, 62);
             panel3.TabIndex = 5;
@@ -387,7 +387,6 @@
             // 
             // seeAll
             // 
-            seeAll.BackColor = Color.FromArgb(22, 10, 110);
             seeAll.FlatAppearance.BorderSize = 0;
             seeAll.FlatStyle = FlatStyle.Flat;
             seeAll.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -402,7 +401,6 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(22, 10, 110);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -417,7 +415,7 @@
             // 
             // searchVHTxt
             // 
-            searchVHTxt.BackColor = Color.FromArgb(22, 10, 95);
+            searchVHTxt.BackColor = Color.FromArgb(28, 22, 120);
             searchVHTxt.CharacterCasing = CharacterCasing.Upper;
             searchVHTxt.Font = new Font("Cambria", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchVHTxt.ForeColor = Color.White;
@@ -437,7 +435,7 @@
             button6.ForeColor = Color.Transparent;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(993, -4);
+            button6.Location = new Point(993, 33);
             button6.Name = "button6";
             button6.Size = new Size(40, 40);
             button6.TabIndex = 12;
@@ -487,7 +485,7 @@
             title.BackColor = Color.Transparent;
             title.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(0, 4);
+            title.Location = new Point(470, 9);
             title.Name = "title";
             title.Size = new Size(101, 23);
             title.TabIndex = 19;
@@ -499,6 +497,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 22, 120);
             ClientSize = new Size(1035, 789);
+            ControlBox = false;
             Controls.Add(panel7);
             Controls.Add(label3);
             Controls.Add(flowPanel);
@@ -506,7 +505,6 @@
             Controls.Add(panel3);
             Controls.Add(listOfVehicle);
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;

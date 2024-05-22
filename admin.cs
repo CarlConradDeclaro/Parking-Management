@@ -49,8 +49,12 @@ namespace Parking
         private void button3_Click(object sender, EventArgs e)
         {
 
+            if (selectedItemType.SelectedItem?.ToString() == null) {
+                errorSelectedType.Text = "Please select a Vehicle Type";
+                return;
+            }
 
-            flowLayoutBrands.Controls.Clear();
+                flowLayoutBrands.Controls.Clear();
             string selecteditemType = this.selectedItemType.SelectedItem?.ToString();
             var vehicleBrand = VehicleBrandMAnger.Instance;
             var VB = vehicleBrand.GetVB();
@@ -84,6 +88,8 @@ namespace Parking
             }
 
             selectTypeCB();
+
+            errorSelectedType.Text = "";
         }
 
         private void selectedItemType_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,9 +99,15 @@ namespace Parking
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //errorEditName
+            if (string.IsNullOrEmpty(typeName.Text)) {
+                errorEditName.Text = "Cannot be empty";
+                return;
+            }
             editType(1);
             selectTypeCB();
             display();
+            errorEditName.Text = "";
         }
 
 
@@ -268,6 +280,10 @@ namespace Parking
             typeName.Text = "";
             flagDown.Value = 0;
             AAPH.Value = 0;
+            errorSelectedType.Text = "";
+            errorEditFlagdown.Text = "";
+            errorEditName.Text = "";
+            errorAAPH.Text = "";
 
         }
 
@@ -298,22 +314,79 @@ namespace Parking
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if ((double)flagDown.Value <= 0) {
+                errorEditFlagdown.Text = "Invalid Flagdown";
+                return;
+            }
+
             editType(2);
             selectTypeCB();
             display();
+            errorEditFlagdown.Text = "";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if ((double)AAPH.Value <= 0) {
+                errorAAPH.Text = "Invalid Amount per hour!";
+                return;
+            }
+
             editType(3);
             selectTypeCB();
             display();
+            errorAAPH.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var vehiclemanager = VehicleManger.Instance;
+            int proceedAddItem = 0;
 
+            if (!string.IsNullOrWhiteSpace(setTypeName.Text))
+            {
+                proceedAddItem++;
+                errorName.Text = "";
+            }
+            else
+            {
+                errorName.Text = "Please enter Type name.";
+            }
+
+            if ((double)setFlagDown.Value != 0)
+            {
+                if ((double)setFlagDown.Value >0) {
+                    proceedAddItem++;
+                    errorFlagDown.Text = "";
+                }else
+                    errorFlagDown.Text = "Invalid Flagdown.";
+            }
+            else
+            {
+                errorFlagDown.Text = "Please enter Flagdown amount.";
+            }
+
+            //errorAmtPH
+
+            if ((double)setAAPH.Value != 0)
+            {
+                if ((double)setAAPH.Value > 0)
+                {
+                    proceedAddItem++;
+                    errorAmtPH.Text = "";
+                }
+                else {
+                    errorAmtPH.Text = "Invalid Amount Per Hour.";
+                }
+            }
+            else
+            {
+                errorAmtPH.Text = "Please enter Amount Per Hour.";
+            }
+
+
+
+            if (proceedAddItem == 3)
             if (setTypeName.Text != "")
             {
                 if (!isTypeInTheList(setTypeName.Text))
@@ -378,6 +451,29 @@ namespace Parking
         {
             string selecttype = selectType.SelectedItem?.ToString();
             var vehicleBrand = VehicleBrandMAnger.Instance;
+            int proceedAddItem = 0;
+
+            if (!string.IsNullOrWhiteSpace(setBrandName.Text))
+            {
+                proceedAddItem++;
+                errorBrandName.Text = "";
+            }
+            else
+            {
+                errorBrandName.Text = "Please enter Type name.";
+            }
+
+            if (selectType.SelectedItem?.ToString() != null)
+            {
+                proceedAddItem++;
+                errorType.Text = "";
+            }
+            else
+            {
+                errorType.Text = "Please select a model.";
+            }
+
+            if (proceedAddItem == 2)
             if (setBrandName.Text != "")
             {
                 if (!isBrandInTheList(setBrandName.Text))
@@ -389,7 +485,6 @@ namespace Parking
                 }
                 else
                     MessageBox.Show("Opps, The " + setBrandName.Text + " is already in the list!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             else
             {
@@ -432,6 +527,11 @@ namespace Parking
             setAAPH.Value = 0;
             setBrandName.Text = "";
             selectType.Text = "";
+            errorName.Text = "";
+            errorFlagDown.Text = "";
+            errorAmtPH.Text = "";
+            errorBrandName.Text = "";
+            errorType.Text = "";
         }
 
         private void flowLayoutBrands_Paint(object sender, PaintEventArgs e)
@@ -441,10 +541,17 @@ namespace Parking
 
         private void button9_Click(object sender, EventArgs e)
         {
+            
             string selectedItemType = this.selectedItemType.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(selectedItemType))
+            if (string.IsNullOrEmpty(selectedItemType) )
             {
                 MessageBox.Show("Please select a vehicle type to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(typeName.Text)) {
+
+                errorEditName.Text = "Cannot be empty";
                 return;
             }
 
@@ -465,6 +572,7 @@ namespace Parking
                         {
                             MessageBox.Show("Vehicle type deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             display();
+                            errorEditName.Text = "";
                         }
                         else
                         {

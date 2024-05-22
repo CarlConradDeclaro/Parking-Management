@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             panel1 = new Panel();
+            errorType = new Label();
+            errorBrandName = new Label();
+            errorAmtPH = new Label();
+            errorFlagDown = new Label();
+            errorName = new Label();
             panel28 = new Panel();
             label1 = new Label();
             button8 = new Button();
@@ -61,6 +66,7 @@
             label3 = new Label();
             label4 = new Label();
             panel5 = new Panel();
+            label5 = new Label();
             panel6 = new Panel();
             panel19 = new Panel();
             button7 = new Button();
@@ -72,10 +78,13 @@
             typeName = new TextBox();
             label10 = new Label();
             label12 = new Label();
-            label11 = new Label();
             flagDown = new NumericUpDown();
             AAPH = new NumericUpDown();
             panel4 = new Panel();
+            errorEditName = new Label();
+            errorAAPH = new Label();
+            errorEditFlagdown = new Label();
+            errorSelectedType = new Label();
             panel27 = new Panel();
             panel26 = new Panel();
             panel25 = new Panel();
@@ -88,12 +97,14 @@
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
+            label11 = new Label();
             panel1.SuspendLayout();
             panel28.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)setAAPH).BeginInit();
             ((System.ComponentModel.ISupportInitialize)setFlagDown).BeginInit();
+            panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)flagDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AAPH).BeginInit();
@@ -104,42 +115,92 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(26, 22, 71);
+            panel1.Controls.Add(errorType);
+            panel1.Controls.Add(errorBrandName);
+            panel1.Controls.Add(errorAmtPH);
+            panel1.Controls.Add(errorFlagDown);
+            panel1.Controls.Add(errorName);
             panel1.Controls.Add(panel28);
-            panel1.Controls.Add(button8);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(131, 43);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1291, 308);
+            panel1.Size = new Size(1292, 308);
             panel1.TabIndex = 0;
+            // 
+            // errorType
+            // 
+            errorType.AutoSize = true;
+            errorType.ForeColor = Color.Red;
+            errorType.Location = new Point(496, 266);
+            errorType.Name = "errorType";
+            errorType.Size = new Size(0, 20);
+            errorType.TabIndex = 29;
+            // 
+            // errorBrandName
+            // 
+            errorBrandName.AutoSize = true;
+            errorBrandName.ForeColor = Color.Red;
+            errorBrandName.Location = new Point(104, 266);
+            errorBrandName.Name = "errorBrandName";
+            errorBrandName.Size = new Size(0, 20);
+            errorBrandName.TabIndex = 28;
+            // 
+            // errorAmtPH
+            // 
+            errorAmtPH.AutoSize = true;
+            errorAmtPH.ForeColor = Color.Red;
+            errorAmtPH.Location = new Point(1025, 138);
+            errorAmtPH.Name = "errorAmtPH";
+            errorAmtPH.Size = new Size(0, 20);
+            errorAmtPH.TabIndex = 27;
+            // 
+            // errorFlagDown
+            // 
+            errorFlagDown.AutoSize = true;
+            errorFlagDown.ForeColor = Color.Red;
+            errorFlagDown.Location = new Point(460, 135);
+            errorFlagDown.Name = "errorFlagDown";
+            errorFlagDown.Size = new Size(0, 20);
+            errorFlagDown.TabIndex = 26;
+            // 
+            // errorName
+            // 
+            errorName.AutoSize = true;
+            errorName.ForeColor = Color.Red;
+            errorName.Location = new Point(108, 127);
+            errorName.Name = "errorName";
+            errorName.Size = new Size(0, 20);
+            errorName.TabIndex = 25;
             // 
             // panel28
             // 
             panel28.BackColor = Color.FromArgb(0, 50, 120);
             panel28.Controls.Add(label1);
-            panel28.Location = new Point(0, -1);
+            panel28.Controls.Add(button8);
+            panel28.Location = new Point(0, 3);
             panel28.Name = "panel28";
-            panel28.Size = new Size(1291, 52);
+            panel28.Size = new Size(1292, 57);
             panel28.TabIndex = 24;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 12);
+            label1.Location = new Point(12, 17);
             label1.Name = "label1";
-            label1.Size = new Size(234, 31);
+            label1.Size = new Size(292, 25);
             label1.TabIndex = 0;
-            label1.Text = "Create Vechicle Type:";
+            label1.Text = "Create Vehicle Type:";
             // 
             // button8
             // 
             button8.FlatAppearance.BorderSize = 0;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.Location = new Point(1204, 20);
+            button8.Location = new Point(1245, 12);
             button8.Name = "button8";
             button8.Size = new Size(43, 29);
             button8.TabIndex = 18;
@@ -202,6 +263,8 @@
             // selectType
             // 
             selectType.BackColor = Color.FromArgb(26, 22, 71);
+            selectType.DropDownStyle = ComboBoxStyle.DropDownList;
+            selectType.FlatStyle = FlatStyle.Flat;
             selectType.Font = new Font("Segoe UI", 12F);
             selectType.ForeColor = Color.White;
             selectType.FormattingEnabled = true;
@@ -213,11 +276,11 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(397, 16);
+            label7.Location = new Point(402, 24);
             label7.Name = "label7";
-            label7.Size = new Size(70, 31);
+            label7.Size = new Size(82, 25);
             label7.TabIndex = 10;
             label7.Text = "Type:";
             // 
@@ -236,11 +299,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label2.ForeColor = Color.White;
             label2.Location = new Point(19, 19);
             label2.Name = "label2";
-            label2.Size = new Size(82, 31);
+            label2.Size = new Size(82, 25);
             label2.TabIndex = 0;
             label2.Text = "Name:";
             // 
@@ -259,7 +322,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(3, 162);
+            label6.Location = new Point(21, 162);
             label6.Name = "label6";
             label6.Size = new Size(246, 31);
             label6.TabIndex = 10;
@@ -284,19 +347,19 @@
             panel2.Controls.Add(label4);
             panel2.Location = new Point(0, 66);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1288, 69);
+            panel2.Size = new Size(1289, 69);
             panel2.TabIndex = 9;
             // 
             // panel13
             // 
-            panel13.Location = new Point(1002, 25);
+            panel13.Location = new Point(1065, 25);
             panel13.Name = "panel13";
             panel13.Size = new Size(10, 35);
             panel13.TabIndex = 15;
             // 
             // panel12
             // 
-            panel12.Location = new Point(1006, 17);
+            panel12.Location = new Point(1069, 17);
             panel12.Name = "panel12";
             panel12.Size = new Size(105, 10);
             panel12.TabIndex = 17;
@@ -341,7 +404,7 @@
             setAAPH.BackColor = Color.FromArgb(26, 22, 71);
             setAAPH.Font = new Font("Segoe UI", 12F);
             setAAPH.ForeColor = Color.White;
-            setAAPH.Location = new Point(1011, 25);
+            setAAPH.Location = new Point(1074, 25);
             setAAPH.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             setAAPH.Name = "setAAPH";
             setAAPH.Size = new Size(100, 34);
@@ -361,11 +424,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(663, 22);
+            label8.Location = new Point(678, 29);
             label8.Name = "label8";
-            label8.Size = new Size(311, 31);
+            label8.Size = new Size(390, 25);
             label8.TabIndex = 11;
             label8.Text = "Additional amount per hour:";
             // 
@@ -394,33 +457,45 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(363, 23);
+            label3.Location = new Point(353, 28);
             label3.Name = "label3";
-            label3.Size = new Size(122, 31);
+            label3.Size = new Size(138, 25);
             label3.TabIndex = 7;
             label3.Text = "Flagdown:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(18, 21);
+            label4.Location = new Point(28, 28);
             label4.Name = "label4";
-            label4.Size = new Size(76, 31);
+            label4.Size = new Size(82, 25);
             label4.TabIndex = 8;
-            label4.Text = "Name";
+            label4.Text = "Name:";
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(0, 50, 120);
+            panel5.Controls.Add(label5);
             panel5.Location = new Point(-2, -1);
             panel5.Name = "panel5";
             panel5.Size = new Size(1291, 52);
             panel5.TabIndex = 11;
             panel5.Paint += panel5_Paint;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("NSimSun", 15F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(24, 18);
+            label5.Name = "label5";
+            label5.Size = new Size(236, 25);
+            label5.TabIndex = 19;
+            label5.Text = "Edit Type/Brand:";
             // 
             // panel6
             // 
@@ -438,7 +513,7 @@
             // 
             // panel19
             // 
-            panel19.Location = new Point(83, 7);
+            panel19.Location = new Point(68, 7);
             panel19.Name = "panel19";
             panel19.Size = new Size(10, 35);
             panel19.TabIndex = 15;
@@ -458,34 +533,36 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(506, 8);
+            label13.Location = new Point(597, 13);
             label13.Name = "label13";
-            label13.Size = new Size(149, 31);
+            label13.Size = new Size(166, 25);
             label13.TabIndex = 16;
             label13.Text = "Brand names";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(14, 14);
+            label9.Location = new Point(-4, 12);
             label9.Name = "label9";
-            label9.Size = new Size(60, 31);
+            label9.Size = new Size(82, 25);
             label9.TabIndex = 11;
-            label9.Text = "Edit:";
+            label9.Text = "Type:";
             // 
             // selectedItemType
             // 
             selectedItemType.BackColor = Color.FromArgb(26, 22, 71);
+            selectedItemType.DropDownStyle = ComboBoxStyle.DropDownList;
+            selectedItemType.FlatStyle = FlatStyle.Flat;
             selectedItemType.Font = new Font("Segoe UI", 12F);
             selectedItemType.ForeColor = Color.White;
             selectedItemType.FormattingEnabled = true;
-            selectedItemType.Location = new Point(90, 8);
+            selectedItemType.Location = new Point(75, 8);
             selectedItemType.Name = "selectedItemType";
-            selectedItemType.Size = new Size(167, 36);
+            selectedItemType.Size = new Size(191, 36);
             selectedItemType.TabIndex = 11;
             selectedItemType.SelectedIndexChanged += selectedItemType_SelectedIndexChanged;
             // 
@@ -513,7 +590,7 @@
             typeName.BackColor = Color.FromArgb(26, 22, 71);
             typeName.Font = new Font("Segoe UI", 12F);
             typeName.ForeColor = Color.White;
-            typeName.Location = new Point(236, 148);
+            typeName.Location = new Point(236, 174);
             typeName.Name = "typeName";
             typeName.Size = new Size(207, 34);
             typeName.TabIndex = 17;
@@ -521,42 +598,31 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(149, 152);
+            label10.Location = new Point(149, 178);
             label10.Name = "label10";
-            label10.Size = new Size(82, 31);
+            label10.Size = new Size(82, 25);
             label10.TabIndex = 16;
             label10.Text = "Name:";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(210, 204);
+            label12.Location = new Point(191, 249);
             label12.Name = "label12";
-            label12.Size = new Size(122, 31);
+            label12.Size = new Size(138, 25);
             label12.TabIndex = 18;
             label12.Text = "Flagdown:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(21, 257);
-            label11.Name = "label11";
-            label11.Size = new Size(311, 31);
-            label11.TabIndex = 20;
-            label11.Text = "Additional amount per hour:";
             // 
             // flagDown
             // 
             flagDown.BackColor = Color.FromArgb(26, 22, 71);
             flagDown.Font = new Font("Segoe UI", 12F);
             flagDown.ForeColor = Color.White;
-            flagDown.Location = new Point(338, 202);
+            flagDown.Location = new Point(338, 247);
             flagDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             flagDown.Name = "flagDown";
             flagDown.Size = new Size(100, 34);
@@ -567,7 +633,7 @@
             AAPH.BackColor = Color.FromArgb(26, 22, 71);
             AAPH.Font = new Font("Segoe UI", 12F);
             AAPH.ForeColor = Color.White;
-            AAPH.Location = new Point(338, 258);
+            AAPH.Location = new Point(338, 326);
             AAPH.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             AAPH.Name = "AAPH";
             AAPH.Size = new Size(100, 34);
@@ -577,6 +643,10 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.BackColor = Color.FromArgb(26, 22, 71);
+            panel4.Controls.Add(errorEditName);
+            panel4.Controls.Add(errorAAPH);
+            panel4.Controls.Add(errorEditFlagdown);
+            panel4.Controls.Add(errorSelectedType);
             panel4.Controls.Add(panel27);
             panel4.Controls.Add(panel26);
             panel4.Controls.Add(panel25);
@@ -600,61 +670,97 @@
             panel4.Controls.Add(panel5);
             panel4.Location = new Point(131, 389);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1289, 368);
+            panel4.Size = new Size(1289, 416);
             panel4.TabIndex = 1;
+            // 
+            // errorEditName
+            // 
+            errorEditName.AutoSize = true;
+            errorEditName.ForeColor = Color.Red;
+            errorEditName.Location = new Point(228, 213);
+            errorEditName.Name = "errorEditName";
+            errorEditName.Size = new Size(0, 20);
+            errorEditName.TabIndex = 33;
+            // 
+            // errorAAPH
+            // 
+            errorAAPH.AutoSize = true;
+            errorAAPH.ForeColor = Color.Red;
+            errorAAPH.Location = new Point(272, 367);
+            errorAAPH.Name = "errorAAPH";
+            errorAAPH.Size = new Size(0, 20);
+            errorAAPH.TabIndex = 32;
+            // 
+            // errorEditFlagdown
+            // 
+            errorEditFlagdown.AutoSize = true;
+            errorEditFlagdown.ForeColor = Color.Red;
+            errorEditFlagdown.Location = new Point(278, 285);
+            errorEditFlagdown.Name = "errorEditFlagdown";
+            errorEditFlagdown.Size = new Size(0, 20);
+            errorEditFlagdown.TabIndex = 31;
+            // 
+            // errorSelectedType
+            // 
+            errorSelectedType.AutoSize = true;
+            errorSelectedType.ForeColor = Color.Red;
+            errorSelectedType.Location = new Point(226, 131);
+            errorSelectedType.Name = "errorSelectedType";
+            errorSelectedType.Size = new Size(0, 20);
+            errorSelectedType.TabIndex = 30;
             // 
             // panel27
             // 
-            panel27.Location = new Point(329, 255);
+            panel27.Location = new Point(329, 323);
             panel27.Name = "panel27";
             panel27.Size = new Size(10, 39);
             panel27.TabIndex = 19;
             // 
             // panel26
             // 
-            panel26.Location = new Point(335, 249);
+            panel26.Location = new Point(335, 317);
             panel26.Name = "panel26";
             panel26.Size = new Size(103, 10);
             panel26.TabIndex = 19;
             // 
             // panel25
             // 
-            panel25.Location = new Point(329, 200);
+            panel25.Location = new Point(329, 245);
             panel25.Name = "panel25";
             panel25.Size = new Size(10, 39);
             panel25.TabIndex = 18;
             // 
             // panel24
             // 
-            panel24.Location = new Point(335, 194);
+            panel24.Location = new Point(335, 239);
             panel24.Name = "panel24";
             panel24.Size = new Size(103, 10);
             panel24.TabIndex = 18;
             // 
             // panel23
             // 
-            panel23.Location = new Point(228, 144);
+            panel23.Location = new Point(228, 170);
             panel23.Name = "panel23";
             panel23.Size = new Size(10, 39);
             panel23.TabIndex = 17;
             // 
             // panel22
             // 
-            panel22.Location = new Point(235, 140);
+            panel22.Location = new Point(235, 166);
             panel22.Name = "panel22";
             panel22.Size = new Size(209, 10);
             panel22.TabIndex = 17;
             // 
             // panel21
             // 
-            panel21.Location = new Point(232, 82);
+            panel21.Location = new Point(228, 82);
             panel21.Name = "panel21";
-            panel21.Size = new Size(180, 10);
+            panel21.Size = new Size(189, 10);
             panel21.TabIndex = 17;
             // 
             // panel20
             // 
-            panel20.Location = new Point(441, 145);
+            panel20.Location = new Point(441, 171);
             panel20.Name = "panel20";
             panel20.Size = new Size(10, 39);
             panel20.TabIndex = 16;
@@ -664,7 +770,7 @@
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Image = Properties.Resources.delete;
-            button9.Location = new Point(493, 147);
+            button9.Location = new Point(493, 173);
             button9.Name = "button9";
             button9.Size = new Size(31, 37);
             button9.TabIndex = 18;
@@ -676,7 +782,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(446, 264);
+            button6.Location = new Point(445, 319);
             button6.Name = "button6";
             button6.Size = new Size(68, 41);
             button6.TabIndex = 23;
@@ -688,7 +794,7 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(446, 208);
+            button5.Location = new Point(446, 241);
             button5.Name = "button5";
             button5.Size = new Size(68, 41);
             button5.TabIndex = 22;
@@ -700,12 +806,23 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(446, 139);
+            button4.Location = new Point(446, 165);
             button4.Name = "button4";
             button4.Size = new Size(68, 54);
             button4.TabIndex = 17;
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("NSimSun", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(22, 330);
+            label11.Name = "label11";
+            label11.Size = new Size(306, 20);
+            label11.TabIndex = 20;
+            label11.Text = "Additional amount per hour:";
             // 
             // admin
             // 
@@ -727,6 +844,8 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)setAAPH).EndInit();
             ((System.ComponentModel.ISupportInitialize)setFlagDown).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)flagDown).EndInit();
@@ -765,7 +884,6 @@
         private TextBox typeName;
         private Label label10;
         private Label label12;
-        private Label label11;
         private NumericUpDown flagDown;
         private NumericUpDown AAPH;
         private Panel panel4;
@@ -797,5 +915,16 @@
         private Panel panel21;
         private Panel panel20;
         private Panel panel28;
+        private Label errorName;
+        private Label errorFlagDown;
+        private Label errorAmtPH;
+        private Label errorType;
+        private Label errorBrandName;
+        private Label errorSelectedType;
+        private Label errorAAPH;
+        private Label errorEditFlagdown;
+        private Label label11;
+        private Label errorEditName;
+        private Label label5;
     }
 }

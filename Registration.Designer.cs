@@ -432,12 +432,15 @@
             // comboBoxGender
             // 
             comboBoxGender.BackColor = Color.FromArgb(12, 11, 55);
+            comboBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxGender.FlatStyle = FlatStyle.Flat;
             comboBoxGender.Font = new Font("NSimSun", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxGender.ForeColor = Color.White;
             comboBoxGender.Location = new Point(359, 353);
             comboBoxGender.Name = "comboBoxGender";
             comboBoxGender.Size = new Size(226, 31);
             comboBoxGender.TabIndex = 30;
+            comboBoxGender.SelectedIndexChanged += comboBoxGender_SelectedIndexChanged_1;
             // 
             // password
             // 
@@ -446,6 +449,7 @@
             password.ForeColor = Color.White;
             password.Location = new Point(34, 353);
             password.Name = "password";
+            password.PasswordChar = '*';
             password.Size = new Size(249, 34);
             password.TabIndex = 31;
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -32,6 +33,7 @@ namespace Parking
             this.titleLabel = titleLabel;
             this.amtTxt = amtTxt;
             this.statusTxt = statusTxt;
+            SetButtonRoundedCorners(parkout);
         }
 
         private void ParkOutList_Load(object sender, EventArgs e)
@@ -91,6 +93,23 @@ namespace Parking
                     return;
                 }               
               }
+        }
+
+        private void SetButtonRoundedCorners(Button button)
+        {
+            int radius = 20; // Radius for the rounded corners
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
+            path.AddLine(radius, 0, button.Width - radius, 0);
+            path.AddArc(new Rectangle(button.Width - radius, 0, radius, radius), -90, 90);
+            path.AddLine(button.Width, radius, button.Width, button.Height - radius);
+            path.AddArc(new Rectangle(button.Width - radius, button.Height - radius, radius, radius), 0, 90);
+            path.AddLine(button.Width - radius, button.Height, radius, button.Height);
+            path.AddArc(new Rectangle(0, button.Height - radius, radius, radius), 90, 90);
+            path.CloseFigure();
+
+            button.Region = new Region(path);
         }
     }
 }

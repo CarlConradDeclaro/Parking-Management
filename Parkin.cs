@@ -46,6 +46,7 @@ namespace Parking
             numPV.Text = countParkedVehicle() + "";
             panel5.Show();
             parkingView.Hide();
+            profilePanel.Hide();
             OccupiedArea();
 
             var c = UserDetails.Instance;
@@ -55,6 +56,7 @@ namespace Parking
 
             adminIcon.Image = c.getGender() == "MALE" ? maleAdmin : femaleAdmin;
             adminName.Text = c.getFirstname();
+            displayProfileDetails();
             adminPanel.SetRoundedCorners(20);
             panel7.SetRoundedCorners(10);
             panel8.SetRoundedCorners(10);
@@ -67,16 +69,18 @@ namespace Parking
             panel16.SetRoundedCorners(10);
             panel17.SetRoundedCorners(10);
             panel18.SetRoundedCorners(10);
-
            
+            panel27.SetRoundedCorners(15);
+            profileDetailsPanel.SetRoundedCorners(15);
         }
 
-      
 
-        private void isParkEmpty(bool isEmpty) {
+
+        private void isParkEmpty(bool isEmpty)
+        {
             if (isEmpty)
                 flowLayoutPanel2.Controls.Add(emptyPark);
-         
+
         }
 
 
@@ -124,7 +128,7 @@ namespace Parking
             if (menuExpand == false)
             {
                 menuContainer.Height += 10;
-                if (menuContainer.Height >= 400)
+                if (menuContainer.Height >= 500)
                 {
                     menuTransition.Stop();
                     menuExpand = true;
@@ -182,6 +186,7 @@ namespace Parking
             {
                 pOut = new Parkout();
                 pOut.Parking += ParkingRecordAddedHandler;
+               
                 pOut.ShowDialog();
 
             }
@@ -213,6 +218,9 @@ namespace Parking
                     parkinList pL = new parkinList(numV, numPV);
                     pL.UpdateLabels(record);
                     pL.EditParking += ParkingRecordAddedHandler;
+                   
+
+
                     flowLayoutPanel2.Controls.Add(pL);
                 }
             }
@@ -253,6 +261,7 @@ namespace Parking
                 {
                     parkinList pL = new parkinList(numV, numPV);
                     pL.UpdateLabels(record);
+                    pL.EditParking += ParkingRecordAddedHandler;
                     flowLayoutPanel2.Controls.Add(pL);
                 }
                 else if (category == "ALL")
@@ -394,6 +403,10 @@ namespace Parking
             admin1.Dock = DockStyle.None;
             panelContent.Controls.Remove(admin1);
             admin1.Hide();
+
+            panelContent.Controls.Remove(profilePanel);
+            profilePanel.Dock = DockStyle.None;
+            profilePanel.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -411,6 +424,9 @@ namespace Parking
             panelContent.Controls.Remove(admin1);
             admin1.Hide();
 
+            panelContent.Controls.Remove(profilePanel);
+            profilePanel.Dock = DockStyle.None;
+            profilePanel.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -427,6 +443,36 @@ namespace Parking
             admin1.Dock = DockStyle.Fill;
             panelContent.Controls.Add(admin1);
             admin1.Show();
+
+            panelContent.Controls.Remove(profilePanel);
+            profilePanel.Dock = DockStyle.None;
+            profilePanel.Hide();
+
+
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            //profilePanel
+            panelContent.Controls.Remove(panel5);
+            panel5.Dock = DockStyle.None;
+            panel5.Hide();
+
+            panelContent.Controls.Remove(history1);
+            history1.Dock = DockStyle.None;
+            history1.Hide();
+
+            panelContent.Controls.Remove(admin1);
+            admin1.Dock = DockStyle.None;
+            admin1.Hide();
+
+            panelContent.Controls.Add(profilePanel);
+            profilePanel.Dock = DockStyle.Fill;
+            profilePanel.Show();
+
+
+
 
         }
 
@@ -867,6 +913,10 @@ namespace Parking
             refreshParkingArea();
             refreshSearcHighlights();
         }
+
+
+
+
         private void refreshSearcHighlights()
         {
             Button[] button = [b01, b02, b03, b04, b05, b06, b07, b08,b09,b10,
@@ -1004,6 +1054,104 @@ namespace Parking
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void profilePanel_Paint(object sender, PaintEventArgs e)
+        {
+            displayProfileDetails();
+        }
+
+        public void displayProfileDetails()
+        {
+            var userData = UserDetails.Instance;
+            profileName.Text = userData.getName();
+            profileEmail.Text = userData.getEmail();
+            profileNum.Text = userData.getPhoneNum();
+            profileGender.Text = userData.getGender();
+            Image MaleIcon = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\defaultBoy.png");
+            Image FemaleIcon = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\defaultGirl.png");
+            profileIcon.BackgroundImage = profileGender.Text == "MALE" ? MaleIcon : FemaleIcon;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            var userData = UserDetails.Instance;
+            editProfile edit = new editProfile(
+                userData.getId(),
+                profileIcon,
+                adminIcon,
+                adminName,
+                profileName,
+                profileEmail,
+                profileNum,
+                profileGender,
+                userData.getFirstname(),
+                userData.getLastname(),
+                userData.getEmail(),
+                userData.getPhoneNum(),
+                userData.getGender())
+                ;
+            edit.ShowDialog();
+        }
+
+        bool view = false;
+        private void btnViewPass_Click(object sender, EventArgs e)
+        {
+            togglePassword();
+        }
+
+        private void togglePassword() {
+            view = !view;
+
+            if (view)
+            {
+                passLabel.Text = UserDetails.Instance.getPassword();
+            }
+            else
+            {
+                passLabel.Text = "*****************";
+            }
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(newPass.Text)) {
+                MessageBox.Show("Password field can't be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            updatePassword(newPass.Text, UserDetails.Instance.getId());
+            newPass.Text = "";
+        }
+
+        private void updatePassword(string newPass,int id) {
+            string sqlQuery = "UPDATE UsersData SET uPassword = @uPassword  WHERE id = @id";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                var userDatails = UserDetails.Instance;
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@uPassword", newPass);
+                    command.Parameters.AddWithValue("@id", id);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UserDetails.Instance.setPassword(newPass);
+                        togglePassword();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data was updated. Please check the ID and try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
         }
     }
 }

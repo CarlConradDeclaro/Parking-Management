@@ -194,7 +194,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Transparent;
+            button1.BackColor = Color.FromArgb(26, 22, 71);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("NSimSun", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -349,9 +349,9 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(6, 424);
             label7.Name = "label7";
-            label7.Size = new Size(96, 23);
+            label7.Size = new Size(101, 23);
             label7.TabIndex = 22;
-            label7.Text = "Total cash";
+            label7.Text = "Total cash:";
             // 
             // flowLayoutPanel1
             // 
@@ -479,9 +479,9 @@
             adminHandler.ForeColor = Color.White;
             adminHandler.Location = new Point(10, 335);
             adminHandler.Name = "adminHandler";
-            adminHandler.Size = new Size(67, 23);
+            adminHandler.Size = new Size(89, 23);
             adminHandler.TabIndex = 30;
-            adminHandler.Text = "Admin";
+            adminHandler.Text = "AdminId:";
             // 
             // view
             // 

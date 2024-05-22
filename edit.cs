@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,8 @@ namespace Parking
     public partial class edit : Form
     {
         String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+        string vType = "";
+        string vBrand = "";
         private string plateNum;
         public event EventHandler editHandler;
 
@@ -22,8 +24,8 @@ namespace Parking
         {
             InitializeComponent();
             plateValue.Text = record.PlateNumber;
-            typeValue.Text = record.Type;
-            brandValue.Text = record.Model;
+            vType = record.Type;
+            vBrand = record.Model;
             driverValue.Text = record.Driver;
             phoneValue.Text = record.Phone;
             plateNum = record.PlateNumber;
@@ -32,12 +34,76 @@ namespace Parking
 
         private void edit_Load(object sender, EventArgs e)
         {
+            
+            var vehiclemanger = VehicleManger.Instance;
+            var VPM = vehiclemanger.GetVPM();
+            foreach (var record in VPM)
+            {
+                typeValue.Items.Add(record.vehicleType);
+            }
 
+            editHandler?.Invoke(this, EventArgs.Empty);
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            EditVehicle(plateNum);
-            this.Close();
+            
+            int proceedAddItem = 0;
+
+            if (!string.IsNullOrWhiteSpace(plateValue.Text) && plateValue.Text.All(char.IsLetterOrDigit))
+            {
+                proceedAddItem++;
+            }
+            else
+            {
+                errorPlateNum.Text = "Please enter a valid plate number.";
+            }
+
+
+            if (typeValue.SelectedItem?.ToString() != null )
+            {
+                proceedAddItem++;
+            }
+            else
+            {
+                errorType.Text = "Please select a type.";
+            }
+
+
+            if (brandValue.SelectedItem?.ToString() != null)
+            {
+                proceedAddItem++;
+            }
+            else
+            {
+                errorBrand.Text = "Please select a model.";
+            }
+
+            if (string.IsNullOrWhiteSpace(driverValue.Text) || !double.TryParse(driverValue.Text, out _))
+            {
+                proceedAddItem++;
+            }
+            else
+            {
+                erroDriveName.Text = "Invalid name. Name should not be numeric.";
+            }
+
+
+            if (string.IsNullOrWhiteSpace(phoneValue.Text) || double.TryParse(phoneValue.Text, out _))
+            {
+                proceedAddItem++;
+            }
+            else
+            {
+                erroPhoneNum.Text = "Please enter a valid numeric phone number.";
+            }
+
+
+
+            if (proceedAddItem == 5) {
+                EditVehicle(plateNum);
+                this.Close();
+            }
+               
         }
         private void EditVehicle(String plateNumber)
         {
@@ -83,12 +149,12 @@ namespace Parking
 
 
                 command.Parameters.AddWithValue("@v_plate", newPlateNo);
-                command.Parameters.AddWithValue("@v_type", newTpe);
-                command.Parameters.AddWithValue("@model", newModel);
+                command.Parameters.AddWithValue("@v_type", typeValue.SelectedItem?.ToString() == null ? vType : typeValue.SelectedItem?.ToString());
+                command.Parameters.AddWithValue("@model", brandValue.SelectedItem?.ToString() == null ? vBrand : brandValue.SelectedItem?.ToString());
                 command.Parameters.AddWithValue("@driver", newDriveName);
                 command.Parameters.AddWithValue("@phone", newPhoneNo);
                 command.Parameters.AddWithValue("@original_v_plate", plateNo);
-
+                editHandler?.Invoke(this, EventArgs.Empty);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -98,11 +164,26 @@ namespace Parking
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            editHandler?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void typeValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            brandValue.Items.Clear();
+            string selectedItem = typeValue.SelectedItem?.ToString();
+            var vehicleBrand = VehicleBrandMAnger.Instance;
+            var VB = vehicleBrand.GetVB();
+            foreach (var record in VB)
+            {
+                if (record.vehicleType == selectedItem)
+                    brandValue.Items.Add(record.vBrand);
+            }
 
         }
     }

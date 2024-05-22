@@ -116,6 +116,10 @@ namespace Parking
             edit editVehicle = new edit(vehicleRecord);
             editVehicle.editHandler += ParkOutList_ParkingRecordAdded;
             editVehicle.Show();
+
+           /* pe1 = new ParkingEntry(flowLayoutPanel2);
+            pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
+            pe1.ShowDialog();*/
         }
 
         public  void setRounded( int borderRadius)

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -24,6 +25,7 @@ namespace Parking
             InitializeComponent();
 
             setGenderItems();
+            SetButtonRoundedCorners(createAccBtn);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace Parking
 
         }
         private void setGenderItems()
-        {
+        {//editGender
             comboBoxGender.Items.Add("MALE");
             comboBoxGender.Items.Add("FEMALE");
         }
@@ -85,12 +87,15 @@ namespace Parking
             bool hasError = false;
 
 
-            string namePattern = @"^[a-zA-Z]+$";
+            string namePattern = @"^[a-zA-Z\s]+$";
             string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             string phonePattern = @"^\d+$";
 
 
-            if (string.IsNullOrWhiteSpace(firstname) || !System.Text.RegularExpressions.Regex.IsMatch(firstname, namePattern))
+            if (isEmailInList(Email, connectionString))
+                return;
+
+            if (string.IsNullOrEmpty((firstname)) || !System.Text.RegularExpressions.Regex.IsMatch(firstname, namePattern))
             {
                 errorLabelFN.Text = "Please enter a valid first name (letters only)";
                 hasError = true;
@@ -134,7 +139,7 @@ namespace Parking
 
             if (string.IsNullOrWhiteSpace(phoneNum) || !System.Text.RegularExpressions.Regex.IsMatch(phoneNum, phonePattern))
             {
-                errorLabelPhoneNum.Text = "Please enter a valid phone number (digits only)";
+                errorLabelPhoneNum.Text = "Enter a valid phone number (digits only)";
                 hasError = true;
             }
             else
@@ -154,7 +159,9 @@ namespace Parking
 
             if (!hasError)
             {
+
                 User user = new User(
+
                     firstname,
                     lastname,
                     phoneNum,
@@ -162,15 +169,57 @@ namespace Parking
                     Email,
                     Password
                 );
+                /*
+                   InsertAdminLog((int)foundUser.Id, foundUser.FirstName + foundUser.LastName);
+                    var c = UserDetails.Instance;
+                    c.addUser(foundUser);
+                    Form1 content = new Form1();
+                    content.Show();
+                    this.Hide();
+                 */
 
                 AddUser(user, connectionString);
+                User foundUser = GetUserByEmail(Email);
                 var c = UserDetails.Instance;
-                c.addUser(user);
+                c.addUser(foundUser);
+
+
                 Form1 content = new Form1();
                 content.Show();
                 InsertAdminLog(getAdminId(Email, connectionString), firstname + " " + lastname, connectionString);
                 this.Hide();
+
             }
+        }
+
+        public static User GetUserByEmail(string email)
+        {
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM UsersData WHERE email = @Email";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Email", email);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new User
+                        {
+                            Id = (int)reader["id"],
+                            FirstName = reader["firstName"].ToString(),
+                            LastName = reader["lastName"].ToString(),
+                            Pnumber = (string)reader["phoneNum"],
+                            Gender = reader["gender"].ToString(),
+                            Email = reader["email"].ToString(),
+                            Password = reader["uPassword"].ToString()
+                        };
+                    }
+                }
+            }
+            return null;
         }
         public static void AddUser(User user, string connectionString)
         {
@@ -243,7 +292,53 @@ namespace Parking
             }
         }
 
+        private bool isEmailInList(string email, string connectionString)
+        {
+
+            string query = "SELECT id FROM UsersData WHERE email = @Email";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        MessageBox.Show("Email already exist.", "Email In Use", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
+        private void SetButtonRoundedCorners(Button button)
+        {
+            int radius = 20; // Radius for the rounded corners
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
+            path.AddLine(radius, 0, button.Width - radius, 0);
+            path.AddArc(new Rectangle(button.Width - radius, 0, radius, radius), -90, 90);
+            path.AddLine(button.Width, radius, button.Width, button.Height - radius);
+            path.AddArc(new Rectangle(button.Width - radius, button.Height - radius, radius, radius), 0, 90);
+            path.AddLine(button.Width - radius, button.Height, radius, button.Height);
+            path.AddArc(new Rectangle(0, button.Height - radius, radius, radius), 90, 90);
+            path.CloseFigure();
+
+            button.Region = new Region(path);
+        }
+
         private void Registration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxGender_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

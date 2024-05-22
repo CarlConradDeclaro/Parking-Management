@@ -169,6 +169,7 @@
             // plateNo
             // 
             plateNo.BackColor = Color.FromArgb(22, 10, 95);
+            plateNo.CharacterCasing = CharacterCasing.Upper;
             plateNo.Font = new Font("NSimSun", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             plateNo.ForeColor = Color.White;
             plateNo.Location = new Point(19, 146);
@@ -181,6 +182,8 @@
             // comboBoxModel
             // 
             comboBoxModel.BackColor = Color.FromArgb(22, 10, 95);
+            comboBoxModel.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxModel.FlatStyle = FlatStyle.Flat;
             comboBoxModel.Font = new Font("Segoe UI", 13.8F);
             comboBoxModel.ForeColor = Color.White;
             comboBoxModel.FormattingEnabled = true;
@@ -212,7 +215,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Transparent;
+            button1.BackColor = Color.FromArgb(22, 10, 95);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
@@ -229,7 +232,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Transparent;
+            button2.BackColor = Color.FromArgb(22, 10, 95);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
@@ -254,7 +257,7 @@
             title.BackColor = Color.Transparent;
             title.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(3, 7);
+            title.Location = new Point(377, 9);
             title.Name = "title";
             title.Size = new Size(88, 23);
             title.TabIndex = 18;
@@ -302,7 +305,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.Transparent;
+            button3.BackColor = Color.FromArgb(22, 10, 95);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
@@ -337,7 +340,7 @@
             button4.ForeColor = Color.Brown;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(816, -1);
+            button4.Location = new Point(816, 38);
             button4.Name = "button4";
             button4.Size = new Size(38, 42);
             button4.TabIndex = 59;
@@ -1579,11 +1582,11 @@
             BackColor = Color.FromArgb(28, 22, 120);
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(855, 732);
+            ControlBox = false;
             Controls.Add(panel3);
             Controls.Add(panel1);
             Cursor = Cursors.Hand;
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.None;
             HelpButton = true;
             Name = "ParkingEntry";
             StartPosition = FormStartPosition.CenterScreen;

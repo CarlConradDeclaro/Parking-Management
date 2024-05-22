@@ -33,6 +33,7 @@ namespace Parking
         private void History_Load(object sender, EventArgs e)
         {
             DisplayTransactions();
+            searchVH.Text = "";
         }
         private void DisplayTransactions() {
             flowPanelHistory.Controls.Clear();
@@ -45,11 +46,11 @@ namespace Parking
                 HistoryList pL = new HistoryList();
                 pL.UpdateLabels(record);
                 flowPanelHistory.Controls.Add(pL);
-
             }
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            searchVH.Text = "";
             DisplayTransactions();
         }
         public void display()
@@ -59,6 +60,7 @@ namespace Parking
 
         private void button3_Click(object sender, EventArgs e)
         {
+            searchVH.Text = "";
             DisplayTransactions();
         }
 
