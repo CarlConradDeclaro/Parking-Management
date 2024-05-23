@@ -14,8 +14,9 @@ namespace Parking
 {
     public partial class admin : UserControl
     {
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+        String connectionString = ConnectionString.Instance.connectionString();
+       
+        
         private static admin instance;
         public static admin Instance
         {

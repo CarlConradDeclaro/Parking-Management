@@ -17,7 +17,7 @@ namespace Parking
     {
         int Id = 0;
         Label AdminName;
-
+        string connectionString = ConnectionString.Instance.connectionString();
         Label profileName;
         Label profileEmail;
         Label profilePhone;
@@ -147,8 +147,7 @@ namespace Parking
         public void updateUserData(int id)
         {
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+ 
             string sqlQuery = "UPDATE UsersData SET firstName = @FirstName, lastName = @LastName, phoneNum = @Pnumber, gender = @Gender, email = @Email WHERE Id = @Id";
 
             string firstName = editFirstname.Text;

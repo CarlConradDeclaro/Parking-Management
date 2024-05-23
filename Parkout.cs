@@ -20,9 +20,7 @@ namespace Parking
         public event EventHandler ParkingRecordAdded;
         public event EventHandler Parking;
         private string palteNum, Type;
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
-
+        String connectionString = ConnectionString.Instance.connectionString();
         private static Parkout instance;
 
         public static Parkout Instance

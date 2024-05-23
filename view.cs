@@ -14,8 +14,7 @@ namespace Parking
 {
     public partial class view : Form
     {
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+        string connectionString = ConnectionString.Instance.connectionString();
         public view()
         {
             InitializeComponent();

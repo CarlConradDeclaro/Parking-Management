@@ -18,8 +18,7 @@ namespace Parking
 
     public partial class Registration : Form
     {
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+        string connectionString = ConnectionString.Instance.connectionString();
         public Registration()
         {
             InitializeComponent();
@@ -192,10 +191,9 @@ namespace Parking
             }
         }
 
-        public static User GetUserByEmail(string email)
+        public User GetUserByEmail(string email)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+ 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();

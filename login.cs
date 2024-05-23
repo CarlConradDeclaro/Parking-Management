@@ -17,7 +17,7 @@ namespace Parking
     {
         string userEmail;
         string userPassword;
-
+        string connectionString = ConnectionString.Instance.connectionString();
         public login(string userEmail, string userPassword)
         {
             this.userEmail = userEmail;
@@ -107,8 +107,7 @@ namespace Parking
         }
         private void InsertAdminLog(int adminID, string adminName)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+ 
             string query = "INSERT INTO Admin_logs (adminID, adminName, timestamp) VALUES (@adminID, @adminName, GETDATE())";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -130,9 +129,9 @@ namespace Parking
             }
         }
 
-        public static User GetUserByEmail(string email)
+        public User GetUserByEmail(string email)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

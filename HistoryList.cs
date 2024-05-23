@@ -17,7 +17,7 @@ namespace Parking
     public partial class HistoryList : UserControl
     {
 
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+        String connectionString = ConnectionString.Instance.connectionString();
 
         public event EventHandler deleteHistoryHandler;
         private ParkingHistoyRecord parkinghistoyRecord;

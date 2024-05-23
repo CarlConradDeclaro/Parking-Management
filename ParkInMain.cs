@@ -22,7 +22,30 @@ using System.Collections;
 namespace Parking
 {
 
-    public class UserDetails
+    public class ConnectionString
+    {
+        
+        private static ConnectionString instance;
+     
+        public static ConnectionString Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new ConnectionString();
+                return instance;
+            }
+            set
+            {
+                instance = value;
+            }
+        }
+
+        public string connectionString() {
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\repos\Parking-Management\DB\VehicleDatabase.mdf;Integrated Security=True";
+        }
+    }
+        public class UserDetails
     {
 
         private string name;
@@ -268,7 +291,7 @@ namespace Parking
         private List<ParkingHistoyRecord> parkingHistoryRecords;
         private static ParkingRecordsManager instance;
 
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+        String connectionString = ConnectionString.Instance.connectionString();
 
 
         public static ParkingRecordsManager Instance
@@ -578,8 +601,7 @@ namespace Parking
     }
 
     public class VehicleManger {
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+        String connectionString = ConnectionString.Instance.connectionString();
         private List<Vehicle> vehiclePaymentMatrix;
         private static VehicleManger instance;
         public static VehicleManger Instance
@@ -680,8 +702,7 @@ namespace Parking
     }
     public class VehicleBrandMAnger
     {
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+        String connectionString = ConnectionString.Instance.connectionString();
         private List<VehicleBrand> vehicleBrand;
         private static VehicleBrandMAnger instance;
         public static VehicleBrandMAnger Instance
@@ -700,22 +721,7 @@ namespace Parking
         }
         private void AddDefaultValues()
         {
-           /* vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Honda"));
-            vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Yamaha"));
-            vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Suzuki"));
-            vehicleBrand.Add(new VehicleBrand("MOTORBIKE", "Kawasaki"));
-            vehicleBrand.Add(new VehicleBrand("SUV", "Toyota"));
-            vehicleBrand.Add(new VehicleBrand("SUV", "Honda"));
-            vehicleBrand.Add(new VehicleBrand("SUV", "Ford"));
-            vehicleBrand.Add(new VehicleBrand("SUV", "Chevrolet"));
-            vehicleBrand.Add(new VehicleBrand("VAN", "Ford"));
-            vehicleBrand.Add(new VehicleBrand("VAN", "Chevrolet"));
-            vehicleBrand.Add(new VehicleBrand("VAN", "Mercedes-Benz"));
-            vehicleBrand.Add(new VehicleBrand("VAN", "Volkswagen"));
-            vehicleBrand.Add(new VehicleBrand("SEDAN", "BMW"));
-            vehicleBrand.Add(new VehicleBrand("SEDAN", "Mercedes-Benz"));
-            vehicleBrand.Add(new VehicleBrand("SEDAN", "Audi"));
-            vehicleBrand.Add(new VehicleBrand("SEDAN", "Lexus"));*/
+           
         }
         public void addVB(VehicleBrand vbrand)
         {

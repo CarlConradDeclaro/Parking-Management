@@ -14,7 +14,7 @@ namespace Parking
 {
     public partial class edit : Form
     {
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
+        String connectionString = ConnectionString.Instance.connectionString();
         string vType = "";
         string vBrand = "";
         private string plateNum;

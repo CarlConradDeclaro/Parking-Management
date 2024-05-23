@@ -23,8 +23,7 @@ namespace Parking
         private FlowLayoutPanel flowLayoutPanel2;
         ParkingRecordsManager prm = new ParkingRecordsManager();
         public event EventHandler ParkingRecordAdded;
-        String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\carlconrad\source\Parking-Management-System\DB\VehicleDB.mdf;Integrated Security=True";
-
+        String connectionString = ConnectionString.Instance.connectionString();
         string imagePath1 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car2.png";
         string imagePath2 = @"C:\Users\carlconrad\source\Parking-Management-System\img\Car1.png";
 
