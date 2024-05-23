@@ -14,6 +14,10 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Parking
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\carlconrad\source\repos\Parking-Management\
+=======
+build_property.ProjectDir = C:\Users\carlconrad\Source\Repos\Parking-Management3\
+>>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
