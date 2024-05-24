@@ -41,6 +41,7 @@ namespace Parking
         public Parkin()
         {
             InitializeComponent();
+         
             filterDisplay("PARKED");
             countSlots();
             numPV.Text = countParkedVehicle() + "";
@@ -69,9 +70,10 @@ namespace Parking
             panel16.SetRoundedCorners(10);
             panel17.SetRoundedCorners(10);
             panel18.SetRoundedCorners(10);
-           
+
             panel27.SetRoundedCorners(15);
             profileDetailsPanel.SetRoundedCorners(15);
+
         }
 
 
@@ -99,6 +101,29 @@ namespace Parking
         }
 
         bool sidebarExpand = false;
+
+        private void expandSiderbar_Tick(object sender, EventArgs e)
+        {
+            sidebar.Width += 10;
+            if (sidebar.Width >= 230)
+            {
+                sidebarExpand = true;
+                expandSiderbar.Stop();
+            }
+        }
+        private void expandMenu_Tick(object sender, EventArgs e)
+        {
+            menuContainer.Height += 10;
+            if (menuContainer.Height >= 500)
+            {
+                expandMenu.Stop();
+                menuExpand = true;
+            }
+        }
+
+
+
+       
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -186,7 +211,7 @@ namespace Parking
             {
                 pOut = new Parkout();
                 pOut.Parking += ParkingRecordAddedHandler;
-               
+
                 pOut.ShowDialog();
 
             }
@@ -218,7 +243,7 @@ namespace Parking
                     parkinList pL = new parkinList(numV, numPV);
                     pL.UpdateLabels(record);
                     pL.EditParking += ParkingRecordAddedHandler;
-                   
+
 
 
                     flowLayoutPanel2.Controls.Add(pL);
@@ -1105,7 +1130,8 @@ namespace Parking
             togglePassword();
         }
 
-        private void togglePassword() {
+        private void togglePassword()
+        {
             view = !view;
 
             if (view)
@@ -1120,7 +1146,8 @@ namespace Parking
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(newPass.Text)) {
+            if (string.IsNullOrEmpty(newPass.Text))
+            {
                 MessageBox.Show("Password field can't be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -1128,7 +1155,8 @@ namespace Parking
             newPass.Text = "";
         }
 
-        private void updatePassword(string newPass,int id) {
+        private void updatePassword(string newPass, int id)
+        {
             string sqlQuery = "UPDATE UsersData SET uPassword = @uPassword  WHERE id = @id";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -1153,6 +1181,8 @@ namespace Parking
                 }
             }
         }
+
+       
     }
 }
 

@@ -83,7 +83,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Ebrima", 9F, FontStyle.Bold);
             label8.ForeColor = Color.Silver;
-            label8.Location = new Point(875, 12);
+            label8.Location = new Point(875, 14);
             label8.Name = "label8";
             label8.Size = new Size(67, 20);
             label8.TabIndex = 7;
@@ -96,7 +96,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1223, 9);
+            button1.Location = new Point(1184, 11);
             button1.Name = "button1";
             button1.Size = new Size(32, 29);
             button1.TabIndex = 10;
@@ -110,7 +110,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(1258, 49);
+            button2.Location = new Point(1255, 9);
             button2.Name = "button2";
             button2.Size = new Size(33, 29);
             button2.TabIndex = 11;
@@ -135,7 +135,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Ebrima", 9F, FontStyle.Bold);
             label3.ForeColor = Color.DarkOrange;
-            label3.Location = new Point(1040, 12);
+            label3.Location = new Point(1040, 14);
             label3.Name = "label3";
             label3.Size = new Size(68, 20);
             label3.TabIndex = 2;
@@ -148,7 +148,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(1261, 9);
+            button3.Location = new Point(1223, 9);
             button3.Name = "button3";
             button3.Size = new Size(32, 29);
             button3.TabIndex = 13;
@@ -170,7 +170,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "parkinList";
-            Size = new Size(1305, 46);
+            Size = new Size(1305, 49);
             Load += parkinList_Load;
             Click += parkinList_Click;
             ResumeLayout(false);

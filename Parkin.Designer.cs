@@ -205,6 +205,8 @@
             panelContent = new Panel();
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
+            expandSiderbar = new System.Windows.Forms.Timer(components);
+            expandMenu = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)humBtn).BeginInit();
             sidebar.SuspendLayout();
@@ -2446,6 +2448,18 @@
             panelContent.Size = new Size(1792, 1252);
             panelContent.TabIndex = 10;
             // 
+            // expandSiderbar
+            // 
+            expandSiderbar.Enabled = true;
+            expandSiderbar.Interval = 15;
+            expandSiderbar.Tick += expandSiderbar_Tick;
+            // 
+            // expandMenu
+            // 
+            expandMenu.Enabled = true;
+            expandMenu.Interval = 15;
+            expandMenu.Tick += expandMenu_Tick;
+            // 
             // Parkin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -2688,5 +2702,7 @@
         private Button button14;
         private Button btnViewPass;
         private Button btnChangePass;
+        private System.Windows.Forms.Timer expandSiderbar;
+        private System.Windows.Forms.Timer expandMenu;
     }
 }

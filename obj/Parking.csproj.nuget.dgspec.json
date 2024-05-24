@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Parking.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Parking.csproj",
         "packagesPath": "C:\\Users\\carlconrad\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\obj\\",
-=======
-    "C:\\Users\\carlconrad\\Source\\Repos\\Parking-Management3\\Parking.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\carlconrad\\Source\\Repos\\Parking-Management3\\Parking.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\carlconrad\\Source\\Repos\\Parking-Management3\\Parking.csproj",
-        "projectName": "Parking",
-        "projectPath": "C:\\Users\\carlconrad\\Source\\Repos\\Parking-Management3\\Parking.csproj",
-        "packagesPath": "C:\\Users\\carlconrad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlconrad\\Source\\Repos\\Parking-Management3\\obj\\",
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\carlconrad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,6 +45,14 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
+            "LiveCharts.WinForms": {
+              "target": "Package",
+              "version": "[0.9.7.1, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"

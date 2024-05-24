@@ -1,163 +1,52 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\",
+  "WorkspaceRootPath": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|c:\\users\\carlconrad\\source\\repos\\parking-management\\parkinmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkinmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\loadingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:loadingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT3_DB_VEHICLEDB.MDF/True/SqlTable/dbo.Transactions.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|c:\\users\\carlconrad\\source\\repos\\parking-management\\loadingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:loadingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|c:\\users\\carlconrad\\source\\repos\\parking-management3\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT_DB_VEHICLEDB.MDF/True/SqlTable/dbo.Transactions.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT_DB_VEHICLEDB.MDF/True/SqlTable/dbo.UsersData.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\editprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:editprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-=======
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkinmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkinmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkingentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkingentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\brandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:brandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\editprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:editprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\historylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:historylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkingentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkingentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\parkinmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkinmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\brandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:brandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkinlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkinlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkinlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\parkinlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkinlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\viewparkinvh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:viewparkinvh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\viewparkinvh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:viewparkinvh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\vehicledetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:vehicledetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkoutlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkoutlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkoutlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:parkoutlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\vehicledetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:vehicledetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\historylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{058E0200-F60C-4753-A1A2-1E9E30F6C6FF}|Parking.csproj|solutionrelative:historylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT_DB_VEHICLEDATABASE.MDF/True/SqlTable/dbo.UsersData.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -167,473 +56,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 30,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-=======
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
-              "Title": "dbo.Transactions [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT3_DB_VEHICLEDB.MDF/True/SqlTable/dbo.Transactions.sql",
-              "ToolTip": "dbo.Transactions [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-<<<<<<< HEAD
-=======
-              "WhenOpened": "2024-05-22T22:40:08.425Z",
+              "DocumentIndex": 4,
+              "Title": "Registration.cs",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Registration.cs",
+              "RelativeDocumentMoniker": "Registration.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Registration.cs",
+              "RelativeToolTip": "Registration.cs",
+              "ViewState": "AQIAAFEBAAAAAAAAAAAwwGMBAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:35:18.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "dbo.Transactions [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT_DB_VEHICLEDB.MDF/True/SqlTable/dbo.Transactions.sql",
-              "ToolTip": "dbo.Transactions [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
-              "WhenOpened": "2024-05-22T22:31:43.886Z"
+              "Title": "Registration.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Registration.cs",
+              "RelativeDocumentMoniker": "Registration.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Registration.cs [Design]",
+              "RelativeToolTip": "Registration.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T13:20:01.76Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AQIAADgNAAAAAAAAAAAqwD8NAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-05-24T12:50:24.598Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "dbo.UsersData [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT_DB_VEHICLEDB.MDF/True/SqlTable/dbo.UsersData.sql",
-              "ToolTip": "dbo.UsersData [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-22T22:31:34.959Z"
-<<<<<<< HEAD
+              "Title": "login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs",
+              "RelativeDocumentMoniker": "login.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs [Design]",
+              "RelativeToolTip": "login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T12:06:44.297Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "editProfile.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\editProfile.cs",
-              "RelativeDocumentMoniker": "editProfile.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\editProfile.cs [Design]",
-              "RelativeToolTip": "editProfile.cs [Design]",
+              "DocumentIndex": 8,
+              "Title": "parkinList.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\parkinList.cs",
+              "RelativeDocumentMoniker": "parkinList.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\parkinList.cs [Design]",
+              "RelativeToolTip": "parkinList.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:19:32.959Z"
-=======
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
+              "WhenOpened": "2024-05-23T18:46:58.834Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "editProfile.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\editProfile.cs",
-              "RelativeDocumentMoniker": "editProfile.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\editProfile.cs [Design]",
-              "RelativeToolTip": "..\\Parking-Management\\editProfile.cs [Design]",
+              "DocumentIndex": 10,
+              "Title": "Parkin.cs",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Parkin.cs",
+              "RelativeDocumentMoniker": "Parkin.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Parkin.cs",
+              "RelativeToolTip": "Parkin.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAUwBkAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:19:32.959Z"
+              "WhenOpened": "2024-05-23T17:39:19.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "editProfile.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\editProfile.cs",
-              "RelativeDocumentMoniker": "editProfile.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\editProfile.cs",
-              "RelativeToolTip": "editProfile.cs",
-              "ViewState": "AQIAAMcAAAAAAAAAAAAAAMsAAAAWAAAA",
+              "DocumentIndex": 5,
+              "Title": "login.cs",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs",
+              "RelativeDocumentMoniker": "login.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs",
+              "RelativeToolTip": "login.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAIwM0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:33:52.011Z"
+              "WhenOpened": "2024-05-23T16:47:21.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoadingState.cs",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\LoadingState.cs",
+              "RelativeDocumentMoniker": "LoadingState.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\LoadingState.cs",
+              "RelativeToolTip": "LoadingState.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAIwBgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T16:44:59.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoadingState.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\LoadingState.cs",
+              "RelativeDocumentMoniker": "LoadingState.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\LoadingState.cs [Design]",
+              "RelativeToolTip": "LoadingState.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T16:40:55.252Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Parkin.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Parkin.cs",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Parkin.cs",
               "RelativeDocumentMoniker": "Parkin.cs",
               "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\Parkin.cs [Design]",
-              "RelativeToolTip": "..\\Parking-Management\\Parkin.cs [Design]",
+              "RelativeToolTip": "Parkin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:29:58.47Z"
+              "WhenOpened": "2024-05-23T16:25:03.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "vehicleDetails.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\vehicleDetails.cs",
-              "RelativeDocumentMoniker": "vehicleDetails.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\vehicleDetails.cs",
-              "RelativeToolTip": "vehicleDetails.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T07:55:21.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "admin.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\admin.cs",
-              "RelativeDocumentMoniker": "admin.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\admin.cs [Design]",
-              "RelativeToolTip": "..\\Parking-Management\\admin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:24:48.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "view.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\view.cs",
-              "RelativeDocumentMoniker": "view.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\view.cs",
-              "RelativeToolTip": "view.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAuwBwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T12:43:49.385Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Registration.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Registration.cs",
-              "RelativeDocumentMoniker": "Registration.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\Registration.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\Registration.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T05:53:08.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "viewParkinVH.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\viewParkinVH.cs",
-              "RelativeDocumentMoniker": "viewParkinVH.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\viewParkinVH.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\viewParkinVH.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:53:22.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "viewParkinVH.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\viewParkinVH.cs",
-              "RelativeDocumentMoniker": "viewParkinVH.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\viewParkinVH.cs",
-              "RelativeToolTip": "viewParkinVH.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:44:44.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "edit.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\edit.cs",
-              "RelativeDocumentMoniker": "edit.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\edit.cs",
-              "RelativeToolTip": "edit.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:08:36.352Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "edit.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\edit.cs",
-              "RelativeDocumentMoniker": "edit.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\edit.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\edit.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:08:31.953Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "History.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\History.cs",
-              "RelativeDocumentMoniker": "History.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\History.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\History.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T16:30:32.858Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "vehicleDetails.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\vehicleDetails.cs",
-              "RelativeDocumentMoniker": "vehicleDetails.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\vehicleDetails.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\vehicleDetails.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:36:32.836Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "view.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\view.cs",
-              "RelativeDocumentMoniker": "view.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\view.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\view.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:36:25.769Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "History.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\History.cs",
-              "RelativeDocumentMoniker": "History.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\History.cs",
-              "RelativeToolTip": "History.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwCMAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T13:13:46.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "parkinList.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkinList.cs",
-              "RelativeDocumentMoniker": "parkinList.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkinList.cs",
-              "RelativeToolTip": "parkinList.cs",
-              "ViewState": "AQIAAGQAAAAAAAAAAAAwwHQAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T13:04:15.123Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "ParkOutList.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkOutList.cs",
-              "RelativeDocumentMoniker": "ParkOutList.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkOutList.cs",
-              "RelativeToolTip": "ParkOutList.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACMAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T08:38:51.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "ParkOutList.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkOutList.cs",
-              "RelativeDocumentMoniker": "ParkOutList.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\ParkOutList.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\ParkOutList.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T08:38:49.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "parkinList.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\parkinList.cs",
-              "RelativeDocumentMoniker": "parkinList.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\parkinList.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\parkinList.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T08:38:31.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Parkout.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Parkout.cs",
-              "RelativeDocumentMoniker": "Parkout.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\Parking-Management-System\\Parkout.cs [Design]",
-              "RelativeToolTip": "..\\..\\Parking-Management-System\\Parkout.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T08:16:31.871Z"
+              "DocumentIndex": 11,
+              "Title": "dbo.UsersData [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_CARLCONRAD_SOURCE_REPOS_PARKING_MANAGEMENT_DB_VEHICLEDATABASE.MDF/True/SqlTable/dbo.UsersData.sql",
+              "ToolTip": "dbo.UsersData [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-23T13:25:18.889Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ParkingEntry.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkingEntry.cs",
-              "RelativeDocumentMoniker": "ParkingEntry.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\ParkingEntry.cs [Design]",
-              "RelativeToolTip": "..\\Parking-Management\\ParkingEntry.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T08:05:34.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Parkout.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Parkout.cs",
-              "RelativeDocumentMoniker": "Parkout.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Parkout.cs",
-              "RelativeToolTip": "Parkout.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAowCgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T19:40:12.199Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ParkingEntry.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkingEntry.cs",
-              "RelativeDocumentMoniker": "ParkingEntry.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkingEntry.cs",
-              "RelativeToolTip": "ParkingEntry.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAkwIgAAABRAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T16:43:40.628Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HistoryList.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\HistoryList.cs",
-              "RelativeDocumentMoniker": "HistoryList.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\HistoryList.cs [Design]",
-              "RelativeToolTip": "..\\Parking-Management\\HistoryList.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T16:34:54.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "HistoryList.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\HistoryList.cs",
-              "RelativeDocumentMoniker": "HistoryList.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\HistoryList.cs",
-              "RelativeToolTip": "HistoryList.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T16:19:01.309Z"
-<<<<<<< HEAD
-=======
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BrandType.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\BrandType.cs",
-              "RelativeDocumentMoniker": "BrandType.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\BrandType.cs",
-              "RelativeToolTip": "BrandType.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAkwC0AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T15:43:15.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BrandType.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\BrandType.cs",
-              "RelativeDocumentMoniker": "BrandType.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\BrandType.cs [Design]",
-              "RelativeToolTip": "..\\Parking-Management\\BrandType.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T15:43:12.579Z"
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-<<<<<<< HEAD
-              "Title": "BrandType.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\BrandType.cs",
-              "RelativeDocumentMoniker": "BrandType.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\BrandType.cs",
-              "RelativeToolTip": "BrandType.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAkwC0AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T15:43:15.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BrandType.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\BrandType.cs",
-              "RelativeDocumentMoniker": "BrandType.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\BrandType.cs [Design]",
-              "RelativeToolTip": "BrandType.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T15:43:12.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-=======
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
-              "Title": "admin.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\admin.cs",
-              "RelativeDocumentMoniker": "admin.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\admin.cs",
-              "RelativeToolTip": "admin.cs",
-              "ViewState": "AQIAAP0AAAAAAAAAAAAYwB0BAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T12:20:36.354Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-=======
-              "DocumentIndex": 5,
->>>>>>> 5e5bc97130dd08b134403fbbeb24bd40c43347a8
               "Title": "ParkInMain.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkInMain.cs",
+              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\ParkInMain.cs",
               "RelativeDocumentMoniker": "ParkInMain.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\ParkInMain.cs",
+              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\ParkInMain.cs",
               "RelativeToolTip": "ParkInMain.cs",
-              "ViewState": "AQIAAKsBAAAAAAAAAAAcwLEBAAAqAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T06:12:55.075Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Registration.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Registration.cs",
-              "RelativeDocumentMoniker": "Registration.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Registration.cs",
-              "RelativeToolTip": "Registration.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAqwI0AAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T06:02:15.047Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "login.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\login.cs",
-              "RelativeDocumentMoniker": "login.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\login.cs",
-              "RelativeToolTip": "login.cs",
-              "ViewState": "AQIAAHoAAAAAAAAAAAAAAI8AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T05:49:34.422Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\login.cs",
-              "RelativeDocumentMoniker": "login.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management\\login.cs [Design]",
-              "RelativeToolTip": "..\\Parking-Management\\login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T05:49:22.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Parkin.cs",
-              "DocumentMoniker": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Parkin.cs",
-              "RelativeDocumentMoniker": "Parkin.cs",
-              "ToolTip": "C:\\Users\\carlconrad\\source\\repos\\Parking-Management3\\Parkin.cs",
-              "RelativeToolTip": "Parkin.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAEkAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T05:45:16.66Z"
+              "WhenOpened": "2024-05-23T13:24:57.816Z"
             }
           ]
         }

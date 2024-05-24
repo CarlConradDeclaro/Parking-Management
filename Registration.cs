@@ -193,7 +193,7 @@ namespace Parking
 
         public User GetUserByEmail(string email)
         {
- 
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -339,6 +339,21 @@ namespace Parking
         private void comboBoxGender_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel29_Paint(object sender, PaintEventArgs e)
+        {
+            /* this.Close();*/
+        }
+
+        private void panel29_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

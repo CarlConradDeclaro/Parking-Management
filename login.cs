@@ -43,29 +43,29 @@ namespace Parking
             string enteredEmail = email.Text;
             string enteredPassword = password.Text;
 
-        
+
             errorEmail.Text = "";
             errorPass.Text = "";
 
-          
+
             if (string.IsNullOrWhiteSpace(enteredEmail))
             {
                 errorEmail.Text = "Email cannot be empty.";
-                return;  
+                return;
             }
 
-           
+
             if (!IsValidEmail(enteredEmail))
             {
                 errorEmail.Text = "Please enter a valid email address.";
-                return;  
+                return;
             }
 
-           
+
             if (string.IsNullOrWhiteSpace(enteredPassword))
             {
                 errorPass.Text = "Password cannot be empty.";
-                return; 
+                return;
             }
 
             User foundUser = GetUserByEmail(enteredEmail);
@@ -76,8 +76,8 @@ namespace Parking
                     InsertAdminLog((int)foundUser.Id, foundUser.FirstName + foundUser.LastName);
                     var c = UserDetails.Instance;
                     c.addUser(foundUser);
-                    Form1 content = new Form1();
-                    content.Show();
+                    LoadingState load = new LoadingState();
+                    load.Show();
                     this.Hide();
                 }
                 else
@@ -107,7 +107,7 @@ namespace Parking
         }
         private void InsertAdminLog(int adminID, string adminName)
         {
- 
+
             string query = "INSERT INTO Admin_logs (adminID, adminName, timestamp) VALUES (@adminID, @adminName, GETDATE())";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -178,7 +178,7 @@ namespace Parking
 
         private void SetButtonRoundedCorners(Button button)
         {
-            int radius = 20; 
+            int radius = 20;
             GraphicsPath path = new GraphicsPath();
             path.StartFigure();
             path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
@@ -193,6 +193,15 @@ namespace Parking
             button.Region = new Region(path);
         }
 
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+            /*  this.Close();*/
+        }
+
+        private void panel8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 
