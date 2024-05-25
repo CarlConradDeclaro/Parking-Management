@@ -96,7 +96,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1184, 11);
+            button1.Location = new Point(1160, 11);
             button1.Name = "button1";
             button1.Size = new Size(32, 29);
             button1.TabIndex = 10;
@@ -110,7 +110,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(1255, 9);
+            button2.Location = new Point(1231, 9);
             button2.Name = "button2";
             button2.Size = new Size(33, 29);
             button2.TabIndex = 11;
@@ -148,7 +148,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(1223, 9);
+            button3.Location = new Point(1199, 9);
             button3.Name = "button3";
             button3.Size = new Size(32, 29);
             button3.TabIndex = 13;

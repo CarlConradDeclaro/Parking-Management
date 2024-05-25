@@ -68,3 +68,6 @@ CREATE TABLE Vehicle_Type (
     [addAmtPerHOur] INT           NULL,
     PRIMARY KEY CLUSTERED ([id] ASC)
 );
+
+
+

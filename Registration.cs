@@ -183,8 +183,12 @@ namespace Parking
                 c.addUser(foundUser);
 
 
-                Form1 content = new Form1();
-                content.Show();
+                /*Form1 content = new Form1();
+                content.Show();*/
+
+                LoadingState load = new LoadingState();
+                load.Show();
+                
                 InsertAdminLog(getAdminId(Email, connectionString), firstname + " " + lastname, connectionString);
                 this.Hide();
 

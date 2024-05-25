@@ -39,6 +39,8 @@
             label1 = new Label();
             button8 = new Button();
             panel3 = new Panel();
+            panel32 = new Panel();
+            panel31 = new Panel();
             panel18 = new Panel();
             panel17 = new Panel();
             panel16 = new Panel();
@@ -51,6 +53,8 @@
             setBrandName = new TextBox();
             label6 = new Label();
             panel2 = new Panel();
+            panel33 = new Panel();
+            panel29 = new Panel();
             panel13 = new Panel();
             panel12 = new Panel();
             panel11 = new Panel();
@@ -64,7 +68,6 @@
             button1 = new Button();
             setTypeName = new TextBox();
             label3 = new Label();
-            label4 = new Label();
             panel5 = new Panel();
             label5 = new Label();
             panel6 = new Panel();
@@ -81,6 +84,10 @@
             flagDown = new NumericUpDown();
             AAPH = new NumericUpDown();
             panel4 = new Panel();
+            panel37 = new Panel();
+            panel36 = new Panel();
+            panel35 = new Panel();
+            panel34 = new Panel();
             errorEditName = new Label();
             errorAAPH = new Label();
             errorEditFlagdown = new Label();
@@ -98,6 +105,8 @@
             button5 = new Button();
             button4 = new Button();
             label11 = new Label();
+            panel30 = new Panel();
+            label4 = new Label();
             panel1.SuspendLayout();
             panel28.SuspendLayout();
             panel3.SuspendLayout();
@@ -133,7 +142,7 @@
             // 
             errorType.AutoSize = true;
             errorType.ForeColor = Color.Red;
-            errorType.Location = new Point(496, 266);
+            errorType.Location = new Point(506, 266);
             errorType.Name = "errorType";
             errorType.Size = new Size(0, 20);
             errorType.TabIndex = 29;
@@ -142,7 +151,7 @@
             // 
             errorBrandName.AutoSize = true;
             errorBrandName.ForeColor = Color.Red;
-            errorBrandName.Location = new Point(104, 266);
+            errorBrandName.Location = new Point(128, 266);
             errorBrandName.Name = "errorBrandName";
             errorBrandName.Size = new Size(0, 20);
             errorBrandName.TabIndex = 28;
@@ -160,7 +169,7 @@
             // 
             errorFlagDown.AutoSize = true;
             errorFlagDown.ForeColor = Color.Red;
-            errorFlagDown.Location = new Point(460, 135);
+            errorFlagDown.Location = new Point(527, 135);
             errorFlagDown.Name = "errorFlagDown";
             errorFlagDown.Size = new Size(0, 20);
             errorFlagDown.TabIndex = 26;
@@ -169,7 +178,7 @@
             // 
             errorName.AutoSize = true;
             errorName.ForeColor = Color.Red;
-            errorName.Location = new Point(108, 131);
+            errorName.Location = new Point(137, 131);
             errorName.Name = "errorName";
             errorName.Size = new Size(0, 20);
             errorName.TabIndex = 25;
@@ -210,6 +219,8 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(26, 22, 71);
+            panel3.Controls.Add(panel32);
+            panel3.Controls.Add(panel31);
             panel3.Controls.Add(panel18);
             panel3.Controls.Add(panel17);
             panel3.Controls.Add(panel16);
@@ -224,38 +235,59 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1285, 69);
             panel3.TabIndex = 10;
+            panel3.Paint += panel3_Paint;
+            // 
+            // panel32
+            // 
+            panel32.BackgroundImage = (Image)resources.GetObject("panel32.BackgroundImage");
+            panel32.BackgroundImageLayout = ImageLayout.Stretch;
+            panel32.Enabled = false;
+            panel32.Location = new Point(384, 23);
+            panel32.Name = "panel32";
+            panel32.Size = new Size(36, 32);
+            panel32.TabIndex = 18;
+            // 
+            // panel31
+            // 
+            panel31.BackgroundImage = (Image)resources.GetObject("panel31.BackgroundImage");
+            panel31.BackgroundImageLayout = ImageLayout.Stretch;
+            panel31.Enabled = false;
+            panel31.Location = new Point(6, 21);
+            panel31.Name = "panel31";
+            panel31.Size = new Size(36, 32);
+            panel31.TabIndex = 7;
             // 
             // panel18
             // 
-            panel18.Location = new Point(483, 16);
+            panel18.Location = new Point(497, 16);
             panel18.Name = "panel18";
             panel18.Size = new Size(10, 39);
             panel18.TabIndex = 16;
             // 
             // panel17
             // 
-            panel17.Location = new Point(490, 12);
+            panel17.Location = new Point(503, 12);
             panel17.Name = "panel17";
             panel17.Size = new Size(200, 10);
             panel17.TabIndex = 17;
             // 
             // panel16
             // 
-            panel16.Location = new Point(312, 16);
+            panel16.Location = new Point(333, 16);
             panel16.Name = "panel16";
             panel16.Size = new Size(10, 39);
             panel16.TabIndex = 15;
             // 
             // panel15
             // 
-            panel15.Location = new Point(103, 13);
+            panel15.Location = new Point(124, 13);
             panel15.Name = "panel15";
             panel15.Size = new Size(214, 10);
             panel15.TabIndex = 16;
             // 
             // panel14
             // 
-            panel14.Location = new Point(99, 20);
+            panel14.Location = new Point(120, 20);
             panel14.Name = "panel14";
             panel14.Size = new Size(10, 35);
             panel14.TabIndex = 14;
@@ -268,7 +300,7 @@
             selectType.Font = new Font("Microsoft Sans Serif", 13.8F);
             selectType.ForeColor = Color.White;
             selectType.FormattingEnabled = true;
-            selectType.Location = new Point(490, 19);
+            selectType.Location = new Point(504, 19);
             selectType.Name = "selectType";
             selectType.Size = new Size(200, 37);
             selectType.TabIndex = 9;
@@ -278,7 +310,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(402, 24);
+            label7.Location = new Point(420, 25);
             label7.Name = "label7";
             label7.Size = new Size(82, 25);
             label7.TabIndex = 10;
@@ -289,7 +321,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(1177, 22);
+            button2.Location = new Point(728, 24);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 3;
@@ -301,7 +333,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 19);
+            label2.Location = new Point(43, 25);
             label2.Name = "label2";
             label2.Size = new Size(82, 25);
             label2.TabIndex = 0;
@@ -312,7 +344,7 @@
             setBrandName.BackColor = Color.FromArgb(26, 22, 71);
             setBrandName.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             setBrandName.ForeColor = Color.White;
-            setBrandName.Location = new Point(107, 21);
+            setBrandName.Location = new Point(128, 21);
             setBrandName.Name = "setBrandName";
             setBrandName.Size = new Size(207, 34);
             setBrandName.TabIndex = 2;
@@ -331,6 +363,10 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(26, 22, 71);
+            panel2.Controls.Add(panel30);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(panel33);
+            panel2.Controls.Add(panel29);
             panel2.Controls.Add(panel13);
             panel2.Controls.Add(panel12);
             panel2.Controls.Add(panel11);
@@ -344,11 +380,30 @@
             panel2.Controls.Add(button1);
             panel2.Controls.Add(setTypeName);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(label4);
             panel2.Location = new Point(0, 66);
             panel2.Name = "panel2";
             panel2.Size = new Size(1289, 69);
             panel2.TabIndex = 9;
+            // 
+            // panel33
+            // 
+            panel33.BackgroundImage = (Image)resources.GetObject("panel33.BackgroundImage");
+            panel33.BackgroundImageLayout = ImageLayout.Stretch;
+            panel33.Enabled = false;
+            panel33.Location = new Point(796, 28);
+            panel33.Name = "panel33";
+            panel33.Size = new Size(36, 32);
+            panel33.TabIndex = 18;
+            // 
+            // panel29
+            // 
+            panel29.BackgroundImage = (Image)resources.GetObject("panel29.BackgroundImage");
+            panel29.BackgroundImageLayout = ImageLayout.Stretch;
+            panel29.Enabled = false;
+            panel29.Location = new Point(411, 27);
+            panel29.Name = "panel29";
+            panel29.Size = new Size(36, 32);
+            panel29.TabIndex = 5;
             // 
             // panel13
             // 
@@ -366,35 +421,35 @@
             // 
             // panel11
             // 
-            panel11.Location = new Point(497, 20);
+            panel11.Location = new Point(575, 20);
             panel11.Name = "panel11";
             panel11.Size = new Size(105, 10);
             panel11.TabIndex = 16;
             // 
             // panel10
             // 
-            panel10.Location = new Point(493, 28);
+            panel10.Location = new Point(571, 28);
             panel10.Name = "panel10";
             panel10.Size = new Size(10, 35);
             panel10.TabIndex = 14;
             // 
             // panel9
             // 
-            panel9.Location = new Point(108, 17);
+            panel9.Location = new Point(129, 17);
             panel9.Name = "panel9";
             panel9.Size = new Size(209, 10);
             panel9.TabIndex = 15;
             // 
             // panel8
             // 
-            panel8.Location = new Point(315, 22);
+            panel8.Location = new Point(336, 22);
             panel8.Name = "panel8";
             panel8.Size = new Size(10, 35);
             panel8.TabIndex = 14;
             // 
             // panel7
             // 
-            panel7.Location = new Point(102, 21);
+            panel7.Location = new Point(123, 21);
             panel7.Name = "panel7";
             panel7.Size = new Size(10, 35);
             panel7.TabIndex = 13;
@@ -415,7 +470,7 @@
             setFlagDown.BackColor = Color.FromArgb(26, 22, 71);
             setFlagDown.Font = new Font("Segoe UI", 12F);
             setFlagDown.ForeColor = Color.White;
-            setFlagDown.Location = new Point(502, 28);
+            setFlagDown.Location = new Point(580, 28);
             setFlagDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             setFlagDown.Name = "setFlagDown";
             setFlagDown.Size = new Size(100, 34);
@@ -426,11 +481,11 @@
             label8.AutoSize = true;
             label8.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(678, 29);
+            label8.Location = new Point(832, 30);
             label8.Name = "label8";
-            label8.Size = new Size(390, 25);
+            label8.Size = new Size(236, 25);
             label8.TabIndex = 11;
-            label8.Text = "Additional amount per hour:";
+            label8.Text = "Amount per hour:";
             // 
             // button1
             // 
@@ -449,7 +504,7 @@
             setTypeName.BackColor = Color.FromArgb(26, 22, 71);
             setTypeName.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             setTypeName.ForeColor = Color.White;
-            setTypeName.Location = new Point(110, 25);
+            setTypeName.Location = new Point(131, 25);
             setTypeName.Name = "setTypeName";
             setTypeName.Size = new Size(207, 34);
             setTypeName.TabIndex = 2;
@@ -459,22 +514,12 @@
             label3.AutoSize = true;
             label3.Font = new Font("NSimSun", 15F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(353, 28);
+            label3.ImageAlign = ContentAlignment.MiddleRight;
+            label3.Location = new Point(443, 32);
             label3.Name = "label3";
             label3.Size = new Size(138, 25);
             label3.TabIndex = 7;
             label3.Text = "Flagdown:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("NSimSun", 15F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(28, 28);
-            label4.Name = "label4";
-            label4.Size = new Size(82, 25);
-            label4.TabIndex = 8;
-            label4.Text = "Name:";
             // 
             // panel5
             // 
@@ -506,9 +551,9 @@
             panel6.Controls.Add(label9);
             panel6.Controls.Add(selectedItemType);
             panel6.Controls.Add(button3);
-            panel6.Location = new Point(151, 81);
+            panel6.Location = new Point(149, 81);
             panel6.Name = "panel6";
-            panel6.Size = new Size(891, 52);
+            panel6.Size = new Size(893, 52);
             panel6.TabIndex = 15;
             // 
             // panel19
@@ -643,6 +688,10 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.BackColor = Color.FromArgb(26, 22, 71);
+            panel4.Controls.Add(panel37);
+            panel4.Controls.Add(panel36);
+            panel4.Controls.Add(panel35);
+            panel4.Controls.Add(panel34);
             panel4.Controls.Add(errorEditName);
             panel4.Controls.Add(errorAAPH);
             panel4.Controls.Add(errorEditFlagdown);
@@ -672,6 +721,46 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1289, 416);
             panel4.TabIndex = 1;
+            // 
+            // panel37
+            // 
+            panel37.BackgroundImage = (Image)resources.GetObject("panel37.BackgroundImage");
+            panel37.BackgroundImageLayout = ImageLayout.Stretch;
+            panel37.Enabled = false;
+            panel37.Location = new Point(97, 321);
+            panel37.Name = "panel37";
+            panel37.Size = new Size(36, 32);
+            panel37.TabIndex = 19;
+            // 
+            // panel36
+            // 
+            panel36.BackgroundImage = (Image)resources.GetObject("panel36.BackgroundImage");
+            panel36.BackgroundImageLayout = ImageLayout.Stretch;
+            panel36.Enabled = false;
+            panel36.Location = new Point(159, 245);
+            panel36.Name = "panel36";
+            panel36.Size = new Size(36, 32);
+            panel36.TabIndex = 6;
+            // 
+            // panel35
+            // 
+            panel35.BackgroundImage = (Image)resources.GetObject("panel35.BackgroundImage");
+            panel35.BackgroundImageLayout = ImageLayout.Stretch;
+            panel35.Enabled = false;
+            panel35.Location = new Point(117, 175);
+            panel35.Name = "panel35";
+            panel35.Size = new Size(36, 32);
+            panel35.TabIndex = 8;
+            // 
+            // panel34
+            // 
+            panel34.BackgroundImage = (Image)resources.GetObject("panel34.BackgroundImage");
+            panel34.BackgroundImageLayout = ImageLayout.Stretch;
+            panel34.Enabled = false;
+            panel34.Location = new Point(107, 93);
+            panel34.Name = "panel34";
+            panel34.Size = new Size(36, 32);
+            panel34.TabIndex = 19;
             // 
             // errorEditName
             // 
@@ -746,7 +835,7 @@
             // 
             // panel22
             // 
-            panel22.Location = new Point(235, 166);
+            panel22.Location = new Point(234, 166);
             panel22.Name = "panel22";
             panel22.Size = new Size(209, 10);
             panel22.TabIndex = 17;
@@ -818,11 +907,32 @@
             label11.AutoSize = true;
             label11.Font = new Font("NSimSun", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(22, 330);
+            label11.Location = new Point(137, 330);
             label11.Name = "label11";
-            label11.Size = new Size(306, 20);
+            label11.Size = new Size(185, 20);
             label11.TabIndex = 20;
-            label11.Text = "Additional amount per hour:";
+            label11.Text = "Amount per hour:";
+            // 
+            // panel30
+            // 
+            panel30.BackgroundImage = (Image)resources.GetObject("panel30.BackgroundImage");
+            panel30.BackgroundImageLayout = ImageLayout.Stretch;
+            panel30.Enabled = false;
+            panel30.Location = new Point(8, 25);
+            panel30.Name = "panel30";
+            panel30.Size = new Size(36, 32);
+            panel30.TabIndex = 20;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("NSimSun", 15F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(45, 29);
+            label4.Name = "label4";
+            label4.Size = new Size(82, 25);
+            label4.TabIndex = 19;
+            label4.Text = "Name:";
             // 
             // admin
             // 
@@ -926,5 +1036,14 @@
         private Label label11;
         private Label errorEditName;
         private Label label5;
+        private Panel panel29;
+        private Panel panel30;
+        private Panel panel32;
+        private Panel panel31;
+        private Panel panel33;
+        private Panel panel37;
+        private Panel panel36;
+        private Panel panel35;
+        private Panel panel34;
     }
 }

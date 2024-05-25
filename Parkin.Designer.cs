@@ -87,6 +87,10 @@
             label19 = new Label();
             passLabel = new Label();
             profileDetailsPanel = new Panel();
+            button18 = new Button();
+            button17 = new Button();
+            button16 = new Button();
+            button15 = new Button();
             button14 = new Button();
             label26 = new Label();
             label23 = new Label();
@@ -96,7 +100,6 @@
             profileGender = new Label();
             profileEmail = new Label();
             profileName = new Label();
-            panel30 = new Panel();
             profileIcon = new Panel();
             adminPanel = new Panel();
             adminName = new Label();
@@ -814,9 +817,9 @@
             // 
             profilePanel.Controls.Add(panel27);
             profilePanel.Controls.Add(profileDetailsPanel);
-            profilePanel.Location = new Point(938, 1045);
+            profilePanel.Location = new Point(901, 1016);
             profilePanel.Name = "profilePanel";
-            profilePanel.Size = new Size(191, 130);
+            profilePanel.Size = new Size(208, 191);
             profilePanel.TabIndex = 22;
             profilePanel.Paint += profilePanel_Paint;
             // 
@@ -831,7 +834,7 @@
             panel27.Controls.Add(label25);
             panel27.Controls.Add(label19);
             panel27.Controls.Add(passLabel);
-            panel27.Location = new Point(-573, 423);
+            panel27.Location = new Point(-564, 423);
             panel27.Name = "panel27";
             panel27.Size = new Size(1368, 279);
             panel27.TabIndex = 7;
@@ -924,6 +927,10 @@
             // 
             profileDetailsPanel.Anchor = AnchorStyles.Top;
             profileDetailsPanel.BackColor = Color.FromArgb(22, 19, 74);
+            profileDetailsPanel.Controls.Add(button18);
+            profileDetailsPanel.Controls.Add(button17);
+            profileDetailsPanel.Controls.Add(button16);
+            profileDetailsPanel.Controls.Add(button15);
             profileDetailsPanel.Controls.Add(button14);
             profileDetailsPanel.Controls.Add(label26);
             profileDetailsPanel.Controls.Add(label23);
@@ -933,12 +940,67 @@
             profileDetailsPanel.Controls.Add(profileGender);
             profileDetailsPanel.Controls.Add(profileEmail);
             profileDetailsPanel.Controls.Add(profileName);
-            profileDetailsPanel.Controls.Add(panel30);
             profileDetailsPanel.Controls.Add(profileIcon);
-            profileDetailsPanel.Location = new Point(-574, 36);
+            profileDetailsPanel.Location = new Point(-565, 36);
             profileDetailsPanel.Name = "profileDetailsPanel";
             profileDetailsPanel.Size = new Size(1368, 366);
             profileDetailsPanel.TabIndex = 0;
+            // 
+            // button18
+            // 
+            button18.Anchor = AnchorStyles.Top;
+            button18.BackgroundImage = (Image)resources.GetObject("button18.BackgroundImage");
+            button18.BackgroundImageLayout = ImageLayout.Zoom;
+            button18.FlatAppearance.BorderSize = 0;
+            button18.FlatStyle = FlatStyle.Flat;
+            button18.ForeColor = SystemColors.ControlDarkDark;
+            button18.Location = new Point(379, 228);
+            button18.Name = "button18";
+            button18.Size = new Size(34, 29);
+            button18.TabIndex = 15;
+            button18.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            button17.Anchor = AnchorStyles.Top;
+            button17.BackgroundImage = (Image)resources.GetObject("button17.BackgroundImage");
+            button17.BackgroundImageLayout = ImageLayout.Zoom;
+            button17.FlatAppearance.BorderSize = 0;
+            button17.FlatStyle = FlatStyle.Flat;
+            button17.ForeColor = SystemColors.ControlDarkDark;
+            button17.Location = new Point(379, 187);
+            button17.Name = "button17";
+            button17.Size = new Size(34, 29);
+            button17.TabIndex = 14;
+            button17.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            button16.Anchor = AnchorStyles.Top;
+            button16.BackgroundImage = (Image)resources.GetObject("button16.BackgroundImage");
+            button16.BackgroundImageLayout = ImageLayout.Zoom;
+            button16.FlatAppearance.BorderSize = 0;
+            button16.FlatStyle = FlatStyle.Flat;
+            button16.ForeColor = SystemColors.ControlDarkDark;
+            button16.Location = new Point(379, 144);
+            button16.Name = "button16";
+            button16.Size = new Size(34, 29);
+            button16.TabIndex = 13;
+            button16.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            button15.Anchor = AnchorStyles.Top;
+            button15.BackgroundImage = (Image)resources.GetObject("button15.BackgroundImage");
+            button15.BackgroundImageLayout = ImageLayout.Zoom;
+            button15.FlatAppearance.BorderSize = 0;
+            button15.FlatStyle = FlatStyle.Flat;
+            button15.ForeColor = SystemColors.ControlDarkDark;
+            button15.Location = new Point(378, 100);
+            button15.Name = "button15";
+            button15.Size = new Size(34, 29);
+            button15.TabIndex = 12;
+            button15.UseVisualStyleBackColor = true;
             // 
             // button14
             // 
@@ -948,7 +1010,7 @@
             button14.FlatAppearance.BorderSize = 0;
             button14.FlatStyle = FlatStyle.Flat;
             button14.ForeColor = SystemColors.ControlDarkDark;
-            button14.Location = new Point(781, 70);
+            button14.Location = new Point(794, 65);
             button14.Name = "button14";
             button14.Size = new Size(34, 29);
             button14.TabIndex = 11;
@@ -961,7 +1023,7 @@
             label26.AutoSize = true;
             label26.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label26.ForeColor = Color.Silver;
-            label26.Location = new Point(360, 109);
+            label26.Location = new Point(413, 109);
             label26.Name = "label26";
             label26.Size = new Size(58, 17);
             label26.TabIndex = 9;
@@ -973,7 +1035,7 @@
             label23.AutoSize = true;
             label23.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label23.ForeColor = Color.Silver;
-            label23.Location = new Point(360, 151);
+            label23.Location = new Point(413, 151);
             label23.Name = "label23";
             label23.Size = new Size(68, 17);
             label23.TabIndex = 8;
@@ -985,7 +1047,7 @@
             label21.AutoSize = true;
             label21.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label21.ForeColor = Color.Silver;
-            label21.Location = new Point(360, 193);
+            label21.Location = new Point(413, 193);
             label21.Name = "label21";
             label21.Size = new Size(98, 17);
             label21.TabIndex = 7;
@@ -997,7 +1059,7 @@
             label18.AutoSize = true;
             label18.Font = new Font("NSimSun", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label18.ForeColor = Color.Silver;
-            label18.Location = new Point(360, 236);
+            label18.Location = new Point(413, 236);
             label18.Name = "label18";
             label18.Size = new Size(78, 17);
             label18.TabIndex = 6;
@@ -1009,7 +1071,7 @@
             profileNum.AutoSize = true;
             profileNum.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             profileNum.ForeColor = Color.White;
-            profileNum.Location = new Point(469, 192);
+            profileNum.Location = new Point(522, 192);
             profileNum.Name = "profileNum";
             profileNum.Size = new Size(140, 23);
             profileNum.TabIndex = 5;
@@ -1021,7 +1083,7 @@
             profileGender.AutoSize = true;
             profileGender.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             profileGender.ForeColor = Color.White;
-            profileGender.Location = new Point(469, 230);
+            profileGender.Location = new Point(522, 230);
             profileGender.Name = "profileGender";
             profileGender.Size = new Size(62, 23);
             profileGender.TabIndex = 4;
@@ -1034,7 +1096,7 @@
             profileEmail.AutoSize = true;
             profileEmail.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             profileEmail.ForeColor = Color.White;
-            profileEmail.Location = new Point(469, 151);
+            profileEmail.Location = new Point(522, 151);
             profileEmail.Name = "profileEmail";
             profileEmail.Size = new Size(257, 23);
             profileEmail.TabIndex = 3;
@@ -1046,18 +1108,11 @@
             profileName.AutoSize = true;
             profileName.Font = new Font("NSimSun", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             profileName.ForeColor = Color.White;
-            profileName.Location = new Point(469, 105);
+            profileName.Location = new Point(522, 105);
             profileName.Name = "profileName";
             profileName.Size = new Size(282, 28);
             profileName.TabIndex = 2;
             profileName.Text = "CarlConrad Declaro";
-            // 
-            // panel30
-            // 
-            panel30.Location = new Point(0, 0);
-            panel30.Name = "panel30";
-            panel30.Size = new Size(200, 100);
-            panel30.TabIndex = 10;
             // 
             // profileIcon
             // 
@@ -2685,7 +2740,6 @@
         private Label profileGender;
         private Label profileEmail;
         private Label profileName;
-        private Panel panel30;
         private Panel profileIcon;
         private Button button12;
         private Panel panel27;
@@ -2704,5 +2758,9 @@
         private Button btnChangePass;
         private System.Windows.Forms.Timer expandSiderbar;
         private System.Windows.Forms.Timer expandMenu;
+        private Button button17;
+        private Button button16;
+        private Button button15;
+        private Button button18;
     }
 }
