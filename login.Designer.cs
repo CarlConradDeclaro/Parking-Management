@@ -177,9 +177,9 @@
             panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
             panel5.BackgroundImageLayout = ImageLayout.Zoom;
             panel5.Enabled = false;
-            panel5.Location = new Point(9, 306);
+            panel5.Location = new Point(8, 306);
             panel5.Name = "panel5";
-            panel5.Size = new Size(44, 51);
+            panel5.Size = new Size(41, 46);
             panel5.TabIndex = 19;
             // 
             // panel4
@@ -189,7 +189,7 @@
             panel4.Enabled = false;
             panel4.Location = new Point(9, 185);
             panel4.Name = "panel4";
-            panel4.Size = new Size(44, 51);
+            panel4.Size = new Size(38, 42);
             panel4.TabIndex = 18;
             // 
             // loginbtn

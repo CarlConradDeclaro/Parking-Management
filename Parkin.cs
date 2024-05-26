@@ -25,7 +25,11 @@ namespace Parking
         public string username;
         public int userID;
 
+        Image maleAdmin = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\maleAdmin.png");
+        Image femaleAdmin = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\femaleAdmin.png");
 
+
+        private Dashboard _dashboard;
         private static Parkin instance;
         public static Parkin Instance
         {
@@ -41,19 +45,17 @@ namespace Parking
         public Parkin()
         {
             InitializeComponent();
-         
+
             filterDisplay("PARKED");
             countSlots();
             numPV.Text = countParkedVehicle() + "";
             panel5.Show();
             parkingView.Hide();
             profilePanel.Hide();
+            PanelDashboard.Hide();
             OccupiedArea();
 
             var c = UserDetails.Instance;
-
-            Image maleAdmin = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\maleAdmin.png");
-            Image femaleAdmin = Image.FromFile(@"C:\Users\carlconrad\source\Parking-Management-System\img\femaleAdmin.png");
 
             adminIcon.Image = c.getGender() == "MALE" ? maleAdmin : femaleAdmin;
             adminName.Text = c.getFirstname();
@@ -74,8 +76,17 @@ namespace Parking
             panel27.SetRoundedCorners(15);
             profileDetailsPanel.SetRoundedCorners(15);
 
-        }
 
+            _dashboard = new Dashboard();
+
+            if (countParkedVehicle() == 0)
+                flowLayoutPanel6.Controls.Add(NoVehicleDatapanel);
+            if (countParkedVehicle() > 0)
+                flowLayoutPanel6.Controls.Remove(NoVehicleDatapanel);
+
+
+        }
+     
 
 
         private void isParkEmpty(bool isEmpty)
@@ -123,7 +134,7 @@ namespace Parking
 
 
 
-       
+
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -179,14 +190,22 @@ namespace Parking
         {
             sidebarTransition.Start();
         }
+        private void YourForm_VehicleParked(object sender, EventArgs e)
+        {
 
+           // dashboard1.Display();
+         //   Dashboard.Instance.Display();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             pe1 = new ParkingEntry(flowLayoutPanel2);
             pe1.ParkingRecordAdded += ParkingRecordAddedHandler;
+            pe1.VehicleParked += YourForm_VehicleParked;
             pe1.ShowDialog();
 
         }
+       
+
         public void setIsParkin(bool isPark)
         {
             isParkin = isPark;
@@ -414,8 +433,70 @@ namespace Parking
 
         }
 
+        private void button49_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Add(PanelDashboard);
+            PanelDashboard.Dock = DockStyle.Fill;
+            PanelDashboard.Show();
+            panelProfile.SetRoundedCorners(10);
+            panelAvailSlot.SetRoundedCorners(10);
+            panelUsers.SetRoundedCorners(10);
+            panelOccupied.SetRoundedCorners(10);
+            flowLayoutParkedV.SetRoundedCorners(10);
+            flowLayoutPanel6.SetRoundedCorners(10);
+            panel2.SetRoundedCorners(10);
+            Display();
+            DisplayTotalEarnings();
+            DisplayAdmin();
+            displayOccupiedSlot();
+            dispayAvailableSlot();
+            displayTotalVehicleParked();
+            displayVehicleData();
+
+            panelContent.Controls.Remove(panel5);
+            panel5.Dock = DockStyle.None;
+            panel5.Hide();
+
+            history1.Dock = DockStyle.None;
+            panelContent.Controls.Remove(history1);
+            history1.Hide();
+
+            admin1.Dock = DockStyle.None;
+            panelContent.Controls.Remove(admin1);
+            admin1.Hide();
+
+            panelContent.Controls.Remove(profilePanel);
+            profilePanel.Dock = DockStyle.None;
+            profilePanel.Hide();
+
+            PanelDashboard.VisibleChanged += Dashboard1_VisibleChanged;
+
+        }
+        private void Dashboard1_VisibleChanged(object sender, EventArgs e)
+        {
+             if (PanelDashboard.Visible)
+            {
+               Display();
+               DisplayTotalEarnings();
+              DisplayAdmin();
+               displayOccupiedSlot();
+                dispayAvailableSlot();
+                displayTotalVehicleParked();
+                displayVehicleData();
+
+                if (countParkedVehicle() == 0)
+                    flowLayoutPanel6.Controls.Add(NoVehicleDatapanel);
+                if (countParkedVehicle() >0)
+                    flowLayoutPanel6.Controls.Remove(NoVehicleDatapanel);
+            }
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
+            panelContent.Controls.Remove(PanelDashboard);
+            PanelDashboard.Dock = DockStyle.None;
+            PanelDashboard.Hide();
+
             panelContent.Controls.Add(panel5);
             panel5.Dock = DockStyle.Fill;
             panel5.Show();
@@ -436,6 +517,9 @@ namespace Parking
 
         private void button5_Click(object sender, EventArgs e)
         {
+            panelContent.Controls.Remove(PanelDashboard);
+            PanelDashboard.Dock = DockStyle.None;
+            PanelDashboard.Hide();
 
             panelContent.Controls.Remove(panel5);
             panel5.Dock = DockStyle.None;
@@ -456,6 +540,9 @@ namespace Parking
 
         private void button7_Click(object sender, EventArgs e)
         {
+            panelContent.Controls.Remove(PanelDashboard);
+            PanelDashboard.Dock = DockStyle.None;
+            PanelDashboard.Hide();
 
             panelContent.Controls.Remove(panel5);
             panel5.Dock = DockStyle.None;
@@ -480,6 +567,10 @@ namespace Parking
         private void button12_Click(object sender, EventArgs e)
         {
             //profilePanel
+            panelContent.Controls.Remove(PanelDashboard);
+            PanelDashboard.Dock = DockStyle.None;
+            PanelDashboard.Hide();
+
             panelContent.Controls.Remove(panel5);
             panel5.Dock = DockStyle.None;
             panel5.Hide();
@@ -496,10 +587,129 @@ namespace Parking
             profilePanel.Dock = DockStyle.Fill;
             profilePanel.Show();
 
+        }
+        public void displayVehicleData()
+        {
+            flowLayoutPanel6.Controls.Clear();
+            var vehiclemanger = VehicleManger.Instance;
+            var VPM = vehiclemanger.GetVPM();
 
+            foreach (var record in VPM)
+            {
+                VehiclesData vd = new VehiclesData();
+                vd.updateLabel(record.vehicleType, record.flagDown + "", "+"+record.additionalAmtPerHour + "", countNumberTypeVehicle(record.vehicleType) + "");
+                flowLayoutPanel6.Controls.Add(vd);
+            }
+        }
+
+        private int countNumberTypeVehicle(string type)
+        {
+            int numOfVehicles = 0;
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();
+
+            foreach (var record in allParkingHistoryRecords)
+            {
+                if (record.Type == type)
+                    numOfVehicles++;
+            }
+            return numOfVehicles;
+        }
+
+
+        public void Display()
+        {
+            flowLayoutParkedV.Controls.Clear();
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
+            for (int i = allParkingRecords.Count - 1; i >= 0; i--)
+            {
+                var record = allParkingRecords[i];
+                if (record.Status == "PARKED")
+                {
+                    ParkedVehicles pv = new ParkedVehicles();
+                    pv.updateLabel(record.PlateNumber, record.S_location);
+                    flowLayoutParkedV.Controls.Add(pv);
+                }
+            }
+
+            firstname.Text = UserDetails.Instance.getFirstname();
+            lastname.Text = UserDetails.Instance.getLastname();
+
+
+            if (UserDetails.Instance.getGender() == "MALE")
+                dashboardProfilePanel.BackgroundImage = maleAdmin;
+            if (UserDetails.Instance.getGender() == "FEMALE")
+                dashboardProfilePanel.BackgroundImage = femaleAdmin;
 
 
         }
+
+        public void DisplayTotalEarnings()
+        {
+
+
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();
+            double amt = 0;
+            for (int i = allParkingHistoryRecords.Count - 1; i >= 0; i--)
+            {
+                var record = allParkingHistoryRecords[i];
+                amt += record.Amount;
+            }
+            earningLabel.Text = amt.ToString("₱ #,##0.00");
+        }
+
+        public void DisplayAdmin()
+        {
+            string query = "SELECT COUNT(*) FROM UsersData";
+
+
+            int userCount = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+
+                    try
+                    {
+
+                        connection.Open();
+
+
+                        userCount = (int)command.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+            adminLabel.Text = userCount.ToString("#,##0");
+        }
+
+
+        public void displayOccupiedSlot()
+        {
+            occSlotLabel.Text = countParkedVehicle().ToString("#,##0");
+        }
+        public void dispayAvailableSlot()
+        {
+            availSlot.Text = (30 - countParkedVehicle()).ToString("#,##0");
+        }
+        public void displayTotalVehicleParked()
+        {
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingHistoryRecords = parkingRecordsManager.GetAllParkingHistoryRecords();
+            totalVehicle.Text = allParkingHistoryRecords.Count.ToString("#,##0"); ;
+
+        }
+       
 
         private void panel9_Paint(object sender, PaintEventArgs e)
         {
@@ -1182,7 +1392,10 @@ namespace Parking
             }
         }
 
-       
+        private void sectionList1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -7,6 +7,15 @@
     <Compile Update="BrandType.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DashboardController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DashboradUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="edit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -18,6 +27,9 @@
     </Compile>
     <Compile Update="LoadingState.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ParkedVehicles.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Registration.cs">
       <SubType>Form</SubType>
@@ -53,6 +65,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="vehicleDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="VehiclesData.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view.cs">

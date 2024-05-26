@@ -37,6 +37,7 @@
             menuContainer = new FlowLayoutPanel();
             panel6 = new Panel();
             menu = new Button();
+            button49 = new Button();
             button6 = new Button();
             button5 = new Button();
             button7 = new Button();
@@ -77,6 +78,52 @@
             panel14 = new Panel();
             numPV = new Label();
             panel5 = new Panel();
+            PanelDashboard = new Panel();
+            panel30 = new Panel();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            flowLayoutPanel6 = new FlowLayoutPanel();
+            vehiclesData1 = new VehiclesData();
+            vehiclesData2 = new VehiclesData();
+            vehiclesData3 = new VehiclesData();
+            vehiclesData4 = new VehiclesData();
+            vehiclesData5 = new VehiclesData();
+            vehiclesData6 = new VehiclesData();
+            vehiclesData7 = new VehiclesData();
+            panelProfile = new Panel();
+            panel32 = new Panel();
+            panel29 = new Panel();
+            label24 = new Label();
+            flowLayoutPanel5 = new FlowLayoutPanel();
+            totalVehicle = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            earningLabel = new Label();
+            label27 = new Label();
+            lastname = new Label();
+            firstname = new Label();
+            dashboardProfilePanel = new Panel();
+            flowLayoutParkedV = new FlowLayoutPanel();
+            NoVehicleDatapanel = new Panel();
+            label41 = new Label();
+            panelAvailSlot = new Panel();
+            panel35 = new Panel();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            availSlot = new Label();
+            label28 = new Label();
+            label38 = new Label();
+            panelOccupied = new Panel();
+            panel34 = new Panel();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            occSlotLabel = new Label();
+            label39 = new Label();
+            label40 = new Label();
+            panelUsers = new Panel();
+            panel33 = new Panel();
+            flowLayoutPanel7 = new FlowLayoutPanel();
+            adminLabel = new Label();
+            dashboardPanel = new Label();
             profilePanel = new Panel();
             panel27 = new Panel();
             btnChangePass = new Button();
@@ -226,6 +273,20 @@
             panel10.SuspendLayout();
             panel14.SuspendLayout();
             panel5.SuspendLayout();
+            PanelDashboard.SuspendLayout();
+            panel30.SuspendLayout();
+            flowLayoutPanel6.SuspendLayout();
+            panelProfile.SuspendLayout();
+            flowLayoutPanel5.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            flowLayoutParkedV.SuspendLayout();
+            NoVehicleDatapanel.SuspendLayout();
+            panelAvailSlot.SuspendLayout();
+            flowLayoutPanel4.SuspendLayout();
+            panelOccupied.SuspendLayout();
+            flowLayoutPanel3.SuspendLayout();
+            panelUsers.SuspendLayout();
+            flowLayoutPanel7.SuspendLayout();
             profilePanel.SuspendLayout();
             panel27.SuspendLayout();
             profileDetailsPanel.SuspendLayout();
@@ -296,14 +357,15 @@
             // menuContainer
             // 
             menuContainer.Controls.Add(panel6);
+            menuContainer.Controls.Add(button49);
             menuContainer.Controls.Add(button6);
             menuContainer.Controls.Add(button5);
             menuContainer.Controls.Add(button7);
             menuContainer.Controls.Add(button12);
             menuContainer.Controls.Add(button13);
-            menuContainer.Location = new Point(0, 3);
+            menuContainer.Location = new Point(0, 0);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(255, 65);
+            menuContainer.Size = new Size(272, 70);
             menuContainer.TabIndex = 7;
             // 
             // panel6
@@ -312,11 +374,12 @@
             panel6.Controls.Add(menu);
             panel6.Location = new Point(3, 3);
             panel6.Name = "panel6";
-            panel6.Size = new Size(249, 66);
+            panel6.Size = new Size(249, 68);
             panel6.TabIndex = 4;
             // 
             // menu
             // 
+            menu.Anchor = AnchorStyles.Left;
             menu.BackColor = Color.FromArgb(31, 28, 75);
             menu.BackgroundImageLayout = ImageLayout.None;
             menu.Cursor = Cursors.Hand;
@@ -326,13 +389,32 @@
             menu.ForeColor = Color.White;
             menu.Image = (Image)resources.GetObject("menu.Image");
             menu.ImageAlign = ContentAlignment.MiddleLeft;
-            menu.Location = new Point(1, -9);
+            menu.Location = new Point(-3, -6);
             menu.Name = "menu";
             menu.Size = new Size(252, 75);
             menu.TabIndex = 3;
             menu.Text = "Menu";
             menu.UseVisualStyleBackColor = false;
             menu.Click += menu_Click;
+            // 
+            // button49
+            // 
+            button49.BackColor = Color.FromArgb(31, 28, 75);
+            button49.BackgroundImageLayout = ImageLayout.None;
+            button49.Cursor = Cursors.Hand;
+            button49.FlatAppearance.BorderSize = 0;
+            button49.FlatStyle = FlatStyle.Flat;
+            button49.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button49.ForeColor = Color.White;
+            button49.Image = (Image)resources.GetObject("button49.Image");
+            button49.ImageAlign = ContentAlignment.MiddleLeft;
+            button49.Location = new Point(3, 77);
+            button49.Name = "button49";
+            button49.Size = new Size(249, 68);
+            button49.TabIndex = 17;
+            button49.Text = "Dashboard";
+            button49.UseVisualStyleBackColor = false;
+            button49.Click += button49_Click;
             // 
             // button6
             // 
@@ -345,7 +427,7 @@
             button6.ForeColor = Color.White;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(3, 75);
+            button6.Location = new Point(3, 151);
             button6.Name = "button6";
             button6.Size = new Size(249, 68);
             button6.TabIndex = 13;
@@ -364,7 +446,7 @@
             button5.ForeColor = Color.White;
             button5.Image = (Image)resources.GetObject("button5.Image");
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 149);
+            button5.Location = new Point(3, 225);
             button5.Name = "button5";
             button5.Size = new Size(249, 68);
             button5.TabIndex = 3;
@@ -383,11 +465,11 @@
             button7.ForeColor = Color.White;
             button7.Image = (Image)resources.GetObject("button7.Image");
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(3, 223);
+            button7.Location = new Point(3, 299);
             button7.Name = "button7";
             button7.Size = new Size(249, 68);
             button7.TabIndex = 14;
-            button7.Text = " Vehicle";
+            button7.Text = "     Manage Parking";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
@@ -402,7 +484,7 @@
             button12.ForeColor = Color.White;
             button12.Image = (Image)resources.GetObject("button12.Image");
             button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(3, 297);
+            button12.Location = new Point(3, 373);
             button12.Name = "button12";
             button12.Size = new Size(249, 68);
             button12.TabIndex = 16;
@@ -421,7 +503,7 @@
             button13.ForeColor = Color.White;
             button13.Image = Properties.Resources.logout;
             button13.ImageAlign = ContentAlignment.MiddleLeft;
-            button13.Location = new Point(3, 371);
+            button13.Location = new Point(3, 447);
             button13.Name = "button13";
             button13.Size = new Size(249, 68);
             button13.TabIndex = 15;
@@ -689,7 +771,7 @@
             panel9.Controls.Add(logo);
             panel9.Controls.Add(panel13);
             panel9.Controls.Add(label5);
-            panel9.Location = new Point(994, 42);
+            panel9.Location = new Point(964, 40);
             panel9.Name = "panel9";
             panel9.Size = new Size(261, 125);
             panel9.TabIndex = 9;
@@ -747,7 +829,7 @@
             panel10.Controls.Add(label9);
             panel10.Controls.Add(button8);
             panel10.Controls.Add(panel14);
-            panel10.Location = new Point(1296, 42);
+            panel10.Location = new Point(1266, 40);
             panel10.Name = "panel10";
             panel10.Size = new Size(261, 125);
             panel10.TabIndex = 13;
@@ -798,6 +880,7 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(PanelDashboard);
             panel5.Controls.Add(profilePanel);
             panel5.Controls.Add(adminPanel);
             panel5.Controls.Add(admin1);
@@ -812,6 +895,509 @@
             panel5.Size = new Size(1792, 1252);
             panel5.TabIndex = 9;
             panel5.Paint += panel5_Paint_1;
+            // 
+            // PanelDashboard
+            // 
+            PanelDashboard.Controls.Add(panel30);
+            PanelDashboard.Controls.Add(flowLayoutPanel6);
+            PanelDashboard.Controls.Add(panelProfile);
+            PanelDashboard.Controls.Add(flowLayoutParkedV);
+            PanelDashboard.Controls.Add(panelAvailSlot);
+            PanelDashboard.Controls.Add(panelOccupied);
+            PanelDashboard.Controls.Add(panelUsers);
+            PanelDashboard.Location = new Point(50, 596);
+            PanelDashboard.Name = "PanelDashboard";
+            PanelDashboard.Size = new Size(94, 367);
+            PanelDashboard.TabIndex = 23;
+            // 
+            // panel30
+            // 
+            panel30.Anchor = AnchorStyles.Top;
+            panel30.Controls.Add(label14);
+            panel30.Controls.Add(label15);
+            panel30.Controls.Add(label16);
+            panel30.Controls.Add(label17);
+            panel30.Location = new Point(-620, 452);
+            panel30.Name = "panel30";
+            panel30.Size = new Size(919, 53);
+            panel30.TabIndex = 18;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(735, 14);
+            label14.Name = "label14";
+            label14.Size = new Size(154, 28);
+            label14.TabIndex = 3;
+            label14.Text = "No. of Vehicles";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(275, 14);
+            label15.Name = "label15";
+            label15.Size = new Size(199, 28);
+            label15.TabIndex = 2;
+            label15.Text = "Additional Amt P/H";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(151, 14);
+            label16.Name = "label16";
+            label16.Size = new Size(103, 28);
+            label16.TabIndex = 1;
+            label16.Text = "Flagdown";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(16, 14);
+            label17.Name = "label17";
+            label17.Size = new Size(80, 28);
+            label17.TabIndex = 0;
+            label17.Text = "Vehicle";
+            // 
+            // flowLayoutPanel6
+            // 
+            flowLayoutPanel6.Anchor = AnchorStyles.Top;
+            flowLayoutPanel6.AutoScroll = true;
+            flowLayoutPanel6.BackColor = Color.FromArgb(22, 19, 75);
+            flowLayoutPanel6.Controls.Add(vehiclesData1);
+            flowLayoutPanel6.Controls.Add(vehiclesData2);
+            flowLayoutPanel6.Controls.Add(vehiclesData3);
+            flowLayoutPanel6.Controls.Add(vehiclesData4);
+            flowLayoutPanel6.Controls.Add(vehiclesData5);
+            flowLayoutPanel6.Controls.Add(vehiclesData6);
+            flowLayoutPanel6.Controls.Add(vehiclesData7);
+            flowLayoutPanel6.Location = new Point(-620, 511);
+            flowLayoutPanel6.Name = "flowLayoutPanel6";
+            flowLayoutPanel6.Size = new Size(919, 351);
+            flowLayoutPanel6.TabIndex = 17;
+            // 
+            // vehiclesData1
+            // 
+            vehiclesData1.BackColor = Color.FromArgb(22, 19, 120);
+            vehiclesData1.Location = new Point(3, 3);
+            vehiclesData1.Name = "vehiclesData1";
+            vehiclesData1.Size = new Size(886, 60);
+            vehiclesData1.TabIndex = 0;
+            // 
+            // vehiclesData2
+            // 
+            vehiclesData2.BackColor = Color.FromArgb(22, 19, 120);
+            vehiclesData2.Location = new Point(3, 69);
+            vehiclesData2.Name = "vehiclesData2";
+            vehiclesData2.Size = new Size(886, 60);
+            vehiclesData2.TabIndex = 1;
+            // 
+            // vehiclesData3
+            // 
+            vehiclesData3.BackColor = Color.FromArgb(22, 19, 120);
+            vehiclesData3.Location = new Point(3, 135);
+            vehiclesData3.Name = "vehiclesData3";
+            vehiclesData3.Size = new Size(886, 60);
+            vehiclesData3.TabIndex = 2;
+            // 
+            // vehiclesData4
+            // 
+            vehiclesData4.BackColor = Color.FromArgb(22, 19, 120);
+            vehiclesData4.Location = new Point(3, 201);
+            vehiclesData4.Name = "vehiclesData4";
+            vehiclesData4.Size = new Size(886, 60);
+            vehiclesData4.TabIndex = 3;
+            // 
+            // vehiclesData5
+            // 
+            vehiclesData5.BackColor = Color.FromArgb(22, 19, 120);
+            vehiclesData5.Location = new Point(3, 267);
+            vehiclesData5.Name = "vehiclesData5";
+            vehiclesData5.Size = new Size(886, 60);
+            vehiclesData5.TabIndex = 4;
+            // 
+            // vehiclesData6
+            // 
+            vehiclesData6.BackColor = Color.FromArgb(22, 19, 120);
+            vehiclesData6.Location = new Point(3, 333);
+            vehiclesData6.Name = "vehiclesData6";
+            vehiclesData6.Size = new Size(886, 60);
+            vehiclesData6.TabIndex = 5;
+            // 
+            // vehiclesData7
+            // 
+            vehiclesData7.BackColor = Color.FromArgb(22, 19, 120);
+            vehiclesData7.Location = new Point(3, 399);
+            vehiclesData7.Name = "vehiclesData7";
+            vehiclesData7.Size = new Size(886, 60);
+            vehiclesData7.TabIndex = 6;
+            // 
+            // panelProfile
+            // 
+            panelProfile.Anchor = AnchorStyles.Top;
+            panelProfile.BackColor = Color.FromArgb(22, 19, 75);
+            panelProfile.Controls.Add(panel32);
+            panelProfile.Controls.Add(panel29);
+            panelProfile.Controls.Add(label24);
+            panelProfile.Controls.Add(flowLayoutPanel5);
+            panelProfile.Controls.Add(flowLayoutPanel1);
+            panelProfile.Controls.Add(label27);
+            panelProfile.Controls.Add(lastname);
+            panelProfile.Controls.Add(firstname);
+            panelProfile.Controls.Add(dashboardProfilePanel);
+            panelProfile.Location = new Point(-620, 28);
+            panelProfile.Name = "panelProfile";
+            panelProfile.Size = new Size(324, 396);
+            panelProfile.TabIndex = 16;
+            // 
+            // panel32
+            // 
+            panel32.BackColor = Color.FromArgb(22, 19, 75);
+            panel32.BackgroundImage = (Image)resources.GetObject("panel32.BackgroundImage");
+            panel32.BackgroundImageLayout = ImageLayout.Zoom;
+            panel32.Location = new Point(47, 345);
+            panel32.Name = "panel32";
+            panel32.Size = new Size(44, 42);
+            panel32.TabIndex = 16;
+            // 
+            // panel29
+            // 
+            panel29.BackColor = Color.FromArgb(22, 19, 75);
+            panel29.BackgroundImage = (Image)resources.GetObject("panel29.BackgroundImage");
+            panel29.BackgroundImageLayout = ImageLayout.Zoom;
+            panel29.Location = new Point(45, 229);
+            panel29.Name = "panel29";
+            panel29.Size = new Size(44, 42);
+            panel29.TabIndex = 11;
+            // 
+            // label24
+            // 
+            label24.Anchor = AnchorStyles.Top;
+            label24.AutoSize = true;
+            label24.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            label24.ForeColor = Color.White;
+            label24.Location = new Point(18, 303);
+            label24.Name = "label24";
+            label24.Size = new Size(150, 25);
+            label24.TabIndex = 15;
+            label24.Text = "Total Vehicles";
+            // 
+            // flowLayoutPanel5
+            // 
+            flowLayoutPanel5.Controls.Add(totalVehicle);
+            flowLayoutPanel5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            flowLayoutPanel5.Location = new Point(94, 351);
+            flowLayoutPanel5.Name = "flowLayoutPanel5";
+            flowLayoutPanel5.Size = new Size(214, 33);
+            flowLayoutPanel5.TabIndex = 15;
+            // 
+            // totalVehicle
+            // 
+            totalVehicle.Anchor = AnchorStyles.Top;
+            totalVehicle.AutoSize = true;
+            totalVehicle.Font = new Font("NSimSun", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            totalVehicle.ForeColor = Color.White;
+            totalVehicle.Location = new Point(3, 0);
+            totalVehicle.Name = "totalVehicle";
+            totalVehicle.Size = new Size(28, 30);
+            totalVehicle.TabIndex = 3;
+            totalVehicle.Text = "5";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(earningLabel);
+            flowLayoutPanel1.Location = new Point(99, 239);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(209, 45);
+            flowLayoutPanel1.TabIndex = 14;
+            // 
+            // earningLabel
+            // 
+            earningLabel.Anchor = AnchorStyles.Top;
+            earningLabel.AutoSize = true;
+            earningLabel.Font = new Font("NSimSun", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            earningLabel.ForeColor = Color.White;
+            earningLabel.Location = new Point(3, 0);
+            earningLabel.Name = "earningLabel";
+            earningLabel.Size = new Size(28, 30);
+            earningLabel.TabIndex = 3;
+            earningLabel.Text = "5";
+            earningLabel.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label27
+            // 
+            label27.Anchor = AnchorStyles.Top;
+            label27.AutoSize = true;
+            label27.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            label27.ForeColor = Color.White;
+            label27.Location = new Point(16, 199);
+            label27.Name = "label27";
+            label27.Size = new Size(152, 25);
+            label27.TabIndex = 13;
+            label27.Text = "Total Earnings";
+            // 
+            // lastname
+            // 
+            lastname.Anchor = AnchorStyles.Top;
+            lastname.AutoSize = true;
+            lastname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            lastname.ForeColor = Color.White;
+            lastname.Location = new Point(156, 81);
+            lastname.Name = "lastname";
+            lastname.Size = new Size(102, 22);
+            lastname.TabIndex = 12;
+            lastname.Text = "Last name";
+            // 
+            // firstname
+            // 
+            firstname.Anchor = AnchorStyles.Top;
+            firstname.AutoSize = true;
+            firstname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
+            firstname.ForeColor = Color.White;
+            firstname.Location = new Point(154, 46);
+            firstname.Name = "firstname";
+            firstname.Size = new Size(104, 22);
+            firstname.TabIndex = 11;
+            firstname.Text = "Frist name";
+            // 
+            // dashboardProfilePanel
+            // 
+            dashboardProfilePanel.BackColor = Color.FromArgb(22, 19, 75);
+            dashboardProfilePanel.BackgroundImage = (Image)resources.GetObject("dashboardProfilePanel.BackgroundImage");
+            dashboardProfilePanel.BackgroundImageLayout = ImageLayout.Zoom;
+            dashboardProfilePanel.Location = new Point(8, 8);
+            dashboardProfilePanel.Name = "dashboardProfilePanel";
+            dashboardProfilePanel.Size = new Size(141, 160);
+            dashboardProfilePanel.TabIndex = 10;
+            // 
+            // flowLayoutParkedV
+            // 
+            flowLayoutParkedV.Anchor = AnchorStyles.Top;
+            flowLayoutParkedV.AutoScroll = true;
+            flowLayoutParkedV.BackColor = Color.FromArgb(22, 19, 75);
+            flowLayoutParkedV.Controls.Add(NoVehicleDatapanel);
+            flowLayoutParkedV.Location = new Point(358, 511);
+            flowLayoutParkedV.Name = "flowLayoutParkedV";
+            flowLayoutParkedV.Size = new Size(323, 351);
+            flowLayoutParkedV.TabIndex = 15;
+            // 
+            // NoVehicleDatapanel
+            // 
+            NoVehicleDatapanel.Controls.Add(label41);
+            NoVehicleDatapanel.Location = new Point(3, 3);
+            NoVehicleDatapanel.Name = "NoVehicleDatapanel";
+            NoVehicleDatapanel.Size = new Size(300, 245);
+            NoVehicleDatapanel.TabIndex = 19;
+            // 
+            // label41
+            // 
+            label41.Anchor = AnchorStyles.Top;
+            label41.AutoSize = true;
+            label41.Font = new Font("NSimSun", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label41.ForeColor = Color.White;
+            label41.Location = new Point(56, 146);
+            label41.Name = "label41";
+            label41.Size = new Size(218, 23);
+            label41.TabIndex = 1;
+            label41.Text = "No Vehicle Data!";
+            // 
+            // panelAvailSlot
+            // 
+            panelAvailSlot.Anchor = AnchorStyles.Top;
+            panelAvailSlot.BackColor = Color.FromArgb(22, 19, 75);
+            panelAvailSlot.Controls.Add(panel35);
+            panelAvailSlot.Controls.Add(flowLayoutPanel4);
+            panelAvailSlot.Controls.Add(label28);
+            panelAvailSlot.Controls.Add(label38);
+            panelAvailSlot.Location = new Point(421, 28);
+            panelAvailSlot.Name = "panelAvailSlot";
+            panelAvailSlot.Size = new Size(265, 147);
+            panelAvailSlot.TabIndex = 13;
+            // 
+            // panel35
+            // 
+            panel35.BackColor = Color.FromArgb(22, 19, 75);
+            panel35.BackgroundImage = (Image)resources.GetObject("panel35.BackgroundImage");
+            panel35.BackgroundImageLayout = ImageLayout.Zoom;
+            panel35.Location = new Point(24, 11);
+            panel35.Name = "panel35";
+            panel35.Size = new Size(44, 42);
+            panel35.TabIndex = 12;
+            // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.Controls.Add(availSlot);
+            flowLayoutPanel4.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanel4.Location = new Point(39, 98);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(201, 33);
+            flowLayoutPanel4.TabIndex = 5;
+            // 
+            // availSlot
+            // 
+            availSlot.Anchor = AnchorStyles.Top;
+            availSlot.AutoSize = true;
+            availSlot.Font = new Font("NSimSun", 16.2F, FontStyle.Bold);
+            availSlot.ForeColor = Color.White;
+            availSlot.Location = new Point(171, 0);
+            availSlot.Name = "availSlot";
+            availSlot.Size = new Size(27, 28);
+            availSlot.TabIndex = 3;
+            availSlot.Text = "5";
+            // 
+            // label28
+            // 
+            label28.Anchor = AnchorStyles.Top;
+            label28.AutoSize = true;
+            label28.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label28.ForeColor = Color.White;
+            label28.Location = new Point(347, 69);
+            label28.Name = "label28";
+            label28.Size = new Size(32, 38);
+            label28.TabIndex = 2;
+            label28.Text = "5";
+            // 
+            // label38
+            // 
+            label38.Anchor = AnchorStyles.Top;
+            label38.AutoSize = true;
+            label38.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
+            label38.ForeColor = Color.White;
+            label38.Location = new Point(74, 22);
+            label38.Name = "label38";
+            label38.Size = new Size(186, 29);
+            label38.TabIndex = 0;
+            label38.Text = "Available Slots";
+            // 
+            // panelOccupied
+            // 
+            panelOccupied.Anchor = AnchorStyles.Top;
+            panelOccupied.BackColor = Color.FromArgb(22, 19, 75);
+            panelOccupied.Controls.Add(panel34);
+            panelOccupied.Controls.Add(flowLayoutPanel3);
+            panelOccupied.Controls.Add(label39);
+            panelOccupied.Controls.Add(label40);
+            panelOccupied.Location = new Point(121, 28);
+            panelOccupied.Name = "panelOccupied";
+            panelOccupied.Size = new Size(271, 147);
+            panelOccupied.TabIndex = 14;
+            // 
+            // panel34
+            // 
+            panel34.BackColor = Color.FromArgb(22, 19, 75);
+            panel34.BackgroundImage = (Image)resources.GetObject("panel34.BackgroundImage");
+            panel34.BackgroundImageLayout = ImageLayout.Zoom;
+            panel34.Location = new Point(15, 8);
+            panel34.Name = "panel34";
+            panel34.Size = new Size(46, 45);
+            panel34.TabIndex = 12;
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.Controls.Add(occSlotLabel);
+            flowLayoutPanel3.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanel3.Location = new Point(58, 98);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(201, 33);
+            flowLayoutPanel3.TabIndex = 5;
+            // 
+            // occSlotLabel
+            // 
+            occSlotLabel.Anchor = AnchorStyles.Top;
+            occSlotLabel.AutoSize = true;
+            occSlotLabel.Font = new Font("NSimSun", 16.2F, FontStyle.Bold);
+            occSlotLabel.ForeColor = Color.White;
+            occSlotLabel.Location = new Point(171, 0);
+            occSlotLabel.Name = "occSlotLabel";
+            occSlotLabel.Size = new Size(27, 28);
+            occSlotLabel.TabIndex = 3;
+            occSlotLabel.Text = "5";
+            // 
+            // label39
+            // 
+            label39.Anchor = AnchorStyles.Top;
+            label39.AutoSize = true;
+            label39.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label39.ForeColor = Color.White;
+            label39.Location = new Point(353, 69);
+            label39.Name = "label39";
+            label39.Size = new Size(32, 38);
+            label39.TabIndex = 2;
+            label39.Text = "5";
+            // 
+            // label40
+            // 
+            label40.Anchor = AnchorStyles.Top;
+            label40.AutoSize = true;
+            label40.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
+            label40.ForeColor = Color.White;
+            label40.Location = new Point(64, 20);
+            label40.Name = "label40";
+            label40.Size = new Size(191, 29);
+            label40.TabIndex = 0;
+            label40.Text = "Occupied Slots";
+            // 
+            // panelUsers
+            // 
+            panelUsers.Anchor = AnchorStyles.Top;
+            panelUsers.BackColor = Color.FromArgb(22, 19, 75);
+            panelUsers.Controls.Add(panel33);
+            panelUsers.Controls.Add(flowLayoutPanel7);
+            panelUsers.Controls.Add(dashboardPanel);
+            panelUsers.Location = new Point(-207, 26);
+            panelUsers.Name = "panelUsers";
+            panelUsers.Size = new Size(298, 149);
+            panelUsers.TabIndex = 12;
+            // 
+            // panel33
+            // 
+            panel33.BackColor = Color.FromArgb(22, 19, 75);
+            panel33.BackgroundImage = (Image)resources.GetObject("panel33.BackgroundImage");
+            panel33.BackgroundImageLayout = ImageLayout.Zoom;
+            panel33.Location = new Point(145, 13);
+            panel33.Name = "panel33";
+            panel33.Size = new Size(49, 47);
+            panel33.TabIndex = 12;
+            // 
+            // flowLayoutPanel7
+            // 
+            flowLayoutPanel7.Controls.Add(adminLabel);
+            flowLayoutPanel7.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanel7.Location = new Point(52, 100);
+            flowLayoutPanel7.Name = "flowLayoutPanel7";
+            flowLayoutPanel7.Size = new Size(227, 33);
+            flowLayoutPanel7.TabIndex = 5;
+            // 
+            // adminLabel
+            // 
+            adminLabel.Anchor = AnchorStyles.Top;
+            adminLabel.AutoSize = true;
+            adminLabel.Font = new Font("NSimSun", 16.2F, FontStyle.Bold);
+            adminLabel.ForeColor = Color.White;
+            adminLabel.Location = new Point(197, 0);
+            adminLabel.Name = "adminLabel";
+            adminLabel.Size = new Size(27, 28);
+            adminLabel.TabIndex = 3;
+            adminLabel.Text = "5";
+            // 
+            // dashboardPanel
+            // 
+            dashboardPanel.Anchor = AnchorStyles.Top;
+            dashboardPanel.AutoSize = true;
+            dashboardPanel.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
+            dashboardPanel.ForeColor = Color.White;
+            dashboardPanel.Location = new Point(201, 20);
+            dashboardPanel.Name = "dashboardPanel";
+            dashboardPanel.Size = new Size(86, 29);
+            dashboardPanel.TabIndex = 0;
+            dashboardPanel.Text = "Admin";
             // 
             // profilePanel
             // 
@@ -1131,7 +1717,7 @@
             adminPanel.Controls.Add(adminName);
             adminPanel.Controls.Add(adminIcon);
             adminPanel.Controls.Add(label13);
-            adminPanel.Location = new Point(251, 25);
+            adminPanel.Location = new Point(221, 23);
             adminPanel.Name = "adminPanel";
             adminPanel.Size = new Size(350, 161);
             adminPanel.TabIndex = 13;
@@ -1172,7 +1758,7 @@
             // admin1
             // 
             admin1.BackColor = Color.FromArgb(22, 19, 64);
-            admin1.Location = new Point(562, 1076);
+            admin1.Location = new Point(577, 1010);
             admin1.Name = "admin1";
             admin1.Size = new Size(241, 142);
             admin1.TabIndex = 21;
@@ -2410,7 +2996,7 @@
             // 
             Content.Anchor = AnchorStyles.Top;
             Content.Controls.Add(vehicleListPanel);
-            Content.Location = new Point(251, 204);
+            Content.Location = new Point(221, 202);
             Content.Name = "Content";
             Content.Size = new Size(1346, 761);
             Content.TabIndex = 18;
@@ -2550,6 +3136,31 @@
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
             panel5.ResumeLayout(false);
+            PanelDashboard.ResumeLayout(false);
+            panel30.ResumeLayout(false);
+            panel30.PerformLayout();
+            flowLayoutPanel6.ResumeLayout(false);
+            panelProfile.ResumeLayout(false);
+            panelProfile.PerformLayout();
+            flowLayoutPanel5.ResumeLayout(false);
+            flowLayoutPanel5.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
+            flowLayoutParkedV.ResumeLayout(false);
+            NoVehicleDatapanel.ResumeLayout(false);
+            NoVehicleDatapanel.PerformLayout();
+            panelAvailSlot.ResumeLayout(false);
+            panelAvailSlot.PerformLayout();
+            flowLayoutPanel4.ResumeLayout(false);
+            flowLayoutPanel4.PerformLayout();
+            panelOccupied.ResumeLayout(false);
+            panelOccupied.PerformLayout();
+            flowLayoutPanel3.ResumeLayout(false);
+            flowLayoutPanel3.PerformLayout();
+            panelUsers.ResumeLayout(false);
+            panelUsers.PerformLayout();
+            flowLayoutPanel7.ResumeLayout(false);
+            flowLayoutPanel7.PerformLayout();
             profilePanel.ResumeLayout(false);
             panel27.ResumeLayout(false);
             panel27.PerformLayout();
@@ -2748,7 +3359,7 @@
         private Label label25;
         private Label label19;
         private Label passLabel;
-        private Panel panel31;
+        private Panel dashboardProfilePanel;
         private Label label23;
         private Label label21;
         private Label label18;
@@ -2762,5 +3373,56 @@
         private Button button16;
         private Button button15;
         private Button button18;
+        private Button button49;
+        private Dashboard dashboard1;
+        private SectionList sectionList1;
+        private Dashboard dashboard2;
+        private DashboardController dashboardController1;
+        private Dashboard dashboard3;
+        private Panel PanelDashboard;
+        private Panel panel30;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private FlowLayoutPanel flowLayoutPanel6;
+        private VehiclesData vehiclesData1;
+        private VehiclesData vehiclesData2;
+        private VehiclesData vehiclesData3;
+        private VehiclesData vehiclesData4;
+        private VehiclesData vehiclesData5;
+        private VehiclesData vehiclesData6;
+        private VehiclesData vehiclesData7;
+        private Panel panelProfile;
+        private Label label24;
+        private FlowLayoutPanel flowLayoutPanel5;
+        private Label totalVehicle;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label earningLabel;
+        private Label label27;
+        private Label lastname;
+        private Label firstname;
+        private FlowLayoutPanel flowLayoutParkedV;
+        private Panel panelAvailSlot;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private Label availSlot;
+        private Label label28;
+        private Label label38;
+        private Panel panelOccupied;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Label occSlotLabel;
+        private Label label39;
+        private Label label40;
+        private Panel panelUsers;
+        private FlowLayoutPanel flowLayoutPanel7;
+        private Label adminLabel;
+        private Label dashboardPanel;
+        private Panel NoVehicleDatapanel;
+        private Label label41;
+        private Panel panel29;
+        private Panel panel32;
+        private Panel panel35;
+        private Panel panel34;
+        private Panel panel33;
     }
 }

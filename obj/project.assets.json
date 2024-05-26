@@ -573,6 +573,7 @@
     "net8.0-windows7.0": [
       "LiveCharts >= 0.9.7",
       "LiveCharts.WinForms >= 0.9.7.1",
+      "LiveCharts.Wpf >= 0.9.7",
       "System.Data.SqlClient >= 4.8.6"
     ]
   },
@@ -627,6 +628,10 @@
           "LiveCharts.WinForms": {
             "target": "Package",
             "version": "[0.9.7.1, )"
+          },
+          "LiveCharts.Wpf": {
+            "target": "Package",
+            "version": "[0.9.7, )"
           },
           "System.Data.SqlClient": {
             "target": "Package",

@@ -505,6 +505,7 @@
             Controls.Add(panel3);
             Controls.Add(listOfVehicle);
             ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;

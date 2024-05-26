@@ -10,6 +10,7 @@
         "dependencies": {
           "LiveCharts": "0.9.7",
           "LiveCharts.WinForms": "0.9.7.1",
+          "LiveCharts.Wpf": "0.9.7",
           "System.Data.SqlClient": "4.8.6"
         },
         "runtime": {

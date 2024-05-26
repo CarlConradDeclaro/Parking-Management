@@ -1587,6 +1587,7 @@
             Controls.Add(panel1);
             Cursor = Cursors.Hand;
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             HelpButton = true;
             Name = "ParkingEntry";
             StartPosition = FormStartPosition.CenterScreen;

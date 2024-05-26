@@ -38,9 +38,6 @@ namespace Parking
             return flowPanelVH;
         }
 
-
-
-
         public Parkout()
         {
             InitializeComponent();
@@ -48,6 +45,7 @@ namespace Parking
             flowPanel.SetRoundedCorners(15);
             listOfVehicle.SetRoundedCorners(2);
             SetButtonRoundedCorners(button5);
+            this.setRounded(20);
         }
 
 
@@ -120,7 +118,43 @@ namespace Parking
         }
 
 
+        private void reDisplay() {
+            palteNum = null;
+            listOfVehicle.Controls.Clear();
+            var parkingRecordsManager = ParkingRecordsManager.Instance;
+            var allParkingRecords = parkingRecordsManager.GetAllParkingRecords();
+            bool foundRecord = false;
+            int count = 0;
+            for (int i = allParkingRecords.Count - 1; i >= 0; i--)
+            {
+                var record = allParkingRecords[i];
+                if (record.Status != "cleared")
+                {
+                    ParkOutList POL = new ParkOutList(flowPanelVH, this, setAmt, setStatus);
+                    POL.UpdateLabels(record);
+                    POL.ParkingRecordAdded += ParkOutList_ParkingRecordAdded;
+                    listOfVehicle.Controls.Add(POL);
+                    count++;
+                }
+            }
 
+            if (count == 0)
+            {
+                Label noResultsLabel = new Label();
+                noResultsLabel.Text = "No results found.";
+                listOfVehicle.Controls.Add(noResultsLabel);
+            }
+
+            flowPanelVH.Controls.Clear();
+            setAmt.Text = "";
+            setStatus.Text = "";
+            setChange.Text = "";
+            enterAmt.Text = "";
+            searchVHTxt.Text = "";
+            setHours.Text = "";
+            invalidD.Text = "";
+            invalidT.Text = "";
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             //parkout
@@ -157,7 +191,7 @@ namespace Parking
                                     setChange.Text = (double.Parse(enterAmt.Text) - double.Parse(setAmt.Text)).ToString();
                                     setStatus.Text = "Successfully paid the amount";
                                     setStatus.ForeColor = Color.Lime;
-
+                                    
                                     ParkingHistoyRecord carDetails = new ParkingHistoyRecord(record.id, convertSlocToSId(record.S_location), record.PlateNumber,
                                                                                             record.Type, record.Model, record.Driver, record.Phone,
                                                                                             record.ArrivalDate, record.ArrivalTime, parkOutDate.Value.ToString("MM/dd/yyyy"),
@@ -167,6 +201,7 @@ namespace Parking
                                     UpdateVehicleFromList(record.PlateNumber);
                                     updateAvailability_query(record.S_location);
                                     palteNum = null;
+                                    reDisplay();
                                     return;
                                 }
                                 else
@@ -573,6 +608,33 @@ namespace Parking
             path.CloseFigure();
 
             button.Region = new Region(path);
+        }
+        public void setRounded(int borderRadius)
+        {
+            this.Paint += (sender, e) =>
+            {
+                Graphics g = e.Graphics;
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+
+                Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
+                int diameter = borderRadius * 2;
+                GraphicsPath path = new GraphicsPath();
+                path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+                path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y, diameter, diameter, 270, 90);
+                path.AddArc(bounds.X + bounds.Width - diameter, bounds.Y + bounds.Height - diameter, diameter, diameter, 0, 90);
+                path.AddArc(bounds.X, bounds.Y + bounds.Height - diameter, diameter, diameter, 90, 90);
+                path.CloseFigure();
+
+                this.Region = new Region(path);
+
+                using (Pen pen = new Pen(this.BackColor, 2))
+                {
+                    g.DrawPath(pen, path);
+                }
+            };
+
+            // Invalidate to ensure the panel is redrawn
+            this.Invalidate();
         }
     }
 

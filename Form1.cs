@@ -8,6 +8,8 @@ namespace Parking
         Parkout pOut;
         Parkin content;
 
+        private Dashboard _dashboard;
+
         private static Form1 instance;
       
         public static Form1 Instance
@@ -27,8 +29,19 @@ namespace Parking
         public Form1()
         {
             InitializeComponent();
-          
+            _dashboard = new Dashboard();
+            pe1 = new ParkingEntry();
+
+            pe1.VehicleParked += YourForm_VehicleParked;
+
         }
+
+        private void YourForm_VehicleParked(object sender, EventArgs e)
+        {
+            // Call the Display method to refresh the Dashboard
+          //  _dashboard.Display();
+        }
+
 
         public void CloseForm() {
             this.Close();

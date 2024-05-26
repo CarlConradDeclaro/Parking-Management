@@ -224,3 +224,8 @@ C:\Users\carlconrad\source\repos\Parking-Management\bin\Debug\net8.0-windows\Liv
 C:\Users\carlconrad\source\repos\Parking-Management\bin\Debug\net8.0-windows\LiveCharts.WinForms.dll
 C:\Users\carlconrad\source\repos\Parking-Management\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
 C:\Users\carlconrad\source\repos\Parking-Management\obj\Debug\net8.0-windows\Parking.LoadingState.resources
+C:\Users\carlconrad\source\repos\Parking-Management\obj\Debug\net8.0-windows\Parking.Dashboard.resources
+C:\Users\carlconrad\source\repos\Parking-Management\obj\Debug\net8.0-windows\Parking.ParkedVehicles.resources
+C:\Users\carlconrad\source\repos\Parking-Management\obj\Debug\net8.0-windows\Parking.VehiclesData.resources
+C:\Users\carlconrad\source\repos\Parking-Management\obj\Debug\net8.0-windows\Parking.DashboardController.resources
+C:\Users\carlconrad\source\repos\Parking-Management\obj\Debug\net8.0-windows\Parking.DashboradUserControl1.resources
